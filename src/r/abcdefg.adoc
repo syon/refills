@@ -1,0 +1,20 @@
+---
+dir: r
+slug: abcdefg
+title: My Sample Post
+date: 2015-11-04
+layout: post.jade
+---
+
+== Hello, AsciiDoc!
+Doc Writer <doc@example.com>
+
+An introduction to http://asciidoc.org[AsciiDoc].
+
+== First Section
+
+* item 1
+* item 2
+
+[source,ruby]
+puts "Hello, World!"

@@ -1,10 +1,6 @@
-Refills
-=======
 
-```sh
-$ npm install -g harp
+# static-site
 
-$ harp server
+This example uses Metalsmith to make a static site. To test it out yourself just run:
 
-$ harp compile
-```
+    $ make build
