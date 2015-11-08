@@ -4,8 +4,7 @@ html
     block head
       block title
         title= title ? title + " | " + site.name : site.name
-      block styles
+        link(rel="stylesheet" href="/assets/vendor/primer.css")
   body
     block body
-      #layout-main
-        block main
+      block main
