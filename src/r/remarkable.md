@@ -1,6 +1,5 @@
 ---
-dir: r
-slug: abcdefg
+slug_refill: rmkbldm
 title: Remarkable demo
 layout: post.jade
 ---
