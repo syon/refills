@@ -1,7 +1,7 @@
 var Metalsmith = require('metalsmith');
 var sass       = require('metalsmith-sass');
 var assets     = require('metalsmith-assets');
-var asciidoc   = require('metalsmith-asciidoc');
+var markdown   = require('metalsmith-markdown-remarkable');
 var jade       = require('metalsmith-jade')
 var layouts    = require('metalsmith-layouts');
 var permalinks = require('metalsmith-permalinks');
@@ -21,7 +21,7 @@ Metalsmith(__dirname)
       return originalPath.replace("scss", "css");
     }
   }))
-  .use(asciidoc())
+  .use(markdown('full'))
   .use(jade())
   .use(permalinks({pattern: ':dir/:slug'}))
   .use(layouts({engine:"jade"}))
