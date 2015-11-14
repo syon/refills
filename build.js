@@ -2,7 +2,8 @@ var Metalsmith = require('metalsmith');
 var sass       = require('metalsmith-sass');
 var assets     = require('metalsmith-assets');
 var markdown   = require('metalsmith-markdown-remarkable');
-var jade       = require('metalsmith-jade')
+var prism      = require('metalsmith-prism');
+var jade       = require('metalsmith-jade');
 var layouts    = require('metalsmith-layouts');
 var permalinks = require('metalsmith-permalinks');
 
@@ -22,6 +23,7 @@ Metalsmith(__dirname)
     }
   }))
   .use(markdown('full'))
+  .use(prism())
   .use(jade())
   .use(permalinks({pattern: 'r/:slug_refill'}))
   .use(permalinks({pattern: 'b/:slug_binder'}))
