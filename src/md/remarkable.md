@@ -1,7 +1,7 @@
 ---
-slug_refill: rmkbldm
+slug: remarkable
 title: Remarkable demo
-layout: post.jade
+layout: page.jade
 ---
 
 # h1 Heading
