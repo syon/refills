@@ -6,11 +6,13 @@ var prism      = require('metalsmith-prism');
 var jade       = require('metalsmith-jade');
 var layouts    = require('metalsmith-layouts');
 var permalinks = require('metalsmith-permalinks');
+var mapsite    = require('metalsmith-mapsite');
 
 Metalsmith(__dirname)
+  .destination('refills')
   .metadata({
     site: {
-      name: 'MY SITE'
+      name: 'Refills'
     }
   })
   .use(assets({
@@ -22,20 +24,18 @@ Metalsmith(__dirname)
       return originalPath.replace("scss", "css");
     }
   }))
-  .use(markdown('full'))
+  .use(markdown('full', {
+    html: true,
+    linkify: true,
+    typographer: true
+  }))
   .use(prism())
   .use(jade())
   .use(permalinks({pattern: ':slug'}))
-  .use(layouts({engine:"jade"}))
-  .use(hello)
+  .use(layouts({engine: 'jade'}))
+  .use(mapsite({
+    hostname: 'http://syon.github.io/refills/'
+  }))
   .build(function(err){
     if (err) throw err;
   });
-
-
-function hello(files, metalsmith, done){
-  for (var file in files) {
-    console.log(file);
-  }
-  done();
-}
