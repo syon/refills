@@ -1,6 +1,17 @@
+Refills
+=======
 
-# static-site
+All articles are refills. Refills are bonded by binders.
 
-This example uses Metalsmith to make a static site. To test it out yourself just run:
+### Ideas
 
-    $ make build
+- Refills are shown in the single page, its own permalink.
+- Binders fetch the refills data and show the article.
+  - Refills are provided as JSON data.
+  - The binder has one top page and shows each refills asynchronously.
+
+### Static source build
+
+```sh
+$ make build
+```
