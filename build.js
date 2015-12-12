@@ -8,11 +8,15 @@ var layouts    = require('metalsmith-layouts');
 var permalinks = require('metalsmith-permalinks');
 var mapsite    = require('metalsmith-mapsite');
 
+var baseurl = 'http://syon.github.io/refills';
+//  baseurl = 'http://localhost:9000/refills';
+
 Metalsmith(__dirname)
   .destination('refills')
   .metadata({
     site: {
-      name: 'Refills'
+      name: 'Refills',
+      basepath: baseurl
     }
   })
   .use(assets({
