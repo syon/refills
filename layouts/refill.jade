@@ -4,15 +4,8 @@ block main
   .container
     .columns
       .one-fourth.column
-        nav.menu
-          span.menu-heading
-            span.octicon.octicon-repo
-            | 組見本
-          a.menu-item.selected(href="#") 問わずがたりの洋酒外史
-          a.menu-item(href="/refills/r/1234568/") ポラーノの広場
-          a.menu-item(href="/refills/r/1234569/") セロ弾きのゴーシュ
-          a.menu-item(href="/refills/r/123456a/") 私の個人主義
+        span one-fourth
       .three-fourths.column
-        article
+        article#article
           .rid= rid
           div!= contents

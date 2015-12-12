@@ -1,0 +1,17 @@
+extends layout
+
+block main
+  .container
+    .columns!= contents
+
+  script.
+    $(function() {
+      var init_rid = $('[data-rid]')[0].attributes['data-rid'].value;
+      loadRefill(init_rid);
+      
+      $(document).on('click', '[data-rid]', function(ev){
+        ev.preventDefault();
+        var rid = $(this).data('rid');
+        loadRefill(rid);
+      });
+    });
