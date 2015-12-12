@@ -4,9 +4,14 @@ layout: index.jade
 ---
 
 .container
-  .blankslate
-    span.mega-octicon.octicon-git-commit
-    span.mega-octicon.octicon-tag
-    span.mega-octicon.octicon-git-branch
-    h3 This is a blank slate
-    p Use it to provide information when no dynamic content exists.
+
+  h1 Binders
+  each b in collections.binders
+    h4
+      a(href="#{site.basepath}/binders/#{b.bid}/")= b.title
+
+  h1 Refills
+  each r in collections.refills
+    h4
+      a(href="#{site.basepath}/refills/#{r.rid}/")= r.title
+    span= r.rid

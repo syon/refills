@@ -1,5 +1,5 @@
 ---
-slug: remarkable
+rid: remarkable
 title: Remarkable demo
 layout: refill.jade
 ---

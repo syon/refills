@@ -1,12 +1,13 @@
-var Metalsmith = require('metalsmith');
-var sass       = require('metalsmith-sass');
-var assets     = require('metalsmith-assets');
-var markdown   = require('metalsmith-markdown-remarkable');
-var prism      = require('metalsmith-prism');
-var jade       = require('metalsmith-jade');
-var layouts    = require('metalsmith-layouts');
-var permalinks = require('metalsmith-permalinks');
-var mapsite    = require('metalsmith-mapsite');
+var Metalsmith  = require('metalsmith');
+var collections = require('metalsmith-collections');
+var sass        = require('metalsmith-sass');
+var assets      = require('metalsmith-assets');
+var markdown    = require('metalsmith-markdown-remarkable');
+var prism       = require('metalsmith-prism');
+var jade        = require('metalsmith-jade');
+var layouts     = require('metalsmith-layouts');
+var permalinks  = require('metalsmith-permalinks');
+var mapsite     = require('metalsmith-mapsite');
 
 Metalsmith(__dirname)
   .destination('refills')
@@ -16,6 +17,14 @@ Metalsmith(__dirname)
       basepath: '/refills'
     }
   })
+  .use(collections({
+    binders: {
+      pattern: 'binders/*.jade'
+    },
+    refills: {
+      pattern: 'refills/*.md'
+    }
+  }))
   .use(assets({
     source: './assets',
     destination: './assets'
@@ -31,7 +40,7 @@ Metalsmith(__dirname)
     typographer: true
   }))
   .use(prism())
-  .use(jade())
+  .use(jade({useMetadata: true}))
   .use(permalinks({pattern: 'refills/:rid'}))
   .use(layouts({engine: 'jade'}))
   .use(mapsite({
