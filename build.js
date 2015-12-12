@@ -31,7 +31,7 @@ Metalsmith(__dirname)
   }))
   .use(prism())
   .use(jade())
-  .use(permalinks({pattern: ':slug'}))
+  .use(permalinks({pattern: 'r/:rid'}))
   .use(layouts({engine: 'jade'}))
   .use(mapsite({
     hostname: 'http://syon.github.io/refills/'

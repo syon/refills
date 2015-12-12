@@ -1,7 +1,7 @@
 ---
 slug: remarkable
 title: Remarkable demo
-layout: page.jade
+layout: refill.jade
 ---
 
 # h1 Heading
