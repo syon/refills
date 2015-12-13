@@ -7,7 +7,7 @@ html
         link(rel="stylesheet" href="#{site.basepath}/assets/vendor/primer.css")
         link(rel="stylesheet" href="#{site.basepath}/assets/vendor/octicons/octicons.css")
         link(rel="stylesheet" href="#{site.basepath}/assets/vendor/outline.min.css")
-        link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700,900|Merriweather:400,400italic,700,700italic")
+        link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Merriweather:400,400italic,700,700italic")
         link(rel="stylesheet" href="#{site.basepath}/assets/vendor/prism.css")
         link(rel="stylesheet" href="#{site.basepath}/assets/app.css")
         script(src="//code.jquery.com/jquery-1.11.3.min.js")
@@ -15,7 +15,8 @@ html
   body
     block body
       block header
-        header
+        header.header
           .container
-            h1= site.name
+            a.logo(href="#{site.basepath}")
+              h1= site.name
       block main
