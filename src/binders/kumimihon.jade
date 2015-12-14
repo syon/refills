@@ -6,6 +6,7 @@ layout: binder.jade
 
 .one-fourth.column
   nav.menu
+    a.menu-item.selected.link-binder-top TOP
     a.menu-item(data-rid="1234567") 問わずがたりの洋酒外史
     a.menu-item(data-rid="1234568") ポラーノの広場
     a.menu-item(data-rid="1234569") セロ弾きのゴーシュ
@@ -13,4 +14,6 @@ layout: binder.jade
 
 .three-fourths.column
   .rid= rid
+  .binder-top
+    p this is binder default sentence.
   article#results

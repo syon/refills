@@ -5,7 +5,7 @@ function loadRefill(rid) {
   })
     .done(function( html ) {
       var a = $(html).find('#article');
-      $("#results").html( a.html() );
+      $("#results").hide().html( a.html() ).fadeIn();
     });
 
   $('.menu-item').removeClass('selected');
