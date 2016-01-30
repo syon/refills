@@ -2,6 +2,7 @@
   "name": "syon-refills",
   "private": true,
   "dependencies": {
+    "jstransformer-markdown": "^1.1.0",
     "metalsmith": "^1.0.0",
     "metalsmith-asciidoc": "^1.1.0",
     "metalsmith-assets": "^0.1.0",
