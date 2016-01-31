@@ -34,5 +34,6 @@ layout: refill.jade
 - メール
 - カレンダー・スケジュール
 - タスク
+- ブックマーク
 - ソースコード
   - GitHub、etc…
