@@ -1,26 +1,4 @@
 extends layout
 
-block main
-  .binderhead
-    .container
-      span.octicon.octicon-repo
-      span= title
-  .container
-    .columns!= contents
-
-  script.
-    $(function() {
-      $(document).on('click', '.link-binder-top', function(ev){
-        $('#results').empty();
-        $('.menu-item').removeClass('selected');
-        $(this).addClass('selected');
-        $('.binder-top').fadeIn();
-      });
-      
-      $(document).on('click', '[data-rid]', function(ev){
-        ev.preventDefault();
-        $('.binder-top').hide();
-        var rid = $(this).data('rid');
-        loadRefill(rid);
-      });
-    });
+block body
+  != contents
