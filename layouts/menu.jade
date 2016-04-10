@@ -1,13 +1,10 @@
-ol
-  li a
-  li b
-  li Metalsmith
+each r in collections.refills
+  unless bid == r.bid
+    h3= r.bid
     ol
-      li
-        a.menu-link(href=".") 『Metalsmith』とは
-      li
-        a.menu-link(href=".") プラグインの紹介
-      li
-        a.menu-link(href=".") 導入事例と解説
-  li d
-  li e
+  else
+    li
+      a.menu-link(href="#{site.basepath}/#{r.bid}/#{r.rid}/")
+        = r.title
+
+  - var bid = r.bid

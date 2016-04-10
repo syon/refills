@@ -1,4 +1,5 @@
 ---
+bid: data-backup
 rid: o1rytc
 title: クラウド障害への備え
 date: 2016/01/31

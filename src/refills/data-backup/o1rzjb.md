@@ -1,4 +1,5 @@
 ---
+bid: data-backup
 rid: o1rzjb
 title: バックアップ計画
 date: 2016/01/31

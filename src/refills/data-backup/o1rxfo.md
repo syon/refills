@@ -1,4 +1,5 @@
 ---
+bid: data-backup
 rid: o1rxfo
 title: バックアップするもの
 date: 2016/01/31

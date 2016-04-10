@@ -1,4 +1,5 @@
 ---
+bid: data-backup
 rid: o24aex
 title: パスワード管理の必要性
 date: 2016/02/06

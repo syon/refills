@@ -1,4 +1,5 @@
 ---
+bid: sample
 rid: remarkable
 title: Remarkable demo
 layout: refill.jade
