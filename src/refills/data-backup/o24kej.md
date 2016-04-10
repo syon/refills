@@ -1,4 +1,5 @@
 ---
+bid: data-backup
 rid: o24kej
 title: 「1Password」の導入
 date: 2016/02/06

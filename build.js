@@ -18,11 +18,8 @@ Metalsmith(__dirname)
     }
   })
   .use(collections({
-    binders: {
-      pattern: 'binders/*.jade'
-    },
     refills: {
-      pattern: 'refills/*.md'
+      pattern: 'refills/*/*.md'
     }
   }))
   .use(assets({
@@ -41,7 +38,7 @@ Metalsmith(__dirname)
   }))
   .use(prism())
   .use(jade({useMetadata: true}))
-  .use(permalinks({pattern: 'refills/:rid'}))
+  .use(permalinks({pattern: ':bid/:rid'}))
   .use(layouts({engine: 'jade'}))
   .use(mapsite({
     hostname: 'http://syon.github.io/refills/'

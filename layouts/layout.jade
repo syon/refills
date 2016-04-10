@@ -4,19 +4,22 @@ html
     block head
       block title
         title= title ? title + " | " + site.name : site.name
-        link(rel="stylesheet" href="#{site.basepath}/assets/vendor/primer.css")
-        link(rel="stylesheet" href="#{site.basepath}/assets/vendor/octicons/octicons.css")
-        link(rel="stylesheet" href="#{site.basepath}/assets/vendor/outline.min.css")
+        link(rel="stylesheet" href="#{site.basepath}/assets/vendor/semantic/semantic.min.css")
         link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Merriweather:400,400italic,700,700italic")
         link(rel="stylesheet" href="#{site.basepath}/assets/vendor/prism.css")
         link(rel="stylesheet" href="#{site.basepath}/assets/app.css")
         script(src="//code.jquery.com/jquery-1.11.3.min.js")
+        script(src="#{site.basepath}/assets/vendor/semantic/semantic.min.js")
         script(src="#{site.basepath}/assets/app.js")
   body
-    block body
-      block header
-        header.header
-          .container
-            a.logo(href="#{site.basepath}")
-              h1= site.name
-      block main
+    #global
+      #gSide
+        #gHead
+          a.logo(href="#{site.basepath}")
+            h1= site.name
+
+        #gMenu
+          include menu.jade
+
+      #gBody
+        block body

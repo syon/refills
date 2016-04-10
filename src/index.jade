@@ -3,15 +3,6 @@ title: /index.jade
 layout: index.jade
 ---
 
-.container
-
-  h1 Binders
-  each b in collections.binders
-    h4
-      a(href="#{site.basepath}/binders/#{b.bid}/")= b.title
+.ui.container
 
   h1 Refills
-  each r in collections.refills
-    h4
-      a(href="#{site.basepath}/refills/#{r.rid}/")= r.title
-    span= r.rid

@@ -1,4 +1,5 @@
 ---
+bid: sample
 rid: dummy
 title: Dummy article
 layout: refill.jade

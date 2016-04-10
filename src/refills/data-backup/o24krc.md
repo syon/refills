@@ -1,4 +1,5 @@
 ---
+bid: data-backup
 rid: o24krc
 title: アカウントの洗い出し
 date: 2016/02/06

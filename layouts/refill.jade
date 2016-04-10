@@ -1,13 +1,10 @@
 extends layout
 
-block main
-  .container
-    .columns
-      .one-fourth.column
-        span one-fourth
-      .three-fourths.column
-        article#article
-          p.meta.text-right
-            span.rid= rid
-            span.date= date
-          div!= contents
+block body
+  header.meta
+    span.rid= rid
+    span.date= date
+
+  article#article
+    h1!= title
+    div!= contents
