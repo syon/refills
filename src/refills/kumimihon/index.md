@@ -1,4 +1,5 @@
 ---
+idx: kumimihon
 bid: kumimihon
 title: 組見本
 rids:
@@ -6,4 +7,5 @@ rids:
   - 1234567
   - 1234568
   - 1234569
+layout: refill.jade
 ---

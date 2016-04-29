@@ -40,6 +40,7 @@ Metalsmith(__dirname)
   .use(prism())
   .use(jade({useMetadata: true}))
   .use(permalinks({pattern: ':bid/:rid'}))
+  .use(permalinks({pattern: ':idx'}))
   .use(layouts({engine: 'jade'}))
   .use(mapsite({
     hostname: 'http://syon.github.io/refills/'

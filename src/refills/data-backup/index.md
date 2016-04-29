@@ -1,4 +1,5 @@
 ---
+idx: data-backup
 bid: data-backup
 title: データバックアップ
 rids:
@@ -11,4 +12,5 @@ rids:
   - o24aex
   - o24kej
   - o24krc
+layout: refill.jade
 ---
