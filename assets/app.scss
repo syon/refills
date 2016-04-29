@@ -13,9 +13,25 @@
 }
 
 #gMenu {
+  .title {
+    margin: 20px 0 0;
+    padding: 8px 15px;
+    color: #364149;
+  }
+
+  ul {
+    margin: 0;
+    list-style: none;
+    padding: 0 0 0 20px;
+  }
+
   .menu-link {
     display: block;
     padding: 8px 15px;
+    color: #364149;
+    &:hover {
+      color: #008cff;
+    }
   }
 }
 

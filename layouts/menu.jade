@@ -1,7 +1,7 @@
 each binder in summary
-  h4= binder.info.title
-  ol
-  each rid in binder.info.rids
-    - var r = binder.refills[rid]
-    li
-      a.menu-link(href="#{site.basepath}/#{binder.info.bid}/#{rid}/")= r.title
+  h4.title= binder.info.title
+  ul
+    each rid in binder.info.rids
+      - var r = binder.refills[rid]
+      li
+        a.menu-link(href="#{site.basepath}/#{binder.info.bid}/#{rid}/")= r.title
