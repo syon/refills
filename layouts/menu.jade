@@ -1,10 +1,7 @@
-each r in collections.refills
-  unless bid == r.bid
-    h3= r.bid
-    ol
-  else
+each binder in summary
+  h4= binder.info.title
+  ol
+  each rid in binder.info.rids
+    - var r = binder.refills[rid]
     li
-      a.menu-link(href="#{site.basepath}/#{r.bid}/#{r.rid}/")
-        = r.title
-
-  - var bid = r.bid
+      a.menu-link(href="#{site.basepath}/#{binder.info.bid}/#{rid}/")= r.title

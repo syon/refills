@@ -22,6 +22,7 @@ Metalsmith(__dirname)
       pattern: 'refills/*/*.md'
     }
   }))
+  .use(refills())
   .use(assets({
     source: './assets',
     destination: './assets'
@@ -46,3 +47,28 @@ Metalsmith(__dirname)
   .build(function(err){
     if (err) throw err;
   });
+
+function refills() {
+  var info = {};
+  return function(files, metalsmith, done) {
+    Object.keys(files).forEach(function(file){
+      var data = files[file];
+      if (data.bid) {
+        if (!info[data.bid]) {
+          // initialize
+          info[data.bid] = { info: {}, refills: {} };
+        }
+        if (data.rids) {
+          // index
+          info[data.bid].info = data;
+        } else {
+          // refill
+          info[data.bid].refills[data.rid] = data;
+        }
+      }
+    });
+    var metadata = metalsmith.metadata();
+    metadata.summary = info;
+    done();
+  }
+}
