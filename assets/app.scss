@@ -58,4 +58,19 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px 0 40px;
+
+  .title {
+    margin-bottom: 4em;
+    padding-bottom: 1em;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    .b-title {
+      margin-top: .5em;
+      font-size: 1.2rem;
+      color: #aaa;
+    }
+    .r-title {
+      margin: 0;
+    }
+  }
 }

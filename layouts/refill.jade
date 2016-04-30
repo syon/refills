@@ -6,5 +6,7 @@ block body
     span.date= date
 
   article#article
-    h1!= title
+    .title
+      h2.b-title= summary[bid].info.title
+      h1.r-title!= title
     div!= contents
