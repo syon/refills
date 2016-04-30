@@ -58,6 +58,7 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px 0 40px;
+  font-size: 16px;
 
   .title {
     margin-bottom: 4em;
@@ -72,5 +73,24 @@
     .r-title {
       margin: 0;
     }
+  }
+
+  li {
+    line-height: 1.7;
+  }
+
+  code {
+    padding: .2em;
+    margin: 0;
+    font-size: .85em;
+    background-color: #f7f7f7;
+  }
+
+  pre {
+    overflow: auto;
+    word-wrap: normal;
+    margin: 0 0 1.275em;
+    padding: .85em 1em;
+    background: #f7f7f7;
   }
 }
