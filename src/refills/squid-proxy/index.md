@@ -1,7 +1,7 @@
 ---
 idx: squid-proxy
 bid: squid-proxy
-title: Squid
+title: Squid Proxy Server
 rids:
   - install
   - config
