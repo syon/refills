@@ -2,11 +2,18 @@ extends layout
 
 block body
   header.meta
-    span.rid= rid
     span.date= date
 
+    - var repo = 'https://github.com/syon/refills/blob/master/src/refills'
+    - var binder = repo + "/" + bid + "/"
+    - var gh_url = rid ? binder + rid + ".md" : binder + "/index.md"
+    a(href=gh_url target="_blank")
+      i.fa.fa-github(aria-hidden="true")
+
   article#article
+
     .title
       h2.b-title= summary[bid].info.title
       h1.r-title!= title
+
     div!= contents
