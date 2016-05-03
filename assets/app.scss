@@ -143,8 +143,10 @@ body, h1, h2, h3, h4, h5 {
     }
   }
 
-  p a[href^="https://github.com"] {
-    color: #4183c4;
+  p, li {
+    a[href^="https://github.com"] {
+      color: #4183c4;
+    }
   }
 
 }
