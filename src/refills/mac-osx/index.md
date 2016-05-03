@@ -3,7 +3,7 @@ idx: mac-osx
 bid: mac-osx
 title: Mac OSX
 rids:
-  - EasySIMBL
+  - easysimbl
 layout: refill.jade
 ---
 
