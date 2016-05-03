@@ -129,4 +129,22 @@ body, h1, h2, h3, h4, h5 {
     padding: .85em 1em;
     background: #f7f7f7;
   }
+
+  a[href^="https://github.com"] {
+    color: inherit;
+    &:before {
+      margin-right: .2em;
+      content: "\f09b";
+      font-family: FontAwesome;
+      font-weight: normal;
+    }
+    &:hover {
+      color: #1e70bf;
+    }
+  }
+
+  p a[href^="https://github.com"] {
+    color: #4183c4;
+  }
+
 }
