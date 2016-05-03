@@ -1,6 +1,6 @@
 ---
 bid: mac-osx
-rid: EasySIMBL
+rid: easysimbl
 title: EasySIMBLのインストールと使い方
 date: 2016/05/02
 layout: refill.jade
