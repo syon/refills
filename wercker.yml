@@ -13,7 +13,7 @@ deploy:
           apt-get install git -y
 
     - script:
-        name: Makefile :: npm install & node build
+        name: Makefile make
         code: |
           make build
 
