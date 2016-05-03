@@ -101,6 +101,20 @@ body, h1, h2, h3, h4, h5 {
     line-height: 1.7;
   }
 
+  dl {
+    dt {
+      font-size: 18px;
+      font-weight: bold;
+      font-style: italic;
+      padding: 0;
+      margin: 15px 0 5px;
+    }
+    dd {
+      margin: 0 0 15px;
+      padding: 0 15px;
+    }
+  }
+
   code {
     padding: .2em;
     margin: 0;
