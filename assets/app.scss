@@ -90,6 +90,16 @@ body, h1, h2, h3, h4, h5 {
     }
   }
 
+  p.imgbox {
+    background: #fafafa;
+    padding: 2rem;
+    border: 1px solid #f5f5f5;
+  }
+
+  h1, h2, h3, h4, h5 {
+    margin: calc(4rem - .14285em) 0 1rem;
+  }
+
   h3 {
     color: #666;
   }
