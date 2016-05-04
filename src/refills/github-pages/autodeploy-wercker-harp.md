@@ -35,20 +35,21 @@ deploy:
 
 ## 解説
 
-- box に git がインストールされていないためデプロイ時にインストールする
+- box に git がインストールされていないためデプロイ時にインストール
 - harp コマンドは node_modules 内のものを直接指定
 - `lukevivier/gh-pages` は lukevivier 氏が作った GitHub Pages デプロイ用の wercker step
   - [lukevivier/step-gh-pages](https://app.wercker.com/#applications/51f71ee369cd738a32001822/tab/details/)
   - [lvivier/step-gh-pages: deploy github pages with wercker](https://github.com/lvivier/step-gh-pages)
-- `$GH_TOKEN` は GitHub の個人設定で生成したトークンを Wercker 経由で割り当てている
-    - [Personal Access Tokens](https://github.com/settings/tokens)
-      - OAuth scopes: ✔ __repo_deployment__
-      - [OAuth | GitHub Developer Guide](https://developer.github.com/v3/oauth/#scopes)
-    - Wearcker `>` Application settings `>` Environment variables
-      - Variable name: `GH_TOKEN`
-      - Value: <上記で生成したトークン> [ __✔ Protected__ ]
-- 実例
-  - [syon/works](https://github.com/syon/works)
+
+### GitHub アクセストークンと Wercker の設定
+`$GH_TOKEN` は GitHub の個人設定で生成したトークンを Wercker 経由で割り当てています。
+詳しくは別のページでまとめていますので参照ください。
+
+- [GitHub アクセストークンと Wercker の設定](../oauth-access-token/)
+
+### 実例
+
+- [syon/works](https://github.com/syon/works)
 
 ### Note (at 2016/05/04)
 
