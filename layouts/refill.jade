@@ -2,7 +2,9 @@ extends layout
 
 block body
   header.meta
-    span.date= date
+    span.date
+      i.fa.fa-calendar(aria-hidden="true")
+      span= date
 
     - var repo = 'https://github.com/syon/refills/blob/master/src/refills'
     - var binder = repo + "/" + bid + "/"
