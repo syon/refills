@@ -7,6 +7,7 @@ rids:
   - config
   - directory
   - errorpage
+  - auth
   - tips
 layout: refill.jade
 ---
