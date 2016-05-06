@@ -90,6 +90,12 @@ body, h1, h2, h3, h4, h5 {
     }
   }
 
+  footer {
+    margin-top: 4em;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+  }
+
   p.imgbox {
     background: #fafafa;
     padding: 2rem;
@@ -98,6 +104,9 @@ body, h1, h2, h3, h4, h5 {
 
   h1, h2, h3, h4, h5 {
     margin: calc(4rem - .14285em) 0 1rem;
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   h3 {

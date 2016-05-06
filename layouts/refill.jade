@@ -19,3 +19,12 @@ block body
       h1.r-title!= title
 
     div!= contents
+
+    footer
+      h3
+        | Index of&nbsp;
+        a(href="/refills/#{bid}/") #{summary[bid].info.title}
+      ul
+        each r in summary[bid].refills
+          li
+            a(href="/refills/#{r.bid}/#{r.rid}/")= r.title
