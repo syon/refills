@@ -1,4 +1,10 @@
 extends layout
 
 block body
-  .container!= contents
+
+  article#article
+
+    .title
+      h1.r-title!= title
+
+    div!= contents

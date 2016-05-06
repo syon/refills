@@ -20,10 +20,11 @@ block body
     .hero
       img(src="hero.png" alt=bid)
 
-    div!= contents
+    .index
+      h2 Index of #{summary[bid].info.title}
+      ul
+        each r in summary[bid].refills
+          li
+            a(href="/refills/#{r.bid}/#{r.rid}/")= r.title
 
-    h2 Index of #{summary[bid].info.title}
-    ul
-      each r in summary[bid].refills
-        li
-          a(href="/refills/#{r.bid}/#{r.rid}/")= r.title
+    div!= contents
