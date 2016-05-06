@@ -15,11 +15,13 @@ block body
   article#article
 
     .title
-      h2.b-title= summary[bid].info.title
       h1.r-title!= title
 
+    .hero
+      img(src="hero.png" alt=bid)
+
     div!= contents
-    
+
     h2 Index of #{summary[bid].info.title}
     ul
       each r in summary[bid].refills

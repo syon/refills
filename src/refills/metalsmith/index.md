@@ -8,8 +8,6 @@ date: 2016/05/06
 layout: binder.jade
 ---
 
-![](metalsmith.png)
-
 [Metalsmith](http://www.metalsmith.io/)
 
 ## Articles
