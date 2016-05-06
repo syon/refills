@@ -12,5 +12,6 @@ rids:
   - o24aex
   - o24kej
   - o24krc
-layout: refill.jade
+date: 2016/05/06
+layout: binder.jade
 ---

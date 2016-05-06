@@ -7,5 +7,6 @@ rids:
   - 1234567
   - 1234568
   - 1234569
-layout: refill.jade
+date: 2016/05/06
+layout: binder.jade
 ---

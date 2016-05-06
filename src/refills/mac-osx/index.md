@@ -4,7 +4,8 @@ bid: mac-osx
 title: Mac OSX
 rids:
   - easysimbl
-layout: refill.jade
+date: 2016/05/06
+layout: binder.jade
 ---
 
 ## Index

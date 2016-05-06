@@ -9,7 +9,8 @@ rids:
   - errorpage
   - auth
   - tips
-layout: refill.jade
+date: 2016/05/06
+layout: binder.jade
 ---
 
 ## Articles

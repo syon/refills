@@ -1,0 +1,27 @@
+extends layout
+
+block body
+  header.meta
+    span.date
+      i.fa.fa-calendar(aria-hidden="true")
+      span= date
+
+    - var repo = 'https://github.com/syon/refills/blob/master/src/refills'
+    - var binder = repo + "/" + bid + "/"
+    - var gh_url = rid ? binder + rid + ".md" : binder + "/index.md"
+    a(href=gh_url target="_blank")
+      i.fa.fa-github(aria-hidden="true")
+
+  article#article
+
+    .title
+      h2.b-title= summary[bid].info.title
+      h1.r-title!= title
+
+    div!= contents
+    
+    h2 Index of #{summary[bid].info.title}
+    ul
+      each r in summary[bid].refills
+        li
+          a(href="/refills/#{r.bid}/#{r.rid}/")= r.title

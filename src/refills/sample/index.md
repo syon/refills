@@ -5,5 +5,6 @@ title: Sample
 rids:
   - dummy
   - remarkable
-layout: refill.jade
+date: 2016/05/06
+layout: binder.jade
 ---
