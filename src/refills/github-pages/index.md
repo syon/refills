@@ -6,6 +6,7 @@ rids:
   - autodeploy-wercker-metalsmith
   - autodeploy-wercker-harp
   - oauth-access-token
+  - aws-s3-bucket-policy
 date: 2016/05/06
 layout: binder.jade
 ---
