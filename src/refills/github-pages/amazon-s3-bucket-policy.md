@@ -11,7 +11,7 @@ https://s3-ap-northeast-1.amazonaws.com/syon.github.io/hello/hedgehog.jpg
 
 この画像（出典^[http://gahag.net/001616-hedgehog-animal/]）は Amazon S3 に置いてアクセス制御を行っています。
 このサイト`syon.github.io`からは表示できますが、画像の URL を直接ブラウザで
-表示しようとしても拒否されます（はじめの1回はキャッシュが使われるかもしれません）。
+表示しようとしても拒否されます（はじめの表示と更新ボタンではキャッシュが使われるかもしれません）。
 
 
 ## GitHubに画像ファイルを置かないようにしたい
