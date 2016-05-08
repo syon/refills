@@ -7,11 +7,6 @@ rids:
   - o1rxfo
   - o1rytc
   - o1rzjb
-  - o1s273
-  - o2dh01
-  - o24aex
-  - o24kej
-  - o24krc
 date: 2016/05/06
 layout: binder.jade
 ---

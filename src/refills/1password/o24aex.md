@@ -1,12 +1,12 @@
 ---
-bid: data-backup
+bid: 1password
 rid: o24aex
 title: パスワード管理の必要性
 date: 2016/02/06
 layout: refill.jade
 ---
 
-# Why
+## Why
 - パスワード管理とは
   - 記憶に頼ると安易なパスワードにしがち
   - 人間には限界がある
