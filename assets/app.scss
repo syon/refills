@@ -23,8 +23,10 @@ body, h1, h2, h3, h4, h5 {
   }
 }
 
-#gHead {
-  padding: 8px 15px;
+@media(max-width:1170px) {
+  #gSide {
+    display: none;
+  }
 }
 
 #gMenu {
@@ -51,12 +53,26 @@ body, h1, h2, h3, h4, h5 {
   .meta {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     height: 50px;
     padding: 0 8px;
     color: #7e888b;
 
-    > * {
+    .logo {
+      color: #7e888b;
+      h1 {
+        font-size: 16px;
+        font-weight: 100;
+        &:hover {
+          color: #1e70bf;
+        }
+      }
+    }
+    .right {
+      display: flex;
+      align-items: center;
+    }
+    .right > * {
       padding: 0 15px;
     }
     .fa-calendar {
@@ -72,7 +88,7 @@ body, h1, h2, h3, h4, h5 {
 #article {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px 0 40px;
+  padding: 20px 20px 40px;
   font-size: 16px;
 
   .title {

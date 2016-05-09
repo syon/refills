@@ -1,0 +1,14 @@
+header.meta
+  .left
+    a.logo(href="#{site.basepath}/")
+      h1= site.name
+  .right
+    span.date
+      i.fa.fa-calendar(aria-hidden="true")
+      span= date
+
+    - var repo = 'https://github.com/syon/refills/blob/master/src/refills'
+    - var binder = repo + "/" + bid + "/"
+    - var gh_url = rid ? binder + rid + ".md" : binder + "/index.md"
+    a(href=gh_url target="_blank")
+      i.fa.fa-github(aria-hidden="true")
