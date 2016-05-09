@@ -3,4 +3,11 @@ title: Refills
 layout: index.jade
 ---
 
-h2 /index.jade
+h2 Recently updated refills
+
+- each r in collections.recent
+  if r.rid
+    p
+      a(href="/refills/#{r.bid}/#{r.rid}/")
+        h3= r.title
+      span= r.date
