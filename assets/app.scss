@@ -12,13 +12,15 @@ body, h1, h2, h3, h4, h5 {
 
 #gSide {
   width: 20rem;
-  background-color: #fafafa;
-  border-right: 1px solid rgba(0,0,0,.07);
+  background-color: #efefef;
 
+  li.selected {
+    background-color: rgba(0,0,0,.07);
+  }
   a {
     color: #364149;
     &:hover {
-      color: #008cff;
+      background-color: rgba(0,0,0,.05);
     }
   }
 }
