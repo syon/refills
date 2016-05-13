@@ -7,10 +7,10 @@ body, h1, h2, h3, h4, h5 {
 }
 
 #global {
-  display: flex;
 }
 
 #gSide {
+  position: fixed;
   width: 20rem;
   background-color: #efefef;
 
@@ -28,6 +28,9 @@ body, h1, h2, h3, h4, h5 {
 @media(max-width:1170px) {
   #gSide {
     display: none;
+  }
+  #gBody {
+    margin-left: 0;
   }
 }
 
@@ -50,7 +53,7 @@ body, h1, h2, h3, h4, h5 {
 }
 
 #gBody {
-  flex: 1;
+  margin-left: 20rem;
 
   .meta {
     display: flex;
