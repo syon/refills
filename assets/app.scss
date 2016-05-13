@@ -10,6 +10,9 @@ body, h1, h2, h3, h4, h5 {
 }
 
 #gSide {
+  @media(max-width:1170px) {
+    display: none;
+  }
   position: fixed;
   width: 20rem;
   background-color: #efefef;
@@ -22,15 +25,6 @@ body, h1, h2, h3, h4, h5 {
     &:hover {
       background-color: rgba(0,0,0,.05);
     }
-  }
-}
-
-@media(max-width:1170px) {
-  #gSide {
-    display: none;
-  }
-  #gBody {
-    margin-left: 0;
   }
 }
 
@@ -54,6 +48,9 @@ body, h1, h2, h3, h4, h5 {
 
 #gBody {
   margin-left: 20rem;
+  @media(max-width:1170px) {
+    margin-left: 0;
+  }
 
   .meta {
     display: flex;
