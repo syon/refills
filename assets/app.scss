@@ -14,6 +14,7 @@ body, h1, h2, h3, h4, h5 {
     display: none;
   }
   position: fixed;
+  overflow-y: auto;
   width: 20rem;
   background-color: #efefef;
 
@@ -180,8 +181,18 @@ body, h1, h2, h3, h4, h5 {
     overflow: auto;
     word-wrap: normal;
     margin: 0 0 1.275em;
-    padding: .85em 1em;
+    padding: .45em 1em;
     background: #f7f7f7;
+    code {
+      display: block;
+    }
+  }
+
+  blockquote {
+    padding-left: 1em;
+    font-style: italic;
+    color: rgba(0,0,0,.6);
+    border-left: 2px solid #ddd;
   }
 
   a[href^="https://github.com"] {
