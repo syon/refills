@@ -6,6 +6,18 @@ $(function() {
 
   $('#gMenu .menu-link[href="'+location.pathname+'"]').closest('li').addClass('selected');
 
+  resizeProcess();
+
+  menuInitialScroll();
+
+});
+
+function menuInitialScroll() {
+  var offset = $('.selected').closest('.binder').offset().top - 130;
+  $('#gSide').scrollTop(offset);
+}
+
+function resizeProcess() {
   var queue = null, wait = 300;
   doResizeProcess();
 
@@ -18,6 +30,6 @@ $(function() {
 
   function doResizeProcess() {
     $('#gSide').height($(window).height());
+    $('#gSide > #gMenu').css('paddingBottom', $(window).height());
   }
-
-});
+}
