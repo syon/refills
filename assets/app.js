@@ -13,7 +13,7 @@ $(function() {
 });
 
 function menuInitialScroll() {
-  var offset = $('.selected').closest('.binder').offset().top - 130;
+  var offset = $('.selected').closest('.binder').offset().top - 100;
   $('#gSide').scrollTop(offset);
 }
 
@@ -30,6 +30,6 @@ function resizeProcess() {
 
   function doResizeProcess() {
     $('#gSide').height($(window).height());
-    $('#gSide > #gMenu').css('paddingBottom', $(window).height());
+    $('#gSide > #gMenu').css('paddingBottom', $(window).height() - 30);
   }
 }
