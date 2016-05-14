@@ -78,7 +78,7 @@ CSV.table("data.tsv", { :col_sep => "\t", :quote_char => "\"" }) # needs header 
 - [rubyの配列からnilと空文字を取り除く - Qiita](http://qiita.com/ta1kt0me@github/items/33c4d37a65b69b75ee40)
 
 
-## Time
+## ActiveSupport
 
 ### ActiveSupport による日時演算
 ```ruby
@@ -99,8 +99,13 @@ Time.strptime("2014-10-06 12:39:10 UTC", "%F %T UTC").since(9.hours).strftime("%
 #=> "2014-10-06 21:39:10 JST"
 ```
 
-### rails/blank.rb
+### blank?
+```ruby
+require 'active_support/core_ext/object/blank'
+```
+
 - [rails/blank.rb at master · rails/rails](https://github.com/rails/rails/blob/master/activesupport/lib/active_support/core_ext/object/blank.rb)
+- [Active Support コア拡張機能 | Rails ガイド](http://railsguides.jp/active_support_core_extensions.html)
 - [Rails以外の環境でblank?メソッドを使うときの注意 - (ﾟ∀ﾟ)o彡 sasata299's blog](http://blog.livedoor.jp/sasata299/archives/51495666.html)
 
 
