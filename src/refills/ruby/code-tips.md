@@ -6,6 +6,88 @@ date: 2016/05/14
 layout: refill.jade
 ---
 
+#### Encoding
+
+    # coding: utf-8
+
+#### 正規表現
+
+- [正規表現](http://docs.ruby-lang.org/ja/2.2.0/doc/spec=2fregexp.html)
+
+```ruby
+# 抽出
+"Hello, World".slice /W.+$/  #=> "World"
+"Hello, World".slice /w.+$/i #=> "World"
+
+# マッチ＆抽出
+"Hello, World. Hey, John.".match(%r{Hey, (.*).})[1] #=> "John"
+"/path/to/article?q=hello".match(%r{.*/article\?q=(.*)})[1] #=> "hello"
+
+# 含む
+"Hello, World" =~ /Hello/  #=> 0
+"Hello, World" =~ /hello/  #=> nil
+"Hello, World" =~ /hello/i #=> 0
+"Hello, World".include? "Hello" #=> true
+["dog", "cat", "mouse"].include? "cat" #=> true
+
+# 完全一致
+"Hello, World" =~ /^Hello$/        #=> nil
+"Hello, World" =~ /^Hello, World$/ #=> 0
+```
+
+#### String
+
+- [Rubyで%記法（パーセント記法）を使う - Qiita](http://qiita.com/mogulla3/items/46bb876391be07921743)
+- [Rubyでクオート、ダブルクオート以外でのStringの書き方 - Qiita](http://qiita.com/tsugi2009/items/dc974669e55a2cbe2809)
+
+```ruby
+str = %(Programming language "Ruby")
+puts str
+# => Programming language "Ruby"
+
+ruby = "Ruby"
+str2 = %(Programming language "#{ruby}")
+puts str2
+# => Programming language "Ruby"
+```
+
+| %  | desc |
+|----|----------------------------------------|
+| %  | ダブルクオートで囲う場合と同等。式展開される。 |
+| %q | シングルクオートで囲う場合と同等。式展開されない。 |
+| %W | スペース区切りで配列定義。式展開される。 |
+| %w | スペース区切りで配列定義。式展開されない。 |
+| %I | 要素がシンボルの配列を作る。式展開される。 |
+| %i | 要素がシンボルの配列を作る。式展開されない。 |
+| %x | コマンド出力を行う。バッククオートで囲った場合と同等。 |
+| %s | シンボル。式展開されない。 |
+
+#### true / false
+
+```ruby
+!!(1)   #=> true
+!!(0)   #=> true
+!!(-1)  #=> true
+!!(nil) #=> false
+!!([])  #=> true
+!!({})  #=> true
+```
+
+#### オブジェクトを JSON に変換
+```ruby
+JSON.generate(obj)
+JSON.pretty_generate(obj) # 整形
+```
+
+#### 日付・時刻の計算
+```ruby
+require 'active_support/time'
+
+Time.now           #=> 2014-10-24 20:50:15 +0900
+Time.now + 3.hours #=> 2014-10-24 23:50:15 +0900
+```
+via - [Rubyで日付の計算するならactive_support使っとけって世間で言われてるけどマジだわ - yachibit.log](http://yachibit.hatenablog.jp/entry/2013/06/08/030926)
+
 ### コマンドライン引数
 
 - [Rubyメモ - コマンドライン引数](http://www2.atwiki.jp/kmo2/pages/16.html)
