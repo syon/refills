@@ -8,7 +8,9 @@ layout: refill.jade
 
 #### Encoding
 
-    # coding: utf-8
+```ruby
+# coding: utf-8
+```
 
 #### 正規表現
 
