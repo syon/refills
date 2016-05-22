@@ -32,6 +32,10 @@ Markdown の実装の1つである __[Remarkable](https://github.com/jonschlinke
 ## [metalsmith-prism](https://github.com/Availity/metalsmith-prism)
 __[Prism.js](http://prismjs.com/)__ を使ってシンタックスハイライトを実現します。
 拡張子が`html`または`htm`のファイルを対象に適用されます。
+Markdown プラグインを使っている場合は、それよりも後にこのプラグインを動作させる必要があります。
+
+- [Prism - Supported languages](http://prismjs.com/#languages-list)  
+  Prism でシンタックスハイライトが可能な言語の一覧
 
 
 ## metalsmith-jade
