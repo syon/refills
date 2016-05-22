@@ -29,7 +29,9 @@ Markdown の実装の1つである __[Remarkable](https://github.com/jonschlinke
   Remarkable のプラグイン一覧
 
 
-## metalsmith-prism
+## [metalsmith-prism](https://github.com/Availity/metalsmith-prism)
+__[Prism.js](http://prismjs.com/)__ を使ってシンタックスハイライトを実現します。
+拡張子が`html`または`htm`のファイルを対象に適用されます。
 
 
 ## metalsmith-jade
