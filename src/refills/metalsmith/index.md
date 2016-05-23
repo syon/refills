@@ -3,8 +3,9 @@ idx: metalsmith
 bid: metalsmith
 title: Metalsmith
 rids:
+  - intro
   - plugins
-date: 2016/05/06
+date: 2016/05/23
 layout: binder.jade
 ---
 
