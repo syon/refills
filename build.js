@@ -8,6 +8,7 @@ var jade        = require('metalsmith-jade');
 var layouts     = require('metalsmith-layouts');
 var permalinks  = require('metalsmith-permalinks');
 var mapsite     = require('metalsmith-mapsite');
+var watch       = require('metalsmith-watch');
 var refills     = require('./bin/refills');
 
 Metalsmith(__dirname)
@@ -48,6 +49,12 @@ Metalsmith(__dirname)
   .use(layouts({engine: 'jade'}))
   .use(mapsite({
     hostname: 'http://syon.github.io/refills/'
+  }))
+  .use(watch({
+    paths: {
+      "${source}/**/*": "**/*"
+    },
+    livereload: true,
   }))
   .build(function(err){
     if (err) throw err;
