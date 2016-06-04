@@ -9,7 +9,22 @@ layout: refill.jade
 ## metalsmith-asciidoc
 
 
-## metalsmith-sass
+## [metalsmith-sass](https://github.com/stevenschobert/metalsmith-sass)
+Sass プラグインです。拡張子`.sass`または`.scss`ファイルを CSS に変換します。
+ただし、Sass のソースファイルや配置ディレクトリをプラグインに渡す必要はありません。
+Metalsmith の流儀として、すべてのソースファイルがプラグインの処理対象となるからです。
+
+ファイル名が`_variables.sass`などのように先頭にアンダースコアが付いている場合、
+パーシャルと判断され出力ファイル群から削除されます。もちろん削除されると言っても、
+プラグイン間に流れる処理過程のソースファイルから除去されるだけであり、元のファイルは残ります。
+そのため、パイプライン内のパーシャルファイルが消えても、変換対象の Sass ファイルは
+ソースディレクトリにそのまま残っているパーシャルを import などで参照することができます。
+
+このプラグインはあくまで Sass ファイルの CSS 変換が目的なので、それらの配置は metalsmith-assets
+プラグインを使って行います。
+
+- [Sass: Syntactically Awesome Style Sheets](http://sass-lang.com/)  
+  Sass 公式サイト
 
 
 ## metalsmith-assets
