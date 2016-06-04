@@ -10,6 +10,21 @@ var permalinks  = require('metalsmith-permalinks');
 var mapsite     = require('metalsmith-mapsite');
 var watch       = require('metalsmith-watch');
 var refills     = require('./bin/refills');
+var dotenv      = require('dotenv');
+
+dotenv.config();
+
+function watching() {
+  if (process.env.NODE_ENV == 'development') {
+    return watch({
+      paths: {
+        "${source}/**/*": "**/*",
+        "assets/**/*": "**/*"
+      },
+      livereload: true,
+    });
+  }
+}
 
 Metalsmith(__dirname)
   .destination('refills')
@@ -50,13 +65,7 @@ Metalsmith(__dirname)
   .use(mapsite({
     hostname: 'http://syon.github.io/refills/'
   }))
-  .use(watch({
-    paths: {
-      "${source}/**/*": "**/*",
-      "assets/**/*": "**/*"
-    },
-    livereload: true,
-  }))
+  .use(watching())
   .build(function(err){
     if (err) throw err;
   });

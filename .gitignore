@@ -36,3 +36,4 @@ node_modules
 # Metalsmith
 /build
 /refills
+/.env

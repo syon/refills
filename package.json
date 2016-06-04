@@ -2,6 +2,7 @@
   "name": "syon-refills",
   "private": true,
   "dependencies": {
+    "dotenv": "^2.0.0",
     "metalsmith": "^2.1.0",
     "metalsmith-assets": "^0.1.0",
     "metalsmith-collections": "^0.7.0",
