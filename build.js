@@ -52,7 +52,8 @@ Metalsmith(__dirname)
   }))
   .use(watch({
     paths: {
-      "${source}/**/*": "**/*"
+      "${source}/**/*": "**/*",
+      "assets/**/*": "**/*"
     },
     livereload: true,
   }))
