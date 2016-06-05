@@ -78,10 +78,12 @@ Markdown プラグインを使っている場合は、それよりも後にこ�
   Prism でシンタックスハイライトが可能な言語の一覧
 
 
-## metalsmith-jade
+## [metalsmith-jade](https://github.com/ahmadnassri/metalsmith-jade)
+Metalsmith plugin to convert jade files.
 
 
-## metalsmith-layouts
+## [metalsmith-layouts](https://github.com/superwolff/metalsmith-layouts)
+A metalsmith plugin for layouts
 
 
 ## [metalsmith-permalinks](https://github.com/segmentio/metalsmith-permalinks)
@@ -124,7 +126,8 @@ OFF にすると同階層に対する参照が失われるため、同階層の�
   ルートパスの図解による説明
 
 
-## metalsmith-mapsite
+## [metalsmith-mapsite](https://github.com/superwolff/metalsmith-mapsite)
+A metalsmith plugin for generating a sitemap.xml file with sitemap.js
 
 
 ## [metalsmith-watch](https://github.com/FWeinb/metalsmith-watch)
