@@ -41,7 +41,8 @@ outputDir オプションに `css/` のようにパス文字列を渡すとそ�
   Sass 公式サイト
 
 
-## metalsmith-assets
+## [metalsmith-assets](https://github.com/treygriffith/metalsmith-assets)
+`Metalsmith.source()` で定義したソースファイル群に、指定したディレクトリにあるアセットファイルを含めます。
 
 
 ## [metalsmith-markdown-remarkable](https://github.com/attentif/metalsmith-markdown-remarkable)
