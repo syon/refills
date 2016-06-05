@@ -42,7 +42,12 @@ outputDir オプションに `css/` のようにパス文字列を渡すとそ�
 
 
 ## [metalsmith-assets](https://github.com/treygriffith/metalsmith-assets)
-`Metalsmith.source()` で定義したソースファイル群に、指定したディレクトリにあるアセットファイルを含めます。
+`Metalsmith.source()` で定義したソースファイル群に、そことは別のディレクトリにあるアセットファイル（各種ライブラリや画像）を含めます。
+例えば Metalsmith で扱うコンテンツがマークダウンで、ソースフォルダには `.md` ファイルのみを配置したい、
+アセットファイルはあえて別の階層に置いて管理したい、という場合に役立ちます。
+
+実際にはサイト固有のスタイルシートを用意することと思います。今どきは Sass などを使うのが便利なため、
+`metalsmith-sass` プラグインと組み合わせてビルドすることになるでしょう。
 
 
 ## [metalsmith-markdown-remarkable](https://github.com/attentif/metalsmith-markdown-remarkable)
