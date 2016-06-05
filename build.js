@@ -47,11 +47,7 @@ Metalsmith(__dirname)
     source: './assets',
     destination: './assets'
   }))
-  .use(sass({
-    outputDir: function(originalPath) {
-      return originalPath.replace("scss", "css");
-    }
-  }))
+  .use(sass())
   .use(markdown('full', {
     html: true,
     linkify: true,
