@@ -2,17 +2,25 @@
 bid: metalsmith
 rid: plugins
 title: プラグインの解説
-date: 2016/06/04
+date: 2016/06/05
 layout: refill.jade
 ---
 
-## metalsmith-asciidoc
+## [metalsmith-autoprefixer](https://github.com/esundahl/metalsmith-autoprefixer)
+Autoprefixer plugin for Metalsmith
+
+
+## [metalsmith-asciidoc](https://github.com/ndhoule/metalsmith-asciidoc)
+A Metalsmith plugin to convert asciidoc files.
 
 
 ## [metalsmith-sass](https://github.com/stevenschobert/metalsmith-sass)
 Sass プラグインです。拡張子`.sass`または`.scss`ファイルを CSS に変換します。
 ただし、Sass のソースファイルや配置ディレクトリをプラグインに渡す必要はありません。
 Metalsmith の流儀として、すべてのソースファイルがプラグインの処理対象となるからです。
+
+- [Sass: Syntactically Awesome Style Sheets](http://sass-lang.com/)  
+  Sass 公式サイト
 
 ### パーシャルについて
 
@@ -36,9 +44,6 @@ outputDir オプションに `css/` のようにパス文字列を渡すとそ�
 この場合、元あった階層は維持されません。構造を維持したい場合はオプションにパス文字列を変換する
 関数を渡します（詳しくはプラグインの README 参照）。
 公式サンプルのように `replace` を使って、`scss` フォルダにあったファイルを `css` フォルダに配置することができます。
-
-- [Sass: Syntactically Awesome Style Sheets](http://sass-lang.com/)  
-  Sass 公式サイト
 
 
 ## [metalsmith-assets](https://github.com/treygriffith/metalsmith-assets)
@@ -79,7 +84,7 @@ Markdown プラグインを使っている場合は、それよりも後にこ�
 ## metalsmith-layouts
 
 
-## metalsmith-permalinks
+## [metalsmith-permalinks](https://github.com/segmentio/metalsmith-permalinks)
 
 例えば `about.html` であれば `about/index.html` に変換して出力することで、
 以下のような URL でアクセスできるようにします。URLの`index.html`は省略できることを利用しています。
@@ -120,3 +125,7 @@ OFF にすると同階層に対する参照が失われるため、同階層の�
 
 
 ## metalsmith-mapsite
+
+
+## [metalsmith-watch](https://github.com/FWeinb/metalsmith-watch)
+A metalsmith plugin to watch for a changes and trigger rebuilds.
