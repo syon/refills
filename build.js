@@ -19,6 +19,7 @@ function watching() {
     return watch({
       paths: {
         "${source}/**/*": "**/*",
+        "layouts/**/*": "**/*",
         "assets/**/*": "**/*"
       },
       livereload: true,
