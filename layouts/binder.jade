@@ -16,10 +16,11 @@ block body
 
     .index
       h2 Index of #{summary[bid].info.title}
-      ul
-        each r in summary[bid].refills
-          li
-            a(href="/refills/#{r.bid}/#{r.rid}/")= r.title
+      .article-links
+        ul
+          each r in summary[bid].refills
+            li
+              a(href="/refills/#{r.bid}/#{r.rid}/")= r.title
 
     div!= contents
 

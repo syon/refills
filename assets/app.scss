@@ -6,6 +6,10 @@ body, h1, h2, h3, h4, h5 {
   font-family: Lato, 'Helvetica Neue', Arial, Helvetica, YuGothic, sans-serif;
 }
 
+a:visited {
+  color: purple;
+}
+
 #global {
 }
 
@@ -126,6 +130,34 @@ body, h1, h2, h3, h4, h5 {
     margin-top: 2em;
     padding-top: 20px;
     border-top: 1px solid #ddd;
+  }
+
+  .article-links {
+    ul {
+      padding: 0;
+      background-color: #fafafa;
+      border: 1px solid #ddd;
+      border-bottom-color: #ccc;
+      border-radius: 3px;
+      box-shadow: inset 0 1px 0 #fff, 0 1px 5px #f1f1f1;
+      li {
+        list-style: none;
+        border-bottom: 1px solid #ddd;
+        box-shadow: 0 1px 0 #fff;
+        &:last-child {
+          border-bottom: 0;
+          box-shadow: none;
+        }
+        a {
+          display: block;
+          padding: 10px 20px;
+          font-weight: bold;
+          &:hover {
+            background-color: rgba(0,0,0,0.05);
+          }
+        }
+      }
+    }
   }
 
   p.imgbox {
