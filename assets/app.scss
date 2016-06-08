@@ -95,7 +95,7 @@ a:visited {
 
 #article {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 40px;
   padding: 20px 20px 40px;
   font-size: 16px;
 
@@ -270,5 +270,11 @@ a:visited {
     th {
       font-weight: 700;
     }
+  }
+
+  hr {
+    margin-top: 40px;
+    border: 0;
+    border-top: 1px solid #eee;
   }
 }
