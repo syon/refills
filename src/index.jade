@@ -9,5 +9,5 @@ h2 Recently updated refills
   if r.rid
     p
       a(href="/refills/#{r.bid}/#{r.rid}/")
-        h3= r.title
+        h3 #{summary[r.bid].info.title} :: #{r.title}
       span= r.date
