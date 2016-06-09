@@ -11,3 +11,9 @@ h2 Recently updated refills
       a(href="/refills/#{r.bid}/#{r.rid}/")
         span.date= r.date
         span #{summary[r.bid].info.title} :: #{r.title}
+        
+h2 Binders
+
+.article-links
+  each s in summary
+    a(href="/refills/#{s.info.bid}/")= s.info.title
