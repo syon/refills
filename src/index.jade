@@ -5,9 +5,9 @@ layout: index.jade
 
 h2 Recently updated refills
 
-- each r in collections.recent
-  if r.rid
-    p
+.article-links
+  - each r in collections.recent
+    if r.rid
       a(href="/refills/#{r.bid}/#{r.rid}/")
-        h3 #{summary[r.bid].info.title} :: #{r.title}
-      span= r.date
+        span.date= r.date
+        span #{summary[r.bid].info.title} :: #{r.title}

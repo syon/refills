@@ -10,10 +10,6 @@ a:visited {
   color: purple;
 }
 
-.adsbygoogle {
-  border: 1px dashed pink;
-}
-
 #gSide {
   @media(max-width:1170px) {
     display: none;
@@ -134,29 +130,31 @@ a:visited {
   }
 
   .article-links {
-    ul {
-      padding: 0;
-      background-color: #fafafa;
-      border: 1px solid #ddd;
-      border-bottom-color: #ccc;
-      border-radius: 3px;
-      box-shadow: inset 0 1px 0 #fff, 0 1px 5px #f1f1f1;
-      li {
-        list-style: none;
-        border-bottom: 1px solid #ddd;
-        box-shadow: 0 1px 0 #fff;
-        &:last-child {
-          border-bottom: 0;
-          box-shadow: none;
-        }
-        a {
-          display: block;
-          padding: 10px 20px;
-          font-weight: bold;
-          &:hover {
-            background-color: rgba(0,0,0,0.05);
-          }
-        }
+    padding: 0;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-bottom-color: #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 0 #fff, 0 1px 5px #f1f1f1;
+    a {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      list-style: none;
+      border-bottom: 1px solid #ddd;
+      box-shadow: 0 1px 0 #fff;
+      font-weight: bold;
+      &:hover {
+        background-color: rgba(0,0,0,0.05);
+      }
+      &:last-child {
+        border-bottom: 0;
+        box-shadow: none;
+      }
+      .date {
+        color: grey;
+        font-weight: normal;
+        padding-right: 20px;
       }
     }
   }
