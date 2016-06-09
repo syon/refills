@@ -30,30 +30,7 @@ a:visited {
   }
 }
 
-#gMenu {
-  .title {
-    margin: 20px 0 0;
-    padding: 8px 15px;
-  }
-
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .menu-link {
-    display: block;
-    padding: 8px 15px;
-  }
-}
-
 #gBody {
-  margin-left: 20rem;
-  @media(max-width:1170px) {
-    margin-left: 0;
-  }
-
   .meta {
     display: flex;
     align-items: center;
