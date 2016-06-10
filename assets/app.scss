@@ -10,6 +10,10 @@ a:visited {
   color: purple;
 }
 
+p {
+  line-height: 1.5;
+}
+
 #gSide {
   @media(max-width:1170px) {
     display: none;
@@ -162,7 +166,8 @@ a:visited {
   }
 
   li {
-    line-height: 1.7;
+    line-height: 1.5;
+    margin-top: .5rem;
   }
 
   dl {
