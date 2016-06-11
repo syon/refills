@@ -9,13 +9,17 @@ h2 Recently updated refills
   - each r in collections.recent
     if r.rid
       a(href="/refills/#{r.bid}/#{r.rid}/")
-        span.date= r.date
-        span #{summary[r.bid].info.title} :: #{r.title}
+        .left
+          span.octicon.octicon-file-text
+          span #{summary[r.bid].info.title} :: #{r.title}
+        .right
+          span.date= r.date
         
 h2 Binders
 
 .article-links
   each s in summary
     a(href="/refills/#{s.info.bid}/")
-      span.octicon.octicon-file-directory
-      = s.info.title
+      .left
+        span.octicon.octicon-file-directory
+        = s.info.title

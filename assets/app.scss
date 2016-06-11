@@ -128,6 +128,7 @@ p {
     a {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       padding: 10px 20px;
       list-style: none;
       border-bottom: 1px solid #ddd;
@@ -147,8 +148,8 @@ p {
       }
       .date {
         color: grey;
+        font-size: 13px;
         font-weight: normal;
-        padding-right: 20px;
       }
     }
   }

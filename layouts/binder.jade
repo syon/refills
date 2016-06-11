@@ -19,8 +19,9 @@ block body
       .article-links
         each r in summary[bid].refills
           a(href="/refills/#{r.bid}/#{r.rid}/")
-            span.octicon.octicon-file-text
-            = r.title
+            .left
+              span.octicon.octicon-file-text
+              = r.title
 
     div!= contents
 
