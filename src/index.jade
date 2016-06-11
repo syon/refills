@@ -16,4 +16,6 @@ h2 Binders
 
 .article-links
   each s in summary
-    a(href="/refills/#{s.info.bid}/")= s.info.title
+    a(href="/refills/#{s.info.bid}/")
+      span.octicon.octicon-file-directory
+      = s.info.title

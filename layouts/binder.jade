@@ -18,7 +18,9 @@ block body
       h2 Index of #{summary[bid].info.title}
       .article-links
         each r in summary[bid].refills
-          a(href="/refills/#{r.bid}/#{r.rid}/")= r.title
+          a(href="/refills/#{r.bid}/#{r.rid}/")
+            span.octicon.octicon-file-text
+            = r.title
 
     div!= contents
 
