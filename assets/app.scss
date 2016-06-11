@@ -64,6 +64,19 @@ p {
       font-size: 24px;
       color: #7e888b;
     }
+    .author {
+      display: flex;
+      align-items: center;
+      &:before {
+        content: none;
+      }
+      img {
+        width: 36px;
+        height: 36px;
+        margin-right: .5rem;
+        border-radius: 100%;
+      }
+    }
   }
 }
 
@@ -102,9 +115,7 @@ p {
   }
 
   footer {
-    margin-top: 2em;
     padding-top: 20px;
-    border-top: 1px solid #ddd;
   }
 
   .article-links {

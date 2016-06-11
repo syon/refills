@@ -18,6 +18,7 @@ block body
       include _adsense-bottom.jade
 
     footer
+      hr
       h3
         | Index of&nbsp;
         a(href="/refills/#{bid}/") #{summary[bid].info.title}
@@ -27,6 +28,9 @@ block body
 
       hr
       .meta
+        a.author(href="https://github.com/syon")
+          img(src="#{site.basepath}/assets/img/syon.png", alt="syon", target="_blank")
+          span syon
         span
           - var repo = 'https://github.com/syon/refills/blob/master/src/refills'
           - var binder = repo + "/" + bid + "/"
