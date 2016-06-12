@@ -1,7 +1,23 @@
 extends layout
 
-block title
-  title #{site.name}
+block title_ogp
+  - var pageTitle = `${site.name}`
+
+  title= pageTitle
+  meta(property="og:title", content=pageTitle)
+  meta(property="og:site_name", content=site.name)
+
+  if (desc)
+    meta(name="description", content=desc)
+    meta(property="og:description", content=desc)
+
+  meta(property="og:type", content="website")
+  meta(property="og:url", content="#{site.baseurl}/")
+
+  if (ogpimg)
+    meta(property="og:image", content="#{site.baseurl}/#{ogpimg}")
+  else
+    meta(property="og:image", content="#{site.baseurl}/assets/img/ogp.png")
 
 block body
 

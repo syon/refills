@@ -33,7 +33,8 @@ Metalsmith(__dirname)
   .metadata({
     site: {
       name: 'Refills',
-      basepath: '/refills'
+      basepath: '/refills',
+      baseurl: 'https://syon.github.io/refills'
     }
   })
   .use(drafts())
