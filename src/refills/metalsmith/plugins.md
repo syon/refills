@@ -2,9 +2,13 @@
 bid: metalsmith
 rid: plugins
 title: プラグインの解説
-date: 2016/06/05
+date: 2016/06/12
 layout: refill.jade
 ---
+
+## [metalsmith-drafts](https://github.com/segmentio/metalsmith-drafts)
+A metalsmith plugin to hide drafts.
+
 
 ## [metalsmith-autoprefixer](https://github.com/esundahl/metalsmith-autoprefixer)
 Autoprefixer plugin for Metalsmith
