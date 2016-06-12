@@ -1,4 +1,5 @@
 var Metalsmith  = require('metalsmith');
+var drafts      = require('metalsmith-drafts');
 var collections = require('metalsmith-collections');
 var sass        = require('metalsmith-sass');
 var assets      = require('metalsmith-assets');
@@ -35,6 +36,7 @@ Metalsmith(__dirname)
       basepath: '/refills'
     }
   })
+  .use(drafts())
   .use(collections({
     recent: {
       pattern: 'refills/*/*.md',
