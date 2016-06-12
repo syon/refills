@@ -14,27 +14,12 @@ p {
   line-height: 1.5;
 }
 
-#gSide {
-  @media(max-width:1170px) {
-    display: none;
-  }
-  position: fixed;
-  overflow-y: auto;
-  width: 20rem;
-  background-color: #efefef;
+#article {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  padding: 20px 20px 40px;
+  font-size: 16px;
 
-  li.selected {
-    background-color: rgba(0,0,0,.07);
-  }
-  a {
-    color: #364149;
-    &:hover {
-      background-color: rgba(0,0,0,.05);
-    }
-  }
-}
-
-#gBody {
   .meta {
     display: flex;
     align-items: center;
@@ -78,13 +63,6 @@ p {
       }
     }
   }
-}
-
-#article {
-  max-width: 800px;
-  margin: 0 auto 40px;
-  padding: 20px 20px 40px;
-  font-size: 16px;
 
   .title {
     margin-bottom: 4em;
