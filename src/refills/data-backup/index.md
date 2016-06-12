@@ -1,4 +1,5 @@
 ---
+draft: true
 idx: data-backup
 bid: data-backup
 title: データバックアップ

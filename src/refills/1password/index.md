@@ -1,4 +1,5 @@
 ---
+draft: true
 idx: 1password
 bid: 1password
 title: 1Passwordの活用方法

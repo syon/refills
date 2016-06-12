@@ -1,4 +1,5 @@
 ---
+draft: true
 bid: 1password
 rid: o24kej
 title: 「1Password」の導入

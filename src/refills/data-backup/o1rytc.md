@@ -1,4 +1,5 @@
 ---
+draft: true
 bid: data-backup
 rid: o1rytc
 title: クラウド障害への備え

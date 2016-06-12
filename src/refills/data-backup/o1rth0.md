@@ -1,4 +1,5 @@
 ---
+draft: true
 bid: data-backup
 rid: o1rth0
 title: バックアップの必要性

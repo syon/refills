@@ -1,4 +1,5 @@
 ---
+draft: true
 bid: data-backup
 rid: o1rzjb
 title: バックアップ計画
