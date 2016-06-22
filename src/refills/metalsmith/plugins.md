@@ -80,6 +80,12 @@ Markdown の実装の1つである __[Remarkable](https://github.com/jonschlinke
 - [packages with keyword ‘remarkable-plugin’ - npm](https://www.npmjs.com/browse/keyword/remarkable-plugin)  
   Remarkable のプラグイン一覧
 
+### Remarkable plugins
+
+- [remarkable-emoji](https://github.com/scrollback/remarkable-emoji)  
+  絵文字プラグイン。 `:laughing:` のように書くと絵文字に変換される。
+  ただし、 Front matter を使用していると機能しない…。
+
 
 ## [metalsmith-prism](https://github.com/Availity/metalsmith-prism)
 __[Prism.js](http://prismjs.com/)__ を使ってシンタックスハイライトを実現します。
