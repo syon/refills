@@ -24,6 +24,9 @@ block body
   article#article
     include _article-header.jade
 
+    if draft
+      .draft DRAFT
+
     .title
       h2.b-title= summary[bid].info.title
       h1.r-title!= title

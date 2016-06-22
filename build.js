@@ -15,6 +15,14 @@ var dotenv      = require('dotenv');
 
 dotenv.config();
 
+function draftsInDev() {
+  if (process.env.NODE_ENV !== 'development') {
+    return drafts();
+  } else {
+    return function(){};
+  }
+}
+
 function watching() {
   if (process.env.NODE_ENV == 'development') {
     return watch({
@@ -37,7 +45,7 @@ Metalsmith(__dirname)
       baseurl: 'https://syon.github.io/refills'
     }
   })
-  .use(drafts())
+  .use(draftsInDev())
   .use(collections({
     recent: {
       pattern: 'refills/*/*.md',
