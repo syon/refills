@@ -26,6 +26,10 @@ Metalsmith の流儀として、すべてのソースファイルがプラグイ
 - [Sass: Syntactically Awesome Style Sheets](http://sass-lang.com/)  
   Sass 公式サイト
 
+### !! Incompatible with Node v6.x
+2016/06 現在、`"node-sass": "^3.1.2"` に依存しているため Node v6.x では動作しません。
+Fork してなんとかするか、 Sass を諦めて metalsmith-less に切り替えます。
+
 ### パーシャルについて
 
 ファイル名が`_variables.sass`などのように先頭にアンダースコアが付いている場合、
@@ -48,6 +52,10 @@ outputDir オプションに `css/` のようにパス文字列を渡すとそ�
 この場合、元あった階層は維持されません。構造を維持したい場合はオプションにパス文字列を変換する
 関数を渡します（詳しくはプラグインの README 参照）。
 公式サンプルのように `replace` を使って、`scss` フォルダにあったファイルを `css` フォルダに配置することができます。
+
+
+## [metalsmith-less](https://github.com/christophercliff/metalsmith-less)
+A LESS plugin for Metalsmith
 
 
 ## [metalsmith-assets](https://github.com/treygriffith/metalsmith-assets)
