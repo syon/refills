@@ -15,3 +15,26 @@ layout: refill.jade
   - A LITTLE SECRET
   - THE PLUGINS
 - About Makefile
+
+
+## Plugin basic
+
+```js
+.use(
+  hello({ hoge: "fuga" })
+)
+```
+```js
+function hello(arg) {
+  console.log(arg.hoge); // fuga
+
+  return function(files, metalsmith, done) {
+    Object.keys(files).forEach(function(file){
+      var data = files[file];
+      // print front-matter title
+      console.log(data.title);
+    });
+    done();
+  }
+}
+```
