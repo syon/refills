@@ -71,7 +71,7 @@ Metalsmith(__dirname)
   .use(permalinks({pattern: ':idx'}))
   .use(layouts({engine: 'jade'}))
   .use(mapsite({
-    hostname: 'http://syon.github.io/refills/'
+    hostname: 'https://syon.github.io/refills/'
   }))
   .use(watching())
   .build(function(err){
