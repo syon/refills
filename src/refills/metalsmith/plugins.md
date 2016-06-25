@@ -2,7 +2,7 @@
 bid: metalsmith
 rid: plugins
 title: プラグインの解説
-date: 2016/06/23
+date: 2016/06/25
 layout: refill.jade
 ---
 
@@ -55,7 +55,9 @@ outputDir オプションに `css/` のようにパス文字列を渡すとそ�
 
 
 ## [metalsmith-less](https://github.com/christophercliff/metalsmith-less)
-A LESS plugin for Metalsmith
+Less プラグインです。拡張子 `.less` ファイルを CSS に変換します。 上記 Sass プラグインと同様、ソースファイルや配置ディレクトリをプラグインに渡す必要はありません。 Metalsmith の流儀として、すべてのソースファイルがプラグインの処理対象となるからです。
+
+対象とする Less ファイルはオプションの `pattern` で指定することができます。
 
 
 ## [metalsmith-assets](https://github.com/treygriffith/metalsmith-assets)
