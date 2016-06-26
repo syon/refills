@@ -15,9 +15,10 @@ var refills      = require('./bin/refills');
 var dotenv       = require('dotenv');
 
 dotenv.config();
+var NODE_ENV = process.env.NODE_ENV;
 
 function draftsInDev() {
-  if (process.env.NODE_ENV !== 'development') {
+  if (NODE_ENV !== 'development') {
     return drafts();
   } else {
     return function(){};
@@ -25,7 +26,7 @@ function draftsInDev() {
 }
 
 function watching() {
-  if (process.env.NODE_ENV == 'development') {
+  if (NODE_ENV == 'development') {
     return watch({
       paths: {
         "${source}/**/*": "**/*",
@@ -44,6 +45,9 @@ Metalsmith(__dirname)
       name: 'Refills',
       basepath: '/refills',
       baseurl: 'https://syon.github.io/refills'
+    },
+    env: {
+      NODE_ENV: NODE_ENV
     }
   })
   .use(draftsInDev())
