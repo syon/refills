@@ -127,7 +127,11 @@ Markdown プラグインを使っている場合は、それよりも後にこ�
 
 
 ## [metalsmith-jade](https://github.com/ahmadnassri/metalsmith-jade)
-Metalsmith plugin to convert jade files.
+Jade プラグインです。拡張子 `.jade` を HTML ファイルに変換します。
+
+### useMetadata オプション
+
+Metalsmith のメタデータを Jade 内の処理で扱えるように渡すかどうかを指定します。
 
 
 ## [metalsmith-layouts](https://github.com/superwolff/metalsmith-layouts)
