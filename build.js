@@ -1,17 +1,18 @@
-var Metalsmith  = require('metalsmith');
-var drafts      = require('metalsmith-drafts');
-var collections = require('metalsmith-collections');
-var less        = require('metalsmith-less');
-var assets      = require('metalsmith-assets');
-var markdown    = require('metalsmith-markdown-remarkable');
-var prism       = require('metalsmith-prism');
-var jade        = require('metalsmith-jade');
-var layouts     = require('metalsmith-layouts');
-var permalinks  = require('metalsmith-permalinks');
-var mapsite     = require('metalsmith-mapsite');
-var watch       = require('metalsmith-watch');
-var refills     = require('./bin/refills');
-var dotenv      = require('dotenv');
+var Metalsmith   = require('metalsmith');
+var drafts       = require('metalsmith-drafts');
+var collections  = require('metalsmith-collections');
+var less         = require('metalsmith-less');
+var autoprefixer = require('metalsmith-autoprefixer');
+var assets       = require('metalsmith-assets');
+var markdown     = require('metalsmith-markdown-remarkable');
+var prism        = require('metalsmith-prism');
+var jade         = require('metalsmith-jade');
+var layouts      = require('metalsmith-layouts');
+var permalinks   = require('metalsmith-permalinks');
+var mapsite      = require('metalsmith-mapsite');
+var watch        = require('metalsmith-watch');
+var refills      = require('./bin/refills');
+var dotenv       = require('dotenv');
 
 dotenv.config();
 
@@ -60,6 +61,7 @@ Metalsmith(__dirname)
     destination: './assets'
   }))
   .use(less())
+  .use(autoprefixer())
   .use(markdown('full', {
     html: true,
     linkify: true,
