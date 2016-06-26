@@ -7,7 +7,31 @@ layout: refill.jade
 ---
 
 ## [metalsmith-drafts](https://github.com/segmentio/metalsmith-drafts)
-A metalsmith plugin to hide drafts.
+ドラフト（下書き）を管理するプラグインです。下書き状態としたいコンテンツファイルの先頭 (YAML front-matter) に `draft: true` と記述すると、パイプラインから除去されます。
+
+ただし、この方法だと下書き状態のまま生成物を確認することができません。
+実例として `development` 環境では下書きも生成するが `production` 環境では除去したい、
+を実現するには以下のようにします。
+
+```bash
+$ export NODE_ENV=development
+```
+
+```js
+function draftsInDev() {
+  if (process.env.NODE_ENV !== 'development') {
+    return drafts();
+  } else {
+    return function(){};
+  }
+}
+```
+
+```js
+  .use(draftsInDev())
+```
+
+`export` の管理には npm パッケージの [dotenv](https://github.com/motdotla/dotenv) を使うと便利です。
 
 
 ## [metalsmith-autoprefixer](https://github.com/esundahl/metalsmith-autoprefixer)
