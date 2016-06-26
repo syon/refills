@@ -35,7 +35,11 @@ function draftsInDev() {
 
 
 ## [metalsmith-autoprefixer](https://github.com/esundahl/metalsmith-autoprefixer)
-Autoprefixer plugin for Metalsmith
+Autoprefixer プラグインです。 CSS ファイルを対象に、ベンダープレフィックスを自動で付加します。
+Sass や Less プラグインを使っている場合には、その後に呼び出します。
+
+- [postcss/autoprefixer](https://github.com/postcss/autoprefixer)  
+  Parse CSS and add vendor prefixes to rules by Can I Use
 
 
 ## [metalsmith-asciidoc](https://github.com/ndhoule/metalsmith-asciidoc)
