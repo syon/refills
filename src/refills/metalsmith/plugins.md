@@ -2,9 +2,26 @@
 bid: metalsmith
 rid: plugins
 title: プラグインの解説
-date: 2016/06/25
+date: 2016/06/29
 layout: refill.jade
 ---
+
+## Table of contents
+
+- metalsmith-drafts
+- metalsmith-autoprefixer
+- metalsmith-sass
+- metalsmith-less
+- metalsmith-assets
+- metalsmith-markdown-remarkable
+- metalsmith-asciidoc
+- metalsmith-prism
+- metalsmith-jade
+- metalsmith-layouts
+- metalsmith-permalinks
+- metalsmith-mapsite
+- metalsmith-watch
+
 
 ## [metalsmith-drafts](https://github.com/segmentio/metalsmith-drafts)
 ドラフト（下書き）を管理するプラグインです。下書き状態としたいコンテンツファイルの先頭 (YAML front-matter) に `draft: true` と記述すると、パイプラインから除去されます。
