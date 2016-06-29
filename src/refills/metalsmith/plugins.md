@@ -184,7 +184,16 @@ OFF にすると同階層に対する参照が失われるため、同階層の�
 
 
 ## [metalsmith-mapsite](https://github.com/superwolff/metalsmith-mapsite)
-A metalsmith plugin for generating a sitemap.xml file with sitemap.js
+__[sitemap.js](https://github.com/ekalinin/sitemap.js)__ を使ってサイトマップ (sitemap.xml) を生成するプラグインです。
+
+### hostname オプション（必須）
+URL を生成するための、ベースとなるパスを指定します。
+例えばこのサイトのように GitHub Pages のプロジェクトページとして公開する場合は `'https://syon.github.io/refills/'` となります。
+他のオプションを使用しない場合に、引数をオブジェクト形式ではなく文字列として1つ渡すと hostname 扱いしてくれます。
+
+### omitIndex オプション
+URL の末尾が `index.html` の場合に除外します。
+metalsmith-permalinks を使うときに便利です。
 
 
 ## [metalsmith-watch](https://github.com/FWeinb/metalsmith-watch)
