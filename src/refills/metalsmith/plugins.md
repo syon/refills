@@ -126,8 +126,12 @@ Markdown の実装の1つである __[Remarkable](https://github.com/jonschlinke
 ### Remarkable plugins
 
 - [remarkable-emoji](https://github.com/scrollback/remarkable-emoji)  
-  絵文字プラグイン。 `:laughing:` のように書くと絵文字に変換される。
-  ただし、 Front matter を使用していると機能しない…。
+  絵文字プラグイン。 `:laughing:` のように書くと絵文字に変換されます。
+  ただし、 Front matter を使用していると機能しないようです…。
+  今どきは OS とブラウザが進化しているので、そのまま絵文字を文書に打ち込めば大体表示されます💁
+
+- [remarkable-classy](https://github.com/andrey-p/remarkable-classy)  
+  クラス割当プラグイン。 Markdown 記述要素の末尾に `{blue}` のように書くと HTML 変換時に `class="blue"` が割り当てられます。
 
 
 ## [metalsmith-asciidoc](https://github.com/ndhoule/metalsmith-asciidoc)
