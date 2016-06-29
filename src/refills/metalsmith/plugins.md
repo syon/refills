@@ -42,10 +42,6 @@ Sass や Less プラグインを使っている場合には、その後に呼び
   Parse CSS and add vendor prefixes to rules by Can I Use
 
 
-## [metalsmith-asciidoc](https://github.com/ndhoule/metalsmith-asciidoc)
-A Metalsmith plugin to convert asciidoc files.
-
-
 ## [metalsmith-sass](https://github.com/stevenschobert/metalsmith-sass)
 Sass プラグインです。拡張子`.sass`または`.scss`ファイルを CSS に変換します。
 ただし、Sass のソースファイルや配置ディレクトリをプラグインに渡す必要はありません。
@@ -115,6 +111,15 @@ Markdown の実装の1つである __[Remarkable](https://github.com/jonschlinke
 - [remarkable-emoji](https://github.com/scrollback/remarkable-emoji)  
   絵文字プラグイン。 `:laughing:` のように書くと絵文字に変換される。
   ただし、 Front matter を使用していると機能しない…。
+
+
+## [metalsmith-asciidoc](https://github.com/ndhoule/metalsmith-asciidoc)
+AsciiDoc の実装の1つである __[Asciidoctor.js](https://github.com/asciidoctor/asciidoctor.js)__ を使って、拡張子 `.adoc` または `.asciidoc` ファイルを HTML に変換します。
+
+- [AsciiDoc Home Page](http://www.methods.co.nz/asciidoc/)  
+  AsciiDoc 本家
+- [asciidoctor/asciidoctor.js](https://github.com/asciidoctor/asciidoctor.js)  
+  Asciidoctor の JavaScript 版
 
 
 ## [metalsmith-prism](https://github.com/Availity/metalsmith-prism)
