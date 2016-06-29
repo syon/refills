@@ -159,7 +159,7 @@ A metalsmith plugin for layouts
 コンテンツが充実してくると、1つのフォルダに100を超えるような Markdown ファイルで溢れ返ります。
 これらを内部的に日付やカテゴリで区切って整理するものの、URLはその構造を隠して短く、といったことが実現できます。
 
-- [syon/wiki](http://syon.github.io/wiki/)  
+- [syon/wiki](https://syon.github.io/wiki/)  
   記事IDでアクセスするサイトの実例
 - [wiki/src/md at master · syon/wiki](https://github.com/syon/wiki/tree/master/src/md)  
   Markdown ファイル名の頭文字で内部的にフォルダ分けした実例
