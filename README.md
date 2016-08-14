@@ -6,3 +6,9 @@ Refills
 ```sh
 $ make build
 ```
+
+### Dev
+
+```sh
+$ node serve
+```
