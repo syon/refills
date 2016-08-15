@@ -12,10 +12,12 @@ var permalinks   = require('metalsmith-permalinks');
 var mapsite      = require('metalsmith-mapsite');
 var watch        = require('metalsmith-watch');
 var refills      = require('./bin/refills');
-var dotenv       = require('dotenv');
+var dotenv       = require('dotenv').config();
 
-dotenv.config();
 var NODE_ENV = process.env.NODE_ENV;
+if (dotenv.NODE_ENV) {
+  NODE_ENV = dotenv.NODE_ENV;
+}
 
 function draftsInDev() {
   if (NODE_ENV !== 'development') {
