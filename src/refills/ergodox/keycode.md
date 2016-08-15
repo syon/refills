@@ -30,7 +30,7 @@ https://github.com/jackhumbert/qmk_firmware#fun-with-modifier-keys
 | `MEH(kc)`  | applies Meh (all modifiers except Win/Cmd) to kc |
 | `LCAG(kc)` | applies CtrlAltGui to kc |
 
-### Samples for Modifier Keys
+#### Samples for Modifier Keys
 
 `LALT(LCTL(KC_DEL))`
 : this makes a key that sends Alt, Control, and Delete in a single keypress.
@@ -59,3 +59,28 @@ https://github.com/jackhumbert/qmk_firmware#fun-with-modifier-keys
 | `KC_RABK`  | > |
 | `KC_PIPE`  | &#124; |
 | `KC_COLN`  | : |
+
+### Modifier-Tap shortcuts
+
+長押しで Modifier キー、タップで通常キーを実現する `MT(mod, kc)` の簡易記述です。
+
+| Keycode      | Key |
+|--------------|-----|
+| `CTL_T(kc)`  | LCTL when held and kc when tapped |
+| `SFT_T(kc)`  | LSFT when held and kc when tapped |
+| `ALT_T(kc)`  | LALT when held and kc when tapped |
+| `GUI_T(kc)`  | LGUI when held and kc when tapped |
+| `ALL_T(kc)`  | Hyper (all mods) when held and kc when tapped |
+| `LCAG_T(kc)` | CtrlAltGui when held and kc when tapped |
+| `MEH_T(kc)`  | like Hyper, but not as cool -- does not include the Cmd/Win key, so just sends Alt+Ctrl+Shift. |
+
+#### Samples for Modifier-Tap
+
+`CTL_T(KC_Z)`
+: 長押しで `Ctrl` 、タップで `Z`。
+
+`ALL_T(KC_NO)`
+: 長押しで `Hyper` 、タップで `何もしない`。
+
+`ALT_T(KC_APP)`
+: 長押しで `Alt` 、タップで `APP`。
