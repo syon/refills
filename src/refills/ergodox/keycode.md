@@ -84,3 +84,10 @@ https://github.com/jackhumbert/qmk_firmware#fun-with-modifier-keys
 
 `ALT_T(KC_APP)`
 : 長押しで `Alt` 、タップで `APP`。
+
+
+## Leader key
+https://github.com/jackhumbert/qmk_firmware#the-leader-key-a-new-kind-of-modifier
+
+キーの同時押しではなく、押した順番で事前定義したキーを送信する新概念。
+`KC_LEAD`に設定したキーをタップしてから、登録したキーコンビネーションを素早く打つことで発火させる。_（未検証）_
