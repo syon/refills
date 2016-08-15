@@ -9,6 +9,17 @@ layout: refill.jade
 ## Keycode Symbol Table
 https://github.com/jackhumbert/qmk_firmware/blob/master/doc/keycode.txt
 
+`KC_*` 形式のキーコードとそのショートネームがリストアップされています。  
+`KC_2 ... Keyboard 2 and @` とあるので、英語配列が前提になっていると考えられます。
+
+
+## Quantum Keycodes
+https://github.com/jackhumbert/qmk_firmware/blob/master/quantum/keymap.h
+
+QMK 特有のキーコード、エイリアスがリストアップされています。  
+`HYPR(kc)`や`TG(layer)`、`CTL_T(kc)`など、キーマップカスタマイズの際に記述する
+Modifier や Layer に関する定義がまとまっており、全体感を把握するのに役立ちます。
+
 
 ## Layer
 
