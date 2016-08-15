@@ -22,6 +22,17 @@ Modifier や Layer に関する定義がまとまっており、全体感を把�
 
 
 ## Layer
+https://github.com/jackhumbert/qmk_firmware#switching-and-toggling-layers
+
+| Keycode         | Mean           | Desc                                    |
+|-----------------|----------------|-----------------------------------------|
+| `MO(layer)`     | Momentary      | 押している間だけ指定したレイヤー |
+| `OSL(layer)`    | One-shot layer | 次の１キーだけ指定したレイヤー |
+| `LT(layer, kc)` | Layer / Tap    | 押している間だけ指定したレイヤー、タップで_kc_ |
+| `TG(layer)`     | Toggle layer   | タップして指定したレイヤー、再タップで戻る（※） |
+| `DF(layer)`     | Default layer  | デフォルトレイヤーの変更（電源OFFまで継続） |
+
+- ※ 行き先のレイヤーには同じキーに `KC_TRNS` を割り当てる必要あり
 
 
 ## Modifier Keys
