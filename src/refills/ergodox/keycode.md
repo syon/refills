@@ -41,17 +41,18 @@ https://github.com/jackhumbert/qmk_firmware#fun-with-modifier-keys
 
 | Keycode    | Desc          |
 |------------|---------------|
-| `LSFT(kc)` | applies left Shift to kc (keycode) - S(kc) is an alias |
-| `RSFT(kc)` | applies right Shift to kc |
-| `LCTL(kc)` | applies left Control to kc |
-| `RCTL(kc)` | applies right Control to kc |
-| `LALT(kc)` | applies left Alt to kc |
-| `RALT(kc)` | applies right Alt to kc |
-| `LGUI(kc)` | applies left GUI (command/win) to kc |
-| `RGUI(kc)` | applies right GUI (command/win) to kc |
-| `HYPR(kc)` | applies Hyper (all modifiers) to kc |
-| `MEH(kc)`  | applies Meh (all modifiers except Win/Cmd) to kc |
-| `LCAG(kc)` | applies CtrlAltGui to kc |
+| `LSFT(kc)` | 左 Shift + _kc_ |
+| `S(kc)`    | 左 Shift + _kc_ |
+| `RSFT(kc)` | 右 Shift + _kc_ |
+| `LCTL(kc)` | 左 Ctrl + _kc_ |
+| `RCTL(kc)` | 右 Ctrl + _kc_ |
+| `LALT(kc)` | 左 Alt + _kc_ |
+| `RALT(kc)` | 右 Alt + _kc_ |
+| `LGUI(kc)` | 左 GUI (Cmd/Win) + _kc_ |
+| `RGUI(kc)` | 右 GUI (Cmd/Win) + _kc_ |
+| `HYPR(kc)` | Ctrl + Shift + Alt + Gui + _kc_ |
+| `MEH(kc)`  | Ctrl + Shift + Alt + _kc_ |
+| `LCAG(kc)` | Ctrl + Alt + Gui + _kc_ |
 
 #### Samples for Modifier Keys
 
