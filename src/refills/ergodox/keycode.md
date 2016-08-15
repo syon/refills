@@ -88,15 +88,15 @@ https://github.com/jackhumbert/qmk_firmware#fun-with-modifier-keys
 
 長押しで Modifier キー、タップで通常キーを実現する `MT(mod, kc)` の簡易記述です。
 
-| Keycode      | Key |
-|--------------|-----|
-| `CTL_T(kc)`  | LCTL when held and kc when tapped |
-| `SFT_T(kc)`  | LSFT when held and kc when tapped |
-| `ALT_T(kc)`  | LALT when held and kc when tapped |
-| `GUI_T(kc)`  | LGUI when held and kc when tapped |
-| `ALL_T(kc)`  | Hyper (all mods) when held and kc when tapped |
-| `LCAG_T(kc)` | CtrlAltGui when held and kc when tapped |
-| `MEH_T(kc)`  | like Hyper, but not as cool -- does not include the Cmd/Win key, so just sends Alt+Ctrl+Shift. |
+| Keycode      | Desc |
+|--------------|------|
+| `CTL_T(kc)`  | 長押しで Ctrl 、タップで _kc_ |
+| `SFT_T(kc)`  | 長押しで Shift 、タップで _kc_ |
+| `ALT_T(kc)`  | 長押しで Alt 、タップで _kc_ |
+| `GUI_T(kc)`  | 長押しで Gui 、タップで _kc_ |
+| `ALL_T(kc)`  | 長押しで Ctrl + Shift + Alt + Gui 、タップで _kc_ |
+| `MEH_T(kc)`  | 長押しで Ctrl + Shift + Alt 、タップで _kc_ |
+| `LCAG_T(kc)` | 長押しで Ctrl + Alt + Gui 、タップで _kc_ |
 
 #### Samples for Modifier-Tap
 
