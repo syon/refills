@@ -4,6 +4,7 @@ bid: ruby
 title: Ruby
 rids:
   - code-tips
-date: 2016/05/14
+  - yaml
+date: 2016/08/17
 layout: binder.jade
 ---
