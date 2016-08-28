@@ -10,3 +10,7 @@ rids:
 date: 2016/05/06
 layout: binder.jade
 ---
+
+## articles
+
+- [2016年新機能\! GitHubのmasterブランチをWebページとして公開する手順 \- Qiita](http://qiita.com/tonkotsuboy_com/items/f98667b89228b98bc096)
