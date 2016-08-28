@@ -28,9 +28,10 @@ block body
       .draft DRAFT
 
     .title
-      h2.b-title= summary[bid].info.title
+      a(href="/refills/#{bid}/")
+        h2.b-title= summary[bid].info.title
       h1.r-title!= title
-  
+
     .main!= contents
 
     .adsense
