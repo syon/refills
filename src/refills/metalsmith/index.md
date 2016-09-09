@@ -4,6 +4,7 @@ bid: metalsmith
 title: Metalsmith
 rids:
   - intro
+  - plugin-basic
   - plugins
 date: 2016/06/05
 layout: binder.jade
