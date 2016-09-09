@@ -24,8 +24,8 @@ block body
   article#article
     include _article-header.jade
 
-    if draft
-      .draft DRAFT
+    if wip
+      .wip WIP
 
     .title
       a(href="/refills/#{bid}/")
