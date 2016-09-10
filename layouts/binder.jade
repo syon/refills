@@ -42,6 +42,16 @@ block body
               span.octicon.octicon-file-text
               = r.title
 
+      h2 Related Refills
+      .article-links
+        if rels
+          each rel in rels
+            - r = bdrf[rel]
+            a(href="/refills/#{r.bid}/#{r.rid}/")
+              .left
+                span.octicon.octicon-file-text
+                = r.title
+
     div!= contents
 
     .adsense

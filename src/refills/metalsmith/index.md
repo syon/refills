@@ -6,6 +6,8 @@ rids:
   - intro
   - plugin-basic
   - plugins
+rels:
+  - github-pages/autodeploy-wercker-metalsmith
 date: 2016/06/05
 layout: binder.jade
 ---
