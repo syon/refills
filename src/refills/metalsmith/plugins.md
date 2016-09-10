@@ -1,7 +1,7 @@
 ---
 bid: metalsmith
 rid: plugins
-title: プラグインの解説
+title: 主要プラグインの一覧と解説
 date: 2016/06/29
 layout: refill.jade
 ---

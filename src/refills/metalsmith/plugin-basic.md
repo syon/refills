@@ -1,7 +1,7 @@
 ---
 bid: metalsmith
 rid: plugin-basic
-title: プラグインの構造と使い方
+title: プラグインの構造
 date: 2016/09/10
 layout: refill.jade
 wip: true
