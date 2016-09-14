@@ -8,11 +8,16 @@ rids:
   - plugins
 rels:
   - github-pages/autodeploy-wercker-metalsmith
-date: 2016/06/05
+date: 2016/09/14
 layout: binder.jade
 ---
 
 [Metalsmith](http://www.metalsmith.io/)
+
+- 静的サイトジェネレータ（Static Site Generator）
+- Node.js / npm パッケージ
+- JavaScript で記述
+
 
 ## Articles
 - [静的サイトジェネレータMetalSmith - I am Bad at Math](http://d.hatena.ne.jp/badatmath/20140426/1398495275)
