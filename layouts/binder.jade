@@ -42,9 +42,9 @@ block body
               span.octicon.octicon-file-text
               = r.title
 
-      h2 Related Refills
-      .article-links
-        if rels
+      if rels
+        h2 Related Refills
+        .article-links
           each rel in rels
             - r = bdrf[rel]
             a(href="/refills/#{r.bid}/#{r.rid}/")
