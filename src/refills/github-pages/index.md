@@ -3,11 +3,12 @@ idx: github-pages
 bid: github-pages
 title: GitHub Pages
 rids:
+  - autodeploy-wercker-webpack
   - autodeploy-wercker-metalsmith
   - autodeploy-wercker-harp
   - oauth-access-token
   - amazon-s3-bucket-policy
-date: 2016/05/06
+date: 2016/12/10
 layout: binder.jade
 ---
 
