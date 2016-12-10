@@ -9,7 +9,6 @@ layout: refill.jade
 ![](ergodoxez.jpg)
 
 - 購入方法
-- UPS キャプチャ
 - 輸入税 1200円 着払い
 
 

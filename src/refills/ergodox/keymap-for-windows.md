@@ -4,7 +4,7 @@ rid: keymap-for-windows
 title: Windows用キーマップの紹介
 date: 2016/10/05
 layout: refill.jade
-wip: true
+wip: false
 ---
 
 ![keymap.c on editor](keymap-c-on-editor.png)
@@ -74,6 +74,7 @@ wip: true
 
 - 日本語入力の切替方法
   - F13 ・ F14 の活用
+  - [Windowsの変換・無変換キーでIMEの有効無効をMac風に操作する \| karakaram\-blog](http://www.karakaram.com/mac-ime)
 
 
 ## Moving Layer
