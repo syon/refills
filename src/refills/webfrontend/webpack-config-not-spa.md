@@ -8,7 +8,7 @@ layout: refill.jade
 
 ![AWAKE](AWAKE.png)
 
-# 要点 (TL;DR)
+## 要点 (TL;DR)
 
 Webpack の学習を兼ねて、数ページ程度の小規模 Web サイトを効率的に開発する土台を作りましたのでご紹介します。話を簡潔にするため、一旦は SPA ではないサイトを目標にしました。
 作成したサイトを GitHub Pages に公開するところまでご案内します。
@@ -33,9 +33,9 @@ AWAKE - GitHub
 DEMO
 : https://syon.github.io/awake/
 
-# 概要
+## 概要
 
-## 採用技術
+### 採用技術
 
 - webpack
   - `webpack-dev-server`
@@ -54,7 +54,7 @@ DEMO
 - Template
   - `Pug (Jade)`
 
-## 構造
+### 構造
 
 ```bash
 awake
@@ -80,7 +80,7 @@ awake
 └── wercker.yml
 ```
 
-## webpack.config.js
+### webpack.config.js
 
 ```js
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -163,9 +163,9 @@ module.exports = {
 };
 ```
 
-# 解説
+## 解説
 
-## ファイル変更監視とオートリロード
+### ファイル変更監視とオートリロード
 
 `webpack-dev-server` を使って実現します。
 
@@ -190,7 +190,7 @@ $ npm run build
 ```
 
 
-## ページ遷移あり & 素の HTML は書きたくないので Pug (Jade)
+### ページ遷移あり & 素の HTML は書きたくないので Pug (Jade)
 
 この例では、ページのテンプレートエンジンとして Pug を使用します。
 ページを分けるには `html-webpack-plugin` を読み込んで、以下のように設定します。
@@ -224,7 +224,7 @@ awake
 │   └── world.pug
 ```
 
-## Bootstrap & jQuery & FontAwesome を使う
+### Bootstrap & jQuery & FontAwesome を使う
 
 Bootstrap については [bootstrap-loader](https://github.com/shakacode/bootstrap-loader) というものがあります。導入の利点は
 
@@ -235,7 +235,7 @@ require('bootstrap-loader');
 
 と書いてシンプルに済むことですが、結局のところ webpack への導入は CSS や Web フォントファイルを個々の Loader で読み込む必要があります。つまり、Web ページ上で利用したいライブラリを使うには Loader で読み込ませれば OK ということがわかります。
 
-## CSS は Sass っぽく書いてベンダープレフィックス自動付与
+### CSS は Sass っぽく書いてベンダープレフィックス自動付与
 
 - [Sassを捨ててPostCSSに移行したのでそのときの工程メモ \- Qiita](http://qiita.com/nabeliwo/items/0aeea21e95f3fbab3955)
 
@@ -260,13 +260,13 @@ __src/css/app.css__
 @import "partials/variables";
 ```
 
-### エディタでのシンタックスカラー問題
+#### エディタでのシンタックスカラー問題
 
 拡張子が css なので、エディタで開くと階層を使った記述でカラーリングされない問題が発覚しました。そのために scss 拡張子を維持するのもどうかと思ったので、Atom で見つけた以下のパッケージを導入することで解決しました。
 
 - [language\-postcss](https://atom.io/packages/language-postcss)
 
-## Google Fonts で Web フォント利用
+### Google Fonts で Web フォント利用
 
 以下の例は、webpack が関係ないことを示しています。
 通常利用時と同じく、Web ページを開いた際にインターネット上の Google のサーバにアクセスして Web フォントを利用しているに過ぎません。
@@ -292,7 +292,7 @@ __src/css/app.css__
 
 別の方法として、`root.pug` にスタイルタグの読み込みをさせることもできます。また、もしインターネットに接続しない環境で利用したい場合には @import 先の URL で得られる CSS からフォントファイルをダウンロードして Loader に読み込ませればいけるのではないでしょうか。
 
-## JavaScript は ES2015
+### JavaScript は ES2015
 
 これについては他でよく述べられているので詳細を割愛します。
 
@@ -311,14 +311,14 @@ __webpack.config.js（抜粋）__
       },
 ```
 
-## Wercker で自動ビルド＆デプロイして GitHub Pages に公開
+### Wercker で自動ビルド＆デプロイして GitHub Pages に公開
 
 別の記事にまとめましたので、こちらを参照ください。
 
 - [GitHub Pages :: Webpack & Wercker 自動デプロイ \| Refills](/refills/github-pages/autodeploy-wercker-webpack/)
 
 
-# Dependencies
+## Dependencies
 
 __package.json（抜粋）__
 ```js
