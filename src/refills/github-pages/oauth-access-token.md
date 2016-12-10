@@ -12,8 +12,8 @@ Wercker から GitHub Pages に自動デプロイするには [lukevivier/step-g
 これによる push を GitHub 側から許可するには、個人設定から public_repo 権限を与えたトークンを生成して渡す必要があります。
 
 GitHub のアクセストークンの管理が個人設定にあることからもわかるように、リポジトリには直接紐付いてはいません。
-そのため、Wercker で複数のリポジトリに対して GitHub Pages をデプロイする場合でも、
-1つのトークンを使いまわすことで管理を一元化できます。
+そのため、Wercker で複数のリポジトリに対して GitHub Pages をデプロイする場合でも1つのトークンを使いまわすことはできますが、
+それだと新たに追加する場合に既存のトークンが取得できません。なので、リポジトリごとにトークンを作成するのがよいでしょう。
 
 - [Personal Access Tokens](https://github.com/settings/tokens)
   - OAuth scopes: ✔ __public_repo__
