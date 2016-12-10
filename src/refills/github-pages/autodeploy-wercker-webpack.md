@@ -47,3 +47,4 @@ deploy:
 ### 実例
 
 - [syon/awake](https://github.com/syon/awake)
+  - [SPA ではない Webpack 設定サンプル](/refills/webfrontend/webpack-not-spa/)

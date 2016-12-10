@@ -1,7 +1,7 @@
 ---
-idx: frontend
-bid: frontend
-title: FrontEnd
+idx: webfrontend
+bid: webfrontend
+title: WebFrontEnd
 rids:
   - webpack-not-spa
 rels:
