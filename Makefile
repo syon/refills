@@ -5,7 +5,4 @@ build: node_modules
 node_modules: package.json
 	npm install
 
-serve: refills
-	node serve
-
 .PHONY: build

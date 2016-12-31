@@ -12,15 +12,9 @@ var permalinks   = require('metalsmith-permalinks');
 var mapsite      = require('metalsmith-mapsite');
 var watch        = require('metalsmith-watch');
 var refills      = require('./bin/refills');
-var dotenv       = require('dotenv').config();
-
-var NODE_ENV = process.env.NODE_ENV;
-if (dotenv.NODE_ENV) {
-  NODE_ENV = dotenv.NODE_ENV;
-}
 
 function draftsInDev() {
-  if (NODE_ENV !== 'development') {
+  if (process.env.NODE_ENV !== 'development') {
     return drafts();
   } else {
     return function(){};
@@ -28,7 +22,7 @@ function draftsInDev() {
 }
 
 function watching() {
-  if (NODE_ENV == 'development') {
+  if (process.env.NODE_ENV === 'development') {
     return watch({
       paths: {
         "${source}/**/*": "**/*",
@@ -49,7 +43,7 @@ Metalsmith(__dirname)
       baseurl: 'https://syon.github.io/refills'
     },
     env: {
-      NODE_ENV: NODE_ENV
+      NODE_ENV: process.env.NODE_ENV
     }
   })
   .use(draftsInDev())
