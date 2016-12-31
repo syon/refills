@@ -1,6 +1,9 @@
 {
   "name": "syon-refills",
   "private": true,
+  "scripts": {
+    "start": "node serve"
+  },
   "dependencies": {
     "dotenv": "^2.0.0",
     "metalsmith": "^2.1.0",
