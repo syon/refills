@@ -27,8 +27,8 @@ Webpack の学習を兼ねて、数ページ程度の小規模 Web サイトを�
 
 ### サンプルリポジトリ
 
-AWAKE - GitHub
-: https://github.com/syon/awake
+AWAKE (webpack branch) - GitHub
+: https://github.com/syon/awake/tree/webpack
 
 DEMO
 : https://syon.github.io/awake/
