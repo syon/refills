@@ -1,7 +1,14 @@
 header.meta
   .left
-    a.logo(href="#{site.basepath}/")
-      h1= site.name
+    .logo
+      a(href="#{site.basepath}/")
+        h1= site.name
+    if (bid)
+      .slash /
+      .b-title
+        a(href="/refills/#{bid}/")
+          h2.b-title= summary[bid].info.title
+
   .right
     - var repo = 'https://github.com/syon/refills/commits/master/src/refills'
     - var binder = repo + "/" + bid + "/"
