@@ -13,9 +13,9 @@ deploy:
           apt-get install git -y
 
     - script:
-        name: Makefile make
+        name: Metalsmith build
         code: |
-          make build
+          node build
 
     - lukevivier/gh-pages:
         token: $GH_TOKEN
