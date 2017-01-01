@@ -7,5 +7,3 @@ rids:
 date: 2017/01/01
 layout: binder.jade
 ---
-
-## Heroku
