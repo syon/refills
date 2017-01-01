@@ -21,34 +21,55 @@ Heroku でアカウントを登録したら、コマンドラインで扱うた�
 
 ## ひな形をダウンロード
 
+![Download zip file from GitHub site](awake-zip.png)
+
 - https://github.com/syon/awake
   - Download ZIP
 
 ダウンロードした ZIP ファイルを、任意の場所に展開します。
 その後、ディレクトリ名を `awake` からサイト名に変更してください。
-ここでは仮に `your-site-name` として説明していきます。
+ここでは仮に `awake-sample` として説明していきます。指定する名称は公開先の
+URL として https://awake-sample.herokuapp.com が得られます[^1]。
+
+![Extract the zip file and rename to awake-sample](awake-sample-finder.png)
 
 ちなみに `$ git clone` して利用することもできますが、あとで自分のリポジトリとして
 Git 管理したり GitHub にプッシュしたい場合に面倒なので、こちらの方法を取るほうが手っ取り早いです。
 
+[^1]: URL にこだわりがなければ、後述の `$ heroku create` コマンドで名称を未指定にすれば自動で生成されます。
+
 
 ## ターミナルで操作
 
-まずはサンプルがHeroku上で動作するかを確認しましょう。
+まずはサンプルをそのままアップロードし、Heroku上で動作するかを確認しましょう。  
+はじめに、Git 管理を開始して初期状態としてコミットします。
 
 ```bash
-$ cd your-site-name
-$ heroku create your-site-name
+$ cd awake-sample
+$ git init
+$ git add -A
+$ git commit -am "Innitial commit"
+```
+
+次に Heroku アプリを作成してプッシュ（アップロード）します。
+`$ heroku open` はブラウザで公開先を開くコマンドです。
+
+```bash
+$ heroku create awake-sample
 $ git push -u heroku master
 $ heroku open
 ```
+
+![Terminal screen shot](awake-command-logs.png)
+
+![Awake sample in browser after heroku open command](awake-sample-browser.png)
 
 要領がわかったところで、お手元のファイルを `public` ディレクトリに配置します。  
 変更内容をコミットして Heroku にアップロードして完了です。
 
 ```bash
 $ git add -A
-$ git commit -am "commit message"
+$ git commit -am "update"
 $ git push -u heroku master
 ```
 
