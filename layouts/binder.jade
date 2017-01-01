@@ -51,6 +51,10 @@ block body
               .left
                 span.octicon.octicon-file-text
                 = r.title
+              .right
+                span.binder-ro
+                  span.octicon.octicon-file-directory
+                  span #{summary[r.bid].info.title}
 
     div!= contents
 

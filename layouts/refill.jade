@@ -1,7 +1,7 @@
 extends layout
 
 block title_ogp
-  - var pageTitle = `${summary[bid].info.title} :: ${title} | ${site.name}`
+  - var pageTitle = `${title} :: ${summary[bid].info.title} | ${site.name}`
 
   title= pageTitle
   meta(property="og:title", content=pageTitle)
