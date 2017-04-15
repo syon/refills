@@ -6,7 +6,7 @@
     "build": "node build"
   },
   "dependencies": {
-    "asciidoctor.js": "^1.5.0",
+    "asciidoctor.js": "1.5.0",
     "metalsmith": "^2.1.0",
     "metalsmith-asciidoc": "^1.1.0",
     "metalsmith-assets": "^0.1.0",
