@@ -15,7 +15,7 @@ deploy:
     - script:
         name: Metalsmith build
         code: |
-          node build
+          npm run build
 
     - lukevivier/gh-pages:
         token: $GH_TOKEN
