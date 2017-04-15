@@ -2,6 +2,7 @@
 rid: 1462280
 bid: github-pages
 rcd: oauth-access-token
+srcpath: github-pages/oauth-access-token.md
 title: GitHubアクセストークンとWerckerの設定
 date: 2016/05/04
 layout: refill.jade

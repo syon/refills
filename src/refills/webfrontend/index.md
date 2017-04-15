@@ -1,6 +1,7 @@
 ---
 idx: webfrontend
 bid: webfrontend
+srcpath: webfrontend/index.md
 title: WebFrontEnd
 rids:
   - webpack-not-spa

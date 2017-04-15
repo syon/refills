@@ -2,6 +2,7 @@
 rid: 1462463
 bid: squid-proxy
 rcd: errorpage
+srcpath: squid-proxy/errorpage.md
 title: エラーページのカスタマイズ
 date: 2016/04/29
 layout: refill.jade

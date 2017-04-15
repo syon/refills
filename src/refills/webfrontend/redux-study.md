@@ -2,6 +2,7 @@
 rid: 1483023
 bid: webfrontend
 rcd: redux-study
+srcpath: webfrontend/redux-study.md
 title: Redux 学習の軌跡と自作サンプルの解説
 date: 2016/12/30
 layout: refill.jade

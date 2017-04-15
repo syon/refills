@@ -2,6 +2,7 @@
 rid: 1473778
 bid: metalsmith
 rcd: intro
+srcpath: metalsmith/intro.md
 title: 思想の解説と活用事例
 date: 2016/09/14
 layout: refill.jade

@@ -2,6 +2,7 @@
 rid: 1475592
 bid: ergodox
 rcd: us-keyboard
+srcpath: ergodox/us-keyboard.md
 title: WindowsでUSキーボードとして認識させる
 date: 2016/10/05
 layout: refill.jade

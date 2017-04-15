@@ -1,6 +1,7 @@
 ---
 idx: fish-shell
 bid: fish-shell
+srcpath: fish-shell/index.md
 title: fish shell
 rids:
   - install

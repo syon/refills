@@ -2,6 +2,7 @@
 rid: 1462464
 bid: squid-proxy
 rcd: auth
+srcpath: squid-proxy/auth.md
 title: auth
 date: 2016/05/04
 layout: refill.jade

@@ -1,6 +1,7 @@
 ---
 idx: ruby
 bid: ruby
+srcpath: ruby/index.md
 title: Ruby
 rids:
   - code-tips

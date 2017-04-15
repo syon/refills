@@ -2,6 +2,7 @@
 rid: 1475593
 bid: ergodox
 rcd: keymap-for-windows
+srcpath: ergodox/keymap-for-windows.md
 title: Windows用キーマップの紹介
 date: 2016/10/05
 layout: refill.jade

@@ -1,6 +1,7 @@
 ---
 idx: squid-proxy
 bid: squid-proxy
+srcpath: squid-proxy/index.md
 title: Squid Proxy Server
 rids:
   - install

@@ -1,6 +1,7 @@
 ---
 idx: javascript
 bid: javascript
+srcpath: javascript/index.md
 title: JavaScript
 rids:
   - code-tips

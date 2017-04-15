@@ -1,6 +1,7 @@
 ---
 idx: metalsmith
 bid: metalsmith
+srcpath: metalsmith/index.md
 title: Metalsmith
 rids:
   - intro

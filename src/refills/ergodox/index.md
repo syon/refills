@@ -1,6 +1,7 @@
 ---
 idx: ergodox
 bid: ergodox
+srcpath: ergodox/index.md
 title: ErgoDox
 rids:
   - ergodox-ez

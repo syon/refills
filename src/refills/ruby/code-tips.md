@@ -2,6 +2,7 @@
 rid: 1463151
 bid: ruby
 rcd: code-tips
+srcpath: ruby/code-tips.md
 title: CODE TIPS
 date: 2016/05/14
 layout: refill.jade

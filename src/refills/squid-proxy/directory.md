@@ -2,6 +2,7 @@
 rid: 1462462
 bid: squid-proxy
 rcd: directory
+srcpath: squid-proxy/directory.md
 title: Squidのディレクトリ
 date: 2016/04/29
 layout: refill.jade

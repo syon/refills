@@ -2,6 +2,7 @@
 rid: 1462114
 bid: mac-osx
 rcd: easysimbl
+srcpath: mac-osx/easysimbl.md
 title: EasySIMBLのインストールと使い方
 date: 2016/05/02
 layout: refill.jade

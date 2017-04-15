@@ -1,6 +1,7 @@
 ---
 idx: github-pages
 bid: github-pages
+srcpath: github-pages/index.md
 title: GitHub Pages
 rids:
   - autodeploy-wercker-webpack

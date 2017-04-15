@@ -2,6 +2,7 @@
 rid: 1471100
 bid: ergodox
 rcd: keycode
+srcpath: ergodox/keycode.md
 title: キーコードまとめ
 date: 2016/08/14
 layout: refill.jade

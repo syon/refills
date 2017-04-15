@@ -2,6 +2,7 @@
 rid: 1462287
 bid: github-pages
 rcd: autodeploy-wercker-harp
+srcpath: github-pages/autodeploy-wercker-harp.md
 title: Harp & Wercker 自動デプロイ
 date: 2016/05/04
 layout: refill.jade

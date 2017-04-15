@@ -1,6 +1,7 @@
 ---
 idx: midi
 bid: midi
+srcpath: midi/index.md
 title: MIDI
 rids:
   - mi1

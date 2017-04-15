@@ -1,6 +1,7 @@
 ---
 idx: heroku
 bid: heroku
+srcpath: heroku/index.md
 title: Heroku
 rids:
   - static-site
