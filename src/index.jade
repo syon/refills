@@ -22,7 +22,7 @@ h2 Binders
 .article-links
   each s in summary
     - if (s.info.bid)
-      a(href="/refills/#{s.info.bid}/")
+      a(href="/refills/bid/#{s.info.bid}/")
         .left
           span.octicon.octicon-file-directory
           = s.info.title
