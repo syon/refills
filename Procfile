@@ -1,2 +1,2 @@
 web: serve
-app: node build
+app: npm run build
