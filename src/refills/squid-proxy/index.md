@@ -9,6 +9,7 @@ rids:
   - errorpage
   - auth
   - tips
+heroimgpath: chronicle/201604/squid-proxy-hero.png
 date: 2016/05/06
 layout: binder.jade
 ---
