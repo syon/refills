@@ -7,7 +7,7 @@ date: 2016/12/30
 layout: refill.jade
 ---
 
-![Redux Study](redux-study.png)
+![Redux Study](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201612/redux-study.png)
 
 ### DEMO
 
@@ -67,10 +67,10 @@ React の基礎を身につけた上で Redux に入門する人向けです。
 
 ## 役に立つ図
 
-> ![Redux Structure](redux-structure.jpg)
+> ![Redux Structure](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201612/redux-structure.jpg)
 > [Reactive State Machine \(Japanese\) // Speaker Deck](https://speakerdeck.com/inamiy/reactive-state-machine-japanese)
 
-> ![](redux-data-flow.png)
+> ![](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201612/redux-data-flow.png)
 > [Introduction to Redux // Speaker Deck](https://speakerdeck.com/axross/introduction-to-redux)
 
 
@@ -104,7 +104,7 @@ __ソースコード上で一体どれを指しているのか迷う__ ことが
 - 自作したサンプルのリポジトリ
   - https://github.com/syon/redux-study
 
-![Redux Study Workspace](redux-study-ws.png)
+![Redux Study Workspace](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201612/redux-study-ws.png)
 
 
 ## 実際に作ってみてわかったこと

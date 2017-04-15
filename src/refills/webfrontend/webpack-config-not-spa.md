@@ -7,7 +7,7 @@ date: 2016/12/10
 layout: refill.jade
 ---
 
-![AWAKE](AWAKE.png)
+![AWAKE](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201612/AWAKE.png)
 
 ## 要点 (TL;DR)
 
