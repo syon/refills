@@ -1,7 +1,10 @@
 extends layout
 
 block title_ogp
-  - var pageTitle = `${title} :: ${summary[bid].info.title} | ${site.name}`
+  if (bid)
+    - var pageTitle = `${title} :: ${summary[bid].info.title} | ${site.name}`
+  else
+    - var pageTitle = `${title} | ${site.name}`
 
   title= pageTitle
   meta(property="og:title", content=pageTitle)
@@ -37,15 +40,16 @@ block body
 
     footer
       hr
-      h3
-        | Index of&nbsp;
-        a(href="/refills/#{bid}/") #{summary[bid].info.title}
-      .article-links
-        each r in summary[bid].refills
-          a(href="/refills/#{r.bid}/#{r.rid}/")
-            .left
-              span.octicon.octicon-file-text
-              = r.title
+      if (bid)
+        h3
+          | Index of&nbsp;
+          a(href="/refills/#{bid}/") #{summary[bid].info.title}
+        .article-links
+          each r in summary[bid].refills
+            a(href="/refills/#{r.bid}/#{r.rid}/")
+              .left
+                span.octicon.octicon-file-text
+                = r.title
 
       hr
       .meta

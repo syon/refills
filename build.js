@@ -4,6 +4,7 @@ var collections  = require('metalsmith-collections');
 var less         = require('metalsmith-less');
 var autoprefixer = require('metalsmith-autoprefixer');
 var assets       = require('metalsmith-assets');
+var asciidoc     = require('metalsmith-asciidoc');
 var markdown     = require('metalsmith-markdown-remarkable');
 var prism        = require('metalsmith-prism');
 var jade         = require('metalsmith-jade');
@@ -62,6 +63,7 @@ Metalsmith(__dirname)
   }))
   .use(less())
   .use(autoprefixer())
+  .use(asciidoc())
   .use(markdown('full', {
     html: true,
     linkify: true,
@@ -70,6 +72,7 @@ Metalsmith(__dirname)
   .use(prism())
   .use(jade({useMetadata: true}))
   .use(permalinks({pattern: ':bid/:rid'}))
+  .use(permalinks({pattern: 'rid/:rid'}))
   .use(permalinks({pattern: ':idx'}))
   .use(layouts({engine: 'jade'}))
   .use(mapsite({
