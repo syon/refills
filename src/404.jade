@@ -1,0 +1,31 @@
+---
+title: 404
+permalink: false
+layout: index.jade
+---
+
+h2 Binders
+
+.article-links
+  each s in summary
+    - if (s.info.bid)
+      a(href="/refills/bid/#{s.info.bid}/")
+        .left
+          span.octicon.octicon-file-directory
+          = s.info.title
+
+
+h2 Refills
+
+.article-links
+  - each r in collections.all
+    if r.rid
+      a(href="/refills/rid/#{r.rid}/")
+        .left
+          span.octicon.octicon-file-text
+          span #{r.title}
+        .right
+          if (r.bid)
+            span.binder-ro
+              span #{summary[r.bid].info.title}
+          span.date= r.date

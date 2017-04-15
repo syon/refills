@@ -54,6 +54,11 @@ Metalsmith(__dirname)
       sortBy: 'date',
       limit: 10,
       reverse: true
+    },
+    all: {
+      pattern: 'refills/*/*.md',
+      sortBy: 'date',
+      reverse: true
     }
   }))
   .use(refills())
