@@ -8,7 +8,7 @@ h2 Recently updated refills
 .article-links
   - each r in collections.recent
     if r.rid
-      a(href="/refills/#{r.bid}/#{r.rid}/")
+      a(href="/refills/rid/#{r.rid}/")
         .left
           span.octicon.octicon-file-text
           span #{r.title}
