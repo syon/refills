@@ -61,6 +61,4 @@ block body
           a(href=remote) Remote site
         span
           - var repo = 'https://github.com/syon/refills/commits/master/src/refills'
-          - var binder = repo + "/" + bid + "/"
-          - var gh_url = rid ? binder + rid + ".md" : binder + "/index.md"
-          a(href=gh_url target="_blank") 更新履歴
+          a(href="#{repo}/#{srcpath}.md" target="_blank") 更新履歴

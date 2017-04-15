@@ -13,8 +13,9 @@ h2 Recently updated refills
           span.octicon.octicon-file-text
           span #{r.title}
         .right
-          span.binder-ro
-            span #{summary[r.bid].info.title}
+          if (r.bid)
+            span.binder-ro
+              span #{summary[r.bid].info.title}
           span.date= r.date
 
 h2 Binders
