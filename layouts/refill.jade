@@ -46,7 +46,7 @@ block body
           a(href="/refills/#{bid}/") #{summary[bid].info.title}
         .article-links
           each r in summary[bid].refills
-            a(href="/refills/#{r.bid}/#{r.rid}/")
+            a(href="/refills/rid/#{r.rid}/")
               .left
                 span.octicon.octicon-file-text
                 = r.title

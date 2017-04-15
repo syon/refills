@@ -1,6 +1,7 @@
 ---
+rid: 1473779
 bid: metalsmith
-rid: plugin-basic
+rcd: plugin-basic
 title: プラグインの構造
 date: 2016/09/10
 layout: refill.jade

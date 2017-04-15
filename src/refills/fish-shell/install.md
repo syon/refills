@@ -1,6 +1,7 @@
 ---
+rid: 1462806
 bid: fish-shell
-rid: install
+rcd: install
 title: インストールと設定
 date: 2016/05/10
 layout: refill.jade

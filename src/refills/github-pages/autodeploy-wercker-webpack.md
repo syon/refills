@@ -1,6 +1,7 @@
 ---
+rid: 1481295
 bid: github-pages
-rid: autodeploy-wercker-webpack
+rcd: autodeploy-wercker-webpack
 title: Webpack & Wercker 自動デプロイ
 date: 2016/12/10
 layout: refill.jade

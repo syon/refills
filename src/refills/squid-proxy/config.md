@@ -1,6 +1,7 @@
 ---
+rid: 1462461
 bid: squid-proxy
-rid: config
+rcd: config
 title: Squidの設定
 date: 2016/04/29
 layout: refill.jade

@@ -1,6 +1,7 @@
 ---
+rid: 1462633
 bid: github-pages
-rid: amazon-s3-bucket-policy
+rcd: amazon-s3-bucket-policy
 title: Amazon S3に画像を置いてアクセス制御
 date: 2016/05/08
 layout: refill.jade

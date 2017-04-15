@@ -1,6 +1,7 @@
 ---
+rid: 1471359
 bid: ruby
-rid: yaml
+rcd: yaml
 title: YAML
 date: 2016/08/17
 layout: refill.jade

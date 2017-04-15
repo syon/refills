@@ -1,6 +1,7 @@
 ---
+rid: 1463065
 bid: javascript
-rid: code-tips
+rcd: code-tips
 title: CODE TIPS
 date: 2016/05/13
 layout: refill.jade

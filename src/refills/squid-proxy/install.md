@@ -1,6 +1,7 @@
 ---
+rid: 1462460
 bid: squid-proxy
-rid: install
+rcd: install
 title: Squidのインストール
 date: 2016/04/29
 layout: refill.jade

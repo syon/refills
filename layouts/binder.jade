@@ -37,7 +37,7 @@ block body
       h2 Index of #{summary[bid].info.title}
       .article-links
         each r in summary[bid].refills
-          a(href="/refills/#{r.bid}/#{r.rid}/")
+          a(href="/refills/rid/#{r.rid}/")
             .left
               span.octicon.octicon-file-text
               = r.title
@@ -47,14 +47,15 @@ block body
         .article-links
           each rel in rels
             - r = bdrf[rel]
-            a(href="/refills/#{r.bid}/#{r.rid}/")
-              .left
-                span.octicon.octicon-file-text
-                = r.title
-              .right
-                span.binder-ro
-                  span.octicon.octicon-file-directory
-                  span #{summary[r.bid].info.title}
+            if r
+              a(href="/refills/rid/#{r.rid}/")
+                .left
+                  span.octicon.octicon-file-text
+                  = r.title
+                .right
+                  span.binder-ro
+                    span.octicon.octicon-file-directory
+                    span #{summary[r.bid].info.title}
 
     div!= contents
 

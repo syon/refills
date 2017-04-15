@@ -1,6 +1,7 @@
 ---
+rid: 1473778
 bid: metalsmith
-rid: intro
+rcd: intro
 title: 思想の解説と活用事例
 date: 2016/09/14
 layout: refill.jade

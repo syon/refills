@@ -1,6 +1,7 @@
 ---
+rid: 1462465
 bid: squid-proxy
-rid: tips
+rcd: tips
 title: TIPS
 date: 2016/04/29
 layout: refill.jade

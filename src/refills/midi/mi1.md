@@ -1,6 +1,7 @@
 ---
+rid: 1472310
 bid: midi
-rid: mi1
+rcd: mi1
 title: Quicco Sound [ mi.1 ] ワイヤレスMIDIインターフェース
 date: 2016/08/28
 layout: refill.jade

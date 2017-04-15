@@ -1,6 +1,7 @@
 ---
+rid: 1462464
 bid: squid-proxy
-rid: auth
+rcd: auth
 title: auth
 date: 2016/05/04
 layout: refill.jade

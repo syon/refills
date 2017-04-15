@@ -1,6 +1,7 @@
 ---
+rid: 1481295
 bid: webfrontend
-rid: webpack-config-not-spa
+rcd: webpack-config-not-spa
 title: SPA ではない Webpack 設定サンプル
 date: 2016/12/10
 layout: refill.jade

@@ -71,9 +71,10 @@ Metalsmith(__dirname)
   }))
   .use(prism())
   .use(jade({useMetadata: true}))
-  .use(permalinks({pattern: ':bid/:rid'}))
-  .use(permalinks({pattern: 'rid/:rid'}))
-  .use(permalinks({pattern: ':idx'}))
+  // .use(permalinks({pattern: ':bid/:rcd'})) // Legacy Refills
+  // .use(permalinks({pattern: ':idx'})) // Legacy Binders
+  .use(permalinks({pattern: 'rid/:rid'})) // New Refills
+  .use(permalinks({pattern: 'bid/:idx'})) // New Binders
   .use(layouts({engine: 'jade'}))
   .use(mapsite({
     hostname: 'https://syon.github.io/refills/',

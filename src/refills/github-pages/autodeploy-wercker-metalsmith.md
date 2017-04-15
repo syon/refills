@@ -1,6 +1,7 @@
 ---
+rid: 1462460
 bid: github-pages
-rid: autodeploy-wercker-metalsmith
+rcd: autodeploy-wercker-metalsmith
 title: Metalsmith & Wercker 自動デプロイ
 date: 2016/05/06
 layout: refill.jade
