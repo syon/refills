@@ -7,7 +7,7 @@ date: 2016/07/26
 layout: refill.jade
 ---
 
-![](ergodoxez.jpg)
+![](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201607/ergodoxez.jpg)
 
 - 購入方法
 - 輸入税 1200円 着払い

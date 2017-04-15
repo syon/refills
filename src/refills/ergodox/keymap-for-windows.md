@@ -8,7 +8,7 @@ layout: refill.jade
 wip: false
 ---
 
-![keymap.c on editor](keymap-c-on-editor.png)
+![keymap.c on editor](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201607/keymap-c-on-editor.png)
 
 
 ## `keymap.c`

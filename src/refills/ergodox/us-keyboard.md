@@ -20,7 +20,7 @@ ErgoDox を Windows の日本語版にキーボードを接続すると __JIS �
 
 ErgoDox を接続すると、デバイスマネージャーのキーボード項目に「HID キーボードデバイス」が ==２つ== 追加されます。これは ErgoDox が２つに分かれているからですね。
 
-![Device Manager](uskb-1.png)
+![Device Manager](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201607/uskb-1.png)
 
 「HID キーボードデバイス」が並んだのを見て、きっとあなたはこう思うでしょう。
 『どれがどれだかわからない…』。
@@ -29,9 +29,9 @@ ErgoDox を接続すると、デバイスマネージャーのキーボード項
 
 <div class="fb">
 
-![HID Keyboard Device Event Tab (1)](uskb-2-1.png)
+![HID Keyboard Device Event Tab (1)](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201607/uskb-2-1.png)
 
-![HID Keyboard Device Event Tab (2)](uskb-2-2.png)
+![HID Keyboard Device Event Tab (2)](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201607/uskb-2-2.png)
 
 </div>
 
@@ -39,9 +39,9 @@ ErgoDox のペアを見つけたら、次は __詳細タブ__ のプルダウン
 
 <div class="fb">
 
-![HID Keyboard Device Detail Tab (1)](uskb-3-1.png)
+![HID Keyboard Device Detail Tab (1)](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201607/uskb-3-1.png)
 
-![HID Keyboard Device Detail Tab (2)](uskb-3-2.png)
+![HID Keyboard Device Detail Tab (2)](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201607/uskb-3-2.png)
 
 </div>
 
@@ -57,7 +57,7 @@ ErgoDox のペアを見つけたら、次は __詳細タブ__ のプルダウン
         - ==__デバイス インスタンスパス__==
           - `Device Parameters`
 
-![](uskb-4-1.png)
+![](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201607/uskb-4-1.png)
 
 `Device Parameters` の内容を表示した状態で右側の何もないところで右クリックし、
 ==DWORD (32 ビット) 値 (D)== を選択して項目を追加します。追加するのは以下の２点です。
@@ -67,7 +67,7 @@ ErgoDox のペアを見つけたら、次は __詳細タブ__ のプルダウン
 | KeyboardSubtypeOverride | 0 |
 | KeyboardTypeOverride    | 4 |
 
-![](uskb-4-2.png)
+![](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201607/uskb-4-2.png)
 
 ==同様の操作を、もう片方のデバイスに対しても実施します。==
 
