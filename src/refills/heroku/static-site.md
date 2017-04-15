@@ -24,7 +24,7 @@ Heroku でアカウントを登録したら、コマンドラインで扱うた�
 
 ## ひな形をダウンロード
 
-![Download zip file from GitHub site](awake-zip.png)
+![Download zip file from GitHub site](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201701/awake-zip.png)
 
 - https://github.com/syon/awake
   - Download ZIP
@@ -34,7 +34,7 @@ Heroku でアカウントを登録したら、コマンドラインで扱うた�
 ここでは仮に `awake-sample` として説明していきます。指定する名称は公開先の
 URL として https://awake-sample.herokuapp.com が得られます[^1]。
 
-![Extract the zip file and rename to awake-sample](awake-sample-finder.png)
+![Extract the zip file and rename to awake-sample](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201701/awake-sample-finder.png)
 
 ちなみに `$ git clone` して利用することもできますが、あとで自分のリポジトリとして
 Git 管理したり GitHub にプッシュしたい場合に面倒なので、こちらの方法を取るほうが手っ取り早いです。
@@ -63,9 +63,9 @@ $ git push -u heroku master
 $ heroku open
 ```
 
-![Terminal screen shot](awake-command-logs.png)
+![Terminal screen shot](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201701/awake-command-logs.png)
 
-![Awake sample in browser after heroku open command](awake-sample-browser.png)
+![Awake sample in browser after heroku open command](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201701/awake-sample-browser.png)
 
 要領がわかったところで、お手元のファイルを `public` ディレクトリに配置します。  
 変更内容をコミットして Heroku にアップロードして完了です。
