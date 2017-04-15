@@ -4,7 +4,7 @@ Refills [![wercker status](https://app.wercker.com/status/3938da859441da2240b9f5
 ### Static source build
 
 ```sh
-$ make build
+$ npm run build
 ```
 
 ### Dev
