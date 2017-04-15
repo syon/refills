@@ -51,14 +51,4 @@ block body
                 span.octicon.octicon-file-text
                 = r.title
 
-      hr
-      .meta
-        a.author(href="https://github.com/syon")
-          img(src="#{site.basepath}/assets/img/syon.png", alt="syon", target="_blank")
-          span syon
-        if (env.NODE_ENV == 'development')
-          - var remote = `https://syon.github.io/refills/rid/${rid}/`
-          a(href=remote) Remote site
-        span
-          - var repo = 'https://github.com/syon/refills/commits/master/src/refills'
-          a(href="#{repo}/#{srcpath}.md" target="_blank") 更新履歴
+    include _article-footer.jade

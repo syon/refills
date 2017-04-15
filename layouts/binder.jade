@@ -63,12 +63,4 @@ block body
     .adsense
       include _adsense-bottom.jade
 
-    footer
-      hr
-      .meta
-        a.author(href="https://github.com/syon")
-          img(src="#{site.basepath}/assets/img/syon.png", alt="syon", target="_blank")
-          span syon
-        span
-          - var repo = 'https://github.com/syon/refills/commits/master/src/refills'
-          a(href="#{repo}/#{srcpath}" target="_blank") 更新履歴
+    include _article-footer.jade

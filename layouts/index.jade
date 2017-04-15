@@ -28,13 +28,4 @@ block body
 
     div!= contents
 
-    footer
-      hr
-      .meta
-        a.author(href="https://github.com/syon")
-          img(src="#{site.basepath}/assets/img/syon.png", alt="syon", target="_blank")
-          span syon
-        .repo
-          a(href="https://github.com/syon/refills" target="_blank") Repo
-          a(href="https://app.wercker.com/project/byKey/3938da859441da2240b9f5d8f7d9f9fd")
-            img(alt="Wercker status" src="https://app.wercker.com/status/3938da859441da2240b9f5d8f7d9f9fd/s/master")
+    include _article-footer.jade
