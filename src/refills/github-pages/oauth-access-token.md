@@ -20,7 +20,7 @@ GitHub のアクセストークンの管理が個人設定にあることから�
   - OAuth scopes: ✔ __public_repo__
   - [OAuth | GitHub Developer Guide](https://developer.github.com/v3/oauth/#scopes)
 
-![GitHub - Personal Access Tokens](github-oauth.png)
+![GitHub - Personal Access Tokens](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201605/github-oauth.png)
 
 
 ## Wercker の設定
@@ -33,7 +33,7 @@ __Protected__ にチェックしてトークンを秘匿します。
   - Variable name: `GH_TOKEN`
   - Value: <上記で生成したトークン> [ __✔ Protected__ ]
 
-![Wercker - Environment variables](wercker-env.png)
+![Wercker - Environment variables](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201605/wercker-env.png)
 
 #### wercker.yml (抜粋)
 ```yaml

@@ -71,7 +71,7 @@ Resource
 
 #### バケットポリシーの適用
 
-![Amazon S3 Bucket Policy](bucket-policy.png)
+![Amazon S3 Bucket Policy](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201605/bucket-policy.png)
 
 
 ## 参考記事
