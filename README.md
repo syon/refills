@@ -12,3 +12,9 @@ $ make build
 ```sh
 $ node serve
 ```
+
+### rid
+
+```js
+Math.floor((new Date()).getTime()/1000000)
+```
