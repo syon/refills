@@ -10,13 +10,13 @@ layout: refill.jade
 ## ダウンロード
 - [Releases · norio-nomura/EasySIMBL](https://github.com/norio-nomura/EasySIMBL/releases)
 
-![](EasySIMBL-1.png)
+![](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201605/EasySIMBL-1.png)
 
 
 ## インストール
-![](EasySIMBL-2.png)
+![](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201605/EasySIMBL-2.png)
 
 
 ## 使い方
-![](EasySIMBL-3.png)
-![](EasySIMBL-4.png)
+![](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201605/EasySIMBL-3.png)
+![](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201605/EasySIMBL-4.png)
