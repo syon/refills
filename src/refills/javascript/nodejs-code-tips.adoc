@@ -1,0 +1,16 @@
+---
+rid: 1492530
+bid: javascript
+rcd: nodejs-code-tips
+srcpath: javascript/nodejs-code-tips.adoc
+title: Node.js CODE TIPS
+date: 2017/04/19
+layout: refill.jade
+---
+
+==== ファイル書き込み
+
+[source,javascript]
+----
+require('fs').writeFile('out.txt', 'content', (e)=>{});
+----
