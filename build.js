@@ -50,13 +50,13 @@ Metalsmith(__dirname)
   .use(draftsInDev())
   .use(collections({
     recent: {
-      pattern: 'refills/*/*.md',
+      pattern: 'refills/*/*.{md,adoc}',
       sortBy: 'date',
       limit: 10,
       reverse: true
     },
     all: {
-      pattern: 'refills/*/*.md',
+      pattern: 'refills/*/*.{md,adoc}',
       sortBy: 'date',
       reverse: true
     }
