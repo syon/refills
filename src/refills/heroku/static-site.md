@@ -1,5 +1,7 @@
 ---
 rid: 1483196
+bid: heroku
+rcd: static-site
 srcpath: heroku/static-site.md
 title: Herokuを使ってサクッと無料で静的サイトを公開
 desc: すでに手元にある HTML などのファイルをインターネットに公開したい場合に、クラウドサービスを利用すると便利です。今回は無料で利用できる Heroku を使ったやり方を紹介します。
