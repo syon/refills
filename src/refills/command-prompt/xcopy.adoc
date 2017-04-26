@@ -10,6 +10,7 @@ layout: refill.jade
 
 ファイルとサブディレクトリを含むディレクトリをコピーします。
 
+
 == Examples
 
 .基本
@@ -19,6 +20,10 @@ xcopy SourceDir DestDir
 ----
 
 
+TIP: 質問に自動返答するには `echo F | xcopy src dest`
+
+
 == Source
 
 - link:https://technet.microsoft.com/ja-jp/library/cc771254(v=ws.10).aspx[Xcopy - Microsoft TechNet]
+- link:http://www.k-tanaka.net/cmd/xcopy.php[コマンドプロンプト xcopy - [ファイルをディレクトリ構造ごとコピーする]]
