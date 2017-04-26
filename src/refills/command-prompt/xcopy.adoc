@@ -1,0 +1,24 @@
+---
+rid: 1493211
+bid: command-prompt
+rcd: xcopy
+srcpath: command-prompt/xcopy.adoc
+title: "【 xcopy 】:: Windowsコマンド"
+date: 2017/04/26
+layout: refill.jade
+---
+
+ファイルとサブディレクトリを含むディレクトリをコピーします。
+
+== Examples
+
+.基本
+[source,batch]
+----
+xcopy SourceDir DestDir
+----
+
+
+== Source
+
+- link:https://technet.microsoft.com/ja-jp/library/cc771254(v=ws.10).aspx[Xcopy - Microsoft TechNet]
