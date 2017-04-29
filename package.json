@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "start": "nf start",
-    "build": "node build"
+    "build": "node build",
+    "gulp": "gulp"
   },
   "dependencies": {
     "asciidoctor.js": "1.5.0",
@@ -24,6 +25,11 @@
   },
   "devDependencies": {
     "foreman": "^2.0.0",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.4.0",
+    "gulp-rename": "^1.2.2",
+    "gulpsmith": "^0.5.5",
+    "precss": "^1.4.0",
     "serve": "^2.1.2"
   }
 }
