@@ -2,6 +2,13 @@ var gulp = require('gulp');
 var gulpsmith = require('gulpsmith');
 var gulp_front_matter = require('gulp-front-matter');
 var assign = require('lodash.assign');
+var del = require('del');
+
+var DEST_DIR = './refills';
+
+gulp.task('clean', function() {
+  del([DEST_DIR]);
+});
 
 gulp.task('css', function () {
   var postcss = require('gulp-postcss');
@@ -111,7 +118,7 @@ gulp.task('metalsmith', function () {
         }))
         .use(watching())
     )
-    .pipe(gulp.dest('./dest'));
+    .pipe(gulp.dest(DEST_DIR));
 });
 
-gulp.task('default', [ 'css', 'metalsmith' ]);
+gulp.task('default', [ 'clean', 'css', 'metalsmith' ]);
