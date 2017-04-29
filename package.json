@@ -33,6 +33,7 @@
     "gulpsmith": "^0.5.5",
     "lodash": "^4.17.4",
     "precss": "^1.4.0",
+    "run-sequence": "^1.2.2",
     "serve": "^2.1.2"
   }
 }

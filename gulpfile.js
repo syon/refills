@@ -3,11 +3,12 @@ var gulpsmith = require('gulpsmith');
 var gulp_front_matter = require('gulp-front-matter');
 var assign = require('lodash.assign');
 var del = require('del');
+var runSequence = require('run-sequence');
 
 var DEST_DIR = './refills';
 
 gulp.task('clean', function() {
-  del([DEST_DIR]);
+  return del([DEST_DIR]);
 });
 
 gulp.task('css', function () {
@@ -22,15 +23,13 @@ gulp.task('css', function () {
   return gulp.src('./assets/*.pcss')
     .pipe(postcss(plugins))
     .pipe(rename({extname: '.css'}))
-    .pipe(gulp.dest('./assets'));
+    .pipe(gulp.dest(`${DEST_DIR}/assets`));
 });
 
 gulp.task('metalsmith', function () {
   var Metalsmith   = require('metalsmith');
   var drafts       = require('metalsmith-drafts');
   var collections  = require('metalsmith-collections');
-  var less         = require('metalsmith-less');
-  var autoprefixer = require('metalsmith-autoprefixer');
   var assets       = require('metalsmith-assets');
   var asciidoc     = require('metalsmith-asciidoc');
   var markdown     = require('metalsmith-markdown-remarkable');
@@ -121,4 +120,6 @@ gulp.task('metalsmith', function () {
     .pipe(gulp.dest(DEST_DIR));
 });
 
-gulp.task('default', [ 'clean', 'css', 'metalsmith' ]);
+gulp.task('default', function () {
+  runSequence('clean', 'metalsmith', 'css');
+});
