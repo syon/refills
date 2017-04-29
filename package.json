@@ -3,8 +3,7 @@
   "private": true,
   "scripts": {
     "start": "nf start",
-    "build": "node build",
-    "gulp": "gulp"
+    "build": "gulp"
   },
   "dependencies": {
     "asciidoctor.js": "1.5.0",
