@@ -1,17 +1,16 @@
 var gulp = require('gulp');
 var gulpsmith = require('gulpsmith');
 var gulp_front_matter = require('gulp-front-matter');
-var assign = require('lodash.assign');
 var del = require('del');
 var runSequence = require('run-sequence');
 
 var DEST_DIR = './refills';
 
-gulp.task('clean', function() {
+gulp.task('clean', () => {
   return del([DEST_DIR]);
 });
 
-gulp.task('css', function () {
+gulp.task('css', () => {
   var postcss = require('gulp-postcss');
   var rename = require('gulp-rename')
   var precss = require('precss');
@@ -26,7 +25,7 @@ gulp.task('css', function () {
     .pipe(gulp.dest(`${DEST_DIR}/assets`));
 });
 
-gulp.task('metalsmith', function () {
+gulp.task('metalsmith', () => {
   var Metalsmith   = require('metalsmith');
   var drafts       = require('metalsmith-drafts');
   var collections  = require('metalsmith-collections');
@@ -63,8 +62,8 @@ gulp.task('metalsmith', function () {
   }
 
   return gulp.src("./src/**/*")
-    .pipe(gulp_front_matter()).on("data", function(file) {
-      assign(file, file.frontMatter); 
+    .pipe(gulp_front_matter()).on("data", file => {
+      Object.assign(file, file.frontMatter); 
       delete file.frontMatter;
     })
     .pipe(
@@ -120,6 +119,6 @@ gulp.task('metalsmith', function () {
     .pipe(gulp.dest(DEST_DIR));
 });
 
-gulp.task('default', function () {
+gulp.task('default', () => {
   runSequence('clean', 'metalsmith', 'css');
 });
