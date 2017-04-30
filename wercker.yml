@@ -3,12 +3,13 @@ box: nodesource/trusty
 build:
   steps:
     - npm-install
+
+deploy:
+  steps:
     - script:
         name: Metalsmith build
         code: npm run build
 
-deploy:
-  steps:
     - lukevivier/gh-pages:
         token: $GH_TOKEN
         basedir: refills
