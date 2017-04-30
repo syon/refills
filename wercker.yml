@@ -3,7 +3,6 @@ box: nodesource/trusty
 build:
   steps:
     - npm-install
-    - npm install --global gulp-cli
 
 deploy:
   steps:
