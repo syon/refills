@@ -7,6 +7,10 @@ build:
 deploy:
   steps:
     - script:
+        name: npm link
+        code: npm link
+
+    - script:
         name: Metalsmith build
         code: npm run build
 
