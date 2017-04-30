@@ -3,20 +3,12 @@ box: node
 build:
   steps:
     - npm-install
+    - script:
+        name: Metalsmith build
+        code: npm run build
 
 deploy:
   steps:
-    - script:
-        name: install git
-        code: |
-          apt-get update
-          apt-get install git -y
-
-    - script:
-        name: Metalsmith build
-        code: |
-          npm run build
-
     - lukevivier/gh-pages:
         token: $GH_TOKEN
         basedir: refills
