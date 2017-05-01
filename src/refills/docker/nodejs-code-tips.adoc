@@ -1,0 +1,22 @@
+---
+rid: 1493647
+bid: docker
+rcd: docker-snippets
+srcpath: docker/docker-snippets.adoc
+title: Docker Snippets
+date: 2017/05/01
+layout: refill.jade
+---
+
+== Node.js
+
+任意のバージョンを一時的に利用する
+
+[source,bash]
+----
+$ docker pull node:6.10
+
+$ docker run -it --rm -v (pwd):/app node:6.10 bash
+root@b679c821674a:/# node -v
+v6.10.2
+----
