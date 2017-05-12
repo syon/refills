@@ -1,0 +1,94 @@
+---
+rid: 1494600
+bid: javascript
+rcd: fetch
+srcpath: javascript/fetch.adoc
+title: Fetch API まとめ
+date: 2017/05/12
+layout: refill.jade
+---
+
+=== window.fetch polyfill
+
+- link:https://github.com/github/fetch[]
+
+[source,bash]
+----
+$ npm install whatwg-fetch --save
+----
+
+=== Response
+
+==== HTML
+
+[source,javascript]
+----
+fetch('/users.html')
+  .then((response) => {
+    return response.text()
+  }).then((body) => {
+    document.body.innerHTML = body
+  })
+----
+
+==== JSON
+
+[source,javascript]
+----
+fetch('/users.json')
+  .then((response) => {
+    return response.json()
+  }).then((json) => {
+    console.log('success:', json)
+  }).catch((ex) => {
+    console.log('failed:', ex)
+  })
+----
+
+==== Response metadata
+
+[source,javascript]
+----
+fetch('/users.json').then((response) => {
+  console.log('Content-Type', response.headers.get('Content-Type'))
+  console.log('Date', response.headers.get('Date'))
+  console.log('status', response.status)
+  console.log('statusText', response.statusText)
+})
+----
+
+=== Post form data
+
+[source,javascript]
+----
+const form = document.querySelector('form')
+
+fetch('/users', {
+  method: 'POST',
+  body: new FormData(form),
+})
+----
+
+[source,javascript]
+----
+const fd = new FormData(form)
+fd.append('foo', 'bar')
+
+fetch('/users', {
+  method: 'POST',
+  body: fd,
+})
+----
+
+=== Cookie
+
+[source,javascript]
+----
+fetch(url, {
+  credentials: 'include',
+})
+----
+
+=== Links
+
+- link:https://developers.google.com/web/updates/2015/03/introduction-to-fetch[Introduction to fetch()  |  Web  |  Google Developers]
