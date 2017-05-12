@@ -8,7 +8,13 @@ date: 2017/05/12
 layout: refill.jade
 ---
 
-=== window.fetch polyfill
+== Can I use... Fetch
+
+A modern replacement for XMLHttpRequest.
+
+- link:http://caniuse.com/#feat=fetch[Can I use... Support tables for HTML5, CSS3, etc]
+
+== window.fetch polyfill
 
 - link:https://github.com/github/fetch[]
 
@@ -57,7 +63,7 @@ fetch('/users.json').then((response) => {
 })
 ----
 
-=== Post form data
+== POST Form Data
 
 [source,javascript]
 ----
@@ -92,3 +98,4 @@ fetch(url, {
 === Links
 
 - link:https://developers.google.com/web/updates/2015/03/introduction-to-fetch[Introduction to fetch()  |  Web  |  Google Developers]
+- link:http://tacamy.hatenablog.com/entry/2016/10/16/182658[jQuery.ajax()の代替としてFetch APIをざっくり使ってみる - tacamy.blog]
