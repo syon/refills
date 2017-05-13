@@ -99,3 +99,4 @@ fetch(url, {
 
 - link:https://developers.google.com/web/updates/2015/03/introduction-to-fetch[Introduction to fetch()  |  Web  |  Google Developers]
 - link:http://tacamy.hatenablog.com/entry/2016/10/16/182658[jQuery.ajax()の代替としてFetch APIをざっくり使ってみる - tacamy.blog]
+- link:http://stackoverflow.com/questions/34558264/fetch-api-with-cookie[Fetch API with Cookie \- Stack Overflow]
