@@ -30,8 +30,8 @@ $ npm install whatwg-fetch --save
 [source,javascript]
 ----
 fetch('/users.html')
-  .then((response) => {
-    return response.text()
+  .then((res) => {
+    return res.text()
   }).then((body) => {
     document.body.innerHTML = body
   })
@@ -42,8 +42,8 @@ fetch('/users.html')
 [source,javascript]
 ----
 fetch('/users.json')
-  .then((response) => {
-    return response.json()
+  .then((res) => {
+    return res.json()
   }).then((json) => {
     console.log('success:', json)
   }).catch((ex) => {
@@ -55,11 +55,11 @@ fetch('/users.json')
 
 [source,javascript]
 ----
-fetch('/users.json').then((response) => {
-  console.log('Content-Type', response.headers.get('Content-Type'))
-  console.log('Date', response.headers.get('Date'))
-  console.log('status', response.status)
-  console.log('statusText', response.statusText)
+fetch('/users.json').then((res) => {
+  console.log('Content-Type', res.headers.get('Content-Type'))
+  console.log('Date', res.headers.get('Date'))
+  console.log('status', res.status)
+  console.log('statusText', res.statusText)
 })
 ----
 
