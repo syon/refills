@@ -1,0 +1,34 @@
+html {
+  font-size: 10px;
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*, .fa {
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "palt";
+}
+
+body, h1, h2, h3, h4, h5 {
+  font-family: "YakuHanJP", Lato, 'Helvetica Neue', Arial, Helvetica, YuGothic, sans-serif;
+}
+
+a {
+  word-wrap: break-word;
+}
+
+a:visited {
+  color: purple;
+}
+
+p, dd {
+  line-height: 1.5;
+}
+
+code, kbd, pre, samp,
+code[class*="language-"], pre[class*="language-"] {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}

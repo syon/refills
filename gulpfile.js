@@ -12,16 +12,14 @@ gulp.task('clean', () => {
 
 gulp.task('css', () => {
   var postcss = require('gulp-postcss');
-  var rename = require('gulp-rename')
   var precss = require('precss');
   var autoprefixer = require('autoprefixer');
   var plugins = [
     precss({}),
     autoprefixer({browsers: ['defaults']})
   ];
-  return gulp.src('./assets/*.pcss')
+  return gulp.src('./assets/*.css')
     .pipe(postcss(plugins))
-    .pipe(rename({extname: '.css'}))
     .pipe(gulp.dest(`${DEST_DIR}/assets`));
 });
 
