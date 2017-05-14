@@ -1,5 +1,5 @@
 ---
-rid: 1462460
+rid: 1462450
 bid: github-pages
 rcd: autodeploy-wercker-metalsmith
 srcpath: github-pages/autodeploy-wercker-metalsmith.md
