@@ -22,14 +22,28 @@ body {
 
 .site-head {
   background-color: #fafbfc;
-  padding: 20px;
   margin-bottom: 20px;
   border-bottom: 1px solid #e1e4e8;
-}
 
-.site-name {
-  margin: 0;
-  font-size: 2rem;
+  .container {
+    padding: 20px;
+  }
+
+  .logo {
+    a {
+      color: #6a737d;
+      font-weight: normal;
+    }
+    .site-name {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 100;
+      text-align: center;
+      &:hover {
+        color: #1e70bf;
+      }
+    }
+  }
 }
 
 #article {
@@ -44,17 +58,6 @@ body {
     height: 50px;
     color: #7e888b;
 
-    .logo {
-      color: #7e888b;
-      h1 {
-        margin: 0;
-        font-size: 16px;
-        font-weight: 100;
-        &:hover {
-          color: #1e70bf;
-        }
-      }
-    }
     .slash {
       margin: 0 0.4em;
     }
