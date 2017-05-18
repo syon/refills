@@ -225,20 +225,6 @@ body {
     margin-top: .5rem;
   }
 
-  dl {
-    dt {
-      font-size: 18px;
-      font-weight: bold;
-      font-style: italic;
-      padding: 0;
-      margin: 15px 0 5px;
-    }
-    dd {
-      margin: 0 0 15px;
-      padding: 0 0 0 15px;
-    }
-  }
-
   code {
     padding: .2em;
     margin: 0;

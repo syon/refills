@@ -45,6 +45,22 @@ article {
   h5 {
     font-size: 1.36rem;
   }
+
+  dl {
+    dt {
+      font-weight: bold;
+      font-style: italic;
+      padding: 0;
+      margin: 15px 0 5px;
+      font-size: 1em;
+    }
+    dd {
+      margin: 0 0 15px;
+      padding: 0 0 0 15px;
+      font-size: 0.9em;
+    }
+  }
+
 }
 
 a {
