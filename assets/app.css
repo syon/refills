@@ -10,6 +10,27 @@
   }
 }
 
+body {
+  margin: 0;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.site-head {
+  background-color: #fafbfc;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.site-name {
+  margin: 0;
+  font-size: 2rem;
+}
+
 #article {
   max-width: 800px;
   margin: 0 auto 40px;

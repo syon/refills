@@ -38,7 +38,9 @@ h5 {
 }
 
 a {
+  color: #4183c4;
   word-wrap: break-word;
+  text-decoration: none;
 }
 
 a:visited {

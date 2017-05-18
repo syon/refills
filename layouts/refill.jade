@@ -24,14 +24,21 @@ block title_ogp
 
 block body
 
+  header.site-head
+    include _site-header.jade
+
   article#article
-    include _article-header.jade
+    //- include _article-header.jade
 
     if wip
       .wip WIP ― 記述途中です
 
     .title
       h1.r-title!= title
+      
+      - var repo = 'https://github.com/syon/refills/commits/master/src/refills'
+      a(href="#{repo}/#{srcpath}" target="_blank")
+        span.date= date
 
     .main!= contents
 
