@@ -27,8 +27,7 @@ block body
   header.site-head
     include _site-header.jade
 
-  article#article
-    //- include _article-header.jade
+  section#article
 
     if wip
       .wip WIP ― 記述途中です
@@ -37,10 +36,10 @@ block body
       h1.r-title!= title
       
       - var repo = 'https://github.com/syon/refills/commits/master/src/refills'
-      a(href="#{repo}/#{srcpath}" target="_blank")
-        span.date= date
+      a.r-date(href="#{repo}/#{srcpath}" target="_blank")
+        span= date
 
-    .main!= contents
+    article.main!= contents
 
     .adsense
       include _adsense-bottom.jade

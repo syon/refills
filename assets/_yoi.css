@@ -14,27 +14,38 @@ html {
 
 body {
   font-family: "YakuHanJP", Lato, 'Helvetica Neue', Arial, Helvetica, YuGothic, sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
-h1 {
-  font-size: 3.2rem;
-}
+article {
 
-h2 {
-  font-size: 2.4rem;
-}
+  h1, h2, h3, h4, h5 {
+    margin-top: 24px;
+    margin: 3em 0 1rem;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
 
-h3 {
-  font-size: 2.0rem;
-}
+  h1 {
+    font-size: 3.2rem;
+  }
 
-h4 {
-  font-size: 1.6rem;
-}
+  h2 {
+    font-size: 2.4rem;
+  }
 
-h5 {
-  font-size: 1.36rem;
+  h3 {
+    font-size: 2.0rem;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+  }
+
+  h5 {
+    font-size: 1.36rem;
+  }
 }
 
 a {

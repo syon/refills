@@ -35,7 +35,6 @@ body {
   max-width: 800px;
   margin: 0 auto 40px;
   padding: 20px 20px 40px;
-  font-size: 16px;
 
   .meta {
     display: flex;
@@ -102,9 +101,12 @@ body {
     margin-bottom: 4em;
     padding: 3em 0;
     text-align: center;
-    border-bottom: 1px solid #ddd;
     .r-title {
-      margin: 0;
+      margin: 0 0 1em;
+      font-size: 3rem;
+    }
+    .r-date {
+      color: #6a737d;
     }
   }
 
@@ -191,13 +193,6 @@ body {
       img {
         width: 100%;
       }
-    }
-  }
-
-  h1, h2, h3, h4, h5 {
-    margin: calc(4rem - .14285em) 0 1rem;
-    &:first-child {
-      margin-top: 0;
     }
   }
 
