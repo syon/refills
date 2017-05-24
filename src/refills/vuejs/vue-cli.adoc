@@ -89,3 +89,11 @@ p
   text-align center
 </style>
 ----
+
+
+'''
+
+==== ToDo
+
+- Vuex
+- PostCSS, Autoprefixer
