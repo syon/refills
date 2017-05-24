@@ -96,4 +96,5 @@ p
 ==== ToDo
 
 - Vuex
+- router
 - PostCSS, Autoprefixer
