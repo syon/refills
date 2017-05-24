@@ -1,0 +1,91 @@
+---
+rid: 1495634
+bid: vuejs
+rcd: vue-cli
+srcpath: vuejs/vue-cli.adoc
+title: vue-cli メモ
+date: 2017/05/24
+layout: refill.jade
+---
+
+== vue-cli とは
+
+- https://github.com/vuejs/vue-cli
+
+[quote, vuejs/vue-cli]
+Simple CLI for scaffolding Vue.js projects
+
+Vue.js プロジェクトのひな形を作るためのコマンドラインツール。
+Node.js 上で動作します。
+
+
+=== インストール
+
+[source,bash]
+----
+$ npm install -g vue-cli
+----
+
+=== 使い方
+
+[source,bash]
+----
+$ vue init <template-name> <project-name>
+----
+
+==== hot reload, linting, testing & css extraction.
+
+[source,bash]
+----
+$ vue init webpack my-project
+----
+
+==== for quick prototyping
+
+[source,bash]
+----
+$ vue init webpack-simple my-project
+----
+
+
+== 単一ファイルコンポーネント
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201705/vue-component-with-preprocessors.png[Single File Component,,600]
+
+- link:https://jp.vuejs.org/v2/guide/single-file-components.html[単一ファイルコンポーネント - Vue.js]
+
+=== テンプレートを Pug (Jade) で書く
+
+`pug` と `pug-loader` をインストールします。
+
+[source,bash]
+----
+$ npm install --save-dev pug pug-loader
+----
+
+[source,jade]
+----
+<template lang="pug">
+div
+  p {{ greeting }} World!
+  other-component
+</template>
+----
+
+=== スタイルを Stylus で書く
+
+`stylus` と `stylus-loader` をインストールします。
+
+[source,bash]
+----
+$ npm install --save-dev stylus stylus-loader
+----
+
+[source,jade]
+----
+<style lang="stylus" scoped>
+p
+  font-size 2em
+  text-align center
+</style>
+----

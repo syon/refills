@@ -208,7 +208,9 @@ body {
   }
 
   h3 {
-    margin-top: 1.5em;
+    margin-top: 2.5em;
+    padding: 0.5em 0px;
+    font-size: 2.4rem;
     color: #666;
   }
 
