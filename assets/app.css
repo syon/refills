@@ -16,7 +16,6 @@ body {
 }
 
 .container {
-  width: 800px;
   margin: 0 auto;
 }
 
@@ -38,7 +37,6 @@ body {
       margin: 0;
       font-size: 2rem;
       font-weight: 100;
-      text-align: center;
       &:hover {
         color: #1e70bf;
       }
