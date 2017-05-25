@@ -179,3 +179,13 @@ function incrimental search (pattern) {
 
 ## クエリストリングの値を取得
 - [javascript - How can I get query string values? - Stack Overflow](http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values)
+
+
+## console.time
+
+```js
+console.time('label_name');
+// ...
+console.timeEnd('label_name');
+//=> label_name: 4878.077880859375ms
+```
