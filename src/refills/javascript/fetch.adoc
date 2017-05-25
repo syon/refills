@@ -102,3 +102,4 @@ fetch(url, {
 - link:http://stackoverflow.com/questions/34558264/fetch-api-with-cookie[Fetch API with Cookie \- Stack Overflow]
 - link:https://github.com/expressjs/body-parser[expressjs/body-parser: Node.js body parsing middleware] +
   サーバサイド(express)でPOSTリクエストのボディ部を読み取るやつ
+- link:https://github.com/facebook/react-native/issues/2538['unsupported BodyInit type' error is uncatchable · Issue #2538 · facebook/react-native]
