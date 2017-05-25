@@ -323,3 +323,9 @@ body {
     }
   }
 }
+
+@media(max-height:400px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+}
