@@ -1,0 +1,73 @@
+---
+rid: 1495884
+bid: pocket
+rcd: overview
+srcpath: pocket/overview.adoc
+title: 「あとで読む」サービス『Pocket』とは？その便利さを解説！
+date: 2017/05/24
+layout: refill.jade
+---
+
+== Pocketとは？
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201705/pocket-intro.png[Pocket Intro]
+
+
+== Pocketアプリの位置づけ
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201705/pocket-position.png[Pocket Position]
+
+
+== 何が便利なの？実演動画
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201705/pocket-twitter-demo.gif[Pocket on Twitter Demo]
+
+何をしているかというと……
+
+- iPhoneのTwitterアプリを使っているとき
+- あとで読みたくなった情報を見つけたら
+- リンクの長押しから共有メニューを呼び出して
+- Pocketのアイコンを押して保存して
+- Pocketアプリに切り替えて
+- さきほど保存した情報を見る
+
+という流れになっています。
+Pocketには、記事が保存した順に並んでいます。
+つまり、記事をどんどんPocketに放り込んで、あとでゆっくり読むことができるんです！
+
+
+== Safariに溜め込んでいませんか？
+
+あとで読もうとしている記事を、Safariのタブに残したままにすることでやりくりする方法もあります。
+もちろんそれも便利でOKですが、あまり重要でないものが残っていると邪魔ですよね。
+暇な時にチェックできればいいや、というものなどはPocketという別の空間に逃がしてあげるのもよいでしょう。
+Safariで今見ているページをPocketに保存するには、このようにします。
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201705/pocket-safari-demo.gif[Pocket on Safari Demo]
+
+
+== PCやタブレットからも使える
+
+Pocketはクラウドサービスなので、TwitterやFacebookと同じようにいろいろなデバイスから使うことができます。
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201705/pocket-device.png[Pocket Device]
+
+
+== はじめてみよう
+
+=== Webサイト
+
+- https://getpocket.com/
+
+=== iPhoneアプリ
+
+++++
+<div class="sticky-itslink">
+<a href="https://itunes.apple.com/jp/app/pocket/id309601447?mt=8&uo=4&at=1001l8nb" rel="nofollow" target="_blank">
+<img src="http://is5.mzstatic.com/image/thumb/Purple127/v4/05/68/9a/05689ae1-cd72-de54-2424-5e030365a866/source/60x60bb.jpg" style="border-style:none;float:left;margin:5px 15px 5px 5px;" alt="Pocket" title="Pocket" >
+</a>
+<div class="sticky-itslinktext">
+<a href="https://itunes.apple.com/jp/app/pocket/id309601447?mt=8&uo=4&at=1001l8nb" rel="nofollow" target="_blank">Pocket</a>
+<br><span style="font-size:xx-small;">Read It Later, Inc<br>価格： 0円</span>
+</div><br style="clear:left;" ></div>
+++++
