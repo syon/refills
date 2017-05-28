@@ -1,0 +1,5 @@
+.imageblock {
+  &.no-shadow img {
+    box-shadow: none;
+  }
+}
