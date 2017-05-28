@@ -68,7 +68,7 @@ image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/
 ++++
 <div class="sticky-itslink">
 <a href="https://itunes.apple.com/jp/app/pocket/id309601447?mt=8&uo=4&at=1001l8nb" rel="nofollow" target="_blank">
-<img src="http://is5.mzstatic.com/image/thumb/Purple127/v4/05/68/9a/05689ae1-cd72-de54-2424-5e030365a866/source/60x60bb.jpg" style="border-style:none;float:left;margin:5px 15px 5px 5px;" alt="Pocket" title="Pocket" >
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201705/pocket-appicon.jpg" style="width:60px;height:60px;border-style:none;float:left;margin:5px 15px 5px 5px;" alt="Pocket" title="Pocket" >
 </a>
 <div class="sticky-itslinktext">
 <a href="https://itunes.apple.com/jp/app/pocket/id309601447?mt=8&uo=4&at=1001l8nb" rel="nofollow" target="_blank">Pocket</a>
