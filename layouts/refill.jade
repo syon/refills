@@ -18,7 +18,7 @@ block title_ogp
   meta(property="og:url", content="#{site.baseurl}/refills/#{bid}/#{rid}/")
 
   if (ogpimg)
-    meta(property="og:image", content="#{site.baseurl}/#{ogpimg}")
+    meta(property="og:image", content="#{site.s3url}/#{ogpimg}")
   else
     meta(property="og:image", content="#{site.baseurl}/assets/img/ogp.png")
 

@@ -70,7 +70,8 @@ gulp.task('metalsmith', () => {
           site: {
             name: 'Refills',
             basepath: '/refills',
-            baseurl: 'https://syon.github.io/refills'
+            baseurl: 'https://syon.github.io/refills',
+            s3url: 'https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills',
           },
           env: {
             NODE_ENV: process.env.NODE_ENV
