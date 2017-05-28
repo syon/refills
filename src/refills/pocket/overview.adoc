@@ -6,7 +6,7 @@ srcpath: pocket/overview.adoc
 title: 「あとで読む」サービス『Pocket』とは？その便利さを解説！
 desc: 「あとで読む」サービス『Pocket』で何ができるのかと、実際に活用している様子をイメージや動画で解説します。
 date: 2017/05/24
-ogpimg: pocket/pocket-ogp.jpg
+ogpimg: chronicle/201705/pocket-ogp.jpg
 layout: refill.jade
 ---
 

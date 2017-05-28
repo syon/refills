@@ -18,8 +18,7 @@ block title_ogp
   meta(property="og:url", content="#{site.baseurl}/refills/#{bid}/#{rid}/")
 
   if (ogpimg)
-    //- OGP Image should be in same domain for security
-    meta(property="og:image", content="#{site.baseurl}/refills/#{ogpimg}")
+    meta(property="og:image", content="#{site.s3url}/#{ogpimg}")
   else
     meta(property="og:image", content="#{site.baseurl}/assets/img/ogp.png")
 
