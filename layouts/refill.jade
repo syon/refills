@@ -22,6 +22,9 @@ block title_ogp
   else
     meta(property="og:image", content="#{site.baseurl}/assets/img/ogp.png")
 
+  if (redirectRid)
+    meta(http-equiv="refresh" content="0;URL=/refills/rid/#{redirectRid}/")
+
 block body
 
   header.site-head

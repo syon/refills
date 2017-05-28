@@ -1,11 +1,11 @@
 ---
-rid: 1495884
+rid: 1495885
 bid: pocket
 rcd: overview
 srcpath: pocket/overview.adoc
 title: 「あとで読む」サービス『Pocket』とは？その便利さを解説！
 desc: 「あとで読む」サービス『Pocket』で何ができるのかと、実際に活用している様子をイメージや動画で解説します。
-date: 2017/05/24
+date: 2017/05/28
 ogpimg: chronicle/201705/pocket-ogp.jpg
 layout: refill.jade
 ---
