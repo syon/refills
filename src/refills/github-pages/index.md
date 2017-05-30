@@ -10,7 +10,7 @@ rids:
   - oauth-access-token
   - amazon-s3-bucket-policy
 heroimgpath: chronicle/201605/github-pages-hero.png
-date: 2016/12/10
+date: 2016.12.10
 layout: binder.jade
 ---
 

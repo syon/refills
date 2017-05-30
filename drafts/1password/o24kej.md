@@ -3,7 +3,7 @@ draft: true
 bid: 1password
 rid: o24kej
 title: 「1Password」の導入
-date: 2016/02/06
+date: 2016.2.6
 layout: refill.jade
 ---
 

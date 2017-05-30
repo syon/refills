@@ -4,7 +4,7 @@ bid: ruby
 rcd: yaml
 srcpath: ruby/yaml.md
 title: YAML
-date: 2016/08/17
+date: 2016.8.17
 layout: refill.jade
 ---
 

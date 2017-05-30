@@ -10,7 +10,7 @@ rids:
 rels:
   - github-pages/autodeploy-wercker-metalsmith
 heroimgpath: chronicle/201609/metalsmith-hero.png
-date: 2016/09/14
+date: 2016.9.14
 layout: binder.jade
 ---
 

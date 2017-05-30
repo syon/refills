@@ -6,7 +6,7 @@ title: fish shell
 rids:
   - install
 heroimgpath: chronicle/201605/fish-shell-hero.png
-date: 2016/05/10
+date: 2016.5.10
 layout: binder.jade
 ---
 

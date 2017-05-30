@@ -5,7 +5,7 @@ srcpath: mac-osx/index.md
 title: Mac OSX
 rids:
   - easysimbl
-date: 2016/05/06
+date: 2016.5.6
 layout: binder.jade
 ---
 

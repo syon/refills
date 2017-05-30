@@ -4,7 +4,7 @@ bid: vuejs
 rcd: vue-cli
 srcpath: vuejs/vue-cli.adoc
 title: vue-cli メモ
-date: 2017/05/24
+date: 2017.5.24
 layout: refill.jade
 ---
 

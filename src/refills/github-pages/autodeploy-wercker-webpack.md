@@ -4,7 +4,7 @@ bid: github-pages
 rcd: autodeploy-wercker-webpack
 srcpath: github-pages/autodeploy-wercker-webpack.md
 title: Webpack & Wercker 自動デプロイ
-date: 2016/12/10
+date: 2016.12.10
 layout: refill.jade
 ---
 

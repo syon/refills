@@ -3,6 +3,6 @@ rid: 1495884
 bid: pocket
 rcd: overview-old
 redirectRid: 1495885
-date: 2017/05/27
+date: 2017.5.27
 layout: refill.jade
 ---

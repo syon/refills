@@ -8,6 +8,6 @@ rids:
   - redux-study
 rels:
   - github-pages/autodeploy-wercker-webpack
-date: 2016/12/30
+date: 2016.12.30
 layout: binder.jade
 ---

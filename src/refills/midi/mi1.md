@@ -4,7 +4,7 @@ bid: midi
 rcd: mi1
 srcpath: midi/mi1.md
 title: Quicco Sound [ mi.1 ] ワイヤレスMIDIインターフェース
-date: 2016/08/28
+date: 2016.8.28
 layout: refill.jade
 ---
 

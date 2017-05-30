@@ -4,7 +4,7 @@ bid: metalsmith
 rcd: plugins
 srcpath: metalsmith/plugins.md
 title: 主要プラグインの一覧と解説
-date: 2016/06/29
+date: 2016.6.29
 layout: refill.jade
 ---
 

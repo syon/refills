@@ -4,7 +4,7 @@ bid: ergodox
 rcd: ergodox-ez
 srcpath: ergodox/ergodox-ez.md
 title: ErgoDox EZ
-date: 2016/07/26
+date: 2016.7.26
 layout: refill.jade
 ---
 

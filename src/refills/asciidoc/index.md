@@ -6,6 +6,6 @@ title: AsciiDoc
 rids:
   - howtowrite
 heroimgpath:
-date: 2017/05/27
+date: 2017.5.27
 layout: binder.jade
 ---

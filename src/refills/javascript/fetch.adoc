@@ -4,7 +4,7 @@ bid: javascript
 rcd: fetch
 srcpath: javascript/fetch.adoc
 title: Fetch API まとめ
-date: 2017/05/12
+date: 2017.5.12
 layout: refill.jade
 ---
 

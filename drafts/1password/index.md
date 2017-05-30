@@ -9,6 +9,6 @@ rids:
   - o2dh01
   - o24kej
   - o24krc
-date: 2016/05/06
+date: 2016.5.6
 layout: binder.jade
 ---

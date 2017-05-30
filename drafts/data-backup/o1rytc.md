@@ -3,7 +3,7 @@ draft: true
 bid: data-backup
 rid: o1rytc
 title: クラウド障害への備え
-date: 2016/01/31
+date: 2016.1.31
 layout: refill.jade
 ---
 

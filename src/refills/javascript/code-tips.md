@@ -4,7 +4,7 @@ bid: javascript
 rcd: code-tips
 srcpath: javascript/code-tips.md
 title: CODE TIPS
-date: 2016/05/13
+date: 2016.5.13
 layout: refill.jade
 ---
 

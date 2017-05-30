@@ -11,7 +11,7 @@ rids:
   - auth
   - tips
 heroimgpath: chronicle/201604/squid-proxy-hero.png
-date: 2016/05/06
+date: 2016.5.6
 layout: binder.jade
 ---
 

@@ -5,6 +5,6 @@ srcpath: command-prompt/index.md
 title: コマンドプロンプト
 rids:
   - xcopy
-date: 2017/04/26
+date: 2017.4.26
 layout: binder.jade
 ---

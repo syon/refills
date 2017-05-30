@@ -4,7 +4,7 @@ bid: ergodox
 rcd: keymap-for-windows
 srcpath: ergodox/keymap-for-windows.md
 title: Windows用キーマップの紹介
-date: 2016/10/05
+date: 2016.10.5
 layout: refill.jade
 wip: false
 ---

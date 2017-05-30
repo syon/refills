@@ -4,7 +4,7 @@ bid: command-prompt
 rcd: xcopy
 srcpath: command-prompt/xcopy.adoc
 title: "【 xcopy 】:: Windowsコマンド"
-date: 2017/04/26
+date: 2017.4.26
 layout: refill.jade
 ---
 

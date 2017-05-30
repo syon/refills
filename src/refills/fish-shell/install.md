@@ -4,7 +4,7 @@ bid: fish-shell
 rcd: install
 srcpath: fish-shell/install.md
 title: インストールと設定
-date: 2016/05/10
+date: 2016.5.10
 layout: refill.jade
 ---
 

@@ -2,7 +2,7 @@
 rid: 1492236
 srcpath: misc/testing.adoc
 title: AsciiDoc Testing
-date: 2017/04/15
+date: 2017.4.15
 layout: refill.jade
 ---
 

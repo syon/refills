@@ -4,7 +4,7 @@ bid: asciidoc
 rcd: howtowrite
 srcpath: asciidoc/howtowrite.md
 title: AsciiDoc覚書き
-date: 2017/05/30
+date: 2017.5.30
 layout: refill.jade
 ---
 

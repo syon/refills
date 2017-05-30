@@ -6,6 +6,6 @@ title: Vue.js
 rids:
   - vue-cli
 heroimgpath:
-date: 2017/05/24
+date: 2017.5.24
 layout: binder.jade
 ---

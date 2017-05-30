@@ -4,7 +4,7 @@ bid: metalsmith
 rcd: plugin-basic
 srcpath: metalsmith/plugin-basic.md
 title: プラグインの構造
-date: 2016/09/10
+date: 2016.9.10
 layout: refill.jade
 ---
 

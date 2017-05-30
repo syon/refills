@@ -3,7 +3,7 @@ draft: true
 bid: data-backup
 rid: o1rxfo
 title: バックアップするもの
-date: 2016/01/31
+date: 2016.1.31
 layout: refill.jade
 ---
 
