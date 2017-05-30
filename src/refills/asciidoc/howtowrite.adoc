@@ -1,0 +1,40 @@
+---
+rid: 1495938
+bid: asciidoc
+rcd: howtowrite
+srcpath: asciidoc/howtowrite.md
+title: AsciiDoc覚書き
+date: 2017/05/30
+layout: refill.jade
+---
+
+== Title
+
+[source,asciidoc]
+----
+= Document Title (h1)
+
+== Level 1 Section Title (h2)
+
+=== Level 2 Section Title (h3)
+
+==== Level 3 Section Title (h4)
+
+===== Level 4 Section Title (h5)
+
+====== Level 5 Section Title (h6)
+----
+
+
+== Image
+
+[source,asciidoc]
+----
+[.no-shadow]
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/hello/hedgehog.jpg[hedgehog]
+----
+
+[.no-shadow]
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201705/hedgehog400.jpg[hedgehog]
+
+- link:https://github.com/asciidoctor/jekyll-asciidoc/issues/138[how to apply a style to an image? · Issue #138 · asciidoctor/jekyll-asciidoc]
