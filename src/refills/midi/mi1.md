@@ -8,7 +8,7 @@ date: 2016.8.28
 layout: refill.jade
 ---
 
-![mi.1](mi1.jpg)
+![mi.1](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201608/mi1.jpg)
 
 <div class="babylink-box" style="overflow: hidden; font-size: small; zoom: 1; margin: 0 auto; text-align: left; max-width: 400px;"><div class="babylink-image" style="float: left; margin: 0px 15px 10px 0px; width: 75px; height: 75px; text-align: center;"><a href="http://amzn.to/2boS6Ad" rel="nofollow" target="_blank"><img style="border-top: medium none; border-right: medium none; border-bottom: medium none; border-left: medium none;" src="http://ecx.images-amazon.com/images/I/41BRmVQZemL._SL75_.jpg" width="75" height="75" /></a></div><div class="babylink-info" style="overflow: hidden; zoom: 1; line-height: 120%;"><div class="babylink-title" style="margin-bottom: 2px; line-height: 120%;"><a href="http://amzn.to/2boS6Ad" rel="nofollow" target="_blank">ワイヤレスMIDIインターフェース mi.1 [Rev.3]</a></div><div class="babylink-manufacturer" style="margin-bottom: 5px;">QUICCO SOUND株式会社</div></div><div class="booklink-footer" style="clear: left"></div></div>
 
