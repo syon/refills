@@ -1,0 +1,85 @@
+---
+rid: 1496490
+bid: selenium
+rcd: install
+srcpath: selenium/install.adoc
+title: Seleniumのインストールとブラウザドライバーの導入
+date: 2017.6.3
+layout: refill.jade
+---
+
+npm (Node.js) を使った例です。
+オプション `-g` を指定してグローバルインストールすることで、
+どのディレクトリからでも起動できるようにしています。
+
+
+== Seleniumのインストール
+
+[source,bash]
+----
+$ npm install -g selenium-standalone@latest
+
+$ selenium-standalone install
+----
+
+
+== ブラウザドライバーのインストール
+
+※コマンド`chromedriver`にPATHが通っていることが要件
+
+
+=== Google Chrome
+[source,bash]
+----
+$ npm install -g chromedriver
+----
+- link:https://www.npmjs.com/package/chromedriver[npm - chromedriver]
+- link:https://sites.google.com/a/chromium.org/chromedriver/[ChromeDriver - WebDriver for Chrome]
+
+
+=== Microsoft Edge
+
+[source,bash]
+----
+$ npm install -g edgedriver
+----
+- link:https://www.npmjs.com/package/edgedriver[npm - edgedriver]
+- link:https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/[WebDriver - Microsoft Edge Development]
+
+
+=== Mozilla Firefox
+
+[source,bash]
+----
+$ npm install -g geckodriver
+----
+
+- link:https://www.npmjs.com/package/geckodriver[npm - geckodriver]
+- link:https://github.com/mozilla/geckodriver[mozilla/geckodriver]
+
+
+=== Opera
+
+[source,bash]
+----
+$ npm install -g operadriver
+----
+
+- link:https://www.npmjs.com/package/operadriver[npm - operadriver]
+- link:https://github.com/operasoftware/operachromiumdriver[operasoftware/operachromiumdriver]
+
+
+=== Safari
+
+(未調査)
+
+- link:https://webkit.org/blog/6900/webdriver-support-in-safari-10/[WebDriver Support in Safari 10 | WebKit]
+
+
+
+== Seleniumサーバの開始
+
+[source,bash]
+----
+$ selenium-standalone start
+----
