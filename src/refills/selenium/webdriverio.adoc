@@ -1,0 +1,54 @@
+---
+rid: 1496538
+bid: selenium
+rcd: webdriverio
+srcpath: selenium/webdriverio.adoc
+title: WebdriverIO 覚書き
+date: 2017.6.4
+layout: refill.jade
+---
+
+
+== WebdriverIO
+
+- link:http://webdriver.io/[WebdriverIO - WebDriver bindings for Node.js]
+- link:https://syon.github.io/wiki/browser/[ブラウザ - syon/wiki]
+
+
+== Getting started WebdriverIO Automation
+
+.package.json
+```js
+"scripts": {
+  "start": "node main.js",
+  "repl": "./node_modules/.bin/wdio repl chrome"
+},
+```
+
+.main.js
+```js
+const webdriverio = require('webdriverio');
+
+const options = {
+  desiredCapabilities: {
+    browserName: 'chrome'
+  }
+};
+
+webdriverio
+  .remote(options)
+  .init()
+  .windowHandleSize({width: 1000, height: 700})
+  .url('https://www.google.co.jp/')
+  .getTitle().then(title => {
+    console.log(title);
+  })
+  .setValue('input[name="q"]', 'webdriverio')
+  .submitForm('form[role="search"]')
+  // .end();
+```
+
+.shell
+```bash
+$ npm start
+```
