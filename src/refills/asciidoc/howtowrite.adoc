@@ -4,11 +4,11 @@ bid: asciidoc
 rcd: howtowrite
 srcpath: asciidoc/howtowrite.md
 title: AsciiDoc覚書き
-date: 2017.5.30
+date: 2017.6.4
 layout: refill.jade
 ---
 
-== Title
+== タイトル ― Title
 
 [source,asciidoc]
 ----
@@ -26,7 +26,7 @@ layout: refill.jade
 ----
 
 
-== Paragraphs
+== 段落 ― Paragraphs
 
 [source,asciidoc]
 ----
@@ -34,19 +34,19 @@ layout: refill.jade
 半角スペースと半角プラスを文末に記述します。
 
 [%hardbreaks]
-Ruby is red.
-Java is black.
+ブロック内の文章を記述した通りに改行させるには、
+`[%hardbreaks]`属性を使用します。
 ----
 
 文章に改行を入れるには +
 半角スペースと半角プラスを文末に記述します。
 
 [%hardbreaks]
-記述した通りに改行させるには、
-ブロック内を
+ブロック内の文章を記述した通りに改行させるには、
+`[%hardbreaks]`属性を使用します。
 
 
-== Image
+== 画像 ― Image
 
 [source,asciidoc]
 ----
@@ -58,3 +58,13 @@ image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/hello/hedgehog.jpg
 image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201705/hedgehog400.jpg[hedgehog]
 
 - link:https://github.com/asciidoctor/jekyll-asciidoc/issues/138[how to apply a style to an image? · Issue #138 · asciidoctor/jekyll-asciidoc]
+
+
+== 水平線 ― Horizontal Rules
+
+[source,asciidoc]
+----
+'''
+----
+
+'''
