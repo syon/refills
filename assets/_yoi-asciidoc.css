@@ -4,6 +4,13 @@
   }
 }
 
+.listingblock {
+  .title {
+    font-size: 0.8em;
+    color: #586069;
+  }
+}
+
 .ulist {
   li > p {
     margin: 0;
