@@ -26,6 +26,26 @@ layout: refill.jade
 ----
 
 
+== Paragraphs
+
+[source,asciidoc]
+----
+文章に改行を入れるには +
+半角スペースと半角プラスを文末に記述します。
+
+[%hardbreaks]
+Ruby is red.
+Java is black.
+----
+
+文章に改行を入れるには +
+半角スペースと半角プラスを文末に記述します。
+
+[%hardbreaks]
+記述した通りに改行させるには、
+ブロック内を
+
+
 == Image
 
 [source,asciidoc]
