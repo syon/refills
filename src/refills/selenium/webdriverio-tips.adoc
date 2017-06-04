@@ -1,0 +1,59 @@
+---
+rid: 1496545
+bid: selenium
+rcd: webdriverio-tips
+srcpath: selenium/webdriverio-tips.adoc
+title: WebdriverIO 逆引き Code Tips
+date: 2017.6.4
+layout: refill.jade
+---
+
+
+- link:http://webdriver.io/api.html[WebdriverIO - API Docs]
+
+
+=== URLナビゲーション
+
+```js
+.url('https://www.google.co.jp/')
+```
+
+- link:http://webdriver.io/api/protocol/url.html[WebdriverIO - url]
+
+
+=== タイトル取得
+
+```js
+.getTitle().then(title => {
+  console.log(title);
+})
+```
+
+- link:http://webdriver.io/api/property/getTitle.html[WebdriverIO - getTitle]
+
+
+=== sleep / wait
+
+```js
+.pause(500)
+```
+
+- link:http://webdriver.io/api/utility/pause.html[WebdriverIO - pause]
+
+
+=== クリック
+
+```js
+.click(selector)
+```
+
+- link:http://webdriver.io/api/action/click.html[WebdriverIO - click]
+
+
+=== セレクトボックスの選択
+
+```js
+.selectByValue(selector, value);
+```
+
+- link:http://webdriver.io/api/action/selectByValue.html[WebdriverIO - selectByValue]
