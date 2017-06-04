@@ -3,3 +3,9 @@
     box-shadow: none;
   }
 }
+
+.ulist {
+  li > p {
+    margin: 0;
+  }
+}
