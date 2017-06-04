@@ -52,7 +52,7 @@ block body
       if (bid)
         h3
           | Index of&nbsp;
-          a(href="/refills/#{bid}/") #{summary[bid].info.title}
+          a(href="/refills/bid/#{bid}/") #{summary[bid].info.title}
         .article-links
           each r in summary[bid].refills
             a(href="/refills/rid/#{r.rid}/")
