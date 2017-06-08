@@ -58,5 +58,16 @@ $ npm start
 webdriver.io::
 link:http://webdriver.io/guide/getstarted/configuration.html#desiredCapabilities[WebdriverIO - Configuration]
 
-Selenium::
-link:https://syon.github.io/refills/rid/1496490/[Seleniumとブラウザドライバーのインストール]
+デバイス・OS・ブラウザ・バージョンを指定して生成する便利ツール::
+link:https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/[Platform Configurator - The Sauce Labs Cookbook]
+
+```js
+const options = {
+  desiredCapabilities: {
+    browserName: 'internet explorer',
+    platform: 'Windows 10',
+    version: '11.103',
+    screenResolution: '1920x1080'
+  }
+};
+```
