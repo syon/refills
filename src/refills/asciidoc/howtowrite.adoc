@@ -60,6 +60,34 @@ image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/
 - link:https://github.com/asciidoctor/jekyll-asciidoc/issues/138[how to apply a style to an image? · Issue #138 · asciidoctor/jekyll-asciidoc]
 
 
+== 定義リスト ― Definition List
+
+[source,asciidoc]
+.1行で記述
+----
+first term:: definition of first term
+second term:: definition of second term
+----
+
+first term:: definition of first term
+second term:: definition of second term
+
+
+[source,asciidoc]
+.複数行で記述
+----
+first term::
+definition of first term
+section term::
+definition of second term
+----
+
+first term::
+definition of first term
+section term::
+definition of second term
+
+
 == 水平線 ― Horizontal Rules
 
 [source,asciidoc]
