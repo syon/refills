@@ -41,7 +41,6 @@ block body
         img(src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/#{heroimgpath}" alt=bid)
 
     .index
-      h2 Index of #{summary[bid].info.title}
       .article-links
         each r in summary[bid].refills
           a(href="/refills/rid/#{r.rid}/")
