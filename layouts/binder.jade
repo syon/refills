@@ -21,14 +21,20 @@ block title_ogp
 
 block body
 
-  article#article
-    include _article-header.jade
+  header.site-head
+    include _site-header.jade
 
-    if draft
-      .draft DRAFT
+  section#article
 
-    .title
+    if wip
+      .wip WIP ― 記述途中です
+
+    .a-title
       h1.r-title!= title
+
+      - var repo = 'https://github.com/syon/refills/commits/master/src/refills'
+      a.r-date(href="#{repo}/#{srcpath}" target="_blank")
+        span= date
 
     if (heroimgpath)
       .hero
@@ -58,7 +64,7 @@ block body
                     span.octicon.octicon-file-directory
                     span #{summary[r.bid].info.title}
 
-    div!= contents
+    article.main!= contents
 
     .adsense
       include _adsense-bottom.jade
