@@ -52,3 +52,11 @@ webdriverio
 ```bash
 $ npm start
 ```
+
+=== options
+
+webdriver.io::
+link:http://webdriver.io/guide/getstarted/configuration.html#desiredCapabilities[WebdriverIO - Configuration]
+
+Selenium::
+link:https://syon.github.io/refills/rid/1496490/[Seleniumとブラウザドライバーのインストール]

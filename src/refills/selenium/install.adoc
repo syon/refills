@@ -3,8 +3,8 @@ rid: 1496490
 bid: selenium
 rcd: install
 srcpath: selenium/install.adoc
-title: Seleniumとブラウザドライバーのインストール
-date: 2017.6.3
+title: Seleniumとブラウザドライバーのインストールと使い方
+date: 2017.6.8
 layout: refill.jade
 ---
 
@@ -87,3 +87,36 @@ $ npm install -g operadriver
 ----
 $ selenium-standalone start
 ----
+
+
+=== DesiredCapabilities
+
+SeleniumHQ/selenium Wiki::
+- link:https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities[DesiredCapabilities · SeleniumHQ/selenium Wiki]
+- link:https://github.com/SeleniumHQ/selenium/wiki/Grid-Platforms[Grid Platforms · SeleniumHQ/selenium Wiki]
+
+デバイス・OS・ブラウザ・バージョンを指定して生成する便利ツール::
+link:https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/[Platform Configurator - The Sauce Labs Cookbook]
+
+
+[cols="1,1,2", options="header"]
+.browser selection
+|===
+|Key
+|Type
+|Description
+
+|browserName
+|string
+|以下のうちいずれか1つ。 +
+`android`, `chrome`, `firefox`, `htmlunit`, `internet explorer`, `iPhone`, `iPad`, `opera`, `safari`
+
+|version
+|string
+|ブラウザのバージョン。不明の場合は空白を指定。
+
+|platform
+|string
+|以下のうちいずれか1つ。 +
+`WINDOWS`, `XP`, `VISTA`, `MAC`, `LINUX`, `UNIX`, `ANDROID` +
+|===
