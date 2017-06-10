@@ -51,78 +51,46 @@ $ npm install -g selenium-standalone@latest
 $ selenium-standalone install
 ----
 
-.コマンド実行結果の例
+.コマンド実行結果の例（失敗）
+```batch
+not fount: java
+Usage: selenium-standalone action [options]
+```
+
+上記の表示が出てしまった場合、Selenium の動作に必要である Java がインストールされていないか、PATH が通っていません。
+link:https://java.com/ja/download/[Java実行環境のダウンロードページ]からダウンロードするなりしましょう。
+Selenium を扱うような方の環境には入っていると思いますが……。
+
+.コマンド実行結果の例（成功）
 ```bash
 ---
 selenium install:
 from: https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar
-to: /usr/local/lib/node_modules/selenium-standalone/.selenium/selenium-server/3.4.0-server.jar
+to: C:\Users\syon\AppData\Roaming\npm\node_modules\selenium-standalone\.selenium\selenium-server\3.4.0-server.jar
 ---
 chrome install:
-from: https://chromedriver.storage.googleapis.com/2.29/chromedriver_mac64.zip
-to: /usr/local/lib/node_modules/selenium-standalone/.selenium/chromedriver/2.29-x64-chromedriver
+from: https://chromedriver.storage.googleapis.com/2.29/chromedriver_win32.zip
+to: C:\Users\syon\AppData\Roaming\npm\node_modules\selenium-standalone\.selenium\chromedriver\2.29-x64-chromedriver
+---
+ie install:
+from: https://selenium-release.storage.googleapis.com/3.4/IEDriverServer_x64_3.4.0.zip
+to: C:\Users\syon\AppData\Roaming\npm\node_modules\selenium-standalone\.selenium\iedriver\3.4.0-x64-IEDriverServer.exe
 ---
 firefox install:
-from: https://github.com/mozilla/geckodriver/releases/download/v0.16.0/geckodriver-v0.16.0-macos.tar.gz
-to: /usr/local/lib/node_modules/selenium-standalone/.selenium/geckodriver/0.16.0-x64-geckodriver
+from: https://github.com/mozilla/geckodriver/releases/download/v0.16.0/geckodriver-v0.16.0-win64.zip
+to: C:\Users\syon\AppData\Roaming\npm\node_modules\selenium-standalone\.selenium\geckodriver\0.16.0-x64-geckodriver
 ```
 
+デフォルトでは Chrome・IE・Firefox のドライバがインストールされます。
+（Mac の場合は IE がインストールされませんでした）
 
-== ブラウザドライバーのインストール
+=== ダウンロードしたファイルの配置場所（グローバルインストール）
 
+Windows::
+`%APPDATA%\Roaming\npm\node_modules\selenium-standalone\.selenium\`
 
-=== Google Chrome
-[source,bash]
-----
-$ npm install -g chromedriver
-----
-
-- コマンド`chromedriver`にPATHが通っていることが要件
-  * どのように紐付けているかは未調査
-- link:https://www.npmjs.com/package/chromedriver[npm - chromedriver]
-- link:https://sites.google.com/a/chromium.org/chromedriver/[ChromeDriver - WebDriver for Chrome]
-
-
-=== Microsoft Edge
-
-[source,bash]
-----
-$ npm install -g edgedriver
-----
-
-- link:https://www.npmjs.com/package/edgedriver[npm - edgedriver]
-- link:https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/[WebDriver - Microsoft Edge Development]
-
-
-=== Mozilla Firefox
-
-[source,bash]
-----
-$ npm install -g geckodriver
-----
-
-- link:https://www.npmjs.com/package/geckodriver[npm - geckodriver]
-- link:https://github.com/mozilla/geckodriver[mozilla/geckodriver]
-
-
-=== Opera
-
-[source,bash]
-----
-$ npm install -g operadriver
-----
-
-- link:https://www.npmjs.com/package/operadriver[npm - operadriver]
-- link:https://github.com/operasoftware/operachromiumdriver[operasoftware/operachromiumdriver]
-
-
-=== Safari
-
-(未調査)
-
-- link:https://webkit.org/blog/6900/webdriver-support-in-safari-10/[WebDriver Support in Safari 10 | WebKit]
-
-
+Mac::
+`/usr/local/lib/node_modules/selenium-standalone/.selenium/`
 
 == Seleniumサーバの開始
 
