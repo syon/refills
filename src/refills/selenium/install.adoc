@@ -4,16 +4,45 @@ bid: selenium
 rcd: install
 srcpath: selenium/install.adoc
 title: Seleniumとブラウザドライバーのインストールと使い方
-date: 2017.6.8
+date: 2017.6.10
 layout: refill.jade
 ---
 
-npm (Node.js) を使った例です。
+この記事では、npm (Node.js) の `selenium-standalone` による
+Selenium 本体と各種ブラウザドライバーのインストール方法、その使い方を説明します。
+
+- link:https://github.com/vvo/selenium-standalone[]
+
+
+== selenium-standalone でできること
+
+Selenium Standalone Server のインストール::
+link:http://www.seleniumhq.org/download/[SeleniumHQ 公式のページ] でも案内されている
+Selenium の本体をダウンロードしてくれます。
+- `selenium-server-standalone-3.4.0.jar`
+    * from: https://selenium-release.storage.googleapis.com
+
+Browser Drivers のインストール::
+下記のような各種ブラウザのドライバをダウンロードしてくれます。
+対象のブラウザやそのバージョンは設定ファイルで指定することもできます。
+- `2.29-x64-chromedriver`
+    * from: https://chromedriver.storage.googleapis.com
+- `3.4.0-x64-IEDriverServer.exe`
+    * from: https://selenium-release.storage.googleapis.com
+- `0.16.0-x64-geckodriver`
+    * from: https://github.com/mozilla/geckodriver/releases
+
+Selenium Standalone Server のスタート::
+ブラウザの自動操作環境を提供するサーバを開始します。
+これが起動している状態でないと、スクリプトでブラウザを操作することができません。
+
+
+== selenium-standalone のグローバルインストール
+
+まずは手軽に試すことのできるグローバルインストールの方法を説明します。
+任意のディレクトリで以下のコマンドを実行してください。
 オプション `-g` を指定してグローバルインストールすることで、
-どのディレクトリからでも起動できるようにしています。
-
-
-== Seleniumのインストール
+どのディレクトリからでも Selenium のサーバを起動できるようにしています。
 
 [source,bash]
 ----
@@ -22,7 +51,21 @@ $ npm install -g selenium-standalone@latest
 $ selenium-standalone install
 ----
 
-- link:https://www.npmjs.com/package/selenium-standalone[npm - selenium-standalone]
+.コマンド実行結果の例
+```bash
+---
+selenium install:
+from: https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar
+to: /usr/local/lib/node_modules/selenium-standalone/.selenium/selenium-server/3.4.0-server.jar
+---
+chrome install:
+from: https://chromedriver.storage.googleapis.com/2.29/chromedriver_mac64.zip
+to: /usr/local/lib/node_modules/selenium-standalone/.selenium/chromedriver/2.29-x64-chromedriver
+---
+firefox install:
+from: https://github.com/mozilla/geckodriver/releases/download/v0.16.0/geckodriver-v0.16.0-macos.tar.gz
+to: /usr/local/lib/node_modules/selenium-standalone/.selenium/geckodriver/0.16.0-x64-geckodriver
+```
 
 
 == ブラウザドライバーのインストール
