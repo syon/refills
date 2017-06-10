@@ -4,7 +4,7 @@ bid: docker
 rcd: docker-snippets
 srcpath: docker/docker-snippets.adoc
 title: Docker Snippets
-date: 2017.5.1
+date: 2017.6.10
 layout: refill.jade
 ---
 
@@ -14,9 +14,9 @@ layout: refill.jade
 
 [source,bash]
 ----
-$ docker pull node:6.10
+$ docker pull node:8
 
-$ docker run -it --rm -v (pwd):/app node:6.10 bash
-root@b679c821674a:/# node -v
-v6.10.2
+$ docker run -it --rm -v (pwd):/app node:8 bash
+root@bc1c3b2e6b78:/# node -v
+v8.1.0
 ----
