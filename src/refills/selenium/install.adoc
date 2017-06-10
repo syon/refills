@@ -84,7 +84,7 @@ to: C:\Users\syon\AppData\Roaming\npm\node_modules\selenium-standalone\.selenium
 デフォルトでは Chrome・IE・Firefox のドライバがインストールされます。
 （Mac の場合は IE がインストールされませんでした）
 
-=== ダウンロードしたファイルの配置場所（グローバルインストール）
+=== ダウンロードしたファイルの配置場所（グローバルインストール時）
 
 Windows::
 `%APPDATA%\Roaming\npm\node_modules\selenium-standalone\.selenium\`
@@ -92,12 +92,83 @@ Windows::
 Mac::
 `/usr/local/lib/node_modules/selenium-standalone/.selenium/`
 
-== Seleniumサーバの開始
+=== Seleniumサーバの開始（グローバルインストール時）
+
+```bash
+$ selenium-standalone start
+```
+
+
+== selenium-standalone のローカルインストール
+
+プロジェクトごとに管理したい場合は、以下のようにします。
 
 [source,bash]
 ----
-$ selenium-standalone start
+$ npm install --save selenium-standalone
 ----
+
+プロジェクトで Selenium を扱うのであれば、おそらくブラウザドライバーの種類やバージョンの定義が必要になるかと思います。
+オプション `--config=config.js` で設定することができます。
+
+.config.js
+```js
+module.exports = {
+  drivers: {
+    chrome: {
+      version: '2.29',
+      arch: process.arch,
+      baseURL: 'https://chromedriver.storage.googleapis.com'
+    },
+    ie: {
+      version: '3.3.0',
+      arch: 'ia32',
+      baseURL: 'https://selenium-release.storage.googleapis.com'
+    },
+  },
+  // proxy: 'http://proxyserver:8080',
+}
+```
+
+version:: ブラウザドライバーのバージョン（≠ブラウザのバージョン）
+arch:: ブラウザドライバーのbit数 `'x64'` または `'ia32'` +
+（`process.arch`は実行マシンの環境から自動取得）
+baseURL:: ブラウザドライバーのダウンロードサイトURL
+
+proxy::
+インターネットからのダウンロードにプロキシ接続が必要な場合に設定することができます。
+未定義の場合は環境変数 `http_proxy` / `https_proxy` も参照されるようです。
+
+.package.json（抜粋）
+```js
+  "scripts": {
+    "selenium-install": "selenium-standalone install --config=config.js",
+    "selenium-start": "selenium-standalone start --config=config.js"
+  },
+  "dependencies": {
+    "selenium-standalone": "^6.4.1"
+  }
+```
+
+.ブラウザドライバーのローカルインストール
+```bash
+$ npm run selenium-install
+```
+
+=== ダウンロードしたファイルの配置場所（ローカルインストール時）
+
+Windows::
+`node_modules\selenium-standalone\.selenium\`
+
+Mac::
+`node_modules/selenium-standalone/.selenium/`
+
+
+=== Seleniumサーバの開始（ローカルインストール時）
+
+```bash
+$ npm run selenium-start
+```
 
 
 == Seleniumサーバ 開始オプション
