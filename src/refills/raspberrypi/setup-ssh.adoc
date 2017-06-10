@@ -1,0 +1,27 @@
+---
+rid: 1497055
+bid: raspberrypi
+rcd: setup-ssh
+srcpath: raspberrypi/setup-ssh.adoc
+title: SSH接続の設定方法
+date: 2017.6.8
+layout: refill.jade
+---
+
+```bash
+$ ssh pi@192.168.0.26
+ssh: connect to host 192.168.0.26 port 22: Connection refused
+```
+
+[quote, http://downloads.raspberrypi.org/raspbian/release_notes.txt]
+2016-11-25: +
+* SSH disabled by default; can be enabled by creating a file with name "ssh" in boot partition
+
+.Terminal
+```bash
+$ sudo raspi-config
+```
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201706/raspi-config1.png[raspi-config]
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201706/raspi-config2.png[raspi-config]
