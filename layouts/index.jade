@@ -21,11 +21,9 @@ block title_ogp
 
 block body
 
-  article#article
+  header.site-head
+    include _site-header.jade
 
-    .title
-      h1.r-title!= title
-
-    div!= contents
+  article#article!= contents
 
     include _article-footer.jade
