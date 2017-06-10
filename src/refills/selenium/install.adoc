@@ -109,7 +109,7 @@ $ npm install --save selenium-standalone
 ----
 
 プロジェクトで Selenium を扱うのであれば、おそらくブラウザドライバーの種類やバージョンの定義が必要になるかと思います。
-オプション `--config=config.js` で設定することができます。
+設定ファイル `config.js` を用意しましょう。
 
 .config.js
 ```js
@@ -139,6 +139,11 @@ proxy::
 インターネットからのダウンロードにプロキシ接続が必要な場合に設定することができます。
 未定義の場合は環境変数 `http_proxy` / `https_proxy` も参照されるようです。
 
+
+=== npm を介した Selenium コマンドの実行
+
+用意した設定ファイルは、オプション `--config=config.js` で指定することができます。
+
 .package.json（抜粋）
 ```js
   "scripts": {
@@ -154,6 +159,7 @@ proxy::
 ```bash
 $ npm run selenium-install
 ```
+
 
 === ダウンロードしたファイルの配置場所（ローカルインストール時）
 
