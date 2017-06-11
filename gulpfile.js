@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var gulpsmith = require('gulpsmith');
 var gulp_front_matter = require('gulp-front-matter');
 var del = require('del');
+var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
 
 var DEST_DIR = './refills';
@@ -22,6 +23,25 @@ gulp.task('css', () => {
     .pipe(postcss(plugins))
     .pipe(gulp.dest(`${DEST_DIR}/assets`));
 });
+
+gulp.task('css-concat', () => {
+  return gulp.src([
+      `${DEST_DIR}/assets/vendor/prism.css`,
+      `${DEST_DIR}/assets/app.css`,
+    ])
+    .pipe(concat('bundle.css'))
+    .pipe(gulp.dest(`${DEST_DIR}/assets`));
+});
+
+gulp.task('assets-after', () => {
+  return del([
+    `${DEST_DIR}/assets/vendor/prism.css`,
+    `${DEST_DIR}/assets/_yoi.css`,
+    `${DEST_DIR}/assets/_yoi-asciidoc.css`,
+    `${DEST_DIR}/assets/app.css`,
+  ]);
+});
+
 
 gulp.task('metalsmith', () => {
   var Metalsmith   = require('metalsmith');
@@ -119,5 +139,5 @@ gulp.task('metalsmith', () => {
 });
 
 gulp.task('default', () => {
-  runSequence('clean', 'metalsmith', 'css');
+  runSequence('clean', 'metalsmith', 'css', 'css-concat', 'assets-after');
 });

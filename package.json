@@ -33,6 +33,7 @@
     "run-sequence": "^1.2.2"
   },
   "devDependencies": {
+    "gulp-concat": "^2.6.1",
     "serve": "^2.1.2"
   }
 }
