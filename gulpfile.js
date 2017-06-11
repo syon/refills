@@ -3,6 +3,7 @@ var gulpsmith = require('gulpsmith');
 var gulp_front_matter = require('gulp-front-matter');
 var del = require('del');
 var concat = require('gulp-concat');
+var minifyCSS = require('gulp-clean-css');
 var runSequence = require('run-sequence');
 
 var DEST_DIR = './refills';
@@ -30,6 +31,7 @@ gulp.task('css-concat', () => {
       `${DEST_DIR}/assets/app.css`,
     ])
     .pipe(concat('bundle.css'))
+    .pipe(minifyCSS())
     .pipe(gulp.dest(`${DEST_DIR}/assets`));
 });
 
