@@ -317,7 +317,7 @@ __webpack.config.js（抜粋）__
 
 別の記事にまとめましたので、こちらを参照ください。
 
-- [GitHub Pages :: Webpack & Wercker 自動デプロイ \| Refills](/refills/github-pages/autodeploy-wercker-webpack/)
+- [GitHub Pages :: Webpack & Wercker 自動デプロイ \| Refills](/refills/rid/1481296/)
 
 
 ## Dependencies
