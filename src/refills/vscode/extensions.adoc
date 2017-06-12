@@ -11,6 +11,16 @@ layout: refill.jade
 :experimental:
 
 
+== link:https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync[Settings Sync]
+> Synchronize Settings, Snippets, Themes, File Icons, Launch, Keybindings, Workspaces and Extensions Across Multiple Machines Using Github Gist.
+
+Public Gist で共有も可能。
+
+
+== link:https://marketplace.visualstudio.com/items?itemName=robertohuertasm.vscode-icons[vscode-icons]
+> Icons for Visual Studio Code
+
+
 == link:https://marketplace.visualstudio.com/items?itemName=siegebell.incremental-search[Incremental Search]
 
 ファイル内の文字列に対してインクリメンタルサーチを行い、目的の箇所に素早く到達します。
