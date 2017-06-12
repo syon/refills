@@ -1,0 +1,35 @@
+---
+rid: 1497270
+bid: vscode
+rcd: extensions
+srcpath: vscode/extensions.adoc
+title: おすすめ拡張機能
+date: 2017.6.12
+layout: refill.jade
+---
+
+:experimental:
+
+
+== link:https://marketplace.visualstudio.com/items?itemName=siegebell.incremental-search[Incremental Search]
+
+ファイル内の文字列に対してインクリメンタルサーチを行い、目的の箇所に素早く到達します。
+はじめに kbd:[Ctrl+i] で入力欄を表示、文字を打ち込むごとに該当箇所がハイライトされカーソルが移動します。
+マッチする箇所が複数ある場合、次の箇所にフォーカスを移動するには再度 kbd:[Ctrl+i] を押します。
+動作を逆向きにするには kbd:[Ctrl+u] を押します。正規表現も利用できます。
+
+
+== link:https://marketplace.visualstudio.com/items?itemName=wmaurer.vscode-jumpy[jumpy]
+
+image::https://cloud.githubusercontent.com/assets/2899448/19660934/0481c44c-9a32-11e6-87cc-1f8913922ccb.gif[]
+
+ファイル内に存在する単語それぞれに対してラベルを一時的に表示し、キーボードで指定することで該当箇所にカーソルをジャンプします。
+ジャンプ先は単語モードのほかに行モードがあります。
+
+
+== link:https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow[indent-rainbow]
+
+image::https://oderwat.gallerycdn.vsassets.io/extensions/oderwat/indent-rainbow/0.6.1/1492182529933/Microsoft.VisualStudio.Services.Icons.Default[]
+
+インデントの階層レベルを、背景色の違いを使ってわかりやすくします。
+名前の通りデフォルト設定ではレインボーですが、ユーザ設定にて色・透明度・パターン数を変更可能です。
