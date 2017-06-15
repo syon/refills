@@ -233,26 +233,6 @@ article {
     margin-top: .5rem;
   }
 
-  code {
-    padding: .2em;
-    margin: 0;
-    background-color: #f7f7f7;
-    &[class^="language-"] {
-      font-size: .85em;
-    }
-  }
-
-  pre {
-    overflow: auto;
-    word-wrap: normal;
-    margin: 0 0 1.275em;
-    padding: .45em 1em;
-    background: #f7f7f7;
-    code {
-      display: block;
-    }
-  }
-
   blockquote {
     padding-left: 1em;
     font-style: italic;
