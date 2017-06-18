@@ -1,0 +1,19 @@
+---
+rid: 1497767
+bid: javascript
+rcd: modern-code-tips
+srcpath: javascript/modern-code-tips.md
+title: モダン CODE TIPS
+date: 2016.6.18
+layout: refill.jade
+---
+
+=== import
+
+- link:https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/import[import - JavaScript | MDN]
+
+=== 別名をつける
+
+```js
+import { member as alias } from "module-name";
+```
