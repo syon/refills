@@ -1,0 +1,15 @@
+---
+rid: 1498316
+bid: command-prompt
+rcd: batch-tips
+srcpath: command-prompt/batch-tips.adoc
+title: "バッチ TIPS"
+date: 2017.6.24
+layout: refill.jade
+---
+
+== pwd
+
+```batch
+SET CURRENT_DIR=%cd%
+```
