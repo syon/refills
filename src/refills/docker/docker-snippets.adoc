@@ -20,3 +20,26 @@ $ docker run -it --rm -v (pwd):/app node:8 bash
 root@bc1c3b2e6b78:/# node -v
 v8.1.0
 ----
+
+== 使っていない container の一括削除
+
+```bash
+# 起動中リスト
+$ docker ps
+
+# 停止中含むリスト
+$ docker ps -a
+
+# 使っていないコンテナを一括削除
+$ docker container prune
+```
+
+== 使っていない image の一括削除
+
+```bash
+# 現状の確認
+$ docker images
+
+# 使っていないイメージを一括削除
+$ docker image prune
+```
