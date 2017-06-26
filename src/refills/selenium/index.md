@@ -32,8 +32,10 @@ layout: binder.jade
 
 
 ## [Selenide](http://selenide.org/)
+http://selenide.org/documentation.html
 
-- http://selenide.org/documentation.html
+- [Selenide～Javaで超簡単・簡潔にUIテストを書く～ \- Qiita](http://qiita.com/tatesuke/items/589e30ab9b3dc7037e26)
+- [Java製SeleniumラッパーのSelenideを使ってみた \- Qiita](http://qiita.com/nyasba/items/6ab42fc73a912426ee5d)
 
 
 ## [WebdriverIO](http://webdriver.io/)
