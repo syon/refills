@@ -10,15 +10,11 @@ date: 2017.6.8
 layout: binder.jade
 ---
 
-## npm
+selenium-standalone
+: [vvo/selenium\-standalone ](https://github.com/vvo/selenium-standalone)
 
-- [selenium\-server\-standalone\-jar](https://www.npmjs.com/package/selenium-server-standalone-jar)
-- [selenium\-standalone](https://www.npmjs.com/package/selenium-standalone)
-
-
-## selenium-standalone
-
-- [vvo/selenium\-standalone ](https://github.com/vvo/selenium-standalone)
+[SeleniumHQ/docker-selenium](https://github.com/SeleniumHQ/docker-selenium)
+: Docker images for Selenium Standalone Server
 
 
 ## articles
