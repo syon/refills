@@ -31,6 +31,11 @@ layout: binder.jade
 - [【Selenium】色んなブラウザを動かす（PC編） \- ネーミングセンスがない！](http://unagi-tabetai.hatenablog.com/entry/2015/05/25/125030) Java実装
 
 
+## [Selenide](http://selenide.org/)
+
+- http://selenide.org/documentation.html
+
+
 ## [WebdriverIO](http://webdriver.io/)
 Selenium 2\.0 javascript bindings for nodejs  
 ※ __wdio__ == webdriverio
