@@ -16,6 +16,7 @@ block title_ogp
 
   meta(property="og:type", content="article")
   meta(property="og:url", content="#{site.baseurl}/rid/#{rid}/")
+  link(rel="canonical" href="#{site.baseurl}/rid/#{rid}/")
 
   if (ogpimg)
     meta(property="og:image", content="#{site.s3url}/#{ogpimg}")
