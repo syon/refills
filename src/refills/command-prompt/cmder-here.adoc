@@ -81,6 +81,13 @@ image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/
 
 image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201706/cmder-property.png[Cmder Property]
 
+
 '''
+
+
+cf.::
+- link:https://github.com/cmderdev/cmder/issues/91[How to start in a given directory · Issue #91 · cmderdev/cmder]
+- link:https://github.com/cmderdev/cmder/issues/1063[cmder here not working with windows bash · Issue #1063 · cmderdev/cmder]
+
 
 おわり
