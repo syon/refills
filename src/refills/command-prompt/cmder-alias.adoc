@@ -1,0 +1,40 @@
+---
+rid: 1498647
+bid: command-prompt
+rcd: cmder-alias
+srcpath: command-prompt/cmder-alias.adoc
+title: Cmderで便利なエイリアス
+date: 2017.6.28
+layout: refill.jade
+---
+
+== Open explorer
+
+引数に指定したパスをエクスプローラで開きます。
+
+.path/to/cmder/bin/open.cmd
+```batch
+@ECHO OFF
+explorer %1
+@ECHO ON
+```
+
+なお、Cmder にはデフォルトで `e.` コマンドが用意されており、
+カレントディレクトリをエクスプローラで開くことができます。
+`explorer .` と同じ意味です。（ドットはカレントディレクトリ）
+
+.in cmder
+```batch
+e.
+```
+
+== Edit hosts
+
+管理者権限で編集したいときに呼び出します。
+
+.path/to/cmder/bin/hosts.cmd
+```bash
+@ECHO OFF
+notepad %windir%/System32/drivers/etc/hosts
+@ECHO ON
+```

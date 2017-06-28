@@ -1,0 +1,86 @@
+---
+rid: 1498646
+bid: command-prompt
+rcd: cmder-here
+srcpath: command-prompt/cmder-here.adoc
+title: Cmderをエクスプローラの右クリックメニューから開く『Cmder Here』
+ogpimg: chronicle/201706/cmder-here.png
+date: 2017.6.28
+layout: refill.jade
+---
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201706/cmder-here.png[Cmder Here in Context Menu]
+
+
+== 前提環境
+
+link:https://github.com/cmderdev/cmder/releases[Releases · cmderdev/cmder]::
+Cmder v1.3.2 (2016-12-01)
+
+
+== "Cmder Here" の追加方法
+
+. コマンドプロンプト、または Cmder を*管理者権限*で開きます。
+. Cmder を配置したディレクトリに移動します。
+. 次のコマンドを実行します。
+```
+.\cmder.exe /REGISTER ALL
+```
+
+もし "Access Denied" というメッセージが出たら、*管理者権限*で実行できているか確認してください。
+
+エクスプローラウィンドウもしくはフォルダで右クリックした際に "Cmder Here" がコンテキストメニューに追加されています。
+
+出典::
+link:https://github.com/cmderdev/cmder#shortcut-to-open-cmder-in-a-chosen-folder[Shortcut to open Cmder in a chosen folder]
+
+
+== "Cmder Here" が期待通り動くように設定する
+
+残念ながら、現在のところ（2017/06/28）上記の通り "Cmder Here" を登録しただけでは期待通りに動作しません。
+以下のように設定を変更すると動作するようになりました。
+
+タイトルバーを右クリックして Settings... を選択::
+[]
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201706/cmder-settings.png[Cmder Settings]
+
+Startup > Tasks > 変更したいタスクを選択::
+[]
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201706/cmder-settings-edit.png[Cmder Settings Edit]
+
+画像内の赤色で示している箇所を、画像の通りになるように変更します。
+`%USERPROFILE%` を `%CMDER_START%` に置き換えただけです。
+
+WARNING: 1文字目のアスタリスクの有無に注意してください。これは管理者権限で実行するかどうかを決める重要な文字です。
+
+.before
+```batch
+*cmd /k "%ConEmuDir%\..\init.bat"  -new_console:d:%USERPROFILE%
+```
+
+.after
+```batch
+*cmd /k "%ConEmuDir%\..\init.bat"  -new_console:d:%CMDER_START%
+```
+
+以下は設定変更後に "Cmder Here" を呼び出した際のキャプチャです。
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201706/cmder-here-fixed.png[Cmder Here fixed]
+
+
+== 直接 Cmder を呼び出したときのディレクトリを指定する
+
+上記の設定を変更すると、直接 Cmder を呼び出した場合はどうなるのでしょうか。
+答えはこの画像の通り Cmder 本体のパスとなります。
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201706/cmder-direct.png[Cmder Direct]
+
+これを任意のディレクトリにするには、Cmder 呼び出し時に引数で指定します。
+例えば、タスクバーにピン留めしている場合は以下の通りにします。
+この他、各種ランチャから Cmder を呼び出している場合も同様です。
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201706/cmder-property.png[Cmder Property]
+
+'''
+
+おわり
