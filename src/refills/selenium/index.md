@@ -32,6 +32,23 @@ http://selenide.org/documentation.html
 
 - [Selenide～Javaで超簡単・簡潔にUIテストを書く～ \- Qiita](http://qiita.com/tatesuke/items/589e30ab9b3dc7037e26)
 - [Java製SeleniumラッパーのSelenideを使ってみた \- Qiita](http://qiita.com/nyasba/items/6ab42fc73a912426ee5d)
+- [Selenideでテストコードを書いてみた \- Qiita](http://qiita.com/nyakome/items/207daf3050809c269e8e)
+
+### Frame
+- [selenide/FramesTest\.java at master · codeborne/selenide](https://github.com/codeborne/selenide/blob/master/src/test/java/integration/FramesTest.java)
+
+### `switchTo`
+```
+switchTo().defaultContent();
+
+switchTo().innerFrame("parentFrame");
+
+switchTo().innerFrame("parentFrame", "childFrame_2", "childFrame_2_1");
+
+switchTo().frame("topFrame");
+
+switchTo().frame(0);
+```
 
 
 ## [WebdriverIO](http://webdriver.io/)
