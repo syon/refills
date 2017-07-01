@@ -34,6 +34,22 @@ http://selenide.org/documentation.html
 - [Java製SeleniumラッパーのSelenideを使ってみた \- Qiita](http://qiita.com/nyasba/items/6ab42fc73a912426ee5d)
 - [Selenideでテストコードを書いてみた \- Qiita](http://qiita.com/nyakome/items/207daf3050809c269e8e)
 
+### Configuration
+
+```java
+import static com.codeborne.selenide.Selenide.*;
+
+System.setProperty( "webdriver.chrome.driver", "C:/path/to/chromedriver.exe" );
+System.setProperty( "chromeoptions.args", "--headless --disable-gpu" );
+Configuration.browser = WebDriverRunner.CHROME;
+Configuration.browserSize = "1280x1024";
+Configuration.timeout = 10000;
+```
+
+Chrome 起動オプション
+: [List of Chromium Command Line Switches « Peter Beverloo](http://peter.sh/experiments/chromium-command-line-switches/)
+
+
 ### Frame
 - [selenide/FramesTest\.java at master · codeborne/selenide](https://github.com/codeborne/selenide/blob/master/src/test/java/integration/FramesTest.java)
 
