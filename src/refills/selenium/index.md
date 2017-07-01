@@ -30,6 +30,7 @@ selenium-standalone
 ## [Selenide](http://selenide.org/)
 http://selenide.org/documentation.html
 
+- [Selenide Java Library：簡単なことは簡単に，Web UI テスト自動化の敷居を下げ，生産性をあげる魔法の Wrapper \- Qiita](http://qiita.com/kazuki-ma/items/d6432fc41c82538a61bd)
 - [Selenide～Javaで超簡単・簡潔にUIテストを書く～ \- Qiita](http://qiita.com/tatesuke/items/589e30ab9b3dc7037e26)
 - [Java製SeleniumラッパーのSelenideを使ってみた \- Qiita](http://qiita.com/nyasba/items/6ab42fc73a912426ee5d)
 - [Selenideでテストコードを書いてみた \- Qiita](http://qiita.com/nyakome/items/207daf3050809c269e8e)
