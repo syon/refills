@@ -120,3 +120,16 @@ ____
 ____
 ４世代と７年前に私たちの祖先たちはこの大陸に、自由の理念から生まれ、全ての人が平等に創られているという命題に捧げられた一つの新しい国を生み出しました。
 ____
+
+
+== パススルー ― Passthrough
+
+++++
+<p>
+Content in a passthrough block is passed to the output unprocessed.
+That means you can include raw HTML, like this embedded Gist:
+</p>
+
+<script src="http://gist.github.com/mojavelinux/5333524.js">
+</script>
+++++
