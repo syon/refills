@@ -4,6 +4,7 @@ bid: javascript
 rcd: electron-base
 srcpath: javascript/electron-base.adoc
 title: HTTP×Electronアプリのひな形の作り方から配布まで
+category:
 date: 2017.7.8
 layout: refill.jade
 ---

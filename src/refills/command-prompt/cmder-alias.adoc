@@ -4,6 +4,7 @@ bid: command-prompt
 rcd: cmder-alias
 srcpath: command-prompt/cmder-alias.adoc
 title: Cmderで便利なエイリアス
+category: コマンドプロンプト
 date: 2017.6.28
 layout: refill.jade
 ---

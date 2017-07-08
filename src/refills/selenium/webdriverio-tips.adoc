@@ -4,6 +4,7 @@ bid: selenium
 rcd: webdriverio-tips
 srcpath: selenium/webdriverio-tips.adoc
 title: WebdriverIO 逆引き Code Tips
+category: Selenium
 date: 2017.6.4
 layout: refill.jade
 ---

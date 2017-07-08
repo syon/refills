@@ -4,6 +4,7 @@ bid: javascript
 rcd: modern-code-tips
 srcpath: javascript/modern-code-tips.md
 title: モダン CODE TIPS
+category: JavaScript
 date: 2016.6.18
 layout: refill.jade
 ---

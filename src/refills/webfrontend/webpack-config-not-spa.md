@@ -4,6 +4,7 @@ bid: webfrontend
 rcd: webpack-config-not-spa
 srcpath: webfrontend/webpack-config-not-spa.md
 title: SPA ではない Webpack 設定サンプル
+category:
 date: 2016.12.10
 layout: refill.jade
 ---

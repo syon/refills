@@ -4,6 +4,7 @@ bid: squid-proxy
 rcd: errorpage
 srcpath: squid-proxy/errorpage.md
 title: エラーページのカスタマイズ
+category: Squid Proxy
 date: 2016.4.29
 layout: refill.jade
 ---

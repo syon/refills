@@ -4,6 +4,7 @@ bid: command-prompt
 rcd: batch-tips
 srcpath: command-prompt/batch-tips.adoc
 title: "バッチ TIPS"
+category: コマンドプロンプト
 date: 2017.6.24
 layout: refill.jade
 ---

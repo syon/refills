@@ -4,6 +4,7 @@ bid: squid-proxy
 rcd: directory
 srcpath: squid-proxy/directory.md
 title: Squidのディレクトリ
+category: Squid Proxy
 date: 2016.4.29
 layout: refill.jade
 ---

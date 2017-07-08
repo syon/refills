@@ -4,6 +4,7 @@ bid: squid-proxy
 rcd: install
 srcpath: squid-proxy/install.md
 title: Squidのインストール
+category: Squid Proxy
 date: 2016.4.29
 layout: refill.jade
 ---

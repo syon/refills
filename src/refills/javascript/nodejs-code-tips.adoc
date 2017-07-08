@@ -4,6 +4,7 @@ bid: javascript
 rcd: nodejs-code-tips
 srcpath: javascript/nodejs-code-tips.adoc
 title: Node.js CODE TIPS
+category: JavaScript
 date: 2017.4.19
 layout: refill.jade
 ---

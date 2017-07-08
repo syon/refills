@@ -4,6 +4,7 @@ bid: asciidoc
 rcd: article-template
 srcpath: asciidoc/article-template.md
 title: AsciiDoc Article Template
+category:
 date: 2017.6.4
 layout: refill.jade
 ---

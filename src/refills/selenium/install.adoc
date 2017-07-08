@@ -4,6 +4,7 @@ bid: selenium
 rcd: install
 srcpath: selenium/install.adoc
 title: Seleniumとブラウザドライバーのインストールと使い方
+category:
 date: 2017.6.10
 layout: refill.jade
 ---

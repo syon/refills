@@ -4,6 +4,7 @@ bid: ergodox
 rcd: keycode
 srcpath: ergodox/keycode.md
 title: キーコードまとめ
+category: ErgoDox
 date: 2016.8.14
 layout: refill.jade
 ---

@@ -4,6 +4,7 @@ bid: squid-proxy
 rcd: tips
 srcpath: squid-proxy/tips.md
 title: TIPS
+category: Squid Proxy
 date: 2016.4.29
 layout: refill.jade
 ---

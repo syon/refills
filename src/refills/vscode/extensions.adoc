@@ -4,6 +4,7 @@ bid: vscode
 rcd: extensions
 srcpath: vscode/extensions.adoc
 title: おすすめ拡張機能
+category: VSCode
 date: 2017.6.12
 layout: refill.jade
 ---

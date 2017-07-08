@@ -4,6 +4,7 @@ bid: github-pages
 rcd: autodeploy-wercker-harp
 srcpath: github-pages/autodeploy-wercker-harp.md
 title: Harp & Wercker 自動デプロイ
+category: GitHub Pages
 date: 2016.5.4
 layout: refill.jade
 ---

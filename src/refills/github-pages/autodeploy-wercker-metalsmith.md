@@ -4,6 +4,7 @@ bid: github-pages
 rcd: autodeploy-wercker-metalsmith
 srcpath: github-pages/autodeploy-wercker-metalsmith.md
 title: Metalsmith & Wercker 自動デプロイ
+category: GitHub Pages
 date: 2016.5.6
 layout: refill.jade
 ---

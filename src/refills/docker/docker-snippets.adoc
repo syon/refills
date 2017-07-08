@@ -4,6 +4,7 @@ bid: docker
 rcd: docker-snippets
 srcpath: docker/docker-snippets.adoc
 title: Docker Snippets
+category:
 date: 2017.6.10
 layout: refill.jade
 ---

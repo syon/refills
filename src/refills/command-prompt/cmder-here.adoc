@@ -4,6 +4,7 @@ bid: command-prompt
 rcd: cmder-here
 srcpath: command-prompt/cmder-here.adoc
 title: Cmderをエクスプローラの右クリックメニューから開く『Cmder Here』
+category: コマンドプロンプト
 ogpimg: chronicle/201706/cmder-here.png
 date: 2017.6.28
 layout: refill.jade

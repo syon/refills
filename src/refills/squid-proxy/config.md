@@ -4,6 +4,7 @@ bid: squid-proxy
 rcd: config
 srcpath: squid-proxy/config.md
 title: Squidの設定
+category: Squid Proxy
 date: 2016.4.29
 layout: refill.jade
 ---

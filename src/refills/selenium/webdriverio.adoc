@@ -4,6 +4,7 @@ bid: selenium
 rcd: webdriverio
 srcpath: selenium/webdriverio.adoc
 title: WebdriverIO 覚書き
+category: Selenium
 date: 2017.6.4
 layout: refill.jade
 ---

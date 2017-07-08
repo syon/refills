@@ -3,7 +3,8 @@ rid: 1493211
 bid: command-prompt
 rcd: xcopy
 srcpath: command-prompt/xcopy.adoc
-title: "【 xcopy 】:: Windowsコマンド"
+title: "【 xcopy 】"
+category: Windowsコマンド
 date: 2017.4.26
 layout: refill.jade
 ---

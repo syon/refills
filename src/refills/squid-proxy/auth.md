@@ -4,6 +4,7 @@ bid: squid-proxy
 rcd: auth
 srcpath: squid-proxy/auth.md
 title: auth
+category: Squid Proxy
 date: 2016.5.4
 layout: refill.jade
 ---
