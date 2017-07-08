@@ -1,7 +1,10 @@
 extends layout
 
 block title_ogp
-  - var pageTitle = `${title} | ${site.name}`
+  if (category)
+    - var pageTitle = `${title} :: ${category} | ${site.name}`
+  else
+    - var pageTitle = `${title} | ${site.name}`
 
   title= pageTitle
   meta(property="og:type" content="article")
@@ -36,11 +39,16 @@ block body
       .wip WIP ― 記述途中です
 
     .a-title
+      .r-meta-cate
+        if (category)
+          span.r-category= category
+      
       h1.r-title!= title
       
-      - var repo = 'https://github.com/syon/refills/commits/master/src/refills'
-      a.r-date(href="#{repo}/#{srcpath}" target="_blank")
-        span= date
+      .r-meta-date
+        - var repo = 'https://github.com/syon/refills/commits/master/src/refills'
+        a.r-date(href="#{repo}/#{srcpath}" target="_blank")
+          span= date
 
     article.main!= contents
 
