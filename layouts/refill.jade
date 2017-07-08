@@ -1,10 +1,7 @@
 extends layout
 
 block title_ogp
-  if (bid)
-    - var pageTitle = `${title} :: ${summary[bid].info.title} | ${site.name}`
-  else
-    - var pageTitle = `${title} | ${site.name}`
+  - var pageTitle = `${title} | ${site.name}`
 
   title= pageTitle
   meta(property="og:type" content="article")
