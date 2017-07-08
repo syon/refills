@@ -2,6 +2,9 @@
   &.no-shadow img {
     box-shadow: none;
   }
+  &.full-width img {
+    width: 100%;
+  }
 }
 
 .listingblock {
@@ -17,6 +20,14 @@
   }
 }
 
-.dlist .ulist > ul {
-  margin-top: 0;
+.dlist {
+  dt code {
+    font-style: normal;
+  }
+  dd > *:first-child {
+    margin-top: 0;
+  }
+  .ulist > ul {
+    margin-top: 0;
+  }
 }
