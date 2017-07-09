@@ -6,7 +6,7 @@ layout: index.jade
 h2 Recently updated refills
 
 .article-links
-  - each r in collections.recent
+  - each r in collections.all
     if r.rid
       a(href="/refills/rid/#{r.rid}/")
         .left

@@ -101,12 +101,6 @@ gulp.task('metalsmith', () => {
         })
         .use(draftsInDev())
         .use(collections({
-          recent: {
-            pattern: 'refills/*/*.{md,adoc}',
-            sortBy: 'date',
-            limit: 10,
-            reverse: true
-          },
           all: {
             pattern: 'refills/*/*.{md,adoc}',
             sortBy: 'date',
