@@ -1,0 +1,41 @@
+---
+rid: 1499687
+bid: shell
+rcd: image-processing
+srcpath: shell/image-processing.adoc
+title: 画像処理コマンド 逆引きメモ
+category:
+date: 2017.7.10
+layout: refill.jade
+---
+
+== リサイズ
+
+=== 一括リサイズ
+
+フォルダ内のJPGファイルを幅500pxに変換します。
+縦横比は維持されます。
+
+```bash
+$ mogrify -resize 500 *.jpg
+```
+
+
+== 圧縮・最適化
+
+=== まとめて最適化
+
+フォルダ内のJPGファイルを一括で最適化します。
+*jpegtran* は ロスレス圧縮 です。
+
+.bash (fish-shell not works)
+```bash
+$ find . -name "*.jpg" -type f -exec jpegtran -copy none -optimize -outfile {} {} \;
+```
+
+
+== 参考
+
+- link:https://developers.google.com/speed/docs/insights/OptimizeImages?hl=ja[画像を最適化する  |  PageSpeed Insights  |  Google Developers]
+- link:http://qiita.com/bezeklik/items/05cc23c0b053706d4fea[Mozilla 製 JPEG エンコーダー「mozjpeg」 - Qiita]
+- link:http://yutorinote.com/mozjpeg/[mozjpeg(cjpeg, jpegtran)をWindowsで使って画像を最適化する | ゆとりの雑記帳]

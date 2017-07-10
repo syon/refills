@@ -1,10 +1,11 @@
 ---
-idx: fish-shell
-bid: fish-shell
+idx: shell
+bid: shell
 srcpath: shell/index.md
-title: fish shell
+title: shell
 rids:
   - fish-shell
-date: 2016.5.10
+  - image-processing
+date: 2017.7.10
 layout: binder.jade
 ---
