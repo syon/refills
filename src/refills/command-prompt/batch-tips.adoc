@@ -17,6 +17,30 @@ echo.
 ```
 
 
+== 実行結果を出力しない
+
+[quote, 'link:http://qiita.com/uhooi/items/b8b25761a5c4efe9025a[batファイルでコマンドの実行結果を出力しないようにする方法 - Qiita]']
+`>` はリダイレクトといい、出力先をコマンドプロンプトでなく指定したファイルに変更します。
+`nul` は空（のファイル）という意味で、書き込んでも何も起きません。
+つまり、`> nul` で出力先を空のファイルに変更することで、コマンドプロンプト上には何も出力されなくなります。 +
+`> nul` を付けただけだと、エラーメッセージは出力されてしまいます。
+さらに `2>&1` を付けることで、エラーメッセージも出力されなくなります。
+
+.例
+```batch
+C:\Windows\System32>mkdir hoge > nul
+
+C:\Windows\System32>mkdir hoge > nul
+サブディレクトリまたはファイル hoge は既に存在します。
+
+C:\Windows\System32>rmdir hoge
+
+C:\Windows\System32>mkdir hoge > nul 2>&1
+
+C:\Windows\System32>mkdir hoge > nul 2>&1
+```
+
+
 == pwd
 
 ```batch
