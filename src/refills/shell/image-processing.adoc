@@ -34,6 +34,12 @@ $ find . -name "*.jpg" -type f -exec jpegtran -copy none -optimize -outfile {} {
 ```
 
 
+== mozjpeg
+
+- link:https://mozjpeg.codelove.de/[mozjpeg | codelove]
+- link:https://mozjpeg.codelove.de/binaries.html[binaries - mozjpeg | codelove]
+
+
 == 参考
 
 - link:https://developers.google.com/speed/docs/insights/OptimizeImages?hl=ja[画像を最適化する  |  PageSpeed Insights  |  Google Developers]
