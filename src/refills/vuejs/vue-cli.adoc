@@ -51,6 +51,7 @@ $ vue init webpack-simple my-project
 
 == 単一ファイルコンポーネント
 
+[.no-shadow]
 image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201705/vue-component-with-preprocessors.png[Single File Component,,600]
 
 - link:https://jp.vuejs.org/v2/guide/single-file-components.html[単一ファイルコンポーネント - Vue.js]
