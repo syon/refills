@@ -92,6 +92,47 @@ p
 </style>
 ----
 
+=== jQueryを使う
+
+`jquery` をインストールして webpack にプラグインとして登録します。
+
+[source,bash]
+----
+$ npm install --save jquery
+----
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/vue-jquery-webpack.png[vue jquery webpack]
+
+.webpack.base.conf.js
+```js
+plugins: [
+  new webpack.ProvidePlugin({
+    $: 'jquery',
+  }),
+]
+```
+
+==== '$' is not defined`
+
+webpack プラグインだけ登録しても、 ESLint の設定をしないと動作しません。
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/vue-jquery-eslint-error.png[vue jquery eslint error]
+
+[quote]
+`✘  http://eslint.org/docs/rules/no-undef  '$' is not defined`
+
+ESLint の設定も変更してエラーが出ないようにします。
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/vue-jquery-eslint.png[vue jquery eslint]
+
+.eslintrc.js
+```js
+env: {
+  browser: true,
+  jquery: true,
+},
+```
+
 
 '''
 
