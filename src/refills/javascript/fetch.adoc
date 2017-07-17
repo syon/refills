@@ -5,7 +5,7 @@ rcd: fetch
 srcpath: javascript/fetch.adoc
 title: Fetch API まとめ
 category: JavaScript
-date: 2017.5.12
+date: 2017.7.17
 layout: refill.jade
 ---
 
@@ -86,6 +86,41 @@ fetch('/users', {
   body: fd,
 })
 ----
+
+=== POST :: jQuery と fetch API の違い
+
+jQuery:: Form Data
+
+fetch API:: Request Payload
+
+==== fetch API にて From Data でリクエストするには Content-Type を指定する
+
+```js
+headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
+```
+
+- link:https://gist.github.com/umamichi/1e1f2d48d5e2a85041033619ea44a730[umamichi/fetch APIでハマったこと.md]
+
+.fetch API - POST example
+```js
+import queryString from 'query-string';
+
+fetch('https://example.com', {
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+  },
+  method: 'POST',
+  body: queryString.stringify(this.query),
+}).then(res => res.json()).then((json) => {
+  console.log(json);
+}).catch((ex) => {
+  console.warn(ex);
+});
+```
+
+- link:https://github.com/sindresorhus/query-string[sindresorhus/query-string: Parse and stringify URL query strings]
+
 
 === Cookie
 
