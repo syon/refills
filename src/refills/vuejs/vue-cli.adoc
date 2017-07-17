@@ -133,6 +133,18 @@ env: {
 },
 ```
 
+=== Vue Router にてページタイトルを変更する
+
+.src/main.js
+```js
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title;
+  next();
+});
+```
+
+- link:https://github.com/vuejs/vue-router/issues/914[how to change document.title in vue-router? · Issue #914 · vuejs/vue-router]
+
 
 '''
 
