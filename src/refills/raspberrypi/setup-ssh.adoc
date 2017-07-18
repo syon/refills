@@ -4,6 +4,7 @@ bid: raspberrypi
 rcd: setup-ssh
 srcpath: raspberrypi/setup-ssh.adoc
 title: SSH接続の設定方法
+category: Raspberry Pi
 date: 2017.6.8
 layout: refill.jade
 ---
