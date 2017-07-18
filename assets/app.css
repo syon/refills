@@ -168,6 +168,12 @@ article {
       display: flex;
       align-items: center;
     }
+    span.r-category {
+      font-size: 1.4rem;
+      padding-left: 0.6em;
+      color: grey;
+      font-weight: normal;
+    }
     a {
       display: flex;
       align-items: center;

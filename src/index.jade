@@ -11,11 +11,11 @@ h2 Recently updated refills
       a(href="/refills/rid/#{r.rid}/")
         .left
           span.octicon.octicon-file-text
-          span #{r.title}
+          .r-title
+            span #{r.title}
+            if r.category
+              span.r-category :: #{r.category}
         .right
-          if (r.bid)
-            span.binder-ro
-              span #{summary[r.bid].info.title}
           span.date= r.date
 
 h2 Binders
