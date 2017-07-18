@@ -22,9 +22,12 @@
   }
   blockquote {
     padding-left: 1em;
-    margin: 1em 0 0.5em 2em;
+    margin: 1em 0 0 2em;
     font-size: 1.6rem;
     font-style: italic;
+  }
+  .paragraph p:last-child {
+    margin-bottom: 0;
   }
   .attribution {
     text-align: right;
