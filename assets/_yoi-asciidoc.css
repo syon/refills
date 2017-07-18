@@ -25,6 +25,7 @@
     margin: 1em 0 0 2em;
     font-size: 1.6rem;
     font-style: italic;
+    border: 0;
   }
   .paragraph p:last-child {
     margin-bottom: 0;

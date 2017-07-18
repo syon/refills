@@ -83,6 +83,15 @@ article {
     }
   }
 
+  blockquote {
+    margin-left: 0;
+    padding-left: 1em;
+    font-size: 1.6rem;
+    font-style: italic;
+    color: rgba(0,0,0,.6);
+    border-left: 2px solid #ddd;
+  }
+
 }
 
 a {
