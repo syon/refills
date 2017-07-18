@@ -7,6 +7,35 @@
   }
 }
 
+.quoteblock {
+  position: relative;
+  margin-bottom: 1em;
+  &:before {
+    content: "\201c";
+    position: absolute;
+    font-size: 10rem;
+    line-height: 1;
+    top: 0;
+    font-family: sans-serif;
+    color: #ddd;
+  }
+  blockquote {
+    padding-left: 1em;
+    margin: 1em 0 0.5em 40px;
+    font-size: 1.6rem;
+    font-style: italic;
+    color: rgba(0,0,0,.6);
+  }
+  .attribution {
+    text-align: right;
+    font-size: 1.4rem;
+    font-style: italic;
+    a {
+      padding-left: 0.5em;
+    }
+  }
+}
+
 .listingblock {
   .title {
     font-size: 0.8em;

@@ -243,13 +243,6 @@ article {
     margin-top: .5rem;
   }
 
-  blockquote {
-    padding-left: 1em;
-    font-style: italic;
-    color: rgba(0,0,0,.6);
-    border-left: 2px solid #ddd;
-  }
-
   a[href^="https://github.com"] {
     color: inherit;
     &:before {
