@@ -4,6 +4,7 @@ bid: ruby
 rcd: code-tips
 srcpath: ruby/code-tips.md
 title: CODE TIPS
+category: Ruby
 date: 2016.5.14
 layout: refill.jade
 ---
