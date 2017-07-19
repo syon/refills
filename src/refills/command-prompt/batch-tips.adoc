@@ -56,6 +56,13 @@ Hello
 ```
 
 
+== cmd.exe のエスケープ仕様
+
+解釈のフェーズによってエスケープ仕様が変わる。
+
+- link:http://thinca.hatenablog.com/entry/20100210/1265813598[cmd.exe のコマンドラインの仕様を解析してみた - 永遠に未完成]
+
+
 == if文の中で変数の値が反映されないとき
 
 - link:http://dalmore.blog7.fc2.com/blog-entry-79.html[バッチファイルのif文やfor文で気をつけること]
