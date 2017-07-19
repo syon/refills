@@ -41,6 +41,21 @@ C:\Windows\System32>mkdir hoge > nul 2>&1
 ```
 
 
+== 引数のダブルクォーテーションを除去する
+
+.sample.bat
+```batch
+echo %1
+echo %~1
+```
+
+```batch
+> sample.bat "Hello"
+"Hello"
+Hello
+```
+
+
 == 標準出力の結果を変数に格納する
 
 コマンドプロンプトには該当の機能がないようなので、ちょっとしたテクニックを使って実現します。
