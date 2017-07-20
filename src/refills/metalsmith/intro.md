@@ -102,7 +102,7 @@ PDF ジェネレータ
 そう、ここも Metalsmith で構築されているのです。
 何をやっているか、なんとなくつかめた気がしませんか。
 
-> https://github.com/syon/refills/blob/master/build.js
+> https://github.com/syon/refills/blob/master/gulpfile.js
 
 ```js
 Metalsmith(__dirname)
