@@ -1,0 +1,45 @@
+---
+rid: 1500559
+bid: vuejs
+rcd: vue-router
+srcpath: vuejs/vue-router.adoc
+title: vue-router メモ
+category: Vue.js
+date: 2017.7.20
+layout: refill.jade
+---
+
+== ページタイトル `<title>` を変更する
+
+.src/main.js
+```js
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title;
+  next();
+});
+```
+
+- link:https://github.com/vuejs/vue-router/issues/914[how to change document.title in vue-router? · Issue #914 · vuejs/vue-router]
+
+
+== 404 Not Found を実現する
+
+- link:https://router.vuejs.org/ja/essentials/redirect-and-alias.html[リダイレクトとエイリアス · GitBook]
+
+```js
+const router = new Router({
+  routes: [
+    // :
+    {
+      path: '/404',
+      name: 'NotFound',
+      component: NotFound,
+      meta: { title: '404' },
+    },
+    {
+      path: '*',
+      redirect: { name: 'NotFound' },
+    },
+  ],
+});
+```
