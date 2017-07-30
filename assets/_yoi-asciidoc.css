@@ -5,6 +5,9 @@
   &.full-width img {
     width: 100%;
   }
+  + .imageblock {
+    margin-top: 2em;
+  }
 }
 
 .quoteblock {

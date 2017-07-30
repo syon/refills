@@ -1,0 +1,115 @@
+---
+rid: 1501413
+bid: windows
+rcd: wox
+srcpath: windows/wox.adoc
+title: Windows用ランチャー『 Wox 』の導入と便利な使い方
+category:
+date: 2017.7.30
+layout: refill.jade
+---
+
+Wox 公式サイト:: http://www.getwox.com/
+
+Wox on GitHub:: https://github.com/Wox-launcher/Wox
+
+
+=== 特徴
+
+- Alfred や Launchy の代替
+- Everything と連携
+
+
+== Demo
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-demo.gif[wox demo]
+
+
+== インストール前提
+
+link:https://github.com/Wox-launcher/Wox/wiki/Getting-started.-Installation[Getting started. Installation · Wox-launcher/Wox Wiki]
+
+- .NET Framework 4.5.2 以上（ Windows 10 の場合は導入済み ）
+  * https://www.microsoft.com/en-us/download/details.aspx?id=42643
+- Everything
+  * サービスが稼働していること
+- Python3（オプション）
+  * PATH が通っていること、もしくは Wox の設定で指定してあること（※プラグインの使用に必要な場合に指定）
+
+
+== Woxのダウンロードとインストール
+
+Wox::
+https://github.com/Wox-launcher/Wox/releases
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-download.png[wox download]
+
+
+== Everythingのダウンロードとインストール
+
+Everything::
+https://www.voidtools.com/
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-everything.png[wox everything]
+
+インストーラに従ってインストールを行います。
+
+=== 特定のファイルサーバもインデックスの対象にするには
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-everything-addfolder.png[wox everything add folder]
+
+
+== Woxのおすすめ設定
+
+設定画面を開くには、タスクトレイやメインウィンドウの右クリックメニューから開くこともできますが、
+Wox に `settings` と打ち込んでしまうのが手っ取り早いでしょう。
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-settings.png[wox settings]
+
+=== 「一般」タブ
+
+起動したときの挙動を設定します。
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-settings-general.png[wox settings general]
+
+=== ホットキー
+
+:experimental:
+
+Wox のメインウィンドウは、デフォルトでは #kbd:[Alt]+ kbd:[Space]# で呼び出します。
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-settings-hotkey.png[wox settings hotkey]
+
+その下のカスタムクエリ ホットキーは、上記とは別のホットキーを定義しそれを呼び出すと、
+対応するキーワードを事前に入力した状態で Wox が起動します。
+
+=== Shell プラグインの設定変更
+
+デフォルトで `Win + R` ショートカットが置き換えられています。
+よくフォルダパスのリンクを `Win + R` から開いたりしますが、
+このプラグインではファイルパスを指定して実行すると期待したとおりに動作しません。
+そのため `Replace Win+R` のチェックは外しておいたほうが無難でしょう。
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-settings-shell.png[wox settings shell]
+
+
+== 便利な使い方
+
+=== Program プラグイン
+
+任意のフォルダに配置して都度実行する exe 形式のプログラム（アプリ）を Wox から呼び出せるようにしましょう。
+例えば、私のように `C:\util` フォルダにまとめている場合はこのように登録します。
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-settings-program.png[wox settings program]
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-settings-program-util.png[wox settings program util]
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-settings-program-flex.png[wox settings program flex]
+
+=== 呼び出せるものいろいろ
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-sample-1.png[wox sample 1.png]
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-sample-2.png[wox sample 2.png]
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-sample-3.png[wox sample 3.png]
