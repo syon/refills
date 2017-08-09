@@ -122,7 +122,16 @@ fetch('https://example.com', {
 - link:https://github.com/sindresorhus/query-string[sindresorhus/query-string: Parse and stringify URL query strings]
 
 
-=== Cookie
+== DELETE
+
+DELETE メソッド GET 同様に payload body を持てないため、
+POST の例で示したようなリクエストを投げると 400 Bad Request となる。
+
+[quote, 'link:https://stackoverflow.com/questions/30334776/servlets-3-1-how-to-handle-body-in-delete-request[java - Servlets 3.1: how to handle body in DELETE request - Stack Overflow]']
+DELETE is not supposed to have a body, just like GET.
+
+
+== Cookie
 
 [source,javascript]
 ----
@@ -131,7 +140,8 @@ fetch(url, {
 })
 ----
 
-=== Links
+
+== Links
 
 - link:https://developers.google.com/web/updates/2015/03/introduction-to-fetch[Introduction to fetch()  |  Web  |  Google Developers]
 - link:http://tacamy.hatenablog.com/entry/2016/10/16/182658[jQuery.ajax()の代替としてFetch APIをざっくり使ってみる - tacamy.blog]
