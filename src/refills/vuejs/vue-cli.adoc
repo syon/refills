@@ -134,10 +134,70 @@ env: {
 ```
 
 
+== Vuexを導入する
+
+`vuex` をインストールします。
+
+[source,bash]
+----
+$ npm install --save vuex
+----
+
+ストアを扱うコードを作成し、Vueと接続します。
+
+.main.js
+```js
+// :
+import store from './store'
+// :
+new Vue({
+  el: '#app',
+  store,
+  // :
+})
+```
+
+.store.js
+```js
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+  state: {
+    count: 777
+  },
+})
+```
+
+規模が大きくなってきたら、公式のサンプルのようにストアを分割します。
+
+- link:https://github.com/vuejs/vuex/blob/dev/examples/shopping-cart/store/index.js[vuex/index.js at dev · vuejs/vuex]
+
+コンポーネント内でストアのステートを使うには、１つの例としてこのように記述します。
+
+.sample.vue
+```jade
+<template lang="pug">
+  h1 {{ count }}
+</template>
+
+<script>
+export default {
+  computed: {
+    count () {
+      return this.$store.state.count
+    }
+  }
+}
+</script>
+```
+
+
 '''
 
 ==== ToDo
 
-- Vuex
 - router
 - PostCSS, Autoprefixer
