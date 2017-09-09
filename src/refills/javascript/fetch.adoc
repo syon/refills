@@ -100,6 +100,7 @@ headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
 ```
 
 - link:https://gist.github.com/umamichi/1e1f2d48d5e2a85041033619ea44a730[umamichi/fetch APIでハマったこと.md]
+- link:http://qiita.com/masakielastic/items/70516e074eadf2ce09dd[Fetch API で x-www-form-urlencoded を直接指定することを避ける - Qiita]
 
 .fetch API - POST example
 ```js
@@ -119,7 +120,8 @@ fetch('https://example.com', {
 });
 ```
 
-- link:https://github.com/sindresorhus/query-string[sindresorhus/query-string: Parse and stringify URL query strings]
+query-string::
+link:https://github.com/sindresorhus/query-string[sindresorhus/query-string: Parse and stringify URL query strings]
 
 
 == DELETE
