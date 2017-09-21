@@ -34,6 +34,7 @@ image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/
 デフォルトのパスワード:: `raspberry`
 
 > The default "Raspbian" OS will automatically broadcast its presence on your network under the mDNS name "raspberrypi". If you are using Mac or Linux, you can reach your Pi easily:
+
 ```bash
 ssh pi@raspberrypi.local
 ```
