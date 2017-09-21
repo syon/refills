@@ -26,3 +26,9 @@ $ sudo raspi-config
 image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201706/raspi-config1.png[raspi-config]
 
 image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201706/raspi-config2.png[raspi-config]
+
+
+== connect
+
+デフォルトのユーザー名:: `pi`
+デフォルトのパスワード:: `raspberry`
