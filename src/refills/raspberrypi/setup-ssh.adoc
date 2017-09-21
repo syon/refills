@@ -32,3 +32,13 @@ image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/
 
 デフォルトのユーザー名:: `pi`
 デフォルトのパスワード:: `raspberry`
+
+> The default "Raspbian" OS will automatically broadcast its presence on your network under the mDNS name "raspberrypi". If you are using Mac or Linux, you can reach your Pi easily:
+```bash
+ssh pi@raspberrypi.local
+```
+
+
+== articles
+
+- link:https://github.com/nfarina/homebridge/wiki/Running-HomeBridge-on-a-Raspberry-Pi[Running Homebridge on a Raspberry Pi · nfarina/homebridge Wiki]
