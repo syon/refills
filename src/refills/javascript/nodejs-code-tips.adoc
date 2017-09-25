@@ -20,7 +20,7 @@ require('fs').writeFile('out.txt', 'content', (e)=>{});
 == 1列読み込み
 
 .sample.txt
-[source,text]
+[source]
 ----
 red
 blue
