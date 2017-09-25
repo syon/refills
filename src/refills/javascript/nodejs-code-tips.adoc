@@ -40,7 +40,7 @@ const colors = content.trim().split('\n');
 == CSV読み込み
 
 .sample.csv
-[source,text]
+[source]
 ----
 fruit
 apple
