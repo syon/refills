@@ -15,3 +15,52 @@ layout: refill.jade
 ----
 require('fs').writeFile('out.txt', 'content', (e)=>{});
 ----
+
+
+==== CSV読み込み
+
+.sample.csv
+[source,csv]
+----
+fruit
+apple
+#banana
+orange
+lemon
+----
+
+.function readCsvSync
+[source,javascript]
+----
+function readCsvSync(filename, options) {
+  const fs = require('fs');
+  const parse = require('csv-parse/lib/sync');
+  const content = fs.readFileSync(filename).toString();
+  return parse(content, options);
+}
+----
+
+.use header
+[source,javascript]
+----
+const options = { columns: true, comment: '#' };
+const records = readCsvSync('sample.csv', options);
+/*
+[ { fruit: 'apple' },
+  { fruit: 'orange' },
+  { fruit: 'lemon' } ]
+*/
+----
+
+.indicate columns
+[source,javascript]
+----
+const options = { columns: ['id'], comment: '#' };
+const records = readCsvSync('sample.csv', options);
+/*
+[ { id: 'fruit' },
+  { id: 'apple' },
+  { id: 'orange' },
+  { id: 'lemon' } ]
+*/
+----
