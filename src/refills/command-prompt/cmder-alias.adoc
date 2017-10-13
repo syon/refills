@@ -29,12 +29,29 @@ explorer %1
 e.
 ```
 
+
+== touch
+
+- link:https://qiita.com/Hiroki_M/items/ffac4383baac1c03adc0[Windowsのコマンドプロンプトでtouchコマンド - Qiita]
+
+.path/to/cmder/bin/touch.cmd
+```batch
+@echo off
+if %1. ==. goto end
+if not exist %1 (
+    type nul > %1
+) else (
+    copy /b %1 +,, > nul
+)
+```
+
+
 == Edit hosts
 
 管理者権限で編集したいときに呼び出します。
 
 .path/to/cmder/bin/hosts.cmd
-```bash
+```batch
 @ECHO OFF
 notepad %windir%/System32/drivers/etc/hosts
 @ECHO ON

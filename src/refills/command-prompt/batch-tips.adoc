@@ -17,6 +17,16 @@ echo.
 ```
 
 
+== 指定時間待つ `timeout` (wait/sleep)
+
+- link:http://www.atmarkit.co.jp/ait/articles/1206/08/news137.html[Tech TIPS：Windowsのtimeout／sleepコマンドで実行を一時停止する - ＠IT]
+
+```batch
+> timeout 5
+5 秒待っています。続行するには何かキーを押してください ...
+```
+
+
 == 実行結果を出力しない
 
 [quote, 'link:http://qiita.com/uhooi/items/b8b25761a5c4efe9025a[batファイルでコマンドの実行結果を出力しないようにする方法 - Qiita]']
@@ -28,16 +38,16 @@ echo.
 
 .例
 ```batch
-C:\Windows\System32>mkdir hoge > nul
+> mkdir hoge > nul
 
-C:\Windows\System32>mkdir hoge > nul
+> mkdir hoge > nul
 サブディレクトリまたはファイル hoge は既に存在します。
 
-C:\Windows\System32>rmdir hoge
+> rmdir hoge
 
-C:\Windows\System32>mkdir hoge > nul 2>&1
+> mkdir hoge > nul 2>&1
 
-C:\Windows\System32>mkdir hoge > nul 2>&1
+> mkdir hoge > nul 2>&1
 ```
 
 
@@ -106,8 +116,37 @@ IF %CNT% GTR 0 (
 `IF %CNT% GTR 0` は「もし CNT が 0 より大きかったら」という意味です。
 
 
+== touch
+
+- link:https://qiita.com/Hiroki_M/items/ffac4383baac1c03adc0[Windowsのコマンドプロンプトでtouchコマンド - Qiita]
+
+```batch
+@echo off
+if %1. ==. goto end
+if not exist %1 (
+    type nul > %1
+) else (
+    copy /b %1 +,, > nul
+)
+```
+
+
 == pwd
 
 ```batch
 SET CURRENT_DIR=%cd%
+```
+
+
+== ファイル生成の監視
+
+- link:http://fpcu.on.coocan.jp/dosvcmd/bbs/log/cat3/cat10/4-0372.html[ファイル生成を監視してバッチを走らせることは可能？ (DOSプロンプト活用相談室LOG)]
+
+```batch
+cd %FOLDER-A%
+:loop
+if exist *.csv move *.csv %FOLDER-B%
+rem 10 秒待つ
+ping -n 11 127.0.0.1 >NUL
+goto loop
 ```
