@@ -43,3 +43,24 @@ const router = new Router({
   ],
 });
 ```
+
+
+### link:https://github.com/vuejs/vuex-router-sync[vuejs/vuex-router-sync]
+
+Effortlessly keep vue-router and vuex store in sync.
+
+- link:https://github.com/vuejs/vue-hackernews-2.0/blob/master/src/app.js[app.js · vuejs/vue-hackernews-2.0] +
+  実例
+- link:http://kuroeveryday.blogspot.jp/2016/12/vuex-router-sync.html[vuex-router-syncを使ってgettersやactions,mutations内からroute情報を取得する | Black Everyday Company]
+
+### transition
+
+- link:http://qiita.com/ryo_dg/items/b2c030362241a20bc6bb[Tumblr API + Vue.jsでTumblrテーマを作った話 - Qiita]
+- link:http://stackoverflow.com/questions/41221099/vue-js-page-transition-fade-effect-with-vue-router[Vue.js page transition fade effect with vue-router - Stack Overflow] +
+  `transition name="hoge"` がCSSセレクタ接頭辞になる
+
+### advanced
+
+- link:https://router.vuejs.org/ja/advanced/scroll-behavior.html[スクロールの振る舞い · GitBook] +
+  注意: この機能は HTML5 history モードでのみ動作します。
+- link:https://router.vuejs.org/ja/advanced/lazy-loading.html[遅延ローディング · GitBook]
