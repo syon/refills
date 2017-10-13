@@ -22,7 +22,7 @@ echo.
 - link:http://www.atmarkit.co.jp/ait/articles/1206/08/news137.html[Tech TIPS：Windowsのtimeout／sleepコマンドで実行を一時停止する - ＠IT]
 
 ```batch
-> timeout 5
+C:\> timeout 5
 5 秒待っています。続行するには何かキーを押してください ...
 ```
 
@@ -38,16 +38,16 @@ echo.
 
 .例
 ```batch
-> mkdir hoge > nul
+C:\> mkdir hoge > nul
 
-> mkdir hoge > nul
+C:\> mkdir hoge > nul
 サブディレクトリまたはファイル hoge は既に存在します。
 
-> rmdir hoge
+C:\> rmdir hoge
 
-> mkdir hoge > nul 2>&1
+C:\> mkdir hoge > nul 2>&1
 
-> mkdir hoge > nul 2>&1
+C:\> mkdir hoge > nul 2>&1
 ```
 
 
@@ -60,7 +60,7 @@ echo %~1
 ```
 
 ```batch
-> sample.bat "Hello"
+C:\> sample.bat "Hello"
 "Hello"
 Hello
 ```
