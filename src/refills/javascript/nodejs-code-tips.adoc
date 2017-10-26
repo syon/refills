@@ -109,6 +109,23 @@ const records = readCsvSync('sample.csv', options);
 ----
 
 
+== glob
+
+- link:https://github.com/isaacs/node-glob[isaacs/node-glob: glob functionality for node.js]
+
+```bash
+npm i glob
+```
+
+```js
+const glob = require('glob');
+
+glob.sync("**/*.js", options, function(er, files) {
+  // files is an array of filenames.
+});
+```
+
+
 == tktk
 
 - link:https://www.npmjs.com/package/tktk[tktk]
