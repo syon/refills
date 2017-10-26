@@ -9,6 +9,29 @@ date: 2017.4.19
 layout: refill.jade
 ---
 
+== ファイル読み込み
+
+テキストファイルの読み込みである場合`'utf-8'`のようにエンコーディングを指定する。
+
+- File System | Node.js Documentation
+  * `link:https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options[fs.readFileSync(path\[, options\])]`
+  * `link:https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback[fs.readFile(path\[, options\], callback)]`
+
+[source,javascript]
+----
+const fs = require('fs');
+
+// sync
+const text = fs.readFileSync('./input.txt', 'utf8');
+
+// async
+fs.readFile('./input.txt', 'utf8', function(err, text) {
+  if (err) throw err;
+  console.log(text);
+});
+----
+
+
 == ファイル書き込み
 
 [source,javascript]
