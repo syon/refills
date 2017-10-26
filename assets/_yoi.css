@@ -65,6 +65,7 @@ article {
     padding: .2em;
     margin: 0;
     background-color: #f7f7f7;
+    font-size: 1.6rem;
     &[class^="language-"] {
       font-size: .85em;
     }
