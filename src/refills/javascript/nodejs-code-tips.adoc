@@ -14,8 +14,8 @@ layout: refill.jade
 テキストファイルの読み込みである場合`'utf-8'`のようにエンコーディングを指定する。
 
 - File System | Node.js Documentation
-  * `link:https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options[fs.readFileSync(path\[, options\])]`
-  * `link:https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback[fs.readFile(path\[, options\], callback)]`
+  * `link:https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options[fs.readFileSync(path[, options\])]`
+  * `link:https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback[fs.readFile(path[, options\], callback)]`
 
 [source,javascript]
 ----
@@ -34,10 +34,20 @@ fs.readFile('./input.txt', 'utf8', function(err, text) {
 
 == ファイル書き込み
 
+=== ファイル書き込み（上書き）
+
+- `link:https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback[fs.writeFile(file, data[, options\], callback)]`
+- `link:https://nodejs.org/api/fs.html#fs_fs_writefilesync_file_data_options[fs.writeFileSync(file, data[, options\])]`
+
 [source,javascript]
 ----
 require('fs').writeFile('out.txt', 'content', (e)=>{});
 ----
+
+=== ファイル書き込み（追記）
+
+- `link:https://nodejs.org/api/fs.html#fs_fs_appendfile_file_data_options_callback[fs.appendFile(file, data[, options\], callback)]`
+- `link:https://nodejs.org/api/fs.html#fs_fs_appendfilesync_file_data_options[fs.appendFileSync(file, data[, options\])]`
 
 
 == 1列読み込み
