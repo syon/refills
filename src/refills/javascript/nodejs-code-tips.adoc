@@ -139,7 +139,8 @@ glob.sync("**/*.js", options, function(er, files) {
 == URL Path Join
 
 `url.resolve(from, to)` を使用する。
-from で指定された URL を起点にして to という行き先を命令された場合に
+よくある join による連結ではなく、現在地と行き先を渡す。
+from で指定された URL を現在地として to という行き先を命令された場合に
 結局どこに行くのかを解明した結果を返す。
 from は `http://` で開始する必要はない。
 逆に to が `http://` から始まる URL でもよい。
@@ -153,6 +154,8 @@ url.resolve('/japan/tokyo/shibuya', 'ebisu')
 //=> '/japan/tokyo/ebisu'
 url.resolve('http://world.com', 'japan')
 //=> 'http://world.com/japan'
+url.resolve('http://world.com/japan/tokyo/', '../osaka/')
+//=> 'http://world.com/japan/osaka/'
 url.resolve('http://world.com/japan/tokyo/', '/america/new-york')
 //=> 'http://world.com/america/new-york'
 url.resolve('http://world.com', 'https://google.com')
