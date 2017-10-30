@@ -126,6 +126,30 @@ glob.sync("**/*.js", options, function(er, files) {
 ```
 
 
+== URL Path Join
+
+`url.resolve(from, to)` を使用する。
+from で指定された URL を起点にして to という行き先を命令された場合に
+結局どこに行くのかを解明した結果を返す。
+from は `http://` で開始する必要はない。
+逆に to が `http://` から始まる URL でもよい。
+それは外部サイトに移動する時と同じ挙動と言える。
+
+- link:https://nodejs.org/api/url.html#url_url_resolve_from_to[url.resolve(from, to) - URL | Node.js Documentation]
+- link:https://stackoverflow.com/questions/16301503/can-i-use-requirepath-join-to-safely-concatenate-urls[node.js - Can I use require("path").join to safely concatenate urls? - Stack Overflow]
+
+```js
+url.resolve('/japan/tokyo/shibuya', 'ebisu')
+//=> '/japan/tokyo/ebisu'
+url.resolve('http://world.com', 'japan')
+//=> 'http://world.com/japan'
+url.resolve('http://world.com/japan/tokyo/', '/america/new-york')
+//=> 'http://world.com/america/new-york'
+url.resolve('http://world.com', 'https://google.com')
+//=> 'https://google.com/'
+```
+
+
 == tktk
 
 - link:https://www.npmjs.com/package/tktk[tktk]
