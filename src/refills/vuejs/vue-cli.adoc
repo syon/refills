@@ -195,6 +195,24 @@ export default {
 ```
 
 
+== IE11 に対応する
+
+[quote, IE11]
+'Promise' は定義されていません。
+
+
+```bash
+$ npm install --save babel-polyfill
+```
+
+.main.js
+```js
+// :
+import 'babel-polyfill'
+// :
+```
+
+
 '''
 
 ==== ToDo
