@@ -14,18 +14,22 @@
   position: relative;
   margin-bottom: 1em;
   color: rgba(0,0,0,.6);
+  padding: 2rem;
+  background-color: #fdfdfe;
+  border-top: 1px solid #f6f8fa;
+  border-bottom: 1px solid #eff3f6;
   &:before {
     content: "\201c";
     position: absolute;
     font-size: 6rem;
     line-height: 1;
-    top: -4px;
+    top: 0;
     font-family: serif;
     color: #ddd;
   }
   blockquote {
     padding-left: 1em;
-    margin: 1em 0 0 2em;
+    margin: 0 0 0 2em;
     font-size: 1.6rem;
     font-style: italic;
     border: 0;
