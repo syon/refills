@@ -103,7 +103,16 @@ gulp.task('metalsmith', () => {
         .use(collections({
           all: {
             pattern: 'refills/*/*.{md,adoc}',
-            sortBy: 'date',
+            sortBy: function (a,b) {
+              a = new Date(a.date);
+              b = new Date(b.date);
+              if (!a && !b) return 0;
+              if (!a) return -1;
+              if (!b) return 1;
+              if (b > a) return -1;
+              if (a > b) return 1;
+              return -1;
+            },
             reverse: true
           }
         }))
