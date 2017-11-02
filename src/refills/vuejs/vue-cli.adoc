@@ -5,20 +5,19 @@ rcd: vue-cli
 srcpath: vuejs/vue-cli.adoc
 title: vue-cli メモ
 category: Vue.js
-date: 2017.7.20
+date: 2017.11.2
 layout: refill.jade
 ---
 
 == vue-cli とは
 
+Vue.js プロジェクトのひな形を作るためのコマンドラインツール。
+Node.js 上で動作します。
+
 - https://github.com/vuejs/vue-cli
 
 [quote, vuejs/vue-cli]
 Simple CLI for scaffolding Vue.js projects
-
-Vue.js プロジェクトのひな形を作るためのコマンドラインツール。
-Node.js 上で動作します。
-
 
 === インストール
 
@@ -217,5 +216,4 @@ import 'babel-polyfill'
 
 ==== ToDo
 
-- router
 - PostCSS, Autoprefixer
