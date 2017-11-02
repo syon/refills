@@ -9,7 +9,20 @@ date: 2016.6.18
 layout: refill.jade
 ---
 
-=== import
+== Array
+
+=== 重複の除去 (unique / distinct)
+
+- link:https://qiita.com/waka-ka/items/694866bd1a6a90289c33[[Javascript\] 配列の重複を取り出す方法 - Qiita]
+
+```js
+const animals = ["cat", "cat", "dog", "mouse", "dog"];
+const distinctAnimals = [...new Set(animals)];
+//=> ["cat", "dog", "mouse"]
+```
+
+
+== import
 
 - link:https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/import[import - JavaScript | MDN]
 
