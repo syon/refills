@@ -70,6 +70,14 @@ const colors = content.trim().split('\n');
 ----
 
 
+== ファイルコピー
+
+```js
+const fs = require('fs');
+fs.createReadStream('src.txt').pipe(fs.createWriteStream('dest.txt'));
+```
+
+
 == CSV読み込み
 
 .sample.csv
