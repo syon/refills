@@ -9,6 +9,11 @@ date: 2016.6.18
 layout: refill.jade
 ---
 
+== Cheatsheet
+
+- link:https://devhints.io/es6[ES2015+ cheatsheet]
+
+
 == Array
 
 === 重複の除去 (unique / distinct)
