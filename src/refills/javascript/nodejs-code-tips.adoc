@@ -72,6 +72,10 @@ const colors = content.trim().split('\n');
 
 == ファイルコピー
 
+- link:https://qiita.com/PianoScoreJP/items/ec3d1b64d5e3a3bfa3b4[Node.js ファイルをコピーするたぶん一番簡単な方法 - Qiita]
+- link:https://qiita.com/tadnakam/items/6b6e0da5bb05c86bd573[node.js で簡単にファイルコピーができるようになってました。 - Qiita]
+  * `link:https://nodejs.org/api/fs.html#fs_fs_copyfile_src_dest_flags_callback[fs.copyFile(src, dest[, flags\], callback)]`
+  * `link:https://nodejs.org/api/fs.html#fs_fs_copyfile_src_dest_flags_callback[fs.copyFileSync(src, dest[, flags\])]`
 ```js
 const fs = require('fs');
 fs.createReadStream('src.txt').pipe(fs.createWriteStream('dest.txt'));
