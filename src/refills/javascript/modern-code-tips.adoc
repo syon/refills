@@ -14,6 +14,25 @@ layout: refill.jade
 - link:https://devhints.io/es6[ES2015+ cheatsheet]
 
 
+== async / await
+
+=== Sleep / Wait
+
+.async関数の中
+```js
+await new Promise(r => setTimeout(r, 5000));
+```
+
+.即時関数
+```js
+(async () => {
+  console.log('start');
+  await new Promise(r => setTimeout(r, 5000));
+  console.log('end');
+})();
+```
+
+
 == Objectの複製・マージ
 
 - link:https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Object/assign[Object.assign() - JavaScript | MDN]
