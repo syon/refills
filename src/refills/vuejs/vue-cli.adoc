@@ -194,6 +194,38 @@ export default {
 ```
 
 
+== Cookieを扱う
+
+- link:https://github.com/alfhen/vue-cookie[alfhen/vue-cookie: A Vue.js plugin for manipulating cookies]
+
+```bash
+$ npm install --save vue-cookie
+```
+
+.main.js
+```js
+import Vue from 'vue';
+import VueCookie from 'vue-cookie';
+// :
+Vue.use(VueCookie);
+// :
+```
+
+```js
+  computed: {
+    token: function () {
+      return this.$cookie.get('token');
+    },
+  },
+  methods: {
+    getToken() {
+      // expires in one day
+      this.$cookie.set('token', 'xxxxxxxxxx', { expires: '1D' });
+    },
+  },
+```
+
+
 == IE11 に対応する
 
 [quote, IE11]
