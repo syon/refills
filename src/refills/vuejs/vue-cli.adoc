@@ -200,28 +200,57 @@ export default new Vuex.Store({
 </template>
 
 <script>
+export default {
+  computed: {
+    count() {
+      return this.$store.state.count;
+    },
+  },
+}
+</script>
+```
+
+ストアのものをそのままコンポーネントで利用する場合には、上記の書き方では冗長なので
+以下のように書くこともできます。
+
+- link:https://vuex.vuejs.org/ja/mutations.html#[アクション · Vuex #コンポーネント内でのアクションのディスパッチ]
+
+```jade
+<template lang="pug">
+  h1 {{ count }}
+  button(@click="doIncrement") Increment
+</template>
+
+<script>
 import { mapState, mapActions } from 'vuex';
 
 export default {
   computed: {
-    ...mapState({
-      countAlias: 'count',
-    }),
-    count100x() {
-      return this.$store.state.count * 100;
-    },
+    ...mapState([
+      'count',
+    ]),
   },
   methods: {
     ...mapActions({
       doIncrement: 'increment',
     }),
+  },
+}
+</script>
+```
+
+=== action
+
+- link:https://qiita.com/hirohero/items/771ac34b8213105e2d5f[Vueコンポーネント & Vuex テンプレ - Qiita]
+
+.SomeComponent.vue
+```jade
+  methods: {
     fetchApi() {
       // :
       this.$store.dispatch('setApiResult', json.list);
     },
   },
-}
-</script>
 ```
 
 
