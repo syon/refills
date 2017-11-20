@@ -191,6 +191,8 @@ export default new Vuex.Store({
 
 - link:https://github.com/vuejs/vuex/blob/dev/examples/shopping-cart/store/index.js[vuex/index.js at dev · vuejs/vuex]
 
+=== state
+
 コンポーネント内でストアのステートを使うには、１つの例としてこのように記述します。
 
 .SomeComponent.vue
@@ -218,11 +220,10 @@ export default {
 ```jade
 <template lang="pug">
   h1 {{ count }}
-  button(@click="doIncrement") Increment
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState } from 'vuex';
 
 export default {
   computed: {
@@ -256,7 +257,7 @@ export default {
 </script>
 ```
 
-```jade
+```js
 import { mapActions } from 'vuex';
 // :
   methods: {
