@@ -230,11 +230,6 @@ export default {
       'count',
     ]),
   },
-  methods: {
-    ...mapActions({
-      doIncrement: 'increment',
-    }),
-  },
 }
 </script>
 ```
@@ -245,11 +240,29 @@ export default {
 
 .SomeComponent.vue
 ```jade
+<template lang="pug">
+  button(@click="doIncrement") Increment
+</template>
+
+<script>
+export default {
   methods: {
     fetchApi() {
       // :
       this.$store.dispatch('setApiResult', json.list);
     },
+  },
+}
+</script>
+```
+
+```jade
+import { mapActions } from 'vuex';
+// :
+  methods: {
+    ...mapActions({
+      doIncrement: 'increment',
+    }),
   },
 ```
 
