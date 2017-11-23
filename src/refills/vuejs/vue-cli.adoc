@@ -5,7 +5,7 @@ rcd: vue-cli
 srcpath: vuejs/vue-cli.adoc
 title: vue-cli メモ
 category: Vue.js
-date: 2017.11.2
+date: 2017.11.23
 layout: refill.jade
 ---
 
@@ -235,7 +235,7 @@ export default {
 </script>
 ```
 
-=== action
+=== actions
 
 - link:https://qiita.com/hirohero/items/771ac34b8213105e2d5f[Vueコンポーネント & Vuex テンプレ - Qiita]
 
@@ -260,6 +260,28 @@ export default {
   },
 }
 </script>
+```
+
+=== mutations
+
+- link:https://vuex.vuejs.org/ja/mutations.html[ミューテーション · Vuex]
+
+==== Vue のリアクティブなルールに則ったミューテーション
+
+新しいプロパティをオブジェクトに追加するとき、以下のいずれかが必要です:
+
+```js
+Vue.set(obj, 'newProp', 123)
+```
+
+```js
+state.obj = { ...state.obj, newProp: 123 }
+```
+
+エントリーIDをキーに持つ連想配列をマージするようなケースでは、スプレッドシンタックスを使って以下のようにします。
+
+```js
+state.entries = { ...state.entries, ...newEntries }
 ```
 
 
