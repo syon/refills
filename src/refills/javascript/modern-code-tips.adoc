@@ -5,7 +5,7 @@ rcd: modern-code-tips
 srcpath: javascript/modern-code-tips.md
 title: モダン CODE TIPS
 category: JavaScript
-date: 2016.6.18
+date: 2017.11.23
 layout: refill.jade
 ---
 
@@ -39,18 +39,18 @@ await new Promise(r => setTimeout(r, 5000));
 
 .オブジェクトを複製する
 ```js
-var obj = { a: 1 };
-var copy = Object.assign({}, obj);
+const obj = { a: 1 };
+const copy = Object.assign({}, obj);
 console.log(copy); // { a: 1 }
 ```
 
 .オブジェクトをマージする
 ```js
-var o1 = { a: 1 };
-var o2 = { b: 2 };
-var o3 = { c: 3 };
+const o1 = { a: 1 };
+const o2 = { b: 2 };
+const o3 = { c: 3 };
 
-var obj = Object.assign(o1, o2, o3);
+const obj = Object.assign(o1, o2, o3);
 console.log(obj); // { a: 1, b: 2, c: 3 }
 console.log(o1);  // { a: 1, b: 2, c: 3 }, targetオブジェクト自身が変化する
 ```
