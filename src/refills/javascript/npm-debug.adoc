@@ -94,7 +94,7 @@ $ env DEBUG="*" node index.js
 
 .fish shell (export)
 ```bash
-$ set -x DEBUG *
+$ set -x DEBUG "*"
 ```
 
 .ES6 import style
