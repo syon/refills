@@ -68,3 +68,9 @@
     margin-top: 0;
   }
 }
+
+.tableblock {
+  p.tableblock {
+    margin: 0;
+  }
+}
