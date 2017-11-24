@@ -1,0 +1,107 @@
+---
+rid: 1511515
+bid: javascript
+rcd: npm-debug
+srcpath: javascript/npm-debug.adoc
+title: NPM debug の使い方
+desc: NPMモジュール "debug" (visionmedia/debug) の使い方。公式ドキュメントをベースにした解説とサンプルを掲載。
+category: JavaScript
+date: 2017.11.24
+layout: refill.jade
+---
+
+[.no-shadow]
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201711/npm-debug.png[npm-debug]
+
+
+== visionmedia / debug
+
+A tiny JavaScript debugging utility modelled after Node.js core's debugging technique. Works in Node.js and web browsers
+
+- link:https://www.npmjs.com/package/debug[]
+- link:https://github.com/visionmedia/debug[]
+
+
+== Tips from documents
+
+link:https://github.com/visionmedia/debug#windows-note[#Windows note]::
+cmd.exe と PowerShell での使い方
+
+link:https://github.com/visionmedia/debug#namespace-colors[#Namespace Colors]::
+デバッグ文字列の色はネームスペースをもとに決定される
+
+link:https://github.com/visionmedia/debug#millisecond-diff[#Millisecond diff]::
+ネームスペースごとに前回呼び出しからの経過時間を表示
+
+link:https://github.com/visionmedia/debug#wildcards[#Wildcards]::
+デバッグ出力の対象にするネームスペース指定に使うワイルドカード `*` の説明。
+先頭にハイフン `-` を付けて除外することもできる。カンマ区切りで複数指定可能。
+
+```js
+localStorage.debug = "*"; // すべて表示
+localStorage.debug = "myapp"; // myappのみ表示
+localStorage.debug = "*,-sockjs-client:*"; // sockjs-client名前空間のみ非表示
+localStorage.debug = ""; // すべて非表示
+```
+
+link:https://github.com/visionmedia/debug#formatters[#Formatters]::
+Debug uses printf-style formatting. カスタムフォーマッタあり。
+
+link:https://github.com/visionmedia/debug#browser-support[#Browser Support]::
+ブラウザでも動作させることが可能。有効にするにはローカルストレージにネームスペースを設定する。
+
+```js
+localStorage.debug = '*'
+```
+
+link:https://github.com/visionmedia/debug#output-streams[#Output streams]::
+デフォルトでは stderr 出力を使用しているところを変更できる。
+
+link:https://github.com/visionmedia/debug#set-dynamically[#Set dynamically]::
+コード内で動的にデバッグ出力の有効・無効を切り替えることができる。
+
+link:https://github.com/visionmedia/debug#checking-whether-a-debug-target-is-enabled[#Checking whether a debug target is enabled]::
+有効・無効の状態を扱うことができるので if 文による分岐ができる。
+
+
+== Install
+
+```bash
+$ npm install debug
+```
+
+
+== Snippets
+
+.bash
+```bash
+$ DEBUG=* node index.js
+```
+
+.fish shell
+```bash
+$ env DEBUG="*" node index.js
+```
+
+.ES6 import style
+```js
+import Debug from 'debug'
+const debug = Debug('myapp')
+
+debug('Hello')
+//=> myapp Hello +0ms
+```
+
+.Node.js
+```js
+var debug = require('debug')('myapp');
+
+debug('Hello');
+//=> myapp Hello +0ms
+```
+
+
+== articles
+
+- link:https://qiita.com/maginemu/items/26b7162d20e0e5d33bb8[debug パッケージの使い方 - Qiita]
+- link:http://blog.sasaplus1.com/2014/12/27/01/[debugモジュールを使う - 四角革命前夜]
