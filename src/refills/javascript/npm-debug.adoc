@@ -37,12 +37,21 @@ link:https://github.com/visionmedia/debug#wildcards[#Wildcards]::
 デバッグ出力の対象にするネームスペース指定に使うワイルドカード `*` の説明。
 先頭にハイフン `-` を付けて除外することもできる。カンマ区切りで複数指定可能。
 
-```js
-localStorage.debug = "*"; // すべて表示
-localStorage.debug = "myapp"; // myappのみ表示
-localStorage.debug = "*,-sockjs-client:*"; // sockjs-client名前空間のみ非表示
-localStorage.debug = ""; // すべて非表示
-```
+|===
+|DEBUG |Purpose
+
+|`"*"`
+|すべて表示
+
+|`"myapp"`
+|myapp のみ表示
+
+|`"\*,-sockjs-client:*"`
+|sockjs-client 名前空間のみ表示しない
+
+|`""`
+|なにも表示しない
+|===
 
 link:https://github.com/visionmedia/debug#formatters[#Formatters]::
 Debug uses printf-style formatting. カスタムフォーマッタあり。
@@ -81,6 +90,11 @@ $ DEBUG=* node index.js
 .fish shell
 ```bash
 $ env DEBUG="*" node index.js
+```
+
+.fish shell (export)
+```bash
+$ set -x DEBUG *
 ```
 
 .ES6 import style
