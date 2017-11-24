@@ -16,6 +16,10 @@ image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/
 
 == visionmedia / debug
 
+Node.js と Web ブラウザで動作する軽量デバッグユーティリティ。
+環境変数で出力範囲をフィルタできる。
+
+[quote, visionmedia/debug]
 A tiny JavaScript debugging utility modelled after Node.js core's debugging technique. Works in Node.js and web browsers
 
 - link:https://www.npmjs.com/package/debug[]
