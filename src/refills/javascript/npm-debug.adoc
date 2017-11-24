@@ -6,6 +6,7 @@ srcpath: javascript/npm-debug.adoc
 title: npm debug の使い方
 desc: npmモジュール "debug" (visionmedia/debug) の使い方。公式ドキュメントをベースにした解説とサンプルを掲載。
 category: JavaScript
+ogpimg: chronicle/201711/npm-debug.png
 date: 2017.11.24
 layout: refill.jade
 ---
