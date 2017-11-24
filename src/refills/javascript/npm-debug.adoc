@@ -3,8 +3,8 @@ rid: 1511515
 bid: javascript
 rcd: npm-debug
 srcpath: javascript/npm-debug.adoc
-title: NPM debug の使い方
-desc: NPMモジュール "debug" (visionmedia/debug) の使い方。公式ドキュメントをベースにした解説とサンプルを掲載。
+title: npm debug の使い方
+desc: npmモジュール "debug" (visionmedia/debug) の使い方。公式ドキュメントをベースにした解説とサンプルを掲載。
 category: JavaScript
 date: 2017.11.24
 layout: refill.jade
