@@ -47,7 +47,7 @@ deploy:
 `$GH_TOKEN` は GitHub の個人設定で生成したトークンを Wercker 経由で割り当てています。
 詳しくは別のページでまとめていますので参照ください。
 
-- [GitHub アクセストークンと Wercker の設定](../oauth-access-token/)
+- [GitHubアクセストークンとWerckerの設定 :: GitHub Pages \| Refills](https://syon.github.io/refills/rid/1462280/)
 
 ### 実例
 
