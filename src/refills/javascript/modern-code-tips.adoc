@@ -78,3 +78,11 @@ const distinctAnimals = [...new Set(animals)];
 ```js
 import { member as alias } from "module-name";
 ```
+
+
+== class
+
+=== 静的メソッドの呼び出し
+- link:https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Classes/static[static - JavaScript | MDN]
+  * 他の静的メソッドから
+  * クラスのコンストラクタや他のメソッドから
