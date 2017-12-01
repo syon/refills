@@ -32,6 +32,34 @@ await new Promise(r => setTimeout(r, 5000));
 })();
 ```
 
+=== 非同期処理の For Loop 繰り返し
+
+- link:https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop[javascript - Using async/await with a forEach loop - Stack Overflow]
+
+.直列実行
+```js
+async function printFiles () {
+  const files = await getFilePaths();
+
+  for (let file of files) {
+    const contents = await fs.readFile(file, 'utf8');
+    console.log(contents);
+  }
+}
+```
+
+.並列実行
+```js
+async function printFiles () {
+  const files = await getFilePaths();
+
+  await Promise.all(files.map(async (file) => {
+    const contents = await fs.readFile(file, 'utf8')
+    console.log(contents)
+  }));
+}
+```
+
 
 == Objectの複製・マージ
 
