@@ -113,6 +113,11 @@ image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/
 image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-settings-program-flex.png[wox settings program flex]
 
 
+=== Clipboard History
+
+- link:http://www.getwox.com/plugin/4[Plugin Detail - Clipboard History]
+
+
 === Weblio 辞書（英和辞典・和英辞典）
 
 image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-settings-weblio-ej.png[wox settings weblio ej]
