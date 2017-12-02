@@ -319,9 +319,10 @@ Vue.use(VueCookie);
 
 == IE11 に対応する
 
-[quote, IE11]
-'Promise' は定義されていません。
+=== Promise
 
+[quote, IE11]
+Unhandled promise rejection ReferenceError 'Promise' は定義されていません。
 
 ```bash
 $ npm install --save babel-polyfill
@@ -331,6 +332,22 @@ $ npm install --save babel-polyfill
 ```js
 // :
 import 'babel-polyfill'
+// :
+```
+
+=== fetch
+
+[quote, IE11]
+Unhandled promise rejection ReferenceError 'fetch' は定義されていません。
+
+```bash
+$ npm install --save whatwg-fetch
+```
+
+.main.js
+```js
+// :
+import 'whatwg-fetch'
 // :
 ```
 

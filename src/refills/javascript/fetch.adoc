@@ -24,6 +24,10 @@ A modern replacement for XMLHttpRequest.
 $ npm install whatwg-fetch --save
 ----
 
+```js
+import 'whatwg-fetch'
+```
+
 === Response
 
 ==== HTML
