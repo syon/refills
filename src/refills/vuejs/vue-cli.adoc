@@ -335,6 +335,35 @@ import 'babel-polyfill'
 ```
 
 
+== 別のホストからIPアドレスで接続して動作確認
+
+- link:https://github.com/webpack/webpack-dev-server/issues/147[Server can't be accessed via IP · Issue #147 · webpack/webpack-dev-server]
+
+.bash
+```bash
+$ export HOST=0.0.0.0
+$ npm run dev
+```
+
+.fish shell
+```bash
+$ set -x HOST 0.0.0.0
+$ npm run dev
+```
+
+開発サーバの設定ファイルがいろいろと参考になります。
+
+.config/index.js
+```js
+  // Various Dev Server settings
+  host: 'localhost', // can be overwritten by process.env.HOST
+  port: 8080, // can be overwritten by process.env.HOST, if port is in use, a free one will be determined
+  autoOpenBrowser: false,
+  errorOverlay: true,
+  notifyOnErrors: true,
+  poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
+```
+
 '''
 
 ==== ToDo
