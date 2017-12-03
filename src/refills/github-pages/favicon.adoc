@@ -1,0 +1,46 @@
+---
+rid: 1512281
+bid: github-pages
+rcd: favicon
+srcpath: github-pages/favicon.md
+title: プロジェクトページのfaviconを表示する
+category: GitHub Pages
+date: 2017.12.3
+layout: refill.jade
+---
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201712/gh-pages-favicon-sample.png[GitHub Pages Favicon]
+
+
+## favicon 表示の仕組み
+
+ブラウザは、そのサイトのホスト直下（ルートパス）に `favicon.ico` が
+設置されていることを期待してファイルを取得し、ファビコンを表示します。
+
+- `https://example.com/favicon.ico`
+
+
+## GitHub Pages の URL 都合
+
+GitHub Pages でホスティングしているプロジェクトページの URL と
+それに対応する favicon は以下の通りです。
+これではプロジェクトごとに別々の favicon を表示することができません。
+
+Project Page URL:: `https://username.github.io/projectname/`
+favicon path:: `https://username.github.io/favicon.ico`
+
+
+## favicon.ico の参照先を変更する
+
+表示している HTML の head 内に、以下のように記述すると favicon.ico の参照先を変更することができます。
+
+./projectname/index.html
+```html
+<link rel="shortcut icon" type="image/x-icon" href="path/to/favicon.ico">
+```
+
+
+## see also
+
+- https://help.github.com/articles/user-organization-and-project-pages/[User, Organization, and Project Pages - User Documentation]
+- https://stackoverflow.com/questions/35037482/favicon-with-github-pages[html - Favicon with GitHub Pages - Stack Overflow]
