@@ -10,7 +10,7 @@ $ npm run build
 ### Dev
 
 ```sh
-$ node serve
+$ npm start
 ```
 
 ### rid
