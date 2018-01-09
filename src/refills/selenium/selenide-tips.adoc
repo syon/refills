@@ -1,0 +1,56 @@
+---
+rid: 1515500
+bid: selenium
+rcd: selenide-tips
+srcpath: selenium/selenide-tips.adoc
+title: Selenide 逆引き Code Tips
+category: Selenium
+date: 2018.1.9
+layout: refill.jade
+---
+
+
+- link:http://selenide.org/[Selenide: concise UI tests in Java]
+
+=== 最後に開いたウィンドウにスイッチする
+
+```java
+// newly opened window
+for (String winHandle : driver.getWindowHandles()) {
+    driver.switchTo().window(winHandle);
+}
+```
+
+- link:https://stackoverflow.com/questions/19112209/how-to-handle-the-new-window-in-selenium-webdriver-using-java[How to handle the new window in Selenium WebDriver using Java? - Stack Overflow]
+
+
+=== タイトルを指定してウィンドウをスイッチする
+
+```java
+public class Utility {
+    public static WebDriver getHandleToWindow(String title) {
+        WebDriver popup = null;
+        Set<String> windowIterator = WebDriverInitialize.getDriver().getWindowHandles();
+        System.err.println("No of windows :  " + windowIterator.size());
+        for (String s : windowIterator) {
+            String windowHandle = s;
+            popup = WebDriverInitialize.getDriver().switchTo().window(windowHandle);
+            System.out.println("Window Title : " + popup.getTitle());
+            System.out.println("Window Url : " + popup.getCurrentUrl());
+            if (popup.getTitle().equals(title) ) {
+                System.out.println("Selected Window Title : " + popup.getTitle());
+                return popup;
+            }
+        }
+        System.out.println("Window Title :" + popup.getTitle());
+        System.out.println();
+        return popup;
+    }
+}
+```
+
+```java
+Webdriver childDriver = Utility.getHandleToWindow("titleOfChildWindow");
+```
+
+- link:https://stackoverflow.com/questions/19112209/how-to-handle-the-new-window-in-selenium-webdriver-using-java[How to handle the new window in Selenium WebDriver using Java? - Stack Overflow]
