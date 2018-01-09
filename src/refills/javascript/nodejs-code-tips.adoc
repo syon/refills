@@ -84,6 +84,12 @@ fs.createReadStream('src.txt').pipe(fs.createWriteStream('dest.txt'));
 
 == CSV読み込み
 
+- link:http://csv.adaltas.com/[Node.js CSV project]
+
+```bash
+$ npm install csv
+```
+
 .sample.csv
 [source]
 ----
