@@ -54,3 +54,9 @@ Webdriver childDriver = Utility.getHandleToWindow("titleOfChildWindow");
 ```
 
 - link:https://stackoverflow.com/questions/19112209/how-to-handle-the-new-window-in-selenium-webdriver-using-java[How to handle the new window in Selenium WebDriver using Java? - Stack Overflow]
+
+
+== articles
+
+- link:https://github.com/codeborne/selenide/wiki/Selenide-vs-Selenium[Selenide vs Selenium · codeborne/selenide Wiki · GitHub] +
+how Selenide API is simpler and more powerful than Selenium WebDriver API.
