@@ -2,7 +2,7 @@
 rid: 1496540
 bid: asciidoc
 rcd: article-template
-srcpath: asciidoc/article-template.md
+srcpath: asciidoc/article-template.adoc
 title: AsciiDoc Article Template
 category:
 date: 2017.6.4

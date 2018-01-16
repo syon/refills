@@ -2,7 +2,7 @@
 rid: 1495938
 bid: asciidoc
 rcd: howtowrite
-srcpath: asciidoc/howtowrite.md
+srcpath: asciidoc/howtowrite.adoc
 title: AsciiDoc覚書き
 category:
 date: 2017.6.4
