@@ -1,0 +1,50 @@
+---
+rid: 1516155
+bid: chrome
+rcd: cvim
+srcpath: chrome/puppeteer.adoc
+title: Puppeteerメモ
+category: Chrome
+date: 2018.1.17
+layout: refill.jade
+---
+
+link:https://github.com/GoogleChrome/puppeteer[GoogleChrome/puppeteer: Headless Chrome Node API]::
+Headless Chrome Node API
+
+
+== documents
+
+- link:https://developers.google.com/web/tools/puppeteer/[Puppeteer  |  Tools for Web Developers  |  Google Developers]
+- link:https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md[puppeteer/api.md at master · GoogleChrome/puppeteer]
+
+
+== tips
+
+=== POSTリクエストを送る
+
+- link:https://github.com/GoogleChrome/puppeteer/issues/669[Send POST request to a page and take screenshot · Issue #669 · GoogleChrome/puppeteer] +
+  POSTリクエストを送るには Request Interception を使う。 overrides.headers で Content-Type も指定しないと Express では受け付けてもらえないので注意。
+```bash
+$ curl http://www.google.com -d 'a=b&c=d'
+```
+```js
+await page.setRequestInterceptionEnabled(true);
+page.on('request', request => {
+  const overrides = {};
+  if (request.url === 'http://www.google.com') {
+    overrides.method = 'POST';
+    overrides.headers = {
+      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+    };
+    overrides.postData = 'a=b&c=d';
+  }
+  request.continue(overrides);
+});
+await page.goto('http://www.google.com');
+```
+
+
+== articles
+
+- link:https://qiita.com/Quramy/items/26058e83e898ec2ec078[--headless時代の本命？ Chrome を Node.jsから操作するライブラリ puppeteer について - Qiita]
