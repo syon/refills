@@ -45,6 +45,18 @@ await page.goto('http://www.google.com');
 ```
 
 
+== Run on
+
+- link:http://syonx.hatenablog.com/entry/2017/09/20/210004[PuppeteerをDockerやHerokuで動かすメモ - syonx]
+
+=== Heroku
+
+- link:https://github.com/jontewks/puppeteer-heroku-buildpack[jontewks/puppeteer-heroku-buildpack] +
+  Installs dependencies needed in order to run puppeteer on heroku
+- link:https://github.com/CoffeeAndCode/puppeteer-heroku-buildpack[CoffeeAndCode/puppeteer-heroku-buildpack] +
+  adds support for Chinese, Korean, and Japanese characters
+
+
 == articles
 
 - link:https://qiita.com/Quramy/items/26058e83e898ec2ec078[--headless時代の本命？ Chrome を Node.jsから操作するライブラリ puppeteer について - Qiita]
