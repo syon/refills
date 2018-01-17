@@ -9,7 +9,7 @@ date: 2018.1.17
 layout: refill.jade
 ---
 
-link:https://github.com/GoogleChrome/puppeteer[GoogleChrome/puppeteer: Headless Chrome Node API]::
+link:https://github.com/GoogleChrome/puppeteer[GoogleChrome/puppeteer]::
 Headless Chrome Node API
 
 
