@@ -49,10 +49,12 @@ layout: refill.jade
 
 == 画像 ― Image
 
+- link:https://aimless.jp/blog/archives/2016-12-03-image-macro-attributes-of-asciidoc/[asciidocのimage記法]
+
 [source,asciidoc]
 ----
 [.no-shadow]
-image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/hello/hedgehog.jpg[hedgehog]
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201705/hedgehog400.jpg[hedgehog]
 ----
 
 [.no-shadow]
@@ -121,6 +123,61 @@ ____
 ____
 ４世代と７年前に私たちの祖先たちはこの大陸に、自由の理念から生まれ、全ての人が平等に創られているという命題に捧げられた一つの新しい国を生み出しました。
 ____
+
+
+== テキスト修飾 ― Text Formatting
+
+- link:http://www.methods.co.nz/asciidoc/chunked/ch10.html[Chapter 10. Text Formatting]
+
+[source,asciidoc]
+.bold
+----
+*太字*
+----
+
+*太字*
+
+[source,asciidoc]
+.italic
+----
+_斜体_
+----
+
+_斜体_
+
+[source,asciidoc]
+.monospace
+----
+`monospace`
+----
+
+`monospace`
+
+[source,asciidoc]
+.mark
+----
+#ハイライト#
+----
+
+#ハイライト#
+
+[source,asciidoc]
+.color
+----
+[red]#赤色文字#
+
+[aqua-background]#水色背景#
+
+[yellow navy-background]#黄色文字 紺色背景#
+----
+
+[red]#赤色文字#
+
+[aqua-background]#水色背景#
+
+[yellow navy-background]#黄色文字 紺色背景#
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201801/asciidoc-available-colors.png[width="345"]
 
 
 == パススルー ― Passthrough
