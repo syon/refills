@@ -31,10 +31,8 @@ Chrome でも近い操作感で利用できるようにする拡張機能です�
 
 == cVimrc おすすめ設定
 
-link:chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/pages/options.html[cVimの設定画面]
-にある*cVimrc*欄にお好みの設定を記述して挙動を変えることができます。他にどんな設定ができるかは
-link:chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/pages/mappings.html[ヘルプ]
-を参照して下さい。
+cVimの設定画面にある*cVimrc*欄にお好みの設定を記述して挙動を変えることができます。
+他にどんな設定ができるかはヘルプを参照して下さい。
 
 [source,vim]
 .cVimrc
@@ -160,8 +158,11 @@ cVim の検索 (Find Mode) は、ブラウザのページ内検索とは独立�
 |===
 |キーバインド |説明
 
+|kbd:[/]
+|検索バーを開く
+
 |kbd:[zz]
-|cVimの " `/` " 検索でヒットしてアクティブなものが画面中央に来るところにスクロール
+|検索にヒットしたアクティブなものが画面中央に来るところにスクロール
 
 |kbd:[n]
 |次の検索結果にフォーカス
