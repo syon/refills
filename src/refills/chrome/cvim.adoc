@@ -11,19 +11,17 @@ layout: refill.jade
 
 :experimental:
 
+[.no-shadow]
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201801/cvim-icon.png[cVim]
+
 
 == cVimとは
 
-＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+キーボードのみで操作されることを前提としたテキストエディタ Vim のキーバインドを
+Chrome でも近い操作感で利用できるようにする拡張機能です。
+ブラウザ内の大抵のことをキーボードのみで操作できるようになります。
 
 ここでは*Vimのことをよく知らない人*でもわかるように説明します。
-
-
-== cVimにできること
-
-- ＊＊＊＊＊＊＊＊＊＊
-- ＊＊＊＊＊＊＊＊＊＊
-- ＊＊＊＊＊＊＊＊＊＊
 
 
 == 入手
@@ -32,6 +30,11 @@ layout: refill.jade
 
 
 == cVimrc おすすめ設定
+
+link:chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/pages/options.html[cVimの設定画面]
+にある*cVimrc*欄にお好みの設定を記述して挙動を変えることができます。他にどんな設定ができるかは
+link:chrome-extension://ihlenndgcmojhcghmfjfneahoeklbjjh/pages/mappings.html[ヘルプ]
+を参照して下さい。
 
 [source,vim]
 .cVimrc
