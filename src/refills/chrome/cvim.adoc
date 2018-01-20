@@ -5,7 +5,8 @@ rcd: cvim
 srcpath: chrome/cvim.adoc
 title: Chromeを素早くキーボードで操作！『cVim』の使い方
 category: Chrome拡張
-date: 2018.1.16
+ogpimg: chronicle/201801/cvim-icon.png
+date: 2018.1.20
 layout: refill.jade
 ---
 
