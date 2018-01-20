@@ -74,3 +74,39 @@
     margin: 0;
   }
 }
+
+span {
+  &.aqua { color: aqua; }
+  &.black { color: black; }
+  &.blue { color: blue; }
+  &.fuchsia { color: fuchsia; }
+  &.gray { color: gray; }
+  &.green { color: green; }
+  &.lime { color: lime; }
+  &.maroon { color: maroon; }
+  &.navy { color: navy; }
+  &.olive { color: olive; }
+  &.purple { color: purple; }
+  &.red { color: red; }
+  &.silver { color: silver; }
+  &.teal { color: teal; }
+  &.white { color: white; }
+  &.yellow { color: yellow; }
+
+  &.aqua-background { background: aqua; }
+  &.black-background { background: black; }
+  &.blue-background { background: blue; }
+  &.fuchsia-background { background: fuchsia; }
+  &.gray-background { background: gray; }
+  &.green-background { background: green; }
+  &.lime-background { background: lime; }
+  &.maroon-background { background: maroon; }
+  &.navy-background { background: navy; }
+  &.olive-background { background: olive; }
+  &.purple-background { background: purple; }
+  &.red-background { background: red; }
+  &.silver-background { background: silver; }
+  &.teal-background { background: teal; }
+  &.white-background { background: white; }
+  &.yellow-background { background: yellow; }
+}
