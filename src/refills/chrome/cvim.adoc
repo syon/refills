@@ -44,6 +44,19 @@ let scrollduration = 300
 ----
 
 
+== おすすめテーマCSS
+
+デフォルトのままだとコマンドの文字が読みづらいので、大きく読みやすく
+それでいて少しカッコいいテーマに改善したものを配布していますのでご利用ください。
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201801/cvim-ffxiv.png[cVim]
+- link:https://gist.github.com/syon/fa2a1e607d1dde697274165bb260c8a4[cVim Theme: FFXIV]
+
+`cvim-ffxiv.css` の *Raw* ボタンの先で表示されるコードを、cVimの設定画面の
+CSS 欄に貼り付けて左下の Save ボタンで保存します。
+その後、新たにページを読み込んだタブで変更内容が反映されているのを確認しましょう。
+
+
 == 覚えておきたいキーバインド
 
 約150パターンあるキーバインドのうち、ひとまずこれだけ覚えておけばOKなリストを
