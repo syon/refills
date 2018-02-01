@@ -104,11 +104,14 @@ image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/
 
 .webpack.base.conf.js
 ```js
-plugins: [
-  new webpack.ProvidePlugin({
-    $: 'jquery',
-  }),
-]
+const webpack = require('webpack')
+// :
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+    }),
+  ]
+// :
 ```
 
 ==== '$' is not defined`
@@ -130,6 +133,27 @@ env: {
   browser: true,
   jquery: true,
 },
+```
+
+=== debugを導入する
+
+`debug` をインストールして webpack にプラグインとして登録します。
+
+[source,bash]
+----
+$ npm install --save debug
+----
+
+.webpack.base.conf.js
+```js
+const webpack = require('webpack')
+// :
+  plugins: [
+    new webpack.ProvidePlugin({
+      Debug: 'debug',
+    }),
+  ]
+// :
 ```
 
 
