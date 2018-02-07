@@ -416,4 +416,5 @@ $ npm run dev
 ==== ToDo
 
 - PostCSS, Autoprefixer
+- link:https://github.com/vuejs/eslint-plugin-vue[vuejs/eslint-plugin-vue: Official ESLint plugin for Vue.js]
 - eslint-plugin-pug
