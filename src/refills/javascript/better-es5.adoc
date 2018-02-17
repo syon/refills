@@ -163,6 +163,13 @@ Prettierによる自動フォーマットを実行するには、メニューの
 キーボードショートカット::
 kbd:[Shift + Alt + F]
 
+++++
+<picture>
+  <source type="image/webp" srcset="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201802/better-es5-prettier-demo.webp" />
+  <img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201802/better-es5-prettier-demo.gif" alt="better-es5-prettier-demo" class="apng-image" />
+</picture>
+++++
+
 
 == 自分のプロジェクトで使うには？
 
