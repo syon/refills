@@ -1,0 +1,276 @@
+---
+rid: 1518800
+bid: javascript
+rcd: better-es5
+srcpath: javascript/better-es5.adoc
+title: 古いJavaScript(ES5)でもESLint・Prettierの恩恵を受けよう
+desc: jQuery時代までの古いJavaScript(ES5)をサンプルに、文法チェック(ESLint)と自動整形(Prettier)をVisual Studio Code (VSCode)で活用する方法を紹介しています。
+category: JavaScript
+ogpimg: chronicle/201802/better-es5.png
+date: 2018.2.17
+layout: refill.jade
+---
+
+:experimental:
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201802/better-es5-hero.png[better-es5]
+
+
+== この記事のターゲット読者像
+
+jQuery 時代までの古い JavaScript (ES5) を扱っており、これからも既存のアーキテクチャを
+維持する必要があるけども、文法チェックや自動整形といったツールを導入したい場合に役に立ちます。
+
+今やエディタ選択の有力候補となった Visual Studio Code (VSCode) をベースに、
+インストールから実際の動作確認までを体験するところまでを案内しています。
+
+コマンドラインの操作は最小限に、初心者にもわかりやすい説明を心がけています。
+
+
+== ESLint とは？
+
+JavaScript のコードに対し*文法チェック*を行って、ルールに沿っていなかったり怪しいところを教えてくれるツールです。
+この記事で配布しているサンプルでは世界中で人気の高い Airbnb 社のルールを採用しています。
+初心者もこのルールという養成ギプスがあれば、自然と良いコードを書く力が身に付くでしょう。
+
+[.no-shadow]
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201802/better-es5-eslint.png[better-es5-eslint]
+
+
+詳細::
+* link:https://github.com/airbnb/javascript/tree/es5-deprecated/es5[Airbnb JavaScript Style Guide (es5)]
+* link:https://github.com/1hella/eslint-config-airbnb-es5[eslint-config-airbnb-es5]
+
+Demo::
+https://eslint.org/demo/
+
+
+== Prettier とは？
+
+世界的おすすめルールでコード整形（フォーマット）をしてくれるツールです。
+JavaScriptの他に、Vue、CSS、Markdownなどにも対応しています。
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201802/better-es5-prettier-demo.webp[better-es5-prettier-demo]
+
+Demo::
+https://prettier.io/playground/
+
+
+== 何が嬉しいの？
+
+- コーディングのケアレスミスを書いたそばから教えてくれます。
+- コーディングスタイルを世界的に認められたものに統一できます。
+- コードのフォーマットにかける時間を短縮できます。
+- コードレビューにおいてコーディングスタイルについて議論する必要がなくなります。
+
+[WARNING]
+====
+特にコードフォーマットについて、今まで「ケースバイケース」で人間が適宜対応してきた
+細かい要件を我慢するというトレードオフで成り立っています。
+より細かいルールは各ツールのサポートするオプションの増加によって対応できるようになる
+可能性がありますが、こだわりが強い訳でもないのであればすべてデフォルトのまま任せるのが
+ひとつの手っ取り早い判断方法と言えます。
+コツとしては、*フォーマッターが整形した後にキレイに見えるように書く*ことです。
+====
+
+== VSCodeで使う準備をしよう
+
+=== Node.jsのインストール
+
+* VSCodeを終了しておきます。
+* link:https://nodejs.org/ja/[]
+  - LTS 推奨版をダウンロード
+* インストーラに従ってインストール
+
+=== 拡張機能のインストール
+
+似たような拡張機能が多くあり、選択間違いを防ぐため一旦以下のリンクから
+拡張機能の Web ページを開いて Install ボタンからインストールを実施してください。
+
+* link:https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint[ESLint - Visual Studio Marketplace]
+* link:https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode[Prettier - Code formatter - Visual Studio Marketplace]
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201802/better-es5-vsc-eslint.png[better-es5-vsc-eslint]
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201802/better-es5-vsc-prettier.png[better-es5-vsc-prettier]
+
+=== 拡張機能の設定
+
+Prettier のフォーマット結果を ESLint の自動修正機能 `--fix` に渡す機能を VSCode から
+利用できるようにするため、ユーザー設定にて以下とおり設定を変更します。
+
+```json
+  "prettier.eslintIntegration": true,
+```
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201802/better-es5-eslintIntegration.png[better-es5-eslintIntegration]
+
+
+== 体験してみよう
+
+- サンプルソースコードをダウンロード
+  * link:https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201802/better-es5.zip[better-es5.zip] (5 KB)
+- 展開したフォルダを VSCode にドラッグ
+- 統合ターミナルを開いて `npm install` を実行
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201802/better-es5-npm-install.png[better-es5-npm-install]
+
+
+.インストールしている npm パッケージ
+|===
+|パッケージ|説明
+
+|`eslint`
+|ESLint本体
+
+|`eslint-config-airbnb-base`
+|ESLint設定: Airbnbのルール(Reactなし版)
+
+|`eslint-config-prettier`
+|Prettierの要求する記述ルールを、ESLintでチェックできるようにしたもの
+
+|`eslint-plugin-import`
+|`eslint-config-airbnb-base` 依存
+
+|`eslint-plugin-prettier`
+|ESLintでPrettier記述ルールを解析できるようにするもの
+
+|`prettier-eslint`
+|Prettier本体とフォーマット結果をESLintに渡す仕組み
+|===
+
+=== 動作確認の様子
+
+こんな感じに表示できていたら成功です。
+ESLint の指摘が表示されない場合は、統合ターミナルを開いてコンソール選択プルダウンから
+ESLint を選択すると、エラーの内容が表示されるので確認してみてください。
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201802/better-es5-sample-preview.png[better-es5-sample-preview]
+
+=== Prettierの自動フォーマットを試す
+
+Prettierによる自動フォーマットを実行するには、メニューの「表示 > コマンドパレット」から
+「ドキュメントのフォーマット (Format Document)」を選択します。
+このことから Prettier は独立したフォーマッターではなく VSCode のドキュメントフォーマッターとして
+組み込まれていることがわかります。
+また、コマンドの隣にキーボードショートカットが表示されているので、何度も実行する場合は覚えておくとよいでしょう。
+
+キーボードショートカット::
+kbd:[Shift + Alt + F]
+
+
+== 自分のプロジェクトで使うには？
+
+=== まだ npm を導入していない場合
+
+導入したいプロジェクトのディレクトリに下記をコピーして配置し、
+インストールコマンドを実行します。
+
+* `.eslintrc.json`
+* `package.json`
+
+```bash
+C:\path\to\dir> npm install
+```
+
+=== すでに npm を導入している場合
+
+```bash
+npm install -D eslint eslint-config-airbnb-base eslint-config-prettier eslint-plugin-import eslint-plugin-prettier prettier-eslint
+```
+
+
+== 設定を変えてみよう
+
+配布しているサンプル *better-es5* は、以下の２つのファイルによって
+ESLint と Prettier の設定を行っています。
+package.json では必要な npm パッケージと Prettier の設定をしています。
+Prettier の設定は専用ファイル `.prettierrc` を用意することもできますが、
+今回は変更するルールも少ないので管理ファイル数を抑えるためにもここに記述しています。
+
+.package.json
+```json
+{
+  "name": "better-es5",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-prettier": "^2.5.0",
+    "prettier-eslint": "^8.8.1"
+  },
+  "prettier": {
+    "trailingComma": "es5"
+  }
+}
+```
+
+./.eslintrc.json
+```json
+{
+  "extends": ["airbnb-base/legacy", "prettier"],
+  "plugins": ["prettier"],
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "$": true,
+    "_": true,
+    "Vue": true,
+    "Vuex": true,
+    "ES6Promise": true,
+    "App": true
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "func-names": 0
+  }
+}
+```
+
+=== ESLintの設定
+
+あなたのプロジェクトで使っているライブラリをグローバル変数経由で参照する場合、
+`"globals"` で示すように事前にそれを ESLint に安全なものと伝える必要があります。
+jQuery の `$` を見れば察しがつくかと思います。
+
+`"rules"` には、プロジェクト独自のルールで Airbnb・Prettier のそれを上書きできます。
+と言っても、主な記述目的としては「さすがにこのルールは守りきれない」というものを
+適宜押さえ込むために追加していくことになるでしょう。
+
+=== Prettierのオプション
+
+Prettier を導入する際、すぐに気になるのは文字列を囲むのが *ダブルクォーテーション*
+だという点でしょう。もしこれを変更したい場合は、以下のように `singleQuote` を
+`true` に設定します。
+
+.package.json (抜粋)
+```json
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
+  }
+}
+```
+
+ほかにもいくつかオプションによって挙動を変更することができます。
+
+* link:https://prettier.io/docs/en/options.html[Options · Prettier]
+
+
+== 保存時のオートフォーマットについて
+
+VSCode の設定にて `"editor.formatOnSave": true` とすれば実現が可能です。
+言語別の ON / OFF も可能です。しかし、実際に使ってみるとわかるのですが、
+例えばフレームワークなどによって事前に用意された設定ファイルにて、一部の値だけ変更した
+場合にすべてのコードがフォーマットされる事態が発生します。
+これではバージョン管理システムで変更を追跡するのが難しくなってしまうのでおすすめできません。
+
+この記事では触れていませんが、Git であればコミット前にフォーマットを実行させることができます。
+
+* link:https://prettier.io/docs/en/precommit.html[Pre-commit Hook · Prettier]
