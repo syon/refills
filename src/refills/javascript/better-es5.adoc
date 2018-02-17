@@ -13,7 +13,7 @@ layout: refill.jade
 
 :experimental:
 
-image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201802/better-es5-hero.png[better-es5]
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201802/better-es5.png[better-es5]
 
 
 == この記事のターゲット読者像
