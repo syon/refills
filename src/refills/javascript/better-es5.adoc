@@ -50,7 +50,12 @@ https://eslint.org/demo/
 世界的おすすめルールでコード整形（フォーマット）をしてくれるツールです。
 JavaScriptの他に、Vue、CSS、Markdownなどにも対応しています。
 
-image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201802/better-es5-prettier-demo.webp[better-es5-prettier-demo]
+++++
+<picture>
+  <source type="image/webp" srcset="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201802/better-es5-prettier-demo.webp" />
+  <img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201802/better-es5-prettier-demo.gif" alt="better-es5-prettier-demo" class="apng-image" />
+</picture>
+++++
 
 Demo::
 https://prettier.io/playground/
