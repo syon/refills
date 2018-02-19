@@ -5,7 +5,7 @@ rcd: extensions
 srcpath: vscode/extensions.adoc
 title: おすすめ拡張機能
 category: VSCode
-date: 2017.6.12
+date: 2018.2.19
 layout: refill.jade
 ---
 
@@ -44,3 +44,13 @@ image::https://oderwat.gallerycdn.vsassets.io/extensions/oderwat/indent-rainbow/
 
 インデントの階層レベルを、背景色の違いを使ってわかりやすくします。
 名前の通りデフォルト設定ではレインボーですが、ユーザ設定にて色・透明度・パターン数を変更可能です。
+
+
+== link:https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer[Bracket Pair Colorizer]
+
+image::https://raw.githubusercontent.com/CoenraadS/BracketPair/master/images/example.png[]
+
+
+== link:https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces[Trailing Spaces]
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201802/vscode-ex-trailingspaces.png[]
