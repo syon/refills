@@ -19,6 +19,12 @@ Headless Chrome Node API
 - link:https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md[puppeteer/api.md at master · GoogleChrome/puppeteer]
 
 
+== based on Headless Chrome
+
+link:https://github.com/yujiosaka/headless-chrome-crawler[Headless Chrome Crawler]::
+Distributed crawler powered by Headless Chrome
+
+
 == tips
 
 === POSTリクエストを送る
