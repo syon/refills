@@ -22,7 +22,7 @@ Headless Chrome Node API
 == based on Headless Chrome
 
 link:https://github.com/yujiosaka/headless-chrome-crawler[Headless Chrome Crawler]::
-Distributed crawler powered by Headless Chrome
+モダンフロントエンドに対応したヘッドレスChromeによる分散クローラー
 
 
 == tips
