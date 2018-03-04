@@ -105,6 +105,12 @@ Array.from(Array(100).keys())
 // => [0, 1, 2, ..., 99]
 ```
 
+```js
+console.table([...Array.from(Array(100).keys())].map((n)=>{
+  return { '16': n.toString(16), '36': n.toString(36) }
+}))
+```
+
 
 == import
 
