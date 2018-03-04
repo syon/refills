@@ -96,6 +96,15 @@ const distinctAnimals = [...new Set(animals)];
 //=> ["cat", "dog", "mouse"]
 ```
 
+=== 指定した範囲の整数配列
+
+- link:http://blog.mudatobunka.org/entry/2015/10/31/222750[指定した範囲の整数配列の作り方 in JavaScript ES6 - 無駄と文化]
+
+```js
+Array.from(Array(100).keys())
+// => [0, 1, 2, ..., 99]
+```
+
 
 == import
 
