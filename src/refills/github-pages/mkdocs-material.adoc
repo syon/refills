@@ -1,0 +1,172 @@
+---
+rid: 1520345
+bid: github-pages
+rcd: mkdocs-material
+srcpath: github-pages/mkdocs-material.md
+title: MkDocs・MaterialのDockerを使ったインストール手順
+desc: Markdownベースのドキュメントサイト生成ツール「MkDocs」とそのテーマをマテリアルデザインにする「Material for MkDocs」を、Dockerを使って構築する手順を紹介します。また、継続的な更新のためにWerckerによるビルド＆デプロイの自動化方法も案内しています。
+category: GitHub Pages
+date: 2018.3.6
+ogpimg: chronicle/201803/mkdocs-screenshot-orange.png
+layout: refill.jade
+---
+
+[.no-shadow]
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201803/mkdocs-screenshot-orange.png[MkDocs Material Screenshot]
+
+デモサイト::
+https://syon.github.io/mkdocs-material-starterkit/
+
+Markdownベースのドキュメントサイト生成ツール「MkDocs」とそのテーマをマテリアルデザインにする
+「Material for MkDocs」を、Dockerを使って構築する手順を紹介します。
+Dockerを動作環境とすることで、お使いのPCにPythonをインストールするのを避けることができます。
+
+また、記事の後半では継続的な更新のために *Wercker によるビルド＆デプロイの自動化方法*も案内しています。
+
+
+== インストール :: Windowsの場合
+
+[WARNING]
+====
+*Docker の導入には __Windows 10 Pro__ が必要です。*
+
+Windows向けDockerはHyper-Vが有効な64bitのWindows 10 Proがシステム要件となっています。
+詳しくは link:https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install[インストール前のご注意] をご確認ください。
+====
+
+=== Dockerのインストール
+
+https://docs.docker.com/docker-for-windows/install/
+
+=== スターターキットZIPの入手
+
+GitHubからダウンロード::
+https://github.com/syon/mkdocs-material-starterkit
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201803/mkdocs-downloadzip.png[Download Starter-Kit ZIP]
+
+=== DockerイメージのPull
+
+ZIP ファイルをダウンロードしたら、任意の場所に展開します。
+そこに入っている `windows` フォルダを開き、以下のバッチファイルを実行します。
+
+- `windows/docker-pull.bat`
+
+=== 実行と動作確認
+
+1. `windows/mkdocs-serve.bat`
+2. http://0.0.0.0:8000
+
+=== アップロード
+
+==== GitHub Pagesの場合
+
+1. `windows/mkdocs-gh-deploy.bat`
+
+==== 他のWebサーバの場合
+
+1. `windows/mkdocs-build.bat`
+2. `site` フォルダをルートとしてアップロード
+
+
+'''
+
+
+== インストール :: Macの場合
+
+1. link:https://github.com/syon/mkdocs-material-starterkit/archive/master.zip[Download ZIP]
+2. link:https://docs.docker.com/docker-for-mac/install/[Install Docker for Mac | Docker Documentation]
+    - `$ docker pull squidfunk/mkdocs-material`
+3. Install link:https://www.wercker.com/cli[Wercker CLI]
+
+=== 実行と動作確認
+
+1. `$ wercker dev --expose-ports`
+2. http://0.0.0.0:8000
+
+=== アップロード
+
+==== GitHub Pagesの場合
+
+```bash
+$ docker run --rm -it -v ${PWD}:/docs squidfunk/mkdocs-material gh-deploy
+```
+
+==== 他のWebサーバの場合
+
+1. `$ wercker build`
+2. `site` ディレクトリをルートとしてアップロード
+
+
+== Markdownファイルの配置
+
+[.no-shadow]
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201803/mkdocs-finder.png[MkDocs Finder]
+
+デモサイトは、このようにMarkdownファイルを配置しています。
+サブフォルダを作ってその中に入れると、カテゴリ（タブ）ごとに分類することができます。
+
+
+== 設定
+
+サイト名やリポジトリ情報を編集しましょう。
+
+.mkdocs.yml
+```yaml
+# Project information
+site_name: The Site Name
+
+# Repository
+repo_name: mkdocs-material-starterkit
+repo_url: https://github.com/syon/mkdocs-material-starterkit
+
+# Configuration
+theme:
+  name: 'material'
+  palette:
+    primary: 'cyan'
+    accent: 'cyan'
+  language: 'ja'
+  feature:
+    tabs: true
+```
+
+配色に関しては、マテリアルデザインのルールに則ってプライマリカラーとアクセントカラーを指定できます。
+例えば2単語の *Deep Purple* は `'deep purple'` と指定します。
+
+[.no-shadow]
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201803/mkdocs-colors.png[MkDocs Material Colors]
+
+以下のキャプチャはプライマリカラーに Purple 、アクセントカラーに Orange を指定したものです。
+
+[.no-shadow]
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201803/mkdocs-screenshot-purple.png[MkDocs Material Purple]
+
+
+== Werckerと連携して自動デプロイ
+
+このスターターキットでは Wercker と連携して GitHub Pages に自動デプロイすることができます。
+まずは Wercker にログインし、対象のリポジトリを登録してから以下の設定を済ませておいてください。
+あとは GitHub にリポジトリを Push するだけです。
+
+- link:https://syon.github.io/refills/rid/1462280/[GitHubアクセストークンとWerckerの設定]
+
+補足ですが、この `wercker.yml` では私が用意した独自の Docker イメージを利用しています。
+これは元となる `squidfunk/mkdocs-material` の Docker イメージにて `ENTRYPOINT`
+が設定されており、 Wercker 上の動作に支障があります。そこで、改めて `ENTRYPOINT` を
+空の指定で打ち消すだけの Dockerfile を用意し公開している次第です。
+
+.wercker.yml（抜粋）
+```yaml
+box:
+  id: syon/mkdocs-material
+```
+
+.Dockerfile
+```dockerfile
+FROM squidfunk/mkdocs-material
+EXPOSE 8000
+ENTRYPOINT []
+```
+
+- link:https://hub.docker.com/r/syon/mkdocs-material/[syon/mkdocs-material - Docker Hub]
