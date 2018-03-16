@@ -60,6 +60,11 @@ async function printFiles () {
 }
 ```
 
+[quote, 'link:https://stackoverflow.com/questions/30362733/handling-errors-in-promise-all[javascript - Handling errors in Promise.all - Stack Overflow]']
+____
+`Promise.all` is all or nothing.
+____
+
 
 == Objectの複製・マージ
 
