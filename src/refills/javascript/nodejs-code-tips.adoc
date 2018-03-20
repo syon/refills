@@ -5,7 +5,7 @@ rcd: nodejs-code-tips
 srcpath: javascript/nodejs-code-tips.adoc
 title: Node.js CODE TIPS
 category: JavaScript
-date: 2017.10.31
+date: 2018.03.20
 layout: refill.jade
 ---
 
