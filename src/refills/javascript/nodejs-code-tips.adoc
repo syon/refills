@@ -31,6 +31,24 @@ fs.readFile('./input.txt', 'utf8', function(err, text) {
 });
 ----
 
+=== Shift JISファイルの読込と書込
+
+```bash
+$ npm install -S iconv-lite
+```
+
+[source,javascript]
+----
+const fs = require('fs');
+const iconv = require('iconv-lite');
+
+const file = fs.readFileSync('./input.txt');
+const text= iconv.decode(Buffer.from(file), "Shift_JIS");
+// ...
+const buf = iconv.encode(text, "Shift_JIS");
+fs.writeFileSync('output.txt', buf, ()=>{});
+----
+
 
 == ファイル書き込み
 
