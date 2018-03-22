@@ -254,6 +254,17 @@ jQuery の `$` を見れば察しがつくかと思います。
 と言っても、主な記述目的としては「さすがにこのルールは守りきれない」というものを
 適宜押さえ込むために追加していくことになるでしょう。
 
+==== 「次の１行だけESLint無効化」
+
+```js
+/* eslint-disable-next-line */
+alert('foo');
+```
+
+その他、例外的にESLintを無効化する方法が公式ドキュメントにまとめられています。
+
+- link:https://eslint.org/docs/user-guide/configuring#disabling-rules-with-inline-comments[Configuring ESLint - ESLint - Pluggable JavaScript linter]
+
 === Prettierのオプション
 
 Prettier を導入する際、すぐに気になるのは文字列を囲むのが *ダブルクォーテーション*
