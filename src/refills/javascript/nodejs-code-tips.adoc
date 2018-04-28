@@ -155,6 +155,12 @@ const records = readCsvSync('sample.csv', options);
 ----
 
 
+== CSV書き込み
+
+- link:http://csv.adaltas.com/stringify/[CSV Stringifier | Node.js CSV project]
+- link:https://syon.github.io/til/2018/04/28/nodejs-yaml2tsv/[[Node.js\]yamlファイルのリストをTSVに変換する - syon/til]
+
+
 == glob
 
 - link:https://github.com/isaacs/node-glob[isaacs/node-glob: glob functionality for node.js]
