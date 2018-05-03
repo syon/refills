@@ -42,6 +42,17 @@ $ mdls sample.txt
 $ xattr -w com.apple.metadata:kMDItemLastUsedDate '' sample.txt
 ```
 
+### 「最後に開いた日」＝ Access Time ではない？
+
+「最後に開いた日」と "Access / atime" のような日付情報を結びつけがちですが、
+どうやらそれとこれとは別のようです。
+とは言え、ふつうに使っていたら同時に更新されるため、一致するでしょう。
+
+![](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201805/mac-statmapping.png)
+
+安易に「ファイル属性のアクセスタイムが最後に開いた日」という理解をしてしまうと、
+期待した結果とならない場合があるので注意です。
+
 
 ## 「最後に開いた日」を任意の日付に設定する
 
