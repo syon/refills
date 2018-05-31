@@ -259,6 +259,8 @@ export default {
 </script>
 ```
 
+- link:https://qiita.com/suin/items/7331905a45a8ff80d4dd[Vuex：mapStateの書き方8パターン+11サンプルコード - Qiita]
+
 === actions
 
 - link:https://qiita.com/hirohero/items/771ac34b8213105e2d5f[Vueコンポーネント & Vuex テンプレ - Qiita]
