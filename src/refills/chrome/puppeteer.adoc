@@ -38,8 +38,16 @@ link:https://github.com/yujiosaka/headless-chrome-crawler[Headless Chrome Crawle
 - E2Eテスト用途ではない
 - 自動操作が目的である（スクレイピング、キャプチャ）
 
+コード内では *ブラウザのユーザー操作* を Puppeteer API に実行させ、
+DOM の読み取りや加工は `page.evaluate()` に流す。
+
 
 == tips
+
+=== まとめ
+
+- link:https://qiita.com/rh_taro/items/32bb6851303cbc613124[puppeteerでよく使うであろう処理の書き方 - Qiita]
+
 
 === launch options
 
@@ -96,6 +104,15 @@ await page.waitFor(1000);
 await page.waitFor(() => !!document.querySelector('.foo'));
 ```
 
+=== ファイルをダウンロードして保存
+
+- link:https://www.sambaiz.net/article/131/[Headless Chromeでファイルをダウンロードする - sambaiz-net]
+
+ブラウザのダウンロード機能を経由して保存したファイルを得る方法。
+`Page.setDownloadBehavior` がダウンロードバーに相当し、ダウンロードフォルダを指定することができる。
+この際、指定するパスは `path.resolve()` を使って適切な文字列を downloadPath に割り当てるとよい。
+
+
 === POSTリクエストを送る
 
 - link:https://github.com/GoogleChrome/puppeteer/issues/669[Send POST request to a page and take screenshot · Issue #669 · GoogleChrome/puppeteer] +
@@ -120,6 +137,13 @@ await page.goto('http://www.google.com');
 ```
 
 
+=== link:https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageexposefunctionname-puppeteerfunction[page.exposeFunction]
+
+ブラウザの window オブジェクトに Node.js 関数を渡して実行させることができる。
+サンプルでは crypto モジュールを require してブラウザから md5 ハッシュを生成している。
+もう１つのサンプルでは fs モジュールを require して window.readfile 関数を実現している。
+
+
 == Run on
 
 - link:http://syonx.hatenablog.com/entry/2017/09/20/210004[PuppeteerをDockerやHerokuで動かすメモ - syonx]
@@ -131,9 +155,8 @@ await page.goto('http://www.google.com');
 - link:https://github.com/CoffeeAndCode/puppeteer-heroku-buildpack[CoffeeAndCode/puppeteer-heroku-buildpack] +
   adds support for Chinese, Korean, and Japanese characters
 
-=== Running Puppeteer on AWS Lambda
+=== link:https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#running-puppeteer-on-aws-lambda[AWS Lambda]
 
-- link:https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#running-puppeteer-on-aws-lambda[puppeteer/troubleshooting.md at master · GoogleChrome/puppeteer]
 - link:https://github.com/Kikobeats/aws-lambda-chrome[Kikobeats/aws-lambda-chrome] +
   Chrome binary compatible with AWS Lambda.
 
