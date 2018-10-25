@@ -40,8 +40,8 @@ link:https://github.com/yujiosaka/headless-chrome-crawler[Headless Chrome Crawle
 
 コード内では *ブラウザの UI 操作* を Puppeteer API に実行させ、
 DOM の読み取りや加工は `page.evaluate()` に流す。
-Puppeteer には link:https://github.com/cheeriojs/cheerio[cheerio] のような
-API はないので、渡した先の Chromium 実行環境で
+Puppeteer には link:https://github.com/cheeriojs/cheerio[cheerio] のような API はない。
+Chromium 実行環境で innerHTML / outerHTML を読み取って cheerio に渡すことはできる。
 
 
 == tips
@@ -104,6 +104,24 @@ await page.waitFor('.foo');
 await page.waitFor(1000);
 // wait for predicate
 await page.waitFor(() => !!document.querySelector('.foo'));
+```
+
+=== 要素のテキスト取得
+
+```js
+const text = await page.$eval('.selector', element => element.textContent);
+```
+
+=== 要素の HTML 取得
+
+```js
+const html = await page.$eval('.main-container', e => e.outerHTML);
+```
+
+=== 名前を指定してフレームを取得
+
+```js
+const frame = page.frames().find(frame => frame.name() === 'myframe');
 ```
 
 === ファイルをダウンロードして保存
