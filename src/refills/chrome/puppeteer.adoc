@@ -15,19 +15,28 @@ image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/
 link:https://github.com/GoogleChrome/puppeteer[GoogleChrome/puppeteer]::
 Headless Chrome Node API
 
-link:https://pptr.dev/[]
-
 
 == documents
 
+- link:https://pptr.dev/[]
 - link:https://developers.google.com/web/tools/puppeteer/[Puppeteer  |  Tools for Web Developers  |  Google Developers]
 - link:https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md[puppeteer/api.md at master · GoogleChrome/puppeteer]
 
 
 == based on Headless Chrome
 
+link:https://github.com/Kikobeats/browserless[Kikobeats/browserless]::
+High level automation API for working with Headless Chrome
+
 link:https://github.com/yujiosaka/headless-chrome-crawler[Headless Chrome Crawler]::
 モダンフロントエンドに対応したヘッドレスChromeによる分散クローラー
+
+
+== Puppeteerの使いどころ
+
+- Chromeで動けば良い
+- E2Eテスト用途ではない
+- 自動操作が目的である（スクレイピング、キャプチャ）
 
 
 == tips
