@@ -38,8 +38,10 @@ link:https://github.com/yujiosaka/headless-chrome-crawler[Headless Chrome Crawle
 - E2Eテスト用途ではない
 - 自動操作が目的である（スクレイピング、キャプチャ）
 
-コード内では *ブラウザのユーザー操作* を Puppeteer API に実行させ、
+コード内では *ブラウザの UI 操作* を Puppeteer API に実行させ、
 DOM の読み取りや加工は `page.evaluate()` に流す。
+Puppeteer には link:https://github.com/cheeriojs/cheerio[cheerio] のような
+API はないので、渡した先の Chromium 実行環境で
 
 
 == tips
@@ -111,6 +113,14 @@ await page.waitFor(() => !!document.querySelector('.foo'));
 ブラウザのダウンロード機能を経由して保存したファイルを得る方法。
 `Page.setDownloadBehavior` がダウンロードバーに相当し、ダウンロードフォルダを指定することができる。
 この際、指定するパスは `path.resolve()` を使って適切な文字列を downloadPath に割り当てるとよい。
+
+ブラウザのUI操作でダウンロードバーに落ちてくるケースであれば上記で対応できるが、
+クリックしただけではページが開いてしまうようなケースでは他の様々なアプローチが存在する。
+
+- link:https://github.com/GoogleChrome/puppeteer/issues/299[Question: How do I get puppeteer to download a file? · Issue #299 · GoogleChrome/puppeteer]
+- link:https://github.com/GoogleChrome/puppeteer/issues/610#issuecomment-340160025[Response is Null when Navigating to a PDF · Issue #610 · GoogleChrome/puppeteer]
+- 静的ファイルならば URL だけ割り出して Node.js に戻して curl のように処理するのも手
+  * link:https://stackoverflow.com/questions/11944932/how-to-download-a-file-with-node-js-without-using-third-party-libraries[javascript - How to download a file with Node.js (without using third-party libraries)? - Stack Overflow]
 
 
 === POSTリクエストを送る
