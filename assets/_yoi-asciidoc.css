@@ -34,6 +34,9 @@
     font-style: italic;
     border: 0;
   }
+  .paragraph p:first-child {
+    margin-top: 0;
+  }
   .paragraph p:last-child {
     margin-bottom: 0;
   }

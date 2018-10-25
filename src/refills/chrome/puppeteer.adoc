@@ -5,12 +5,17 @@ rcd: cvim
 srcpath: chrome/puppeteer.adoc
 title: Puppeteerメモ
 category: Chrome
-date: 2018.1.17
+date: 2018.10.25
 layout: refill.jade
 ---
 
+[.no-shadow]
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201810/puppeteer.png[Puppeteer,150]
+
 link:https://github.com/GoogleChrome/puppeteer[GoogleChrome/puppeteer]::
 Headless Chrome Node API
+
+link:https://pptr.dev/[]
 
 
 == documents
@@ -26,6 +31,61 @@ link:https://github.com/yujiosaka/headless-chrome-crawler[Headless Chrome Crawle
 
 
 == tips
+
+=== launch options
+
+- link:https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#puppeteerlaunchoptions[puppeteer/api.md at master · GoogleChrome/puppeteer]
+- link:https://peter.sh/experiments/chromium-command-line-switches/[List of Chromium Command Line Switches « Peter Beverloo]
+
+=== ERR_CERT_COMMON_NAME_INVALID
+
+> UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): Error: SSL Certificate error: ERR_CERT_COMMON_NAME_INVALID
+
+```js
+const browser = await puppeteer.launch({
+  headless: false,
+  ignoreHTTPSErrors: true
+});
+```
+
+=== use proxy server with authentication
+
+- link:https://blog.apify.com/how-to-make-headless-chrome-and-puppeteer-use-a-proxy-server-with-authentication-249a21a79212[Make headless Chrome and Puppeteer use proxy server with authentication]
+
+```js
+const puppeteer = require('puppeteer');
+
+(async() => {
+  const proxyUrl = 'http://proxy.example.com:8000';
+  const username = 'bob';
+  const password = 'password123';
+
+  const browser = await puppeteer.launch({
+    args: [`--proxy-server=${proxyUrl}`],
+    headless: false,
+  });
+
+  const page = await browser.newPage();
+
+  await page.authenticate({ username, password });
+  await page.goto('https://www.example.com');
+
+  await browser.close();
+})();
+```
+
+=== wait / sleep
+
+- link:https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagewaitforselectororfunctionortimeout-options-args[puppeteer/api.md at master · GoogleChrome/puppeteer]
+
+```js
+// wait for selector
+await page.waitFor('.foo');
+// wait for 1 second
+await page.waitFor(1000);
+// wait for predicate
+await page.waitFor(() => !!document.querySelector('.foo'));
+```
 
 === POSTリクエストを送る
 
@@ -61,6 +121,12 @@ await page.goto('http://www.google.com');
   Installs dependencies needed in order to run puppeteer on heroku
 - link:https://github.com/CoffeeAndCode/puppeteer-heroku-buildpack[CoffeeAndCode/puppeteer-heroku-buildpack] +
   adds support for Chinese, Korean, and Japanese characters
+
+=== Running Puppeteer on AWS Lambda
+
+- link:https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#running-puppeteer-on-aws-lambda[puppeteer/troubleshooting.md at master · GoogleChrome/puppeteer]
+- link:https://github.com/Kikobeats/aws-lambda-chrome[Kikobeats/aws-lambda-chrome] +
+  Chrome binary compatible with AWS Lambda.
 
 
 == articles
