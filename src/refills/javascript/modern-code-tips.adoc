@@ -66,6 +66,21 @@ ____
 ____
 
 
+== n回ループ
+
+```js
+[...Array(5)].map((_, i) => console.log(i))
+//=> 0
+//=> 1
+//=> 2
+//=> 3
+//=> 4
+
+[...Array(20)].map(() => '★').join('')
+//=> ★★★★★★★★★★★★★★★★★★★★
+```
+
+
 == Objectの複製・マージ
 
 - link:https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Object/assign[Object.assign() - JavaScript | MDN]
