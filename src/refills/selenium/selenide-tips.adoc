@@ -5,12 +5,47 @@ rcd: selenide-tips
 srcpath: selenium/selenide-tips.adoc
 title: Selenide 逆引き Code Tips
 category: Selenium
-date: 2018.1.9
+date: 2018.11.8
 layout: refill.jade
 ---
 
-
 - link:http://selenide.org/[Selenide: concise UI tests in Java]
+
+
+== IE11 で動作しないとき
+
+インターネットオプションの保護モード有効や拡大率100%、
+レジストリ `FEATURE_BFCACHE` の設定をしても動作しない状況になりました。
+具体的には IE11 が立ち上がり自動入力はできるものの `element.click()` が効かないという事象です。
+以下のコードで動作確認できました。(2018年11月)
+
+- Windows 10 Pro (64 bit)
+- IEDriverServer.exe (32 bit)
+
+```java
+public static void useIE11() {
+    Configuration.browser = WebDriverRunner.INTERNET_EXPLORER;
+    System.setProperty("webdriver.ie.driver", "C:/path/to/webdrivers/IEDriverServer.exe"); // 32bit
+
+    DesiredCapabilities dc = new DesiredCapabilities();
+    dc.setCapability("nativeEvents", false);
+    dc.setCapability("unexpectedAlertBehaviour", "accept");
+    dc.setCapability("ignoreProtectedModeSettings", true);
+    dc.setCapability("disable-popup-blocking", true);
+    dc.setCapability("enablePersistentHover", true);
+    InternetExplorerOptions opts = new InternetExplorerOptions();
+    opts.merge( dc );
+    InternetExplorerDriver driver = new InternetExplorer( opts );
+    WebDriverRunner.setWebDriver( driver );
+}
+```
+
+- link:https://github.com/selenide/selenide/wiki/How-Selenide-creates-WebDriver[How Selenide creates WebDriver · selenide/selenide Wiki]
+- link:https://sqa.stackexchange.com/questions/9496/webdriver-clicking-button-issue-in-ie-11[automated testing - WebDriver Clicking button issue in IE 11 - Software Quality Assurance & Testing Stack Exchange]
+- link:https://bitwave.showcase-tv.com/selenium%E3%81%A7internet-explorer11%E3%82%92%E5%8B%95%E3%81%8B%E3%81%99%E6%96%B9%E6%B3%95/[SeleniumでInternet Explorer11を動かす方法]
+
+
+== ウィンドウ
 
 === 最後に開いたウィンドウにスイッチする
 
@@ -50,7 +85,7 @@ public class Utility {
 ```
 
 ```java
-Webdriver childDriver = Utility.getHandleToWindow("titleOfChildWindow");
+WebDriver childDriver = Utility.getHandleToWindow("titleOfChildWindow");
 ```
 
 - link:https://stackoverflow.com/questions/19112209/how-to-handle-the-new-window-in-selenium-webdriver-using-java[How to handle the new window in Selenium WebDriver using Java? - Stack Overflow]
