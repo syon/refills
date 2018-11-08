@@ -45,6 +45,29 @@ public static void useIE11() {
 - link:https://bitwave.showcase-tv.com/selenium%E3%81%A7internet-explorer11%E3%82%92%E5%8B%95%E3%81%8B%E3%81%99%E6%96%B9%E6%B3%95/[SeleniumでInternet Explorer11を動かす方法]
 
 
+== 設定
+
+```java
+// ブラウザウィンドウのサイズ
+Configuration.browserSize = "1280x1024";
+
+// open() を呼んだときのベースURL
+Configuration.baseUrl = "http://localhost:8080";
+
+// 自動操作の続行待ちタイムアウト 30秒
+Configuration.timeout = 30000;
+
+// テストが終了後もブラウザを開いたままにする
+Configuration.holdBrowserOpen = true;
+
+// スクリーンショット等の出力先
+Configuration.reportsFolder = "path/to/folder";
+
+// テストが失敗したときにレポートを出力しない
+Configuration.savePageSource = false;
+```
+
+
 == ウィンドウ
 
 === 最後に開いたウィンドウにスイッチする
