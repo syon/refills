@@ -6,7 +6,7 @@ srcpath: heroku/static-site.md
 title: Herokuを使ってサクッと無料で静的サイトを公開
 desc: すでに手元にある HTML などのファイルをインターネットに公開したい場合に、クラウドサービスを利用すると便利です。今回は無料で利用できる Heroku を使ったやり方を紹介します。
 category: Heroku
-date: 2017.1.1
+date: 2018.11.18
 ogpimg: heroku/static-site/awake-command-logs.png
 layout: refill.jade
 ---
@@ -16,6 +16,30 @@ layout: refill.jade
 今回は無料で利用できる Heroku を使ったやり方を紹介します。
 
 - [Cloud Application Platform | Heroku](https://www.heroku.com/)
+
+
+***
+
+*余談* ― 2018年末現在、静的ファイルのホスティングは Netlify が主流です。
+Heroku は無料で利用できる PaaS の有力な候補であることは変わりませんが、
+後発の Firebase も便利ですので、あわせてご検討ください。
+
+<p>
+<a href="https://www.netlify.com">
+  <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"/>
+</a>
+&nbsp;
+<a href="https://firebase.google.com">
+  <img src="https://firebase.google.com/downloads/brand-guidelines/SVG/logo-built_black.svg?hl=ja" style="height:50px;"/>
+</a>
+</p>
+
+Netlify のスターターキットも用意しています。
+
+- https://github.com/syon/awake
+
+***
+
 
 Heroku でアカウントを登録したら、コマンドラインで扱うために Heroku CLI をインストールします。
 
@@ -28,7 +52,7 @@ Heroku でアカウントを登録したら、コマンドラインで扱うた�
 
 ![Download zip file from GitHub site](https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201701/awake-zip.png)
 
-- https://github.com/syon/awake
+- https://github.com/syon/awake/tree/heroku
   - Download ZIP
 
 ダウンロードした ZIP ファイルを、任意の場所に展開します。
