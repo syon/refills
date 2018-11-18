@@ -26,11 +26,11 @@ Heroku は無料で利用できる PaaS の有力な候補であることは変�
 
 <p>
 <a href="https://www.netlify.com">
-  <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"/>
+  <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" style="display:inline-block; height:50px;"/>
 </a>
 &nbsp;
 <a href="https://firebase.google.com">
-  <img src="https://firebase.google.com/downloads/brand-guidelines/SVG/logo-built_black.svg?hl=ja" style="height:50px;"/>
+  <img src="https://firebase.google.com/downloads/brand-guidelines/SVG/logo-built_black.svg?hl=ja" style="display:inline-block; height:50px;"/>
 </a>
 </p>
 
