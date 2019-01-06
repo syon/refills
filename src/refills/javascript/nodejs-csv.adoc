@@ -1,0 +1,46 @@
+---
+rid: 1546773
+bid: javascript
+rcd: nodejs-csv
+srcpath: javascript/nodejs-csv.adoc
+title: Node.js CSV まとめ
+category: JavaScript
+date: 2019.01.06
+layout: refill.jade
+---
+
+== オブジェクト配列からCSV文字列に変換
+
+link:https://csv.js.org/stringify/[CSV Stringify - Usage]
+
+```js
+const stringifySync = require("csv-stringify/lib/sync");
+
+const records = [
+  { id: 1, name: "宮崎", birthday: "1985/11/30" },
+  { id: 2, name: "藤岡", birthday: "1988/8/9" },
+  { id: 3, name: "深田", birthday: "1982/11/2" },
+  { id: 4, name: "橋本", birthday: "1999/2/3" },
+  { id: 5, name: "国仲", birthday: "1979/6/9" }
+];
+
+const csvString = stringifySync(records, {
+  header: true,
+  columns: {
+    id: "ID",
+    name: "氏名",
+    birthday: "生年月日"
+  },
+  quoted_string: true
+});
+
+console.log(csvString);
+/* =>
+"顧客ID","氏名","生年月日"
+1,"宮崎","1985/11/30"
+2,"藤岡","1988/8/9"
+3,"深田","1982/11/2"
+4,"橋本","1999/2/3"
+5,"国仲","1979/6/9"
+*/
+```
