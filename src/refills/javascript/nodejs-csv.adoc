@@ -36,7 +36,7 @@ const csvString = stringifySync(records, {
 
 console.log(csvString);
 /* =>
-"顧客ID","氏名","生年月日"
+"ID","氏名","生年月日"
 1,"宮崎","1985/11/30"
 2,"藤岡","1988/8/9"
 3,"深田","1982/11/2"
