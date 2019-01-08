@@ -32,6 +32,16 @@ await new Promise(r => setTimeout(r, 5000));
 })();
 ```
 
+.Top-level async function
+```js
+(async () => {
+  var text = await main();
+  console.log(text);
+})().catch(e => {
+  // Deal with the fact the chain failed
+});
+```
+
 === 非同期処理の For Loop 繰り返し
 
 - link:https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop[javascript - Using async/await with a forEach loop - Stack Overflow]
