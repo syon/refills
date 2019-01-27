@@ -59,7 +59,7 @@ fs.writeFileSync('output.txt', buf, ()=>{});
 
 [source,javascript]
 ----
-require('fs').writeFile('out.txt', 'content', (e)=>{});
+require("fs").writeFileSync("out.txt", "Hello!");
 ----
 
 === ファイル書き込み（追記）
