@@ -5,9 +5,22 @@ rcd: docker-snippets
 srcpath: docker/docker-snippets.adoc
 title: Docker Snippets
 category:
-date: 2017.6.10
+date: 2019.3.3
 layout: refill.jade
 ---
+
+== ENTRYPOINT と CMD
+
+```
+ENTRYPOINT ["/usr/bin/rethinkdb"]
+
+CMD ["--help"]
+```
+
+docker run を引数無しで実行した場合は CMD で設定したものが実行される。
+CMD で指定するのは引数部分だけもよし、配列先頭を executable なものにすることもできる（推奨）。
+
+- link:https://qiita.com/hnakamur/items/afddaa3dbe48ad2b8b5c[dockerのENTRYPOINTとCMDの書き方と使い分け、さらに併用 - Qiita]
 
 == Node.js
 
