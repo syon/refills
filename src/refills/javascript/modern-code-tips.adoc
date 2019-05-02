@@ -141,26 +141,28 @@ items.sort((a, b) => {
 
 === オブジェクトから配列に変換
 
-Object.entries()::
+Object.entries() ※ES2017::
 [key, value] からなる配列を返す。mapに渡せば、返す配列の中でkeyの扱いを自由にできる。
+スプレッド構文 `...value` を使えばvalueオブジェクトにマージした配列を作れる。
 
 - link:https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Object/entries[Object.entries() - JavaScript | MDN]
 
 ```js
 const items = {
-  apple: 100,
-  melon: 500,
-  mango: 398
+  apple: { price: 100, color: 'red' },
+  melon: { price: 500, color: 'green' },
+  lemon: { price: 248, color: 'yellow' }
 }
 
-Object.entries(items).map(([k, v]) => v)
+Object.entries(items).map(([k, v]) => v.price)
 //=> [100, 500, 398]
 
-Object.entries(items).map(([k, v]) => ({ name: k, price: v }))
-//=>
-// { name: 'apple', price: 100 }
-// { name: 'melon', price: 500 }
-// { name: 'mango', price: 398 }
+Object.entries(items).map(([k, v]) => ({ name: k, ...v }))
+//=> [
+//  { name: 'apple', price: 100, color: 'red' }
+//  { name: 'melon', price: 500, color: 'green' }
+//  { name: 'lemon', price: 248, color: 'yellow' }
+// ]
 ```
 
 === 重複の除去 (unique / distinct)
