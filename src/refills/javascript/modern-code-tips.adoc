@@ -118,7 +118,7 @@ console.log(o1);  // { a: 1, b: 2, c: 3 }, targetオブジェクト自身が変�
 
 === ソート (sort)
 
-- [Array.prototype.sort() - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+- link:https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/sort[Array.prototype.sort() - JavaScript | MDN]
 
 ```js
 const items = [
@@ -137,6 +137,30 @@ items.sort((a, b) => {
 // { name: 'apple', price: 100 }
 // { name: 'mango', price: 398 }
 // { name: 'melon', price: 500 }
+```
+
+=== オブジェクトから配列に変換
+
+Object.entries()::
+[key, value] からなる配列を返す。mapに渡せば、返す配列の中でkeyの扱いを自由にできる。
+
+- link:https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Object/entries[Object.entries() - JavaScript | MDN]
+
+```js
+const items = {
+  apple: 100,
+  melon: 500,
+  mango: 398
+}
+
+Object.entries(items).map(([k, v]) => v)
+//=> [100, 500, 398]
+
+Object.entries(items).map(([k, v]) => ({ name: k, price: v }))
+//=>
+// { name: 'apple', price: 100 }
+// { name: 'melon', price: 500 }
+// { name: 'mango', price: 398 }
 ```
 
 === 重複の除去 (unique / distinct)
