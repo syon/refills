@@ -116,6 +116,29 @@ console.log(o1);  // { a: 1, b: 2, c: 3 }, targetオブジェクト自身が変�
 
 == Array
 
+=== ソート (sort)
+
+- [Array.prototype.sort() - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+
+```js
+const items = [
+  { name: 'apple', price: 100 },
+  { name: 'orange', price: 98 },
+  { name: 'banana', price: 50 },
+  { name: 'melon', price: 500 },
+  { name: 'mango', price: 398 }
+]
+items.sort((a, b) => {
+  return a.price - b.price
+})
+//=>
+// { name: 'banana', price: 50 }
+// { name: 'orange', price: 98 }
+// { name: 'apple', price: 100 }
+// { name: 'mango', price: 398 }
+// { name: 'melon', price: 500 }
+```
+
 === 重複の除去 (unique / distinct)
 
 - link:https://qiita.com/waka-ka/items/694866bd1a6a90289c33[[Javascript\] 配列の重複を取り出す方法 - Qiita]
