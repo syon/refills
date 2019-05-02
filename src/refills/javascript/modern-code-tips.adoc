@@ -76,6 +76,37 @@ ____
 ____
 
 
+== クラス
+
+- link:https://tylermcginnis.com/javascript-private-and-public-class-fields/[JavaScript Private and Public Class Fields]
+- link:https://blog.jxck.io/entries/2019-03-14/private-class-field.html[Private Class Field の導入に伴う JS の構文拡張 | blog.jxck.io]
+- link:https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Classes#Field_declarations[クラス - JavaScript | MDN -- #フィールド宣言]
+
+```js
+class Player {
+  name = 'Anonymous'
+  points = 0
+
+  constructor(name) {
+    this.name = name || this.name
+  }
+
+  addPoints(amount) {
+    Player.shout(`got ${amount} points!`)
+    this.points += amount
+  }
+
+  static shout(str) {
+    console.log(str.toUpperCase())
+  }
+}
+
+var p = new Player()
+p.addPoints(5)
+//=> GOT 5 PT!
+```
+
+
 == n回ループ
 
 ```js
