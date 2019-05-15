@@ -76,7 +76,7 @@ ____
 ____
 
 
-== クラス
+== Class / クラス
 
 - link:https://tylermcginnis.com/javascript-private-and-public-class-fields/[JavaScript Private and Public Class Fields]
 - link:https://blog.jxck.io/entries/2019-03-14/private-class-field.html[Private Class Field の導入に伴う JS の構文拡張 | blog.jxck.io]
@@ -231,11 +231,3 @@ console.table([...Array.from(Array(100).keys())].map((n)=>{
 ```js
 import { member as alias } from "module-name";
 ```
-
-
-== class
-
-=== 静的メソッドの呼び出し
-- link:https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Classes/static[static - JavaScript | MDN]
-  * 他の静的メソッドから
-  * クラスのコンストラクタや他のメソッドから
