@@ -151,6 +151,8 @@ console.log(o1);  // { a: 1, b: 2, c: 3 }, targetオブジェクト自身が変�
 
 - link:https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/sort[Array.prototype.sort() - JavaScript | MDN]
 
+WARNING: ソートは対象配列上で直接行われることに注意して下さい。コピーされた別の配列が準備されることはありません。
+
 ```js
 const items = [
   { name: 'apple', price: 100 },
