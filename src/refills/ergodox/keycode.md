@@ -5,21 +5,21 @@ rcd: keycode
 srcpath: ergodox/keycode.md
 title: キーコードまとめ
 category: ErgoDox
-date: 2016.8.14
+date: 2019.6.23
 layout: refill.jade
 ---
 
 ## Basic Keycodes
-- https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md
-- https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes_basic.md
+- [qmk_firmware / docs / keycodes.md](https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md)
+- [qmk_firmware / docs / keycodes_basic.md](https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes_basic.md)
 
 `KC_*` 形式のキーコードとそのショートネームがリストアップされています。  
 `KC_2 ... Keyboard 2 and @` とあるので、英語配列が前提になっていると考えられます。
 
 
 ## Quantum Keycodes
-- https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#quantum-keycodes
-- https://github.com/qmk/qmk_firmware/blob/master/docs/quantum_keycodes.md
+- [qmk_firmware / docs / keycodes.md#quantum-keycodes](https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#quantum-keycodes)
+- [qmk_firmware / docs / quantum_keycodes.md](https://github.com/qmk/qmk_firmware/blob/master/docs/quantum_keycodes.md)
 
 QMK 特有のキーコード、エイリアスがリストアップされています。  
 `HYPR(kc)`や`TG(layer)`、`CTL_T(kc)`など、キーマップカスタマイズの際に記述する
@@ -27,8 +27,8 @@ Modifier や Layer に関する定義がまとまっており、全体感を把�
 
 
 ## Layer
-- https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#layer-switching
-- https://github.com/qmk/qmk_firmware/blob/master/docs/feature_advanced_keycodes.md#switching-and-toggling-layers
+- [qmk_firmware / docs / keycodes.md#layer-switching](https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#layer-switching)
+- [qmk_firmware / docs / feature_advanced_keycodes.md#switching-and-toggling-layers](https://github.com/qmk/qmk_firmware/blob/master/docs/feature_advanced_keycodes.md#switching-and-toggling-layers)
 
 | Keycode           | Mean           | Desc                                    |
 |-------------------|----------------|-----------------------------------------|
@@ -43,8 +43,8 @@ Modifier や Layer に関する定義がまとまっており、全体感を把�
 
 
 ## Modifier Keys
-- https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#modifiers
-- https://github.com/qmk/qmk_firmware/blob/master/docs/feature_advanced_keycodes.md#modifier-keys
+- [qmk_firmware / docs / keycodes.md#modifiers](https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#modifiers)
+- [qmk_firmware / docs / feature_advanced_keycodes.md#modifier-keys](https://github.com/qmk/qmk_firmware/blob/master/docs/feature_advanced_keycodes.md#modifier-keys)
 
 | Keycode    | Desc          |
 |------------|---------------|
@@ -67,7 +67,7 @@ Modifier や Layer に関する定義がまとまっており、全体感を把�
 : this makes a key that sends Alt, Control, and Delete in a single keypress.
 
 ### Shift キーを必要とするキーのショートネーム
-https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#us-ansi-shifted-symbols
+[qmk_firmware / docs / keycodes.md#us-ansi-shifted-symbols](https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#us-ansi-shifted-symbols)
 
 | Keycode    | Key |
 |------------|-----|
@@ -94,8 +94,8 @@ https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#us-ansi-shifted
 
 ### Modifier-Tap shortcuts
 
-- https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#mod-tap-keys
-- https://github.com/qmk/qmk_firmware/blob/master/docs/feature_advanced_keycodes.md#mod-tap
+- [qmk_firmware / docs / keycodes.md#mod-tap-keys](https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#mod-tap-keys)
+- [qmk_firmware / docs / feature_advanced_keycodes.md#mod-tap](https://github.com/qmk/qmk_firmware/blob/master/docs/feature_advanced_keycodes.md#mod-tap)
 
 長押しで Modifier キー、タップで通常キーを実現する `MT(mod, kc)` の簡易記述です。
 
@@ -122,7 +122,7 @@ https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#us-ansi-shifted
 
 
 ## Leader key
-https://github.com/qmk/qmk_firmware/blob/master/docs/feature_leader_key.md
+[qmk_firmware / docs / feature_leader_key.md](https://github.com/qmk/qmk_firmware/blob/master/docs/feature_leader_key.md)
 
 キーの同時押しではなく、押した順番で事前定義したキーを送信する新概念。
 `KC_LEAD`に設定したキーをタップしてから、登録したキーコンビネーションを素早く打つことで発火させる。_（未検証）_
