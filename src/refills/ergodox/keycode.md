@@ -21,9 +21,7 @@ layout: refill.jade
 - [qmk_firmware / docs / keycodes.md#quantum-keycodes](https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#quantum-keycodes)
 - [qmk_firmware / docs / quantum_keycodes.md](https://github.com/qmk/qmk_firmware/blob/master/docs/quantum_keycodes.md)
 
-QMK 特有のキーコード、エイリアスがリストアップされています。  
-`HYPR(kc)`や`TG(layer)`、`CTL_T(kc)`など、キーマップカスタマイズの際に記述する
-Modifier や Layer に関する定義がまとまっており、全体感を把握するのに役立ちます。
+QMK 特有のキーコード、エイリアスがリストアップされています。
 
 
 ## Layer
