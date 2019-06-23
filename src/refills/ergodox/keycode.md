@@ -9,15 +9,17 @@ date: 2016.8.14
 layout: refill.jade
 ---
 
-## Keycode Symbol Table
-https://github.com/jackhumbert/qmk_firmware/blob/master/doc/keycode.txt
+## Basic Keycodes
+- https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md
+- https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes_basic.md
 
 `KC_*` 形式のキーコードとそのショートネームがリストアップされています。  
 `KC_2 ... Keyboard 2 and @` とあるので、英語配列が前提になっていると考えられます。
 
 
 ## Quantum Keycodes
-https://github.com/jackhumbert/qmk_firmware/blob/master/quantum/keymap.h
+- https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#quantum-keycodes
+- https://github.com/qmk/qmk_firmware/blob/master/docs/quantum_keycodes.md
 
 QMK 特有のキーコード、エイリアスがリストアップされています。  
 `HYPR(kc)`や`TG(layer)`、`CTL_T(kc)`など、キーマップカスタマイズの際に記述する
@@ -25,7 +27,8 @@ Modifier や Layer に関する定義がまとまっており、全体感を把�
 
 
 ## Layer
-https://github.com/jackhumbert/qmk_firmware#switching-and-toggling-layers
+- https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#layer-switching
+- https://github.com/qmk/qmk_firmware/blob/master/docs/feature_advanced_keycodes.md#switching-and-toggling-layers
 
 | Keycode           | Mean           | Desc                                    |
 |-------------------|----------------|-----------------------------------------|
@@ -40,7 +43,8 @@ https://github.com/jackhumbert/qmk_firmware#switching-and-toggling-layers
 
 
 ## Modifier Keys
-https://github.com/jackhumbert/qmk_firmware#fun-with-modifier-keys
+- https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#modifiers
+- https://github.com/qmk/qmk_firmware/blob/master/docs/feature_advanced_keycodes.md#modifier-keys
 
 | Keycode    | Desc          |
 |------------|---------------|
@@ -63,6 +67,7 @@ https://github.com/jackhumbert/qmk_firmware#fun-with-modifier-keys
 : this makes a key that sends Alt, Control, and Delete in a single keypress.
 
 ### Shift キーを必要とするキーのショートネーム
+https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#us-ansi-shifted-symbols
 
 | Keycode    | Key |
 |------------|-----|
@@ -89,6 +94,9 @@ https://github.com/jackhumbert/qmk_firmware#fun-with-modifier-keys
 
 ### Modifier-Tap shortcuts
 
+- https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#mod-tap-keys
+- https://github.com/qmk/qmk_firmware/blob/master/docs/feature_advanced_keycodes.md#mod-tap
+
 長押しで Modifier キー、タップで通常キーを実現する `MT(mod, kc)` の簡易記述です。
 
 | Keycode      | Desc |
@@ -114,7 +122,7 @@ https://github.com/jackhumbert/qmk_firmware#fun-with-modifier-keys
 
 
 ## Leader key
-https://github.com/jackhumbert/qmk_firmware#the-leader-key-a-new-kind-of-modifier
+https://github.com/qmk/qmk_firmware/blob/master/docs/feature_leader_key.md
 
 キーの同時押しではなく、押した順番で事前定義したキーを送信する新概念。
 `KC_LEAD`に設定したキーをタップしてから、登録したキーコンビネーションを素早く打つことで発火させる。_（未検証）_
