@@ -5,7 +5,7 @@ rcd: nodejs-code-tips
 srcpath: javascript/nodejs-code-tips.adoc
 title: Node.js CODE TIPS
 category: JavaScript
-date: 2018.03.20
+date: 2019.07.25
 layout: refill.jade
 ---
 
@@ -100,82 +100,9 @@ fs.createReadStream('src.txt').pipe(fs.createWriteStream('dest.txt'));
 ```
 
 
-== CSV読み込み
+== CSV
 
-- link:http://csv.adaltas.com/[Node.js CSV project]
-
-```bash
-$ npm install csv
-```
-
-.sample.csv
-[source]
-----
-fruit
-apple
-#banana
-orange
-lemon
-----
-
-.function readCsvSync
-[source,javascript]
-----
-function readCsvSync(filename, options) {
-  const fs = require('fs');
-  const parse = require('csv-parse/lib/sync');
-  const content = fs.readFileSync(filename).toString();
-  return parse(content, options);
-}
-----
-
-.use header
-[source,javascript]
-----
-const options = { columns: true, comment: '#' };
-const records = readCsvSync('sample.csv', options);
-/*
-[ { fruit: 'apple' },
-  { fruit: 'orange' },
-  { fruit: 'lemon' } ]
-*/
-----
-
-.indicate columns
-[source,javascript]
-----
-const options = { columns: ['id'], comment: '#' };
-const records = readCsvSync('sample.csv', options);
-/*
-[ { id: 'fruit' },
-  { id: 'apple' },
-  { id: 'orange' },
-  { id: 'lemon' } ]
-*/
-----
-
-
-== CSV書き込み
-
-- link:http://csv.adaltas.com/stringify/[CSV Stringifier | Node.js CSV project]
-- link:https://syon.github.io/til/2018/04/28/nodejs-yaml2tsv/[[Node.js\]yamlファイルのリストをTSVに変換する - syon/til]
-
-
-== glob
-
-- link:https://github.com/isaacs/node-glob[isaacs/node-glob: glob functionality for node.js]
-
-Options:: https://github.com/isaacs/node-glob#options
-
-```bash
-npm i glob
-```
-
-```js
-const glob = require('glob');
-
-const files = glob.sync("**/*.js", options);
-```
+- link:https://syon.github.io/refills/rid/1546773/[Node.js CSV まとめ :: JavaScript | Refills]
 
 
 == URL Path Join
