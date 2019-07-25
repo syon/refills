@@ -5,7 +5,7 @@ rcd: modern-code-tips
 srcpath: javascript/modern-code-tips.md
 title: モダン CODE TIPS
 category: JavaScript
-date: 2017.11.23
+date: 2019.7.25
 layout: refill.jade
 ---
 
@@ -34,11 +34,12 @@ await new Promise(r => setTimeout(r, 5000));
 
 .Top-level async function
 ```js
-(async () => {
-  var text = await main();
+;(async () => {
+  const text = await main();
   console.log(text);
 })().catch(e => {
   // Deal with the fact the chain failed
+  console.warn(e)
 });
 ```
 
