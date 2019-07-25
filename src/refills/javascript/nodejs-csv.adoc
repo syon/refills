@@ -70,23 +70,6 @@ const records = readCsvSync('sample.csv', options);
 - link:https://syon.github.io/til/2018/04/28/nodejs-yaml2tsv/[[Node.js\]yamlファイルのリストをTSVに変換する - syon/til]
 
 
-== glob
-
-- link:https://github.com/isaacs/node-glob[isaacs/node-glob: glob functionality for node.js]
-
-Options:: https://github.com/isaacs/node-glob#options
-
-```bash
-npm i glob
-```
-
-```js
-const glob = require('glob');
-
-const files = glob.sync("**/*.js", options);
-```
-
-
 == オブジェクト配列からCSV文字列に変換
 
 link:https://csv.js.org/stringify/[CSV Stringify - Usage]

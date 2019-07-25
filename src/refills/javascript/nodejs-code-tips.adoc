@@ -100,6 +100,23 @@ fs.createReadStream('src.txt').pipe(fs.createWriteStream('dest.txt'));
 ```
 
 
+== glob
+
+- link:https://github.com/isaacs/node-glob[isaacs/node-glob: glob functionality for node.js]
+
+Options:: https://github.com/isaacs/node-glob#options
+
+```bash
+npm i glob
+```
+
+```js
+const glob = require('glob');
+
+const files = glob.sync("**/*.js", options);
+```
+
+
 == CSV
 
 - link:https://syon.github.io/refills/rid/1546773/[Node.js CSV まとめ :: JavaScript | Refills]
