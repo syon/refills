@@ -1,0 +1,41 @@
+---
+rid: 1564145
+bid: javascript
+rcd: nodejs-azure-sqlserver-mssql
+srcpath: javascript/nodejs-azure-sqlserver-mssql.adoc
+title: Node.js × SQL Server 使い方
+category: JavaScript
+date: 2019.07.26
+layout: refill.jade
+---
+
+== データベース接続の基本
+
+- link:https://www.npmjs.com/package/mssql[mssql - npm]
+
+```bash
+$ npm install -S mssql
+```
+
+```js
+const sql = require("mssql");
+
+const config = {
+  user: "syon@hello",
+  password: "mysecretstrings",
+  server: "hello.database.windows.net",
+  database: "hello",
+  options: {
+    encrypt: true // Use this if you're on Windows Azure
+  }
+};
+
+(async () => {
+  await sql.connect(config);
+  const result = await sql.query`select * from users where id = 1`;
+  console.dir(result);
+  await sql.close();
+})().catch(e => {
+  console.warn(e);
+});
+```
