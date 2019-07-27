@@ -12,6 +12,7 @@ layout: refill.jade
 == データベース接続の基本
 
 - link:https://www.npmjs.com/package/mssql[mssql - npm]
+- link:https://blog.deezus.net/entry/2018/09/19/000000[node.jsでSQLServerに接続する - deezus blog]
 
 ```bash
 $ npm install -S mssql
