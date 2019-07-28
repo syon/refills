@@ -35,11 +35,11 @@ await new Promise(r => setTimeout(r, 5000));
 .Top-level async function
 ```js
 ;(async () => {
-  const text = await main();
-  console.log(text);
+  const result = await main();
+  console.log(result);
 })().catch(e => {
   // Deal with the fact the chain failed
-  console.warn(e)
+  console.warn(e);
 });
 ```
 
