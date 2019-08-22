@@ -5,11 +5,13 @@ rcd: vuex
 srcpath: vuejs/vuex.adoc
 title: Vuex メモ
 category: Vue.js
-date: 2018.8.22
+date: 2019.8.22
 layout: refill.jade
 ---
 
 == Nuxt.js module mode store template
+
+- link:https://ja.nuxtjs.org/guide/vuex-store/[Vuex ストア - Nuxt.js]
 
 .store/user.js
 ```js
