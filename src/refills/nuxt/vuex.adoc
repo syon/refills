@@ -1,10 +1,10 @@
 ---
 rid: 1566444
-bid: vuejs
+bid: nuxt
 rcd: vuex
-srcpath: vuejs/vuex.adoc
+srcpath: nuxt/vuex.adoc
 title: Vuex メモ
-category: Vue.js
+category: Nuxt.js
 date: 2019.8.22
 layout: refill.jade
 ---
