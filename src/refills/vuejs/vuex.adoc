@@ -1,0 +1,65 @@
+---
+rid: 1566444
+bid: vuejs
+rcd: vuex
+srcpath: vuejs/vuex.adoc
+title: Vuex メモ
+category: Vue.js
+date: 2018.8.22
+layout: refill.jade
+---
+
+== Nuxt.js module mode store template
+
+.store/user.js
+```js
+import axios from 'axios'
+
+export const state = () => ({
+  profile: null
+})
+
+export const getters = {
+  isLogin(state) {
+    return !!state.profile
+  }
+}
+
+export const mutations = {
+  setProfile(state, profile) {
+    state.profile = profile
+  }
+}
+
+export const actions = {
+  async load({ commit }, id) {
+    const res = await axios.get(API_URL, { params: { id } })
+    const profile = res.data
+    commit('setProfile', profile)
+  }
+}
+```
+
+.pages/_id.vue
+```js
+import { mapState, mapGetters } from 'vuex'
+
+export default {
+  computed: {
+    ...mapState('user', {
+      profile: state => state.profile
+    }),
+    ...mapGetters({
+      isLogin: 'user/isLogin'
+    })
+  },
+  async asyncData({ store, params }) {
+    const { id } = params
+    await store.dispatch('user/load', id)
+    return { id }
+  },
+  async mounted() {
+    // await this.$store.dispatch('user/load', this.id)
+  }
+}
+```
