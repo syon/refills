@@ -15,16 +15,37 @@ layout: refill.jade
 
 - link:https://momentjs.com/docs/#/displaying/difference/[Moment.js | Docs - #Difference]
 
-.ES
 ```js
 import moment from 'moment'
 
 const today = moment()
+//=> moment("2019-08-23T23:30:02.478")
+
 const birthday = moment('1985/11/30', 'YYYY/MM/DD')
+//=> moment("1985-11-30T00:00:00.000")
 
 today.diff(birthday, 'years')
 //=> 33
 
 today.diff(birthday, 'years', true)
 //=> 33.73327554263117
+
+Math.floor(today.diff(birthday, 'years', true) * 10) / 10
+//=> 33.7
+
+moment.duration(today.diff(birthday)).as('months')
+//=> 404.77148837872556
+
+moment.duration(today.diff(birthday)).as('months') % 12
+//=> 8.771488378725564
+
+Math.floor(moment.duration(today.diff(birthday)).as('months') % 12)
+//=> 8
+
+(() => {
+  const y = today.diff(birthday, 'years')
+  const m = Math.floor(moment.duration(today.diff(birthday)).as('months') % 12)
+  return `${y}歳 ${m}ヶ月`
+})()
+//=> 33歳 8ヶ月
 ```
