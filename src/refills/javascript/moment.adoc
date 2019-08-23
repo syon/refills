@@ -1,0 +1,30 @@
+---
+rid: 1566555
+bid: javascript
+rcd: moment
+srcpath: javascript/moment.adoc
+title: Moment.js メモ
+category: JavaScript
+date: 2019.8.22
+layout: refill.jade
+---
+
+== 年齢計算
+
+誕生日と現在日付を使って年齢を計算します。
+
+- link:https://momentjs.com/docs/#/displaying/difference/[Moment.js | Docs - #Difference]
+
+.ES
+```js
+import moment from 'moment'
+
+const today = moment()
+const birthday = moment('1985/11/30', 'YYYY/MM/DD')
+
+today.diff(birthday, 'years')
+//=> 33
+
+today.diff(birthday, 'years', true)
+//=> 33.73327554263117
+```
