@@ -40,3 +40,90 @@ const config = {
   console.warn(e);
 });
 ```
+
+
+== コネクションプールの使い方
+
+- link:https://github.com/tediousjs/node-mssql#connection-pools[tediousjs/node-mssql: Microsoft SQL Server client for Node.js]
+
+```js
+const sql = require("mssql");
+
+const config = {
+  user: process.env.MSSQL_USER,
+  password: process.env.MSSQL_PASSWORD,
+  server: process.env.MSSQL_SERVER,
+  database: process.env.MSSQL_DATABASE,
+  options: {
+    encrypt: true // Use this if you're on Windows Azure
+  }
+}
+
+const pool1 = new sql.ConnectionPool(config);
+const pool1Connect = pool1.connect();
+
+pool1.on("error", err => {
+  console.error("!! POOL ERROR !!")
+  console.error(err)
+});
+
+async function echoTheNumberOnPool(arg) {
+  await pool1Connect; // ensures that the pool has been created
+  try {
+    const req = pool1.request();
+    const res = await req.query(`select ${arg} as number`);
+    await new Promise(r => setTimeout(r, 3000 * Math.random()));
+    const result = res.recordset[0]
+    console.log(result)
+    return result;
+  } catch (err) {
+    console.error("SQL error", err);
+  }
+}
+
+;(async () => {
+  console.log('---- Promise.all Start ----')
+  await Promise.all([
+    echoTheNumberOnPool(1),
+    echoTheNumberOnPool(2),
+    echoTheNumberOnPool(3),
+    echoTheNumberOnPool(4),
+    echoTheNumberOnPool(5),
+    echoTheNumberOnPool(6),
+    echoTheNumberOnPool(7),
+    echoTheNumberOnPool(8),
+    echoTheNumberOnPool(9),
+    echoTheNumberOnPool(10),
+    echoTheNumberOnPool(11),
+    echoTheNumberOnPool(12),
+    echoTheNumberOnPool(13),
+    echoTheNumberOnPool(14),
+    echoTheNumberOnPool(15)
+  ])
+  console.log('---- Promise.all End ----')
+  await pool1.close()
+})().catch(e => {
+  console.warn(e);
+});
+```
+
+```bash
+$ node main.js
+---- Promise.all Start ----
+{ number: 5 }
+{ number: 3 }
+{ number: 1 }
+{ number: 7 }
+{ number: 10 }
+{ number: 12 }
+{ number: 4 }
+{ number: 2 }
+{ number: 13 }
+{ number: 14 }
+{ number: 8 }
+{ number: 15 }
+{ number: 6 }
+{ number: 11 }
+{ number: 9 }
+---- Promise.all End ----
+```
