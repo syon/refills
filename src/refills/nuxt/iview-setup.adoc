@@ -1,0 +1,122 @@
+---
+rid: 1578999
+bid: nuxt
+rcd: iview-setup
+srcpath: nuxt/iview-setup.adoc
+title: Nuxt.js + iView (View UI)のセットアップ
+category: Nuxt.js
+date: 2020.1.14
+layout: refill.jade
+---
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/202001/iviewui-com.png[iviewui.com]
+
+Nuxt.js の UI フレームワークに View UI (旧 iView) を採用した環境のセットアップ方法をご紹介します。
+現時点で最新の View UI **v4** を前提としています。
+テーマのカスタマイズまでご案内します。
+
+
+== View UI (iView)
+
+- https://www.iviewui.com
+- https://github.com/view-design/ViewUI
+
+
+== 前提事項
+
+Node.js:: 12.14.0
+npm:: 6.13.4
+nuxt:: 2.11.0
+view-design:: 4.1.0
+
+
+== 完成イメージ
+
+[.no-shadow]
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/202001/nuxt-iview.png[nuxt-iview]
+
+サンプルソース 一式::
+https://github.com/syon/awake/tree/nuxt-iview4
+
+
+== 手順① 🌱 create-nuxt-app
+
+Nuxt.js 公式ガイドに従い、`create-nuxt-app` を使用します。
+
+```bash
+$ npx create-nuxt-app <project-name>
+```
+
+- link:https://ja.nuxtjs.org/guide/installation/[インストール - NuxtJS]
+
+質問については、サンプルソースでは以下のように答えています。
+UI framework はまだ旧名の iView のままだったので、これを選択します。
+
+```bash
+create-nuxt-app v2.12.0
+? Choose the package manager Npm
+? Choose UI framework iView
+? Choose custom server framework None (Recommended)
+? Choose Nuxt.js modules Axios, DotEnv
+? Choose linting tools ESLint, Prettier
+? Choose test framework None
+? Choose rendering mode Single Page App
+? Choose development tools jsconfig.json (Recommended for VS Code)
+```
+
+
+== 手順② 📦 iview → view-design
+
+上記テンプレートに従ってインストールすると iView v3 が導入されます。
+これを現時点で最新の **v4** にアップグレードします。
+公式にあるアップグレードガイドに従い、npmパッケージ `iview` を `view-design` に変更します。
+
+- link:https://www.iviewui.com/docs/update4-en[Upgrade 4.x Guide - iView]
+
+
+== 手順③ 💄 Customize Theme
+
+テーマのカスタマイズには、つまずきポイントがあります。
+View UI は CSS の拡張メタ言語 link:http://lesscss.org/[Less]
+を使ってスタイルシートを作っています。
+テーマのカスタマイズは変数を変更することで実現するため、開発中の
+環境でも Less を導入する必要があります。
+
+.Nuxt.jsにLessを導入
+```bash
+$ npm i -D less less-loader
+```
+
+このまま作業を進めると、以下のエラーに遭遇します。
+
+image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/202001/iview-theme-error.png[iview-theme-error]
+
+```bash
+ ERROR  in ./plugins/iview-theme.less
+
+Module build failed (from ./node_modules/less-loader/dist/cjs.js):
+
+
+// https://github.com/ant-design/ant-motion/issues/44
+.bezierEasingMixin();
+^
+Inline JavaScript is not enabled. Is it set in your options?
+```
+
+これに対処するには、link:https://github.com/vueComponent/ant-design-vue/issues/234#issuecomment-466308850[ひと手間を加える] 必要があります。
+
+Less を導入できたら、公式のドキュメントに従いテーマカスタマイズ用のファイルを準備します。
+
+- link:https://www.iviewui.com/docs/guide/theme-en[Customize Theme - iView]
+
+具体的なコードの変更内容はこちらをご覧ください。
+
+- link:https://github.com/syon/awake/commit/0fb95bae3950e3e1dfa87f54926d2e8ac179e5ad[💄 Customize Theme · syon/awake@0fb95ba]
+
+'''
+
+以上でセットアップは終わりです。以下のコマンドを実行して開発を開始しましょう！
+
+```bash
+$ npm run dev
+```
