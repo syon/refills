@@ -5,6 +5,7 @@ rcd: iview-setup
 srcpath: nuxt/iview-setup.adoc
 title: Nuxt.js + iView (View UI)のセットアップ
 category: Nuxt.js
+heroimgpath: chronicle/202001/iviewui-com.png
 date: 2020.1.14
 layout: refill.jade
 ---
