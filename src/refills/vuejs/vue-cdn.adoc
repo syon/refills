@@ -1,0 +1,65 @@
+---
+rid: 1579400
+bid: vuejs
+rcd: vue-cdn
+srcpath: vuejs/vue-cdn.adoc
+title: CDN版 Vue.js クイックスタート テンプレート
+category: Vue.js
+date: 2020.1.19
+layout: refill.jade
+---
+
+.index.html
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ message }}</p>
+      <button @click="handleStart">start</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
+```
+
+.app.js
+```js
+new Vue({
+  el: "#app",
+  data() {
+    return {
+      message: "Hello"
+    };
+  },
+  methods: {
+    handleStart() {
+      this.message = "handleStart"
+    }
+  },
+  mounted() {
+    console.log("Mounted.")
+  }
+});
+```
+
+== serve
+
+.Install
+```bash
+$ npm i -g serve
+```
+
+.Run
+```bash
+$ serve .
+```
+
+- link:https://www.npmjs.com/package/serve[serve - npm]
