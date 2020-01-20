@@ -12,6 +12,7 @@ layout: refill.jade
 == Nuxt.js module mode store template
 
 - link:https://ja.nuxtjs.org/guide/vuex-store/[Vuex ストア - Nuxt.js]
+- #link:https://vuex.vuejs.org/ja/api/[API リファレンス | Vuex]#
 
 .store/user.js
 ```js
@@ -63,5 +64,37 @@ export default {
   async mounted() {
     // await this.$store.dispatch('user/load', this.id)
   }
+}
+```
+
+== TIPS・getters
+
+- https://vuex.vuejs.org/ja/guide/getters.html
+
+> メソッドによってアクセスされるゲッターは呼び出す度に実行され、その結果はキャッシュされない点に留意してください。
+
+```js
+export const getters = {
+  // メソッドスタイルアクセス
+  getTodoById: (state) => (id) => {
+    return state.todos.find(todo => todo.id === id)
+  }
+  // ゲッターは第2引数として他のゲッターを受け取ります:
+  doneTodosCount: (state, getters) => {
+    return getters.doneTodos.length
+  }
+}
+```
+
+== TIPS・actions
+
+```js
+{
+  state,      // `store.state` と同じか、モジュール内にあればローカルステート
+  rootState,  // `store.state` と同じ。ただしモジュール内に限る
+  commit,     // `store.commit` と同じ
+  dispatch,   // `store.dispatch` と同じ
+  getters,    // `store.getters` と同じか、モジュール内にあればローカルゲッター
+  rootGetters // `store.getters` と同じ。ただしモジュール内に限る
 }
 ```
