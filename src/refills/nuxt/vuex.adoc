@@ -70,6 +70,7 @@ export default {
 == TIPS・getters
 
 - https://vuex.vuejs.org/ja/guide/getters.html
+- https://vuex.vuejs.org/ja/api/#getters
 
 > メソッドによってアクセスされるゲッターは呼び出す度に実行され、その結果はキャッシュされない点に留意してください。
 
@@ -78,10 +79,14 @@ export const getters = {
   // メソッドスタイルアクセス
   getTodoById: (state) => (id) => {
     return state.todos.find(todo => todo.id === id)
-  }
+  },
   // ゲッターは第2引数として他のゲッターを受け取ります:
   doneTodosCount: (state, getters) => {
     return getters.doneTodos.length
+  },
+  // ローカル、グローバル利用
+  getSomething(state, getters, rootState, rootGetters) {
+    return rootGetters['user/statistics'](state)
   }
 }
 ```
