@@ -199,6 +199,33 @@ Object.entries(items).map(([k, v]) => ({ name: k, ...v }))
 // ]
 ```
 
+=== オブジェクト配列の reduce
+
+- link:https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce[JavaScript Demo: Array.reduce()]
+
+アキュムレーター (acc) が直前の反復処理の返値なので、合計値を計算するのであれば型は数値。
+配列そのままを reduce すると、初回の acc が先頭オブジェクトとなってしまい、
+acc.price と書くと反復2回目以降で数値が返ってくるため不整合となる。
+そこで第2引数の initialValue に 0 を渡すことで初回から acc を 0 にしている。
+
+```js
+const items = [
+  { name: 'apple', price: 100, color: 'red' },
+  { name: 'melon', price: 500, color: 'green' },
+  { name: 'lemon', price: 248, color: 'yellow' },
+  { name: 'peach', price: 378, color: 'pink' }
+]
+
+/*
+ * acc: 前処理の返値(price)
+ * cur: 現在値(object)
+ */
+items.reduce((acc, cur) => {
+  return acc + cur.price
+}, 0)
+//=> 1226
+```
+
 === 重複の除去 (unique / distinct)
 
 - link:https://qiita.com/waka-ka/items/694866bd1a6a90289c33[[Javascript\] 配列の重複を取り出す方法 - Qiita]
