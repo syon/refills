@@ -1,0 +1,43 @@
+---
+rid: 1596178
+bid: userstyle
+rcd: redmine
+srcpath: userstyle/redmine.adoc
+title: Redmineのチケットを見やすくする
+category: UserStyle
+date: 2020.7.31
+layout: refill.jade
+---
+
+== Chrome拡張機能 "Stylus"
+
+Chromeの拡張機能 "Stylus" を使って、任意のWebページにオリジナルのCSSを適用します。
+
+- link:https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=ja[Stylus - Chrome ウェブストア]
+
+インストールができたら、適用したいRedmineのトップページに行きます。
+アドレスバー右にある拡張機能のアイコンからStylusを探し、「次のスタイルを書く」
+から適切ものを選択します。よくわからなければ、「このURL」でいいでしょう。
+
+現れたエディタの中にあるコード入力欄に以下のCSSを貼り付けて保存します。
+画面一番下にある適用先を確認して反映されていることを確認して完了。
+
+```css
+/* チケット内の説明欄を常に表示 */
+#issue_description_and_toolbar {
+  display: block !important;
+}
+
+/* 自分が担当のチケットは太字 */
+tr.issue.assigned-to-me {
+  font-weight: bold;
+}
+
+/* クローズされたものは暗灰色 */
+tr.issue.closed,
+tr.issue.closed a,
+tr.issue.closed a:link,
+tr.issue.closed a:visited {
+  color: darkgrey;
+}
+```
