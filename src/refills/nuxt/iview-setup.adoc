@@ -85,7 +85,7 @@ View UI は CSS の拡張メタ言語 link:http://lesscss.org/[Less]
 
 .Nuxt.jsにLessを導入
 ```bash
-$ npm i -D less less-loader
+$ npm i -D less less-loader@5
 ```
 
 このまま作業を進めると、以下のエラーに遭遇します。
