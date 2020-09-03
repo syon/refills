@@ -35,6 +35,6 @@
     "run-sequence": "^1.2.2"
   },
   "devDependencies": {
-    "serve": "^2.1.2"
+    "serve": "^10.1.2"
   }
 }
