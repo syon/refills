@@ -11,7 +11,7 @@ layout: refill.jade
 
 == CSV読み込み
 
-- link:http://csv.adaltas.com/[Node.js CSV project]
+- link:https://csv.js.org/[CSV Project - Node.js CSV package]
 
 ```bash
 $ npm install csv
@@ -62,6 +62,31 @@ const records = readCsvSync('sample.csv', options);
   { id: 'lemon' } ]
 */
 ----
+
+
+== TSVファイル読み込み
+
+Excelで作成した、ヘッダ付きリストをコピーしてそのまま貼り付けたタブ区切りのTSVファイルから読み込む。
+
+```js
+const fs = require('fs')
+const path = require('path')
+const parse = require('csv-parse/lib/sync')
+
+const dataset = fs.readFileSync(
+  path.join(__dirname, 'dataset', 'customers.tsv'),
+  'utf-8'
+)
+
+const records = parse(dataset, {
+  columns: true,
+  delimiter: '\t',
+  skip_empty_lines: true,
+  trim: true,
+})
+
+console.log(records)
+```
 
 
 == CSV書き込み
