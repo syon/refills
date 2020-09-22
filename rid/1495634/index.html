@@ -1,0 +1,578 @@
+<!DOCTYPE html><html lang="ja"><head><title>vue-cli メモ :: Vue.js | Refills</title><meta property="og:type" content="article"><meta property="og:locale" content="ja_JP"><meta property="og:title" content="vue-cli メモ :: Vue.js | Refills"><meta property="og:site_name" content="Refills"><meta property="og:type" content="article"><meta property="og:url" content="https://syon.github.io/refills/rid/1495634/"><link rel="canonical" href="https://syon.github.io/refills/rid/1495634/"><meta property="og:image" content="https://syon.github.io/refills/assets/img/ogp.png"><meta charset="utf-8"><meta name="viewport" content="initial-scale=1, width=device-width"><link rel="stylesheet" href="/refills/assets/vendor/octicons/octicons.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Merriweather:400,400italic,700,700italic"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="/refills/assets/bundle.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37634759-11', 'auto');
+ga('send', 'pageview');</script></head><body><header class="site-head"><div class="container"><div class="logo"><a href="/refills/"><h1 class="site-name">Refills</h1></a></div></div></header><section id="article"><div class="a-title"><div class="r-meta-cate"><span class="r-category">Vue.js</span></div><h1 class="r-title">vue-cli メモ</h1><div class="r-meta-date"><a href="https://github.com/syon/refills/commits/master/src/refills/vuejs/vue-cli.adoc" target="_blank" class="r-date"><span>2017.11.23</span></a></div></div><article class="main"><div class="sect1">
+<h2 id="_vue_cli">vue-cli &#x3068;&#x306F;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vue.js &#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x3072;&#x306A;&#x5F62;&#x3092;&#x4F5C;&#x308B;&#x305F;&#x3081;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x30C4;&#x30FC;&#x30EB;&#x3002;
+Node.js &#x4E0A;&#x3067;&#x52D5;&#x4F5C;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/vuejs/vue-cli" class="bare">https://github.com/vuejs/vue-cli</a></p>
+</li>
+</ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+Simple CLI for scaffolding Vue.js projects
+</blockquote>
+<div class="attribution">
+&#x2014; vuejs/vue-cli
+</div>
+</div>
+<div class="sect2">
+<h3 id="__">&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ npm <span class="token function">install</span> -g vue-cli</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="___2">&#x4F7F;&#x3044;&#x65B9;</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ vue init <span class="token operator">&lt;</span>template-name<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>project-name<span class="token operator">&gt;</span></code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_hot_reload_linting_testing_css_extraction">hot reload, linting, testing &amp; css extraction.</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ vue init webpack my-project</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_for_quick_prototyping">for quick prototyping</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ vue init webpack-simple my-project</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___3">&#x5358;&#x4E00;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30B3;&#x30F3;&#x30DD;&#x30FC;&#x30CD;&#x30F3;&#x30C8;</h2>
+<div class="sectionbody">
+<div class="imageblock no-shadow">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201705/vue-component-with-preprocessors.png" alt="Single File Component" width height="600">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jp.vuejs.org/v2/guide/single-file-components.html">&#x5358;&#x4E00;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30B3;&#x30F3;&#x30DD;&#x30FC;&#x30CD;&#x30F3;&#x30C8; - Vue.js</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="__pug_jade">&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x3092; Pug (Jade) &#x3067;&#x66F8;&#x304F;</h3>
+<div class="paragraph">
+<p><code>pug</code> &#x3068; <code>pug-loader</code> &#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ npm <span class="token function">install</span> --save-dev pug pug-loader</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-jade" data-lang="jade"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>pug<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span></span>
+<span class="token tag">div</span>
+  <span class="token tag">p</span> <span class="token plain-text">{{ greeting }} World!</span>
+  <span class="token tag">other-component</span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span></span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__stylus">&#x30B9;&#x30BF;&#x30A4;&#x30EB;&#x3092; Stylus &#x3067;&#x66F8;&#x304F;</h3>
+<div class="paragraph">
+<p><code>stylus</code> &#x3068; <code>stylus-loader</code> &#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ npm <span class="token function">install</span> --save-dev stylus stylus-loader</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-jade" data-lang="jade"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>stylus<span class="token punctuation">&quot;</span></span> <span class="token attr-name">scoped</span><span class="token punctuation">&gt;</span></span></span>
+<span class="token tag">p</span>
+  <span class="token tag">font-size</span> <span class="token plain-text">2em</span>
+  <span class="token tag">text-align</span> <span class="token plain-text">center</span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span></span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_jquery">jQuery&#x3092;&#x4F7F;&#x3046;</h3>
+<div class="paragraph">
+<p><code>jquery</code> &#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x3066; webpack &#x306B;&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x3068;&#x3057;&#x3066;&#x767B;&#x9332;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ npm <span class="token function">install</span> --save jquery</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/vue-jquery-webpack.png" alt="vue jquery webpack">
+</div>
+</div>
+<div class="listingblock">
+<div class="title">webpack.base.conf.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js"><span class="token keyword">const</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;webpack&apos;</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// :</span>
+  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>ProvidePlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      $<span class="token punctuation">:</span> <span class="token string">&apos;jquery&apos;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">// :</span></code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="__is_not_defined">&apos;$&apos; is not defined`</h4>
+<div class="paragraph">
+<p>webpack &#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x3060;&#x3051;&#x767B;&#x9332;&#x3057;&#x3066;&#x3082;&#x3001; ESLint &#x306E;&#x8A2D;&#x5B9A;&#x3092;&#x3057;&#x306A;&#x3044;&#x3068;&#x52D5;&#x4F5C;&#x3057;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/vue-jquery-eslint-error.png" alt="vue jquery eslint error">
+</div>
+</div>
+<div class="quoteblock">
+<blockquote>
+<code>&#x2718;  <a href="http://eslint.org/docs/rules/no-undef" class="bare">http://eslint.org/docs/rules/no-undef</a>  &apos;$&apos; is not defined</code>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>ESLint &#x306E;&#x8A2D;&#x5B9A;&#x3082;&#x5909;&#x66F4;&#x3057;&#x3066;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x51FA;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/vue-jquery-eslint.png" alt="vue jquery eslint">
+</div>
+</div>
+<div class="listingblock">
+<div class="title">eslintrc.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">env<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  browser<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  jquery<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_debug">debug&#x3092;&#x5C0E;&#x5165;&#x3059;&#x308B;</h3>
+<div class="paragraph">
+<p><code>debug</code> &#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x3066; webpack &#x306B;&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x3068;&#x3057;&#x3066;&#x767B;&#x9332;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ npm <span class="token function">install</span> --save debug</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">webpack.base.conf.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js"><span class="token keyword">const</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;webpack&apos;</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// :</span>
+  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>ProvidePlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      Debug<span class="token punctuation">:</span> <span class="token string">&apos;debug&apos;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">// :</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vuex">Vuex&#x3092;&#x5C0E;&#x5165;&#x3059;&#x308B;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>vuex</code> &#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ npm <span class="token function">install</span> --save vuex</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x30B9;&#x30C8;&#x30A2;&#x3092;&#x6271;&#x3046;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3001;Vue&#x3068;&#x63A5;&#x7D9A;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="title">main.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js"><span class="token comment" spellcheck="true">// :</span>
+<span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">&apos;./store&apos;</span>
+<span class="token comment" spellcheck="true">// :</span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token punctuation">:</span> <span class="token string">&apos;#app&apos;</span><span class="token punctuation">,</span>
+  store<span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// :</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">store.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">&apos;vue&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Vuex <span class="token keyword">from</span> <span class="token string">&apos;vuex&apos;</span><span class="token punctuation">;</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Vuex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  state<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    count<span class="token punctuation">:</span> <span class="token number">777</span><span class="token punctuation">,</span>
+    apiResult<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  mutations<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">increment</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      state<span class="token punctuation">.</span>count <span class="token operator">=</span> state<span class="token punctuation">.</span>count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">setApiResult</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> payload<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      state<span class="token punctuation">.</span>apiResult <span class="token operator">=</span> payload<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  actions<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">increment</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      context<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">&apos;increment&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">setApiResult</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> payload<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      context<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">&apos;setApiResult&apos;</span><span class="token punctuation">,</span> payload<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x898F;&#x6A21;&#x304C;&#x5927;&#x304D;&#x304F;&#x306A;&#x3063;&#x3066;&#x304D;&#x305F;&#x3089;&#x3001;&#x516C;&#x5F0F;&#x306E;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x306E;&#x3088;&#x3046;&#x306B;&#x30B9;&#x30C8;&#x30A2;&#x3092;&#x5206;&#x5272;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/vuejs/vuex/blob/dev/examples/shopping-cart/store/index.js">vuex/index.js at dev &#xB7; vuejs/vuex</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_state">state</h3>
+<div class="paragraph">
+<p>&#x30B3;&#x30F3;&#x30DD;&#x30FC;&#x30CD;&#x30F3;&#x30C8;&#x5185;&#x3067;&#x30B9;&#x30C8;&#x30A2;&#x306E;&#x30B9;&#x30C6;&#x30FC;&#x30C8;&#x3092;&#x4F7F;&#x3046;&#x306B;&#x306F;&#x3001;&#xFF11;&#x3064;&#x306E;&#x4F8B;&#x3068;&#x3057;&#x3066;&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;&#x8A18;&#x8FF0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="title">SomeComponent.vue</div>
+<div class="content">
+<pre class="highlight"><code class="language-jade" data-lang="jade"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>pug<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span></span>
+  <span class="token tag">h1</span> <span class="token plain-text">{{ count }}</span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span></span>
+
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span></span>
+<span class="token tag">export</span> <span class="token plain-text">default {</span>
+  <span class="token tag">computed<span class="token punctuation">:</span></span> {
+    <span class="token tag">count</span>() {
+      <span class="token tag">return</span> <span class="token plain-text">this.$store.state.count;</span>
+    },
+  },
+}
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x30B9;&#x30C8;&#x30A2;&#x306E;&#x3082;&#x306E;&#x3092;&#x305D;&#x306E;&#x307E;&#x307E;&#x30B3;&#x30F3;&#x30DD;&#x30FC;&#x30CD;&#x30F3;&#x30C8;&#x3067;&#x5229;&#x7528;&#x3059;&#x308B;&#x5834;&#x5408;&#x306B;&#x306F;&#x3001;&#x4E0A;&#x8A18;&#x306E;&#x66F8;&#x304D;&#x65B9;&#x3067;&#x306F;&#x5197;&#x9577;&#x306A;&#x306E;&#x3067;
+&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x66F8;&#x304F;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://vuex.vuejs.org/ja/mutations.html#">&#x30A2;&#x30AF;&#x30B7;&#x30E7;&#x30F3; &#xB7; Vuex #&#x30B3;&#x30F3;&#x30DD;&#x30FC;&#x30CD;&#x30F3;&#x30C8;&#x5185;&#x3067;&#x306E;&#x30A2;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x30C7;&#x30A3;&#x30B9;&#x30D1;&#x30C3;&#x30C1;</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-jade" data-lang="jade"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>pug<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span></span>
+  <span class="token tag">h1</span> <span class="token plain-text">{{ count }}</span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span></span>
+
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span></span>
+<span class="token tag">import</span> <span class="token plain-text">{ mapState } from &apos;vuex&apos;;</span>
+
+<span class="token tag">export</span> <span class="token plain-text">default {</span>
+  <span class="token tag">computed<span class="token punctuation">:</span></span> {
+    <span class="token tag">...mapState<span class="token attributes"><span class="token punctuation">(</span>[
+      &apos;count&apos;<span class="token punctuation">,</span>
+    ]<span class="token punctuation">)</span></span></span>,
+  },
+}
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://qiita.com/suin/items/7331905a45a8ff80d4dd">Vuex&#xFF1A;mapState&#x306E;&#x66F8;&#x304D;&#x65B9;8&#x30D1;&#x30BF;&#x30FC;&#x30F3;+11&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x30B3;&#x30FC;&#x30C9; - Qiita</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_actions">actions</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://qiita.com/hirohero/items/771ac34b8213105e2d5f">Vue&#x30B3;&#x30F3;&#x30DD;&#x30FC;&#x30CD;&#x30F3;&#x30C8; &amp; Vuex &#x30C6;&#x30F3;&#x30D7;&#x30EC; - Qiita</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">SomeComponent.vue</div>
+<div class="content">
+<pre class="highlight"><code class="language-jade" data-lang="jade"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>pug<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span></span>
+  <span class="token tag">button<span class="token attributes"><span class="token punctuation">(</span>@<span class="token attr-name">click</span><span class="token punctuation">=</span><span class="token attr-value"><span class="token string">&quot;doIncrement&quot;</span></span><span class="token punctuation">)</span></span></span> <span class="token plain-text">Increment</span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span></span>
+
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span></span>
+<span class="token tag">import</span> <span class="token plain-text">{ mapActions } from &apos;vuex&apos;;</span>
+
+<span class="token tag">export</span> <span class="token plain-text">default {</span>
+  <span class="token tag">methods<span class="token punctuation">:</span></span> {
+    <span class="token tag">...mapActions<span class="token attributes"><span class="token punctuation">(</span>{
+      doIncrement: &apos;increment&apos;<span class="token punctuation">,</span>
+    }<span class="token punctuation">)</span></span></span>,
+    <span class="token tag">fetchApi</span>() {
+      <span class="token comment" spellcheck="true">// :</span>
+      <span class="token tag">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>dispatch(&apos;setApiResult&apos;, json<span class="token punctuation">.</span>list);
+    },
+  },
+}
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mutations">mutations</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://vuex.vuejs.org/ja/mutations.html">&#x30DF;&#x30E5;&#x30FC;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3; &#xB7; Vuex</a></p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_vue">Vue &#x306E;&#x30EA;&#x30A2;&#x30AF;&#x30C6;&#x30A3;&#x30D6;&#x306A;&#x30EB;&#x30FC;&#x30EB;&#x306B;&#x5247;&#x3063;&#x305F;&#x30DF;&#x30E5;&#x30FC;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;</h4>
+<div class="paragraph">
+<p>&#x65B0;&#x3057;&#x3044;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x3068;&#x304D;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x3044;&#x305A;&#x308C;&#x304B;&#x304C;&#x5FC5;&#x8981;&#x3067;&#x3059;:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">Vue<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">&apos;newProp&apos;</span><span class="token punctuation">,</span> <span class="token number">123</span><span class="token punctuation">)</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">state<span class="token punctuation">.</span>obj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>obj<span class="token punctuation">,</span> newProp<span class="token punctuation">:</span> <span class="token number">123</span> <span class="token punctuation">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x30A8;&#x30F3;&#x30C8;&#x30EA;&#x30FC;ID&#x3092;&#x30AD;&#x30FC;&#x306B;&#x6301;&#x3064;&#x9023;&#x60F3;&#x914D;&#x5217;&#x3092;&#x30DE;&#x30FC;&#x30B8;&#x3059;&#x308B;&#x3088;&#x3046;&#x306A;&#x30B1;&#x30FC;&#x30B9;&#x3067;&#x306F;&#x3001;&#x30B9;&#x30D7;&#x30EC;&#x30C3;&#x30C9;&#x30B7;&#x30F3;&#x30BF;&#x30C3;&#x30AF;&#x30B9;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">state<span class="token punctuation">.</span>entries <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>entries<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>newEntries <span class="token punctuation">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cookie">Cookie&#x3092;&#x6271;&#x3046;</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/alfhen/vue-cookie">alfhen/vue-cookie: A Vue.js plugin for manipulating cookies</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ npm <span class="token function">install</span> --save vue-cookie</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">main.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">&apos;vue&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> VueCookie <span class="token keyword">from</span> <span class="token string">&apos;vue-cookie&apos;</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// :</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueCookie<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// :</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">  computed<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    token<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$cookie<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">&apos;token&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// expires in one day</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$cookie<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token string">&apos;token&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;xxxxxxxxxx&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> expires<span class="token punctuation">:</span> <span class="token string">&apos;1D&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ie11">IE11 &#x306B;&#x5BFE;&#x5FDC;&#x3059;&#x308B;</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_promise">Promise</h3>
+<div class="quoteblock">
+<blockquote>
+Unhandled promise rejection ReferenceError &apos;Promise&apos; &#x306F;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;
+</blockquote>
+<div class="attribution">
+&#x2014; IE11
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ npm <span class="token function">install</span> --save babel-polyfill</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">main.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js"><span class="token comment" spellcheck="true">// :</span>
+<span class="token keyword">import</span> <span class="token string">&apos;babel-polyfill&apos;</span>
+<span class="token comment" spellcheck="true">// :</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fetch">fetch</h3>
+<div class="quoteblock">
+<blockquote>
+Unhandled promise rejection ReferenceError &apos;fetch&apos; &#x306F;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;
+</blockquote>
+<div class="attribution">
+&#x2014; IE11
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ npm <span class="token function">install</span> --save whatwg-fetch</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">main.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js"><span class="token comment" spellcheck="true">// :</span>
+<span class="token keyword">import</span> <span class="token string">&apos;whatwg-fetch&apos;</span>
+<span class="token comment" spellcheck="true">// :</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__ip">&#x5225;&#x306E;&#x30DB;&#x30B9;&#x30C8;&#x304B;&#x3089;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3067;&#x63A5;&#x7D9A;&#x3057;&#x3066;&#x52D5;&#x4F5C;&#x78BA;&#x8A8D;</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/webpack/webpack-dev-server/issues/147">Server can&#x2019;t be accessed via IP &#xB7; Issue #147 &#xB7; webpack/webpack-dev-server</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">bash</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ <span class="token function">export</span> HOST<span class="token operator">=</span>0.0.0.0
+$ npm run dev</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">fish shell</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ <span class="token keyword">set</span> -x HOST 0.0.0.0
+$ npm run dev</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x958B;&#x767A;&#x30B5;&#x30FC;&#x30D0;&#x306E;&#x8A2D;&#x5B9A;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x3044;&#x308D;&#x3044;&#x308D;&#x3068;&#x53C2;&#x8003;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="title">config/index.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">  <span class="token comment" spellcheck="true">// Various Dev Server settings</span>
+  host<span class="token punctuation">:</span> <span class="token string">&apos;localhost&apos;</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// can be overwritten by process.env.HOST</span>
+  port<span class="token punctuation">:</span> <span class="token number">8080</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// can be overwritten by process.env.HOST, if port is in use, a free one will be determined</span>
+  autoOpenBrowser<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  errorOverlay<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  notifyOnErrors<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  poll<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_note">Note</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://scrapbox.io/syon/Vue.js_Note">Vue.js Note - syonbox - Scrapbox</a></p>
+</li>
+</ul>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="_todo">ToDo</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>PostCSS, Autoprefixer</p>
+</li>
+<li>
+<p><a href="https://github.com/vuejs/eslint-plugin-vue">vuejs/eslint-plugin-vue: Official ESLint plugin for Vue.js</a></p>
+</li>
+<li>
+<p>eslint-plugin-pug</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></article><div class="adsense"><div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Refills Bottom (Responsive) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2136746860059501"
+     data-ad-slot="2358320270"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><footer><hr><h3>Index of&nbsp;<a href="/refills/bid/vuejs/">Vue.js</a></h3><div class="article-links"><a href="/refills/rid/1495634/"><div class="left"><span class="octicon octicon-file-text"></span>vue-cli メモ</div></a><a href="/refills/rid/1500559/"><div class="left"><span class="octicon octicon-file-text"></span>vue-router メモ</div></a><a href="/refills/rid/1579400/"><div class="left"><span class="octicon octicon-file-text"></span>CDN版 Vue.js クイックスタート テンプレート</div></a></div></footer><footer><hr><div class="meta"><div class="left"><a href="https://github.com/syon" class="author"><img src="/refills/assets/img/syon.jpg" alt="syon" target="_blank"><span>syon</span></a></div><div class="right"><div class="repo"><span><a href="https://github.com/syon/refills/commits/master/src/refills/vuejs/vue-cli.adoc" target="_blank">更新履歴</a></span><a href="https://github.com/syon/refills" target="_blank">Repo</a><a href="https://app.wercker.com/project/byKey/3938da859441da2240b9f5d8f7d9f9fd"><img alt="Wercker status" src="https://app.wercker.com/status/3938da859441da2240b9f5d8f7d9f9fd/s/master"></a></div></div></div></footer></section></body></html>

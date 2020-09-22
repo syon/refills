@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="ja"><head><title>Webpack &amp; Wercker 自動デプロイ :: GitHub Pages | Refills</title><meta property="og:type" content="article"><meta property="og:locale" content="ja_JP"><meta property="og:title" content="Webpack &amp; Wercker 自動デプロイ :: GitHub Pages | Refills"><meta property="og:site_name" content="Refills"><meta property="og:type" content="article"><meta property="og:url" content="https://syon.github.io/refills/rid/1481296/"><link rel="canonical" href="https://syon.github.io/refills/rid/1481296/"><meta property="og:image" content="https://syon.github.io/refills/assets/img/ogp.png"><meta charset="utf-8"><meta name="viewport" content="initial-scale=1, width=device-width"><link rel="stylesheet" href="/refills/assets/vendor/octicons/octicons.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Merriweather:400,400italic,700,700italic"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="/refills/assets/bundle.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37634759-11', 'auto');
+ga('send', 'pageview');</script></head><body><header class="site-head"><div class="container"><div class="logo"><a href="/refills/"><h1 class="site-name">Refills</h1></a></div></div></header><section id="article"><div class="a-title"><div class="r-meta-cate"><span class="r-category">GitHub Pages</span></div><h1 class="r-title">Webpack & Wercker 自動デプロイ</h1><div class="r-meta-date"><a href="https://github.com/syon/refills/commits/master/src/refills/github-pages/autodeploy-wercker-webpack.md" target="_blank" class="r-date"><span>2016.12.10</span></a></div></div><article class="main"><h4>wercker.yml</h4>
+<pre><code class="language-yaml">box<span class="token punctuation">:</span> node
+
+<span class="token key atrule">build</span><span class="token punctuation">:</span>
+  <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> npm<span class="token punctuation">-</span>install
+    <span class="token punctuation">-</span> <span class="token key atrule">script</span><span class="token punctuation">:</span>
+        <span class="token key atrule">name</span><span class="token punctuation">:</span> install git
+        <span class="token key atrule">code</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+          apt-get update
+          apt-get install git -y</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">script</span><span class="token punctuation">:</span>
+        <span class="token key atrule">name</span><span class="token punctuation">:</span> webpack
+        <span class="token key atrule">code</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+          npm run build</span>
+
+<span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">lukevivier/gh-pages</span><span class="token punctuation">:</span>
+        <span class="token key atrule">token</span><span class="token punctuation">:</span> $GH_TOKEN
+        <span class="token key atrule">basedir</span><span class="token punctuation">:</span> www
+</code></pre>
+<h2>&#x89E3;&#x8AAC;</h2>
+<ul>
+<li>box &#x306B; git &#x304C;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3055;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;&#x305F;&#x3081;&#x30C7;&#x30D7;&#x30ED;&#x30A4;&#x6642;&#x306B;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;</li>
+<li><code>lukevivier/gh-pages</code> &#x306F; lukevivier &#x6C0F;&#x304C;&#x4F5C;&#x3063;&#x305F; GitHub Pages &#x30C7;&#x30D7;&#x30ED;&#x30A4;&#x7528;&#x306E; wercker step
+<ul>
+<li><a href="https://app.wercker.com/#applications/51f71ee369cd738a32001822/tab/details/">lukevivier/step-gh-pages</a></li>
+<li><a href="https://github.com/lvivier/step-gh-pages">lvivier/step-gh-pages: deploy github pages with wercker</a></li>
+</ul></li>
+</ul>
+<h3>GitHub &#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x30C8;&#x30FC;&#x30AF;&#x30F3;&#x3068; Wercker &#x306E;&#x8A2D;&#x5B9A;</h3>
+<p><code>$GH_TOKEN</code> &#x306F; GitHub &#x306E;&#x500B;&#x4EBA;&#x8A2D;&#x5B9A;&#x3067;&#x751F;&#x6210;&#x3057;&#x305F;&#x30C8;&#x30FC;&#x30AF;&#x30F3;&#x3092; Wercker &#x7D4C;&#x7531;&#x3067;&#x5272;&#x308A;&#x5F53;&#x3066;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x8A73;&#x3057;&#x304F;&#x306F;&#x5225;&#x306E;&#x30DA;&#x30FC;&#x30B8;&#x3067;&#x307E;&#x3068;&#x3081;&#x3066;&#x3044;&#x307E;&#x3059;&#x306E;&#x3067;&#x53C2;&#x7167;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<ul>
+<li><a href="https://syon.github.io/refills/rid/1462280/">GitHub&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x30C8;&#x30FC;&#x30AF;&#x30F3;&#x3068;Wercker&#x306E;&#x8A2D;&#x5B9A; :: GitHub Pages | Refills</a></li>
+</ul>
+<h3>&#x5B9F;&#x4F8B;</h3>
+<ul>
+<li><a href="https://github.com/syon/awake">syon/awake</a>
+<ul>
+<li><a href="/refills/rid/1481295/">SPA &#x3067;&#x306F;&#x306A;&#x3044; Webpack &#x8A2D;&#x5B9A;&#x30B5;&#x30F3;&#x30D7;&#x30EB;</a></li>
+</ul></li>
+</ul>
+</article><div class="adsense"><div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Refills Bottom (Responsive) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2136746860059501"
+     data-ad-slot="2358320270"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><footer><hr><h3>Index of&nbsp;<a href="/refills/bid/github-pages/">GitHub Pages</a></h3><div class="article-links"><a href="/refills/rid/1462280/"><div class="left"><span class="octicon octicon-file-text"></span>GitHubアクセストークンとWerckerの設定</div></a><a href="/refills/rid/1462287/"><div class="left"><span class="octicon octicon-file-text"></span>Harp &amp; Wercker 自動デプロイ</div></a><a href="/refills/rid/1462450/"><div class="left"><span class="octicon octicon-file-text"></span>Metalsmith &amp; Wercker 自動デプロイ</div></a><a href="/refills/rid/1462633/"><div class="left"><span class="octicon octicon-file-text"></span>Amazon S3に画像を置いてアクセス制御</div></a><a href="/refills/rid/1481296/"><div class="left"><span class="octicon octicon-file-text"></span>Webpack &amp; Wercker 自動デプロイ</div></a><a href="/refills/rid/1512281/"><div class="left"><span class="octicon octicon-file-text"></span>プロジェクトページのfaviconを表示する</div></a><a href="/refills/rid/1520345/"><div class="left"><span class="octicon octicon-file-text"></span>MkDocs・MaterialのDockerを使ったインストール手順</div></a></div></footer><footer><hr><div class="meta"><div class="left"><a href="https://github.com/syon" class="author"><img src="/refills/assets/img/syon.jpg" alt="syon" target="_blank"><span>syon</span></a></div><div class="right"><div class="repo"><span><a href="https://github.com/syon/refills/commits/master/src/refills/github-pages/autodeploy-wercker-webpack.md" target="_blank">更新履歴</a></span><a href="https://github.com/syon/refills" target="_blank">Repo</a><a href="https://app.wercker.com/project/byKey/3938da859441da2240b9f5d8f7d9f9fd"><img alt="Wercker status" src="https://app.wercker.com/status/3938da859441da2240b9f5d8f7d9f9fd/s/master"></a></div></div></div></footer></section></body></html>

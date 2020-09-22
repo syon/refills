@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="ja"><head><title>Macのファイル属性「最後に開いた日」を変更する :: macOS | Refills</title><meta property="og:type" content="article"><meta property="og:locale" content="ja_JP"><meta property="og:title" content="Macのファイル属性「最後に開いた日」を変更する :: macOS | Refills"><meta property="og:site_name" content="Refills"><meta property="og:type" content="article"><meta property="og:url" content="https://syon.github.io/refills/rid/1525348/"><link rel="canonical" href="https://syon.github.io/refills/rid/1525348/"><meta property="og:image" content="https://syon.github.io/refills/assets/img/ogp.png"><meta charset="utf-8"><meta name="viewport" content="initial-scale=1, width=device-width"><link rel="stylesheet" href="/refills/assets/vendor/octicons/octicons.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Merriweather:400,400italic,700,700italic"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="/refills/assets/bundle.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37634759-11', 'auto');
+ga('send', 'pageview');</script></head><body><header class="site-head"><div class="container"><div class="logo"><a href="/refills/"><h1 class="site-name">Refills</h1></a></div></div></header><section id="article"><div class="a-title"><div class="r-meta-cate"><span class="r-category">macOS</span></div><h1 class="r-title">Macのファイル属性「最後に開いた日」を変更する</h1><div class="r-meta-date"><a href="https://github.com/syon/refills/commits/master/src/refills/mac-osx/mac-change-last-opened.md" target="_blank" class="r-date"><span>2018.5.3</span></a></div></div><article class="main"><p><img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201805/mac-lastopened.png" alt></p>
+<h2>&#x306F;&#x3058;&#x3081;&#x306B;</h2>
+<p>&#x307E;&#x305A;&#x6700;&#x521D;&#x306B;&#x65AD;&#x3063;&#x3066;&#x304A;&#x304F;&#x3068;&#x3001;&#x300C;&#x6700;&#x5F8C;&#x306B;&#x958B;&#x3044;&#x305F;&#x65E5;&#x300D;&#x3060;&#x3051;&#x3092;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x304B;&#x3089;&#x7DE8;&#x96C6;&#x3059;&#x308B;&#x3053;&#x3068;&#x306F;&#x3067;&#x304D;&#x306A;&#x3044;&#x3088;&#x3046;&#x3067;&#x3059;&#x3002;
+&#x3053;&#x3053;&#x3067;&#x306F;&#x3001;&#x305D;&#x306E;&#x5C5E;&#x6027;&#x3092;&#x7DE8;&#x96C6;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x306F;&#x306A;&#x304F;
+<strong>Finder &#x4E0A;&#x3067;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x6700;&#x5F8C;&#x306B;&#x958B;&#x3044;&#x305F;&#x65E5;</strong> &#x3092;&#x4EFB;&#x610F;&#x306E;&#x3082;&#x306E;&#x306B;&#x5909;&#x66F4;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x30B4;&#x30FC;&#x30EB;&#x3068;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<h2>&#x300C;&#x6700;&#x5F8C;&#x306B;&#x958B;&#x3044;&#x305F;&#x65E5;&#x300D;&#x306E;&#x8A73;&#x7D30;</h2>
+<p>Mac &#x306E; Finder &#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x300C;&#x6700;&#x5F8C;&#x306B;&#x958B;&#x3044;&#x305F;&#x65E5;&#x300D;&#x306F;&#x3001;&#x4EE5;&#x4E0B;&#x306E;
+2 &#x3064;&#x306E;&#x60C5;&#x5831;&#x3092;&#x72B6;&#x6CC1;&#x306B;&#x5FDC;&#x3058;&#x3066;&#x51FA;&#x3057;&#x5206;&#x3051;&#x3066;&#x3044;&#x308B;&#x3088;&#x3046;&#x306B;&#x898B;&#x3048;&#x307E;&#x3059;&#x3002;</p>
+<ol>
+<li>&#x76F4;&#x63A5;/&#x9593;&#x63A5;&#x7684;&#x306B; Finder &#x7D4C;&#x7531;&#x3067;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x958B;&#x3044;&#x305F;&#x3068;&#x304D;&#x306B;&#x57CB;&#x3081;&#x8FBC;&#x307E;&#x308C;&#x308B; Spotlight &#x5C5E;&#x6027; <code>kMDItemLastUsedDate</code></li>
+<li>&#x4E0A;&#x8A18;&#x304C;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;&#x3068;&#x304D;&#x306F;&#x3001;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5909;&#x66F4;&#x65E5;</li>
+</ol>
+<p>Spotlight &#x5C5E;&#x6027; <code>kMDItemLastUsedDate</code> &#x306F;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x8ABF;&#x3079;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="language-bash">$ mdls sample.txt
+</code></pre>
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201805/mac-mdls.png" alt></p>
+<p><code>xattr</code> &#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x4F7F;&#x3063;&#x3066; <code>kMDItemLastUsedDate</code>
+&#x306E;&#x76F4;&#x63A5;&#x7DE8;&#x96C6;&#x3092;&#x8A66;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x304C;&#x3001;&#x3046;&#x307E;&#x304F;&#x3044;&#x304D;&#x307E;&#x305B;&#x3093;&#x3067;&#x3057;&#x305F;&#x3002;
+&#x9069;&#x5F53;&#x306A;&#x5024;&#x3067;&#x4E0A;&#x66F8;&#x304D;&#x3057;&#x3066;&#x304B;&#x3089;&#x66F4;&#x306B;&#x7A7A;&#x6587;&#x5B57;&#x3067;&#x4E0A;&#x66F8;&#x304D;&#x3059;&#x308B;&#x3068;&#x5C5E;&#x6027;&#x305D;&#x306E;&#x3082;&#x306E;&#x304C;&#x6D88;&#x3048;&#x305F;&#x308A;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;&#x8A73;&#x3057;&#x3044;&#x3053;&#x3068;&#x306F;&#x308F;&#x304B;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+<pre><code class="language-bash">$ xattr -w com.apple.metadata:kMDItemLastUsedDate <span class="token string">&apos;&apos;</span> sample.txt
+</code></pre>
+<h3>&#x300C;&#x6700;&#x5F8C;&#x306B;&#x958B;&#x3044;&#x305F;&#x65E5;&#x300D;&#xFF1D; Access Time &#x3067;&#x306F;&#x306A;&#x3044;&#xFF1F;</h3>
+<p>&#x300C;&#x6700;&#x5F8C;&#x306B;&#x958B;&#x3044;&#x305F;&#x65E5;&#x300D;&#x3068; &#x201C;Access / atime&#x201D; &#x306E;&#x3088;&#x3046;&#x306A;&#x65E5;&#x4ED8;&#x60C5;&#x5831;&#x3092;&#x7D50;&#x3073;&#x3064;&#x3051;&#x304C;&#x3061;&#x3067;&#x3059;&#x304C;&#x3001;
+&#x3069;&#x3046;&#x3084;&#x3089;&#x305D;&#x308C;&#x3068;&#x3053;&#x308C;&#x3068;&#x306F;&#x5225;&#x306E;&#x3088;&#x3046;&#x3067;&#x3059;&#x3002;
+&#x3068;&#x306F;&#x8A00;&#x3048;&#x3001;&#x3075;&#x3064;&#x3046;&#x306B;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x305F;&#x3089;&#x540C;&#x6642;&#x306B;&#x66F4;&#x65B0;&#x3055;&#x308C;&#x308B;&#x305F;&#x3081;&#x3001;&#x4E00;&#x81F4;&#x3059;&#x308B;&#x3067;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201805/mac-statmapping.png" alt></p>
+<p>&#x5B89;&#x6613;&#x306B;&#x300C;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x5C5E;&#x6027;&#x306E;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x30BF;&#x30A4;&#x30E0;&#x304C;&#x6700;&#x5F8C;&#x306B;&#x958B;&#x3044;&#x305F;&#x65E5;&#x300D;&#x3068;&#x3044;&#x3046;&#x7406;&#x89E3;&#x3092;&#x3057;&#x3066;&#x3057;&#x307E;&#x3046;&#x3068;&#x3001;
+&#x671F;&#x5F85;&#x3057;&#x305F;&#x7D50;&#x679C;&#x3068;&#x306A;&#x3089;&#x306A;&#x3044;&#x5834;&#x5408;&#x304C;&#x3042;&#x308B;&#x306E;&#x3067;&#x6CE8;&#x610F;&#x3067;&#x3059;&#x3002;</p>
+<h2>&#x300C;&#x6700;&#x5F8C;&#x306B;&#x958B;&#x3044;&#x305F;&#x65E5;&#x300D;&#x3092;&#x4EFB;&#x610F;&#x306E;&#x65E5;&#x4ED8;&#x306B;&#x8A2D;&#x5B9A;&#x3059;&#x308B;</h2>
+<p>&#x4E0A;&#x8A18;&#x306E;&#x6319;&#x52D5;&#x3092;&#x8E0F;&#x307E;&#x3048;&#x308B;&#x3068;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x3059;&#x308C;&#x3070;&#x4EFB;&#x610F;&#x306E;&#x65E5;&#x4ED8;&#x306B;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x8981;&#x3059;&#x308B;&#x306B;&#x3001;&#x958B;&#x3044;&#x305F;&#x60C5;&#x5831;&#x3092;&#x6D88;&#x3057;&#x3066;&#x5909;&#x66F4;&#x65E5;&#x3092;&#x66F8;&#x304D;&#x63DB;&#x3048;&#x3066;&#x5B9F;&#x73FE;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<ul>
+<li>&#x904E;&#x53BB;&#x306B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x958B;&#x3044;&#x305F;&#x308A;&#x3057;&#x3066; Spotlight &#x5C5E;&#x6027;&#x304C;&#x5B58;&#x5728;&#x3059;&#x308B;&#x5834;&#x5408;&#x3001;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x30B3;&#x30D4;&#x30FC;&#x3059;&#x308B;&#x306A;&#x3069;&#x3057;&#x3066;&#x5C5E;&#x6027;&#x60C5;&#x5831;&#x306E;&#x306A;&#x3044;&#x72B6;&#x614B;&#x306B;&#x3059;&#x308B;</li>
+<li>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x5909;&#x66F4;&#x65E5;&#x3092;&#x66F8;&#x304D;&#x63DB;&#x3048;&#x308B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#xFF08;&#x4EE5;&#x4E0B;&#x306E;&#x3044;&#x305A;&#x308C;&#x304B;&#xFF09;
+<ul>
+<li><code>setfile -m &apos;02/02/2020 12:59:59&apos; sample.txt</code></li>
+<li><code>touch -mt 202002021259.59 sample.txt</code></li>
+</ul></li>
+<li><strong>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x958B;&#x304B;&#x306A;&#x3044;</strong></li>
+</ul>
+<p>&#x305F;&#x3060;&#x3057;&#x3001;&#x3053;&#x306E;&#x3084;&#x308A;&#x65B9;&#x3060;&#x3068;&#x300C;&#x5909;&#x66F4;&#x65E5;&#x300D;&#x3068;&#x300C;&#x6700;&#x5F8C;&#x306B;&#x958B;&#x3044;&#x305F;&#x65E5;&#x300D;&#x304C;&#x5FC5;&#x305A;&#x540C;&#x3058;&#x3082;&#x306E;&#x3068;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201805/mac-lastopened.png" alt></p>
+<h2>&#x300C;&#x5909;&#x66F4;&#x65E5;&#x300D;&#x3068;&#x300C;&#x6700;&#x5F8C;&#x306B;&#x958B;&#x3044;&#x305F;&#x65E5;&#x300D;&#x3092;&#x305D;&#x308C;&#x305E;&#x308C;&#x4EFB;&#x610F;&#x306E;&#x65E5;&#x4ED8;&#x306B;&#x8A2D;&#x5B9A;&#x3059;&#x308B;</h2>
+<p>&#x7121;&#x7406;&#x3084;&#x308A;&#x3067;&#x3059;&#x304C;&#x5B9F;&#x73FE;&#x3067;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x65E5;&#x4ED8;&#x3092;&#x5909;&#x3048;&#x3066;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x958B;&#x3044;&#x3066;&#x623B;&#x3063;&#x3066;&#x6765;&#x308C;&#x3070;&#x3044;&#x3044;&#x306E;&#x3067;&#x3059;&#x3002;&#x79D2;&#x30FB;&#x30DF;&#x30EA;&#x79D2;&#x30EC;&#x30D9;&#x30EB;&#x306E;&#x8ABF;&#x6574;&#x306F;&#x96E3;&#x3057;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201805/mac-lastopendforce.png" alt></p>
+<h2>cf.</h2>
+<ul>
+<li><a href="http://d.hatena.ne.jp/zariganitosh/20130404/attribute_datetime">&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5C5E;&#x6027;&#x60C5;&#x5831;&#x3092;&#x63A2;&#x308B; &#x6642;&#x523B;&#x7DE8; - &#x30B6;&#x30EA;&#x30AC;&#x30CB;&#x304C;&#x898B;&#x3066;&#x3044;&#x305F;&#x2026;&#x3002;</a></li>
+<li><a href="https://ja.wikipedia.org/wiki/2038%E5%B9%B4%E5%95%8F%E9%A1%8C">2038&#x5E74;&#x554F;&#x984C; - Wikipedia</a>
+<ul>
+<li>2038&#x5E74;1&#x6708;19&#x65E5;3&#x6642;14&#x5206;7&#x79D2;&#xFF08;&#x65E5;&#x672C;&#x6A19;&#x6E96;&#x6642;&#x3067;&#x306F;2038&#x5E74;1&#x6708;19&#x65E5;12&#x6642;14&#x5206;7&#x79D2;&#xFF09;</li>
+</ul></li>
+</ul>
+</article><div class="adsense"><div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Refills Bottom (Responsive) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2136746860059501"
+     data-ad-slot="2358320270"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><footer><hr><h3>Index of&nbsp;<a href="/refills/bid/mac-osx/">Mac OSX</a></h3><div class="article-links"><a href="/refills/rid/1462114/"><div class="left"><span class="octicon octicon-file-text"></span>EasySIMBLのインストールと使い方</div></a><a href="/refills/rid/1525348/"><div class="left"><span class="octicon octicon-file-text"></span>Macのファイル属性「最後に開いた日」を変更する</div></a></div></footer><footer><hr><div class="meta"><div class="left"><a href="https://github.com/syon" class="author"><img src="/refills/assets/img/syon.jpg" alt="syon" target="_blank"><span>syon</span></a></div><div class="right"><div class="repo"><span><a href="https://github.com/syon/refills/commits/master/src/refills/mac-osx/mac-change-last-opened.md" target="_blank">更新履歴</a></span><a href="https://github.com/syon/refills" target="_blank">Repo</a><a href="https://app.wercker.com/project/byKey/3938da859441da2240b9f5d8f7d9f9fd"><img alt="Wercker status" src="https://app.wercker.com/status/3938da859441da2240b9f5d8f7d9f9fd/s/master"></a></div></div></div></footer></section></body></html>

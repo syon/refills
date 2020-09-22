@@ -1,0 +1,276 @@
+<!DOCTYPE html><html lang="ja"><head><title>Windows用ランチャー『 Wox 』の導入と便利な使い方 | Refills</title><meta property="og:type" content="article"><meta property="og:locale" content="ja_JP"><meta property="og:title" content="Windows用ランチャー『 Wox 』の導入と便利な使い方 | Refills"><meta property="og:site_name" content="Refills"><meta property="og:type" content="article"><meta property="og:url" content="https://syon.github.io/refills/rid/1501413/"><link rel="canonical" href="https://syon.github.io/refills/rid/1501413/"><meta property="og:image" content="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-hero.png"><meta charset="utf-8"><meta name="viewport" content="initial-scale=1, width=device-width"><link rel="stylesheet" href="/refills/assets/vendor/octicons/octicons.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Merriweather:400,400italic,700,700italic"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="/refills/assets/bundle.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37634759-11', 'auto');
+ga('send', 'pageview');</script></head><body><header class="site-head"><div class="container"><div class="logo"><a href="/refills/"><h1 class="site-name">Refills</h1></a></div></div></header><section id="article"><div class="a-title"><div class="r-meta-cate"></div><h1 class="r-title">Windows用ランチャー『 Wox 』の導入と便利な使い方</h1><div class="r-meta-date"><a href="https://github.com/syon/refills/commits/master/src/refills/windows/wox.adoc" target="_blank" class="r-date"><span>2017.7.30</span></a></div></div><article class="main"><div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-hero.png" alt="wox">
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Wox 公式サイト</dt>
+<dd>
+<p><a href="http://www.getwox.com/" class="bare">http://www.getwox.com/</a></p>
+</dd>
+<dt class="hdlist1">Wox on GitHub</dt>
+<dd>
+<p><a href="https://github.com/Wox-launcher/Wox" class="bare">https://github.com/Wox-launcher/Wox</a></p>
+</dd>
+</dl>
+</div>
+<div class="sect2">
+<h3 id="__">特徴</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Alfred や Launchy の代替</p>
+</li>
+<li>
+<p>Everything と連携</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_demo">Demo</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-demo.gif" alt="wox demo">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___2">インストール前提</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://github.com/Wox-launcher/Wox/wiki/Getting-started.-Installation">Getting started. Installation · Wox-launcher/Wox Wiki</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>.NET Framework 4.5.2 以上（ Windows 10 の場合は導入済み ）</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.microsoft.com/en-us/download/details.aspx?id=42643" class="bare">https://www.microsoft.com/en-us/download/details.aspx?id=42643</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Everything</p>
+<div class="ulist">
+<ul>
+<li>
+<p>サービスが稼働していること</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Python3（オプション）</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PATH が通っていること、もしくは Wox の設定で指定してあること（※プラグインの使用に必要な場合に指定）</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wox">Woxのダウンロードとインストール</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Wox</dt>
+<dd>
+<p><a href="https://github.com/Wox-launcher/Wox/releases" class="bare">https://github.com/Wox-launcher/Wox/releases</a></p>
+</dd>
+</dl>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-download.png" alt="wox download">
+</div>
+</div>
+<div class="paragraph">
+<p>ダウンロードしたファイルを実行すると、自動的にインストールされます。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_everything">Everythingのダウンロードとインストール</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Everything</dt>
+<dd>
+<p><a href="https://www.voidtools.com/" class="bare">https://www.voidtools.com/</a></p>
+</dd>
+</dl>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-everything.png" alt="wox everything">
+</div>
+</div>
+<div class="paragraph">
+<p>インストーラに従ってインストールを行います。</p>
+</div>
+<div class="sect2">
+<h3 id="___3">特定のファイルサーバもインデックスの対象にするには</h3>
+<div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-everything-addfolder.png" alt="wox everything add folder">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wox_2">Woxのおすすめ設定</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>設定画面を開くには、タスクトレイやメインウィンドウの右クリックメニューから開くこともできますが、
+Wox に <code>settings</code> と打ち込んでしまうのが手っ取り早いでしょう。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-settings.png" alt="wox settings">
+</div>
+</div>
+<div class="sect2">
+<h3 id="___4">「一般」タブ</h3>
+<div class="paragraph">
+<p>起動したときの挙動を設定します。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-settings-general.png" alt="wox settings general">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="___5">ホットキー</h3>
+<div class="paragraph">
+<p>Wox のメインウィンドウは、デフォルトでは <mark><kbd>Alt</kbd>+ <kbd>Space</kbd></mark> で呼び出します。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-settings-hotkey.png" alt="wox settings hotkey">
+</div>
+</div>
+<div class="paragraph">
+<p>その下のカスタムクエリ ホットキーは、上記とは別のホットキーを定義しそれを呼び出すと、
+対応するキーワードを事前に入力した状態で Wox が起動します。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_shell">Shell プラグインの設定変更</h3>
+<div class="paragraph">
+<p>デフォルトで <code>Win + R</code> ショートカットが置き換えられています。
+よくフォルダパスのリンクを <code>Win + R</code> から開いたりしますが、
+このプラグインではファイルパスを指定して実行すると期待したとおりに動作しません。
+そのため <code>Replace Win+R</code> のチェックは外しておいたほうが無難でしょう。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-settings-shell.png" alt="wox settings shell">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___6">便利な使い方</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_program">Program プラグイン</h3>
+<div class="paragraph">
+<p>任意のフォルダに配置して都度実行する exe 形式のプログラム（アプリ）を Wox から呼び出せるようにしましょう。
+例えば、私のように <code>C:\util</code> フォルダにまとめている場合はこのように登録します。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-settings-program.png" alt="wox settings program">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-settings-program-util.png" alt="wox settings program util">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-settings-program-flex.png" alt="wox settings program flex">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_clipboard_history">Clipboard History</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.getwox.com/plugin/4">Plugin Detail - Clipboard History</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_weblio">Weblio 辞書（英和辞典・和英辞典）</h3>
+<div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-settings-weblio-ej.png" alt="wox settings weblio ej">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-settings-weblio.png" alt="wox settings weblio">
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">URL</dt>
+<dd>
+<p><code><a href="http://ejje.weblio.jp/content/{q}" class="bare">http://ejje.weblio.jp/content/{q}</a></code></p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="___7">呼び出せるものいろいろ</h3>
+<div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-sample-1.png" alt="wox sample 1">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-sample-2.png" alt="wox sample 2">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-sample-3.png" alt="wox sample 3">
+</div>
+</div>
+</div>
+</div>
+</div></article><div class="adsense"><div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Refills Bottom (Responsive) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2136746860059501"
+     data-ad-slot="2358320270"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><footer><hr><h3>Index of&nbsp;<a href="/refills/bid/windows/">Windows</a></h3><div class="article-links"><a href="/refills/rid/1501413/"><div class="left"><span class="octicon octicon-file-text"></span>Windows用ランチャー『 Wox 』の導入と便利な使い方</div></a></div></footer><footer><hr><div class="meta"><div class="left"><a href="https://github.com/syon" class="author"><img src="/refills/assets/img/syon.jpg" alt="syon" target="_blank"><span>syon</span></a></div><div class="right"><div class="repo"><span><a href="https://github.com/syon/refills/commits/master/src/refills/windows/wox.adoc" target="_blank">更新履歴</a></span><a href="https://github.com/syon/refills" target="_blank">Repo</a><a href="https://app.wercker.com/project/byKey/3938da859441da2240b9f5d8f7d9f9fd"><img alt="Wercker status" src="https://app.wercker.com/status/3938da859441da2240b9f5d8f7d9f9fd/s/master"></a></div></div></div></footer></section></body></html>

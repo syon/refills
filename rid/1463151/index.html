@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="ja"><head><title>CODE TIPS :: Ruby | Refills</title><meta property="og:type" content="article"><meta property="og:locale" content="ja_JP"><meta property="og:title" content="CODE TIPS :: Ruby | Refills"><meta property="og:site_name" content="Refills"><meta property="og:type" content="article"><meta property="og:url" content="https://syon.github.io/refills/rid/1463151/"><link rel="canonical" href="https://syon.github.io/refills/rid/1463151/"><meta property="og:image" content="https://syon.github.io/refills/assets/img/ogp.png"><meta charset="utf-8"><meta name="viewport" content="initial-scale=1, width=device-width"><link rel="stylesheet" href="/refills/assets/vendor/octicons/octicons.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Merriweather:400,400italic,700,700italic"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="/refills/assets/bundle.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37634759-11', 'auto');
+ga('send', 'pageview');</script></head><body><header class="site-head"><div class="container"><div class="logo"><a href="/refills/"><h1 class="site-name">Refills</h1></a></div></div></header><section id="article"><div class="a-title"><div class="r-meta-cate"><span class="r-category">Ruby</span></div><h1 class="r-title">CODE TIPS</h1><div class="r-meta-date"><a href="https://github.com/syon/refills/commits/master/src/refills/ruby/code-tips.md" target="_blank" class="r-date"><span>2016.5.14</span></a></div></div><article class="main"><h4>Encoding</h4>
+<pre><code class="language-ruby"><span class="token comment" spellcheck="true"># coding: utf-8</span>
+</code></pre>
+<h4>&#x6B63;&#x898F;&#x8868;&#x73FE;</h4>
+<ul>
+<li><a href="http://docs.ruby-lang.org/ja/2.2.0/doc/spec=2fregexp.html">&#x6B63;&#x898F;&#x8868;&#x73FE;</a></li>
+</ul>
+<pre><code class="language-ruby"><span class="token comment" spellcheck="true"># &#x62BD;&#x51FA;</span>
+<span class="token string">&quot;Hello, World&quot;</span><span class="token punctuation">.</span>slice <span class="token regex">/W.+$/</span>  <span class="token comment" spellcheck="true">#=&gt; &quot;World&quot;</span>
+<span class="token string">&quot;Hello, World&quot;</span><span class="token punctuation">.</span>slice <span class="token regex">/w.+$/i</span> <span class="token comment" spellcheck="true">#=&gt; &quot;World&quot;</span>
+
+<span class="token comment" spellcheck="true"># &#x30DE;&#x30C3;&#x30C1;&#xFF06;&#x62BD;&#x51FA;</span>
+<span class="token string">&quot;Hello, World. Hey, John.&quot;</span><span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">%r{Hey, (.*).}</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#=&gt; &quot;John&quot;</span>
+<span class="token string">&quot;/path/to/article?q=hello&quot;</span><span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">%r{.*/article\?q=(.*)}</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#=&gt; &quot;hello&quot;</span>
+
+<span class="token comment" spellcheck="true"># &#x542B;&#x3080;</span>
+<span class="token string">&quot;Hello, World&quot;</span> <span class="token operator">=</span><span class="token operator">~</span> <span class="token regex">/Hello/</span>  <span class="token comment" spellcheck="true">#=&gt; 0</span>
+<span class="token string">&quot;Hello, World&quot;</span> <span class="token operator">=</span><span class="token operator">~</span> <span class="token regex">/hello/</span>  <span class="token comment" spellcheck="true">#=&gt; nil</span>
+<span class="token string">&quot;Hello, World&quot;</span> <span class="token operator">=</span><span class="token operator">~</span> <span class="token regex">/hello/i</span> <span class="token comment" spellcheck="true">#=&gt; 0</span>
+<span class="token string">&quot;Hello, World&quot;</span><span class="token punctuation">.</span>include<span class="token operator">?</span> <span class="token string">&quot;Hello&quot;</span> <span class="token comment" spellcheck="true">#=&gt; true</span>
+<span class="token punctuation">[</span><span class="token string">&quot;dog&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;cat&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;mouse&quot;</span><span class="token punctuation">]</span><span class="token punctuation">.</span>include<span class="token operator">?</span> <span class="token string">&quot;cat&quot;</span> <span class="token comment" spellcheck="true">#=&gt; true</span>
+
+<span class="token comment" spellcheck="true"># &#x5B8C;&#x5168;&#x4E00;&#x81F4;</span>
+<span class="token string">&quot;Hello, World&quot;</span> <span class="token operator">=</span><span class="token operator">~</span> <span class="token regex">/^Hello$/</span>        <span class="token comment" spellcheck="true">#=&gt; nil</span>
+<span class="token string">&quot;Hello, World&quot;</span> <span class="token operator">=</span><span class="token operator">~</span> <span class="token regex">/^Hello, World$/</span> <span class="token comment" spellcheck="true">#=&gt; 0</span>
+</code></pre>
+<h4>String</h4>
+<ul>
+<li><a href="http://qiita.com/mogulla3/items/46bb876391be07921743">Ruby&#x3067;%&#x8A18;&#x6CD5;&#xFF08;&#x30D1;&#x30FC;&#x30BB;&#x30F3;&#x30C8;&#x8A18;&#x6CD5;&#xFF09;&#x3092;&#x4F7F;&#x3046; - Qiita</a></li>
+<li><a href="http://qiita.com/tsugi2009/items/dc974669e55a2cbe2809">Ruby&#x3067;&#x30AF;&#x30AA;&#x30FC;&#x30C8;&#x3001;&#x30C0;&#x30D6;&#x30EB;&#x30AF;&#x30AA;&#x30FC;&#x30C8;&#x4EE5;&#x5916;&#x3067;&#x306E;String&#x306E;&#x66F8;&#x304D;&#x65B9; - Qiita</a></li>
+</ul>
+<pre><code class="language-ruby">str <span class="token operator">=</span> <span class="token string">%(Programming language &quot;Ruby&quot;)</span>
+puts str
+<span class="token comment" spellcheck="true"># =&gt; Programming language &quot;Ruby&quot;</span>
+
+ruby <span class="token operator">=</span> <span class="token string">&quot;Ruby&quot;</span>
+str2 <span class="token operator">=</span> <span class="token string">%(Programming language &quot;<span class="token interpolation"><span class="token delimiter tag">#{</span>ruby<span class="token delimiter tag">}</span></span>&quot;)</span>
+puts str2
+<span class="token comment" spellcheck="true"># =&gt; Programming language &quot;Ruby&quot;</span>
+</code></pre>
+<table>
+<thead>
+<tr><th>%</th><th>desc</th></tr>
+</thead>
+<tbody>
+<tr><td><code>%</code></td><td>&#x30C0;&#x30D6;&#x30EB;&#x30AF;&#x30AA;&#x30FC;&#x30C8;&#x3067;&#x56F2;&#x3046;&#x5834;&#x5408;&#x3068;&#x540C;&#x7B49;&#x3002;&#x5F0F;&#x5C55;&#x958B;&#x3055;&#x308C;&#x308B;&#x3002;</td></tr>
+<tr><td><code>%q</code></td><td>&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30AF;&#x30AA;&#x30FC;&#x30C8;&#x3067;&#x56F2;&#x3046;&#x5834;&#x5408;&#x3068;&#x540C;&#x7B49;&#x3002;&#x5F0F;&#x5C55;&#x958B;&#x3055;&#x308C;&#x306A;&#x3044;&#x3002;</td></tr>
+<tr><td><code>%W</code></td><td>&#x30B9;&#x30DA;&#x30FC;&#x30B9;&#x533A;&#x5207;&#x308A;&#x3067;&#x914D;&#x5217;&#x5B9A;&#x7FA9;&#x3002;&#x5F0F;&#x5C55;&#x958B;&#x3055;&#x308C;&#x308B;&#x3002;</td></tr>
+<tr><td><code>%w</code></td><td>&#x30B9;&#x30DA;&#x30FC;&#x30B9;&#x533A;&#x5207;&#x308A;&#x3067;&#x914D;&#x5217;&#x5B9A;&#x7FA9;&#x3002;&#x5F0F;&#x5C55;&#x958B;&#x3055;&#x308C;&#x306A;&#x3044;&#x3002;</td></tr>
+<tr><td><code>%I</code></td><td>&#x8981;&#x7D20;&#x304C;&#x30B7;&#x30F3;&#x30DC;&#x30EB;&#x306E;&#x914D;&#x5217;&#x3092;&#x4F5C;&#x308B;&#x3002;&#x5F0F;&#x5C55;&#x958B;&#x3055;&#x308C;&#x308B;&#x3002;</td></tr>
+<tr><td><code>%i</code></td><td>&#x8981;&#x7D20;&#x304C;&#x30B7;&#x30F3;&#x30DC;&#x30EB;&#x306E;&#x914D;&#x5217;&#x3092;&#x4F5C;&#x308B;&#x3002;&#x5F0F;&#x5C55;&#x958B;&#x3055;&#x308C;&#x306A;&#x3044;&#x3002;</td></tr>
+<tr><td><code>%x</code></td><td>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x51FA;&#x529B;&#x3092;&#x884C;&#x3046;&#x3002;&#x30D0;&#x30C3;&#x30AF;&#x30AF;&#x30AA;&#x30FC;&#x30C8;&#x3067;&#x56F2;&#x3063;&#x305F;&#x5834;&#x5408;&#x3068;&#x540C;&#x7B49;&#x3002;</td></tr>
+<tr><td><code>%s</code></td><td>&#x30B7;&#x30F3;&#x30DC;&#x30EB;&#x3002;&#x5F0F;&#x5C55;&#x958B;&#x3055;&#x308C;&#x306A;&#x3044;&#x3002;</td></tr>
+</tbody>
+</table>
+<h4>true / false</h4>
+<pre><code class="language-ruby"><span class="token operator">!</span><span class="token operator">!</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">#=&gt; true</span>
+<span class="token operator">!</span><span class="token operator">!</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">#=&gt; true</span>
+<span class="token operator">!</span><span class="token operator">!</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#=&gt; true</span>
+<span class="token operator">!</span><span class="token operator">!</span><span class="token punctuation">(</span><span class="token keyword">nil</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#=&gt; false</span>
+<span class="token operator">!</span><span class="token operator">!</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#=&gt; true</span>
+<span class="token operator">!</span><span class="token operator">!</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#=&gt; true</span>
+</code></pre>
+<h4>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092; JSON &#x306B;&#x5909;&#x63DB;</h4>
+<pre><code class="language-ruby"><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">generate</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
+<span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">pretty_generate</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># &#x6574;&#x5F62;</span>
+</code></pre>
+<h4>&#x65E5;&#x4ED8;&#x30FB;&#x6642;&#x523B;&#x306E;&#x8A08;&#x7B97;</h4>
+<pre><code class="language-ruby"><span class="token keyword">require</span> <span class="token string">&apos;active_support/time&apos;</span>
+
+<span class="token builtin">Time</span><span class="token punctuation">.</span>now           <span class="token comment" spellcheck="true">#=&gt; 2014-10-24 20:50:15 +0900</span>
+<span class="token builtin">Time</span><span class="token punctuation">.</span>now <span class="token operator">+</span> <span class="token number">3</span><span class="token punctuation">.</span>hours <span class="token comment" spellcheck="true">#=&gt; 2014-10-24 23:50:15 +0900</span>
+</code></pre>
+<p>via - <a href="http://yachibit.hatenablog.jp/entry/2013/06/08/030926">Ruby&#x3067;&#x65E5;&#x4ED8;&#x306E;&#x8A08;&#x7B97;&#x3059;&#x308B;&#x306A;&#x3089;active_support&#x4F7F;&#x3063;&#x3068;&#x3051;&#x3063;&#x3066;&#x4E16;&#x9593;&#x3067;&#x8A00;&#x308F;&#x308C;&#x3066;&#x308B;&#x3051;&#x3069;&#x30DE;&#x30B8;&#x3060;&#x308F; - yachibit.log</a></p>
+<h3>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x5F15;&#x6570;</h3>
+<ul>
+<li><a href="http://www2.atwiki.jp/kmo2/pages/16.html">Ruby&#x30E1;&#x30E2; - &#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x5F15;&#x6570;</a></li>
+</ul>
+<pre><code class="language-ruby">puts <span class="token constant">ARGV</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+</code></pre>
+<h2>&#x4F8B;&#x5916;</h2>
+<ul>
+<li><a href="http://qiita.com/jnchito/items/3ef95ea144ed15df3637">Ruby - Rails&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306B;&#x304A;&#x3051;&#x308B;&#x30A8;&#x30E9;&#x30FC;&#x51E6;&#x7406;&#xFF08;&#x4F8B;&#x5916;&#x8A2D;&#x8A08;&#xFF09;&#x306E;&#x8003;&#x3048;&#x65B9; - Qiita</a></li>
+</ul>
+<h2>Debug</h2>
+<h3>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x4E00;&#x89A7;</h3>
+<pre><code class="language-ruby"><span class="token keyword">require</span> <span class="token string">&apos;pp&apos;</span>
+pp <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span>methods<span class="token punctuation">.</span>sort
+</code></pre>
+<h3>pry</h3>
+<ul>
+<li><a href="http://qiita.com/Kokudori/items/2b36068cdf2e40e75c2d">Ruby - &#x30B0;&#x30B0;&#x308B;&#x3088;&#x308A;&#x3082;&#x307E;&#x305A;&#x306F;pry - Qiita</a></li>
+</ul>
+<h3>&#x30D6;&#x30ED;&#x30C3;&#x30AF;&#x30B3;&#x30E1;&#x30F3;&#x30C8;</h3>
+<pre><code class="language-ruby"><span class="token operator">=</span><span class="token keyword">begin</span>
+  <span class="token punctuation">:</span>
+  <span class="token punctuation">:</span>
+<span class="token operator">=</span><span class="token keyword">end</span>
+</code></pre>
+<h2>File</h2>
+<h3>&#x51FA;&#x529B;</h3>
+<pre><code class="language-ruby"><span class="token comment" spellcheck="true"># r:&#x8AAD;&#x8FBC; w:&#x4E0A;&#x66F8; a:&#x8FFD;&#x8A18;</span>
+<span class="token function">open</span><span class="token punctuation">(</span><span class="token string">&quot;log.txt&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token operator">|</span>f<span class="token operator">|</span> f<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">&quot;&#x6587;&#x5B57;&#x5217;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+</code></pre>
+<h3>Path</h3>
+<ul>
+<li><a href="http://stackoverflow.com/questions/374326/get-filename-without-extension-from-file-path-in-ruby">Get Filename without extension from file path in Ruby - Stack Overflow</a></li>
+</ul>
+<pre><code class="language-ruby"><span class="token builtin">File</span><span class="token punctuation">.</span><span class="token function">basename</span><span class="token punctuation">(</span><span class="token string">&quot;/home/gumby/work/ruby.rb&quot;</span><span class="token punctuation">)</span>          <span class="token comment" spellcheck="true">#=&gt; &quot;ruby.rb&quot;</span>
+<span class="token builtin">File</span><span class="token punctuation">.</span><span class="token function">basename</span><span class="token punctuation">(</span><span class="token string">&quot;/home/gumby/work/ruby.rb&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;.rb&quot;</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">#=&gt; &quot;ruby&quot;</span>
+</code></pre>
+<h2>CSV</h2>
+<ul>
+<li><a href="http://melborne.github.io/2013/01/24/csv-table-method-is-awesome/">Ruby&#x6A19;&#x6E96;&#x6DFB;&#x4ED8;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;csv&#x306E;CSV.table&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x304C;&#x6700;&#x5F37;&#x306A;&#x4EF6;&#x306B;&#x3064;&#x3044;&#x3066;</a>
+<ul>
+<li><a href="http://docs.ruby-lang.org/ja/2.1.0/class/CSV=3a=3aTable.html">Ruby 2.1.0 &#x30EA;&#x30D5;&#x30A1;&#x30EC;&#x30F3;&#x30B9;&#x30DE;&#x30CB;&#x30E5;&#x30A2;&#x30EB; class CSV::Table</a></li>
+</ul></li>
+</ul>
+<pre><code class="language-ruby"><span class="token constant">CSV</span><span class="token punctuation">.</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token string">&quot;data.tsv&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token symbol">:col_sep</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;\t&quot;</span><span class="token punctuation">,</span> <span class="token symbol">:quote_char</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;\&quot;&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># needs header row</span>
+</code></pre>
+<h2>Array</h2>
+<p>&#x8981;&#x7D20;&#x6570;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x53D6;&#x5F97;</p>
+<pre><code class="language-ruby"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">take</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#=&gt; [1, 2, 3]</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">first</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#=&gt; [1, 2, 3]</span>
+</code></pre>
+<ul>
+<li><a href="http://qiita.com/ta1kt0me@github/items/33c4d37a65b69b75ee40">ruby&#x306E;&#x914D;&#x5217;&#x304B;&#x3089;nil&#x3068;&#x7A7A;&#x6587;&#x5B57;&#x3092;&#x53D6;&#x308A;&#x9664;&#x304F; - Qiita</a></li>
+</ul>
+<h2>ActiveSupport</h2>
+<h3>ActiveSupport &#x306B;&#x3088;&#x308B;&#x65E5;&#x6642;&#x6F14;&#x7B97;</h3>
+<pre><code class="language-ruby">gem <span class="token string">&apos;activesupport&apos;</span>
+<span class="token keyword">require</span> <span class="token string">&apos;active_support/all&apos;</span>
+
+<span class="token builtin">Time</span><span class="token punctuation">.</span>now                <span class="token comment" spellcheck="true">#=&gt; 2014-10-06 21:39:10 +0900</span>
+<span class="token builtin">Time</span><span class="token punctuation">.</span>now<span class="token punctuation">.</span><span class="token function">since</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">.</span>hours<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#=&gt; 2014-10-07 00:39:10 +0900</span>
+</code></pre>
+<h3>ActiveSupport &#x306B;&#x3088;&#x308B; UTC(String) &#x2192; JST(String) &#x5909;&#x63DB;</h3>
+<p>9&#x6642;&#x9593;&#x9032;&#x3081;&#x3066; JST &#x8868;&#x8A18;&#x306B;&#x3059;&#x308B;</p>
+<pre><code class="language-ruby">gem <span class="token string">&apos;activesupport&apos;</span>
+<span class="token keyword">require</span> <span class="token string">&apos;active_support/all&apos;</span>
+
+<span class="token builtin">Time</span><span class="token punctuation">.</span><span class="token function">strptime</span><span class="token punctuation">(</span><span class="token string">&quot;2014-10-06 12:39:10 UTC&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;%F %T UTC&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">since</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">.</span>hours<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">strftime</span><span class="token punctuation">(</span><span class="token string">&quot;%F %T JST&quot;</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#=&gt; &quot;2014-10-06 21:39:10 JST&quot;</span>
+</code></pre>
+<h3>blank?</h3>
+<pre><code class="language-ruby"><span class="token keyword">require</span> <span class="token string">&apos;active_support/core_ext/object/blank&apos;</span>
+</code></pre>
+<ul>
+<li><a href="https://github.com/rails/rails/blob/master/activesupport/lib/active_support/core_ext/object/blank.rb">rails/blank.rb at master &#xB7; rails/rails</a></li>
+<li><a href="http://railsguides.jp/active_support_core_extensions.html">Active Support &#x30B3;&#x30A2;&#x62E1;&#x5F35;&#x6A5F;&#x80FD; | Rails &#x30AC;&#x30A4;&#x30C9;</a></li>
+<li><a href="http://blog.livedoor.jp/sasata299/archives/51495666.html">Rails&#x4EE5;&#x5916;&#x306E;&#x74B0;&#x5883;&#x3067;blank?&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x4F7F;&#x3046;&#x3068;&#x304D;&#x306E;&#x6CE8;&#x610F; - (&#xFF9F;&#x2200;&#xFF9F;)o&#x5F61; sasata299&#x2019;s blog</a></li>
+</ul>
+<h2>Ruby&#x30EF;&#x30F3;&#x30E9;&#x30A4;&#x30CA;&#x30FC;</h2>
+<ul>
+<li><a href="http://d.hatena.ne.jp/maeharin/20130113/ruby_oneliner">Ruby&#x30EF;&#x30F3;&#x30E9;&#x30A4;&#x30CA;&#x30FC;&#x5165;&#x9580; - maeharin&#x306E;&#x65E5;&#x8A18;</a></li>
+</ul>
+<h3>&#x30EF;&#x30F3;&#x30E9;&#x30A4;&#x30CA;&#x30FC;&#x57FA;&#x790E;</h3>
+<dl>
+<dt><code>-e</code></dt>
+<dd>&#x4E00;&#x756A;&#x57FA;&#x672C;&#x7684;&#x306A;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3002;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3002;&#xFF08;&#x4ED6;&#x306E;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3068;&#x7D44;&#x307F;&#x5408;&#x308F;&#x305B;&#x308B;&#x6642;&#x306F;&#x5FC5;&#x305A;&#x6700;&#x5F8C;&#x306B;&#x8A18;&#x8F09;&#x3059;&#x308B;&#xFF09;
+</dd>
+</dl>
+<pre><code class="language-bash">$ ruby -e <span class="token string">&apos;puts &quot;hoge&quot;&apos;</span>
+</code></pre>
+<h3>Windows&#x306E;&#x74B0;&#x5883;&#x5909;&#x6570;Path&#x3092;&#x6539;&#x884C;&#x3057;&#x3066;&#x8868;&#x793A;</h3>
+<pre><code class="language-bash"><span class="token keyword">echo</span> %path% <span class="token operator">|</span> ruby -F<span class="token punctuation">;</span> -ane <span class="token string">&apos;puts <span class="token variable">$F</span>&apos;</span>
+</code></pre>
+<p><code>echo %path%</code>&#x3067;&#x51FA;&#x529B;&#x3055;&#x308C;&#x308B;&#x5185;&#x5BB9;&#x3092;&#x3001;ruby&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306E;&#x5F15;&#x6570;&#x3068;&#x3057;&#x3066;&#x6E21;&#x3057;&#x3001;<code>-n</code>&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306B;&#x3088;&#x3063;&#x3066;&#x884C;&#x3054;&#x3068;&#x306B;&#x51E6;&#x7406;&#x3092;&#x30EB;&#x30FC;&#x30D7;&#x3059;&#x308B;&#x3002;&#x30EB;&#x30FC;&#x30D7;&#x306F; Kernel.#gets &#x306B;&#x3088;&#x308A;&#x7D44;&#x8FBC;&#x5909;&#x6570;<code>$_</code>&#x306B;&#x683C;&#x7D0D;&#x3055;&#x308C;&#x308B;&#x3002;<code>echo %path%</code>&#x306E;&#x5834;&#x5408;&#x306F;<code>;</code>&#x533A;&#x5207;&#x308A;&#x306E;1&#x884C;&#x6587;&#x5B57;&#x5217;&#x306E;&#x305F;&#x3081;&#x3001;&#x30EB;&#x30FC;&#x30D7;&#x306F;1&#x56DE;&#x3068;&#x306A;&#x308B;&#x3002;&#x6B21;&#x306B;&#x3001;<code>-a</code>&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306B;&#x3088;&#x3063;&#x3066;&#x30EB;&#x30FC;&#x30D7;&#x306E;&#x5148;&#x982D;&#x3067;&#x81EA;&#x52D5;&#x7684;&#x306B; $F = $_.split &#x304C;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x3001;&#x7D50;&#x679C;&#x306E;&#x683C;&#x7D0D;&#x3055;&#x308C;&#x305F;<code>$F</code>&#x3092; puts &#x3067;&#x51FA;&#x529B;&#x3057;&#x3066;&#x3044;&#x308B;&#x3002;split&#x306E;&#x533A;&#x5207;&#x308A;&#x6587;&#x5B57;&#x306F;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x534A;&#x89D2;&#x30B9;&#x30DA;&#x30FC;&#x30B9;&#x306E;&#x3088;&#x3046;&#x3060;&#x304C;&#x3001;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;<code>-F;</code>&#x3067;<code>;</code>&#x3092;&#x533A;&#x5207;&#x308A;&#x6587;&#x5B57;&#x306B;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x3044;&#x308B;&#x3002;</p>
+<h2><a href="https://gist.github.com/manji6/5056073">ruby&#x3092;&#x4F7F;&#x3063;&#x3066;&#x7C21;&#x6613;web&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x69CB;&#x7BC9;</a></h2>
+</article><div class="adsense"><div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Refills Bottom (Responsive) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2136746860059501"
+     data-ad-slot="2358320270"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><footer><hr><h3>Index of&nbsp;<a href="/refills/bid/ruby/">Ruby</a></h3><div class="article-links"><a href="/refills/rid/1463151/"><div class="left"><span class="octicon octicon-file-text"></span>CODE TIPS</div></a><a href="/refills/rid/1471359/"><div class="left"><span class="octicon octicon-file-text"></span>YAML</div></a></div></footer><footer><hr><div class="meta"><div class="left"><a href="https://github.com/syon" class="author"><img src="/refills/assets/img/syon.jpg" alt="syon" target="_blank"><span>syon</span></a></div><div class="right"><div class="repo"><span><a href="https://github.com/syon/refills/commits/master/src/refills/ruby/code-tips.md" target="_blank">更新履歴</a></span><a href="https://github.com/syon/refills" target="_blank">Repo</a><a href="https://app.wercker.com/project/byKey/3938da859441da2240b9f5d8f7d9f9fd"><img alt="Wercker status" src="https://app.wercker.com/status/3938da859441da2240b9f5d8f7d9f9fd/s/master"></a></div></div></div></footer></section></body></html>

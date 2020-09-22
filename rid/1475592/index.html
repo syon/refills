@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="ja"><head><title>WindowsでUSキーボードとして認識させる :: ErgoDox | Refills</title><meta property="og:type" content="article"><meta property="og:locale" content="ja_JP"><meta property="og:title" content="WindowsでUSキーボードとして認識させる :: ErgoDox | Refills"><meta property="og:site_name" content="Refills"><meta property="og:type" content="article"><meta property="og:url" content="https://syon.github.io/refills/rid/1475592/"><link rel="canonical" href="https://syon.github.io/refills/rid/1475592/"><meta property="og:image" content="https://syon.github.io/refills/assets/img/ogp.png"><meta charset="utf-8"><meta name="viewport" content="initial-scale=1, width=device-width"><link rel="stylesheet" href="/refills/assets/vendor/octicons/octicons.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Merriweather:400,400italic,700,700italic"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="/refills/assets/bundle.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37634759-11', 'auto');
+ga('send', 'pageview');</script></head><body><header class="site-head"><div class="container"><div class="logo"><a href="/refills/"><h1 class="site-name">Refills</h1></a></div></div></header><section id="article"><div class="a-title"><div class="r-meta-cate"><span class="r-category">ErgoDox</span></div><h1 class="r-title">WindowsでUSキーボードとして認識させる</h1><div class="r-meta-date"><a href="https://github.com/syon/refills/commits/master/src/refills/ergodox/us-keyboard.md" target="_blank" class="r-date"><span>2016.10.5</span></a></div></div><article class="main"><h2>ErgoDox と Windows 日本語版</h2>
+<p>ErgoDox を Windows の日本語版にキーボードを接続すると <strong>JIS キーボード（日本語配列）</strong> として認識されます。そのことに問題があるわけではないのですが、公開されている ErgoDox の情報は <strong>US キーボード（英語配列）</strong> として認識された上での説明となっていることがほとんどです。キーマッピング設定も英語配列がベースとなっています。</p>
+<p>現状、どちらのキーボードとして認識されているかを確認するためには、適当なテキスト入力欄でキーボードの <code>Q</code> <code>W</code> キーの上にある <code>2</code> キーを <code>Shift</code> と同時に押します。現れた文字列が <code>&quot;</code>（ダブルクォーテーション）であれば日本語配列、 <code>@</code> であれば英語配列です。</p>
+<p>ここでは、 ErgoDox を US キーボード（英語配列）として認識させるためにレジストリを変更して実現する方法を紹介します。</p>
+<h2>デバイスマネージャーの確認</h2>
+<p>ErgoDox を接続すると、デバイスマネージャーのキーボード項目に「HID キーボードデバイス」が <mark>２つ</mark> 追加されます。これは ErgoDox が２つに分かれているからですね。</p>
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201607/uskb-1.png" alt="Device Manager"></p>
+<p>「HID キーボードデバイス」が並んだのを見て、きっとあなたはこう思うでしょう。
+『どれがどれだかわからない…』。
+大丈夫です。プロパティを開き、 <strong>イベントタブ</strong> を確認します。そうしたら、タイムスタンプから判別できることがわかるでしょう。右か左かは今回の件には関係ないので、タイムスタンプが同じペアを探します。
+プロパティのダイアログは複数同時に開けます。</p>
+<div class="fb">
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201607/uskb-2-1.png" alt="HID Keyboard Device Event Tab (1)"></p>
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201607/uskb-2-2.png" alt="HID Keyboard Device Event Tab (2)"></p>
+</div>
+<p>ErgoDox のペアを見つけたら、次は <strong>詳細タブ</strong> のプルダウンから <mark><strong>デバイス インスタンスパス</strong></mark> を選択し、値を確認できる状態で維持します。</p>
+<div class="fb">
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201607/uskb-3-1.png" alt="HID Keyboard Device Detail Tab (1)"></p>
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201607/uskb-3-2.png" alt="HID Keyboard Device Detail Tab (2)"></p>
+</div>
+<h2>レジストリエディターでの編集（左右２デバイス分）</h2>
+<p>デバイス インスタンスパスの値に対応した項目を探します。</p>
+<ul>
+<li><code>HKEY_LOCAL_MACHINE</code>
+<ul>
+<li><code>SYSTEM</code>
+<ul>
+<li><code>CurrentControlSet</code>
+<ul>
+<li><code>Enum</code>
+<ul>
+<li><mark><strong>デバイス インスタンスパス</strong></mark>
+<ul>
+<li><code>Device Parameters</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201607/uskb-4-1.png" alt=""></p>
+<p><code>Device Parameters</code> の内容を表示した状態で右側の何もないところで右クリックし、
+<mark>DWORD (32 ビット) 値 (D)</mark> を選択して項目を追加します。追加するのは以下の２点です。</p>
+<table>
+<thead>
+<tr><th>名前</th><th style="text-align:center">値</th></tr>
+</thead>
+<tbody>
+<tr><td>KeyboardSubtypeOverride</td><td style="text-align:center">0</td></tr>
+<tr><td>KeyboardTypeOverride</td><td style="text-align:center">4</td></tr>
+</tbody>
+</table>
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201607/uskb-4-2.png" alt=""></p>
+<p><mark>同様の操作を、もう片方のデバイスに対しても実施します。</mark></p>
+<h2>変更内容の反映</h2>
+<p>コンピュータを <mark><strong>再起動</strong></mark> します。</p>
+<p>再起動が済んだら、再び <code>2</code> キーを <code>Shift</code> と同時に押して <code>@</code> が表示されることを確認したら完了です。</p>
+</article><div class="adsense"><div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Refills Bottom (Responsive) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2136746860059501"
+     data-ad-slot="2358320270"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><footer><hr><h3>Index of&nbsp;<a href="/refills/bid/ergodox/">ErgoDox</a></h3><div class="article-links"><a href="/refills/rid/1469458/"><div class="left"><span class="octicon octicon-file-text"></span>ErgoDox EZ</div></a><a href="/refills/rid/1471100/"><div class="left"><span class="octicon octicon-file-text"></span>キーコードまとめ</div></a><a href="/refills/rid/1475592/"><div class="left"><span class="octicon octicon-file-text"></span>WindowsでUSキーボードとして認識させる</div></a><a href="/refills/rid/1475593/"><div class="left"><span class="octicon octicon-file-text"></span>Windows用キーマップの紹介</div></a></div></footer><footer><hr><div class="meta"><div class="left"><a href="https://github.com/syon" class="author"><img src="/refills/assets/img/syon.jpg" alt="syon" target="_blank"><span>syon</span></a></div><div class="right"><div class="repo"><span><a href="https://github.com/syon/refills/commits/master/src/refills/ergodox/us-keyboard.md" target="_blank">更新履歴</a></span><a href="https://github.com/syon/refills" target="_blank">Repo</a><a href="https://app.wercker.com/project/byKey/3938da859441da2240b9f5d8f7d9f9fd"><img alt="Wercker status" src="https://app.wercker.com/status/3938da859441da2240b9f5d8f7d9f9fd/s/master"></a></div></div></div></footer></section></body></html>

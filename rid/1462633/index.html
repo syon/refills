@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="ja"><head><title>Amazon S3に画像を置いてアクセス制御 :: GitHub Pages | Refills</title><meta property="og:type" content="article"><meta property="og:locale" content="ja_JP"><meta property="og:title" content="Amazon S3に画像を置いてアクセス制御 :: GitHub Pages | Refills"><meta property="og:site_name" content="Refills"><meta property="og:type" content="article"><meta property="og:url" content="https://syon.github.io/refills/rid/1462633/"><link rel="canonical" href="https://syon.github.io/refills/rid/1462633/"><meta property="og:image" content="https://syon.github.io/refills/assets/img/ogp.png"><meta charset="utf-8"><meta name="viewport" content="initial-scale=1, width=device-width"><link rel="stylesheet" href="/refills/assets/vendor/octicons/octicons.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Merriweather:400,400italic,700,700italic"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="/refills/assets/bundle.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37634759-11', 'auto');
+ga('send', 'pageview');</script></head><body><header class="site-head"><div class="container"><div class="logo"><a href="/refills/"><h1 class="site-name">Refills</h1></a></div></div></header><section id="article"><div class="a-title"><div class="r-meta-cate"><span class="r-category">GitHub Pages</span></div><h1 class="r-title">Amazon S3に画像を置いてアクセス制御</h1><div class="r-meta-date"><a href="https://github.com/syon/refills/commits/master/src/refills/github-pages/amazon-s3-bucket-policy.md" target="_blank" class="r-date"><span>2016.5.8</span></a></div></div><article class="main"><p><img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/hello/hedgehog.jpg" alt="hedgehog">
+<a href="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/hello/hedgehog.jpg">https://s3-ap-northeast-1.amazonaws.com/syon.github.io/hello/hedgehog.jpg</a></p>
+<p>&#x3053;&#x306E;&#x753B;&#x50CF;&#xFF08;&#x51FA;&#x5178;<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>&#xFF09;&#x306F; Amazon S3 &#x306B;&#x7F6E;&#x3044;&#x3066;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x5236;&#x5FA1;&#x3092;&#x884C;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x306E;&#x30B5;&#x30A4;&#x30C8;<code>syon.github.io</code>&#x304B;&#x3089;&#x306F;&#x8868;&#x793A;&#x3067;&#x304D;&#x307E;&#x3059;&#x304C;&#x3001;&#x753B;&#x50CF;&#x306E; URL &#x3092;&#x76F4;&#x63A5;&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x3067;
+&#x8868;&#x793A;&#x3057;&#x3088;&#x3046;&#x3068;&#x3057;&#x3066;&#x3082;&#x62D2;&#x5426;&#x3055;&#x308C;&#x307E;&#x3059;&#xFF08;&#x306F;&#x3058;&#x3081;&#x306E;&#x8868;&#x793A;&#x3068;&#x66F4;&#x65B0;&#x30DC;&#x30BF;&#x30F3;&#x3067;&#x306F;&#x30AD;&#x30E3;&#x30C3;&#x30B7;&#x30E5;&#x304C;&#x4F7F;&#x308F;&#x308C;&#x308B;&#x304B;&#x3082;&#x3057;&#x308C;&#x307E;&#x305B;&#x3093;&#xFF09;&#x3002;</p>
+<h2>GitHub&#x306B;&#x753B;&#x50CF;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7F6E;&#x304B;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x3057;&#x305F;&#x3044;</h2>
+<ul>
+<li>GitHub Pages &#x4E0A;&#x306E; Web &#x30DA;&#x30FC;&#x30B8;&#x306B;&#x63B2;&#x8F09;&#x3059;&#x308B;&#x753B;&#x50CF;&#x3092; Amazon S3 &#x306B;&#x7F6E;&#x304F;</li>
+<li>GitHub &#x306E;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x306F; 1GB &#x672A;&#x6E80;&#x304C;&#x63A8;&#x5968;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;
+<ul>
+<li><a href="https://help.github.com/articles/what-is-my-disk-quota/">What is my disk quota? - User Documentation</a></li>
+</ul></li>
+</ul>
+<h4>&#x304A;&#x3053;&#x3068;&#x308F;&#x308A;</h4>
+<ul>
+<li>GitHub &#x81EA;&#x8EAB;&#x304C; Jekyll &#x7B49;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x30D6;&#x30ED;&#x30B0;&#x3092;&#x904B;&#x55B6;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x8A31;&#x3057;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x3001;
+&#x666E;&#x901A;&#x306B;&#x8A18;&#x4E8B;&#x3092;&#x66F8;&#x3044;&#x3066;&#x8EFD;&#x91CF;&#x306A;&#x753B;&#x50CF;&#x3092;&#x3044;&#x304F;&#x3064;&#x304B;&#x8F09;&#x305B;&#x308B;&#x7A0B;&#x5EA6;&#x306E;&#x4F7F;&#x7528;&#x306A;&#x3089;&#x3070;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x306B;&#x753B;&#x50CF;&#x3092;&#x7F6E;&#x3044;&#x3066;&#x304A;&#x3044;&#x3066;&#x3082;&#x3088;&#x3044;&#x306E;&#x3067;&#x306F;&#x3001;
+&#x3068;&#x3044;&#x3046;&#x306E;&#x304C;&#x500B;&#x4EBA;&#x7684;&#x306A;&#x898B;&#x89E3;&#x3067;&#x3059;</li>
+<li>&#x30D6;&#x30ED;&#x30B0;&#x7528;&#x9014;&#x3067;&#x3082;&#x3053;&#x306E;&#x65B9;&#x6CD5;&#x3092;&#x3068;&#x308B;&#x3068;&#x3001;Markdown &#x3067;&#x8A18;&#x4E8B;&#x3092;&#x66F8;&#x304F;&#x3068;&#x304D;&#x306B;&#x753B;&#x50CF; URL &#x3092;&#x76F8;&#x5BFE;&#x6307;&#x5B9A;&#x3067;&#x304D;&#x306A;&#x304F;&#x306A;&#x3063;&#x3066;&#x9762;&#x5012;&#x3067;&#x3059;</li>
+<li>&#x3053;&#x3053;&#x3067;&#x60F3;&#x5B9A;&#x3059;&#x308B;&#x30B1;&#x30FC;&#x30B9;&#x306F;&#x3001;S3 &#x306B;&#x7F6E;&#x3044;&#x305F;&#x5927;&#x91CF;&#x306E;&#x753B;&#x50CF;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092; GitHub Pages &#x304B;&#x3089;&#x52D5;&#x7684;&#x306B;&#x53C2;&#x7167;&#x3057;&#x3066;&#x8868;&#x793A;&#x3059;&#x308B;&#x3068;&#x3044;&#x3063;&#x305F;&#x4F7F;&#x3044;&#x65B9;&#x3067;&#x3059;</li>
+<li>GitHub Pages &#x3060;&#x304B;&#x3089;&#x3068;&#x3044;&#x3063;&#x3066;&#x4F55;&#x304B;&#x7279;&#x5225;&#x306A;&#x89E3;&#x8AAC;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;1&#x3064;&#x306E;&#x5177;&#x4F53;&#x4F8B;&#x3068;&#x3057;&#x3066;&#x3054;&#x89A7;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</li>
+</ul>
+<h2>Amazon S3&#x3078;&#x306E;&#x753B;&#x50CF;&#x914D;&#x7F6E;&#x3068;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x5236;&#x5FA1;</h2>
+<ul>
+<li>&#x610F;&#x56F3;&#x3057;&#x306A;&#x3044;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x306B;&#x3088;&#x3063;&#x3066; Amazon &#x304B;&#x3089;&#x306E;&#x8ACB;&#x6C42;&#x984D;&#x304C;&#x9AD8;&#x304F;&#x306A;&#x3089;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;</li>
+<li><a href="https://aws.amazon.com/jp/s3/">Amazon S3 (&#x30B9;&#x30B1;&#x30FC;&#x30E9;&#x30D6;&#x30EB;&#x306A;&#x30AF;&#x30E9;&#x30A6;&#x30C9;&#x30B9;&#x30C8;&#x30EC;&#x30FC;&#x30B8;&#x30B5;&#x30FC;&#x30D3;&#x30B9; ) | AWS</a>
+<ul>
+<li><a href="https://aws.amazon.com/jp/s3/pricing/">&#x6599;&#x91D1; - Amazon S3 | AWS</a></li>
+<li><a href="http://calculator.s3.amazonaws.com/index.html">AWS &#x7C21;&#x6613;&#x898B;&#x7A4D;&#x308A;&#x30C4;&#x30FC;&#x30EB;</a></li>
+</ul></li>
+</ul>
+<h3>&#x30D0;&#x30B1;&#x30C3;&#x30C8;&#x30DD;&#x30EA;&#x30B7;&#x30FC;</h3>
+<ul>
+<li><a href="http://awspolicygen.s3.amazonaws.com/policygen.html">AWS Policy Generator</a>  <br>
+&#x516C;&#x5F0F;&#x306E;&#x30B8;&#x30A7;&#x30CD;&#x30EC;&#x30FC;&#x30BF;&#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</li>
+</ul>
+<pre><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token keys">&quot;Version&quot;</span><span class="token punctuation">:</span> &quot;2012-10-17&quot;<span class="token punctuation">,</span>
+  <span class="token keys">&quot;Statement&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token keys">&quot;Sid&quot;</span><span class="token punctuation">:</span> &quot;Give access if referer is set&quot;<span class="token punctuation">,</span>
+      <span class="token keys">&quot;Effect&quot;</span><span class="token punctuation">:</span> &quot;Allow&quot;<span class="token punctuation">,</span>
+      <span class="token keys">&quot;Principal&quot;</span><span class="token punctuation">:</span> &quot;*&quot;<span class="token punctuation">,</span>
+      <span class="token keys">&quot;Action&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>&quot;s3<span class="token punctuation">:</span>GetObject&quot;<span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token keys">&quot;Resource&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>&quot;arn<span class="token punctuation">:</span>aws<span class="token punctuation">:</span>s3<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token punctuation">:</span>syon.github.io/*&quot;<span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token keys">&quot;Condition&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token keys">&quot;StringLike&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          <span class="token keys">&quot;aws:Referer&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            &quot;http<span class="token punctuation">:</span>//syon.github.io/*&quot;<span class="token punctuation">,</span>
+            &quot;https<span class="token punctuation">:</span>//syon.github.io/*&quot;
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<dl>
+<dt>Version</dt>
+<dd>&#x4EFB;&#x610F;&#x306E;&#x65E5;&#x4ED8;&#x3067;&#x306F;&#x306A;&#x304F;&#x3001;&#x30D0;&#x30EA;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x3002;
+</dd>
+<dt>Resource</dt>
+<dd>S3 &#x30D0;&#x30B1;&#x30C3;&#x30C8;&#x540D;&#x3092; <code>username.github.io</code> &#x306B;&#x5408;&#x308F;&#x305B;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+</dd>
+</dl>
+<h4>&#x30D0;&#x30B1;&#x30C3;&#x30C8;&#x30DD;&#x30EA;&#x30B7;&#x30FC;&#x306E;&#x9069;&#x7528;</h4>
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201605/bucket-policy.png" alt="Amazon S3 Bucket Policy"></p>
+<h2>&#x53C2;&#x8003;&#x8A18;&#x4E8B;</h2>
+<ul>
+<li><a href="https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/dev/example-bucket-policies.html">&#x30D0;&#x30B1;&#x30C3;&#x30C8;&#x30DD;&#x30EA;&#x30B7;&#x30FC;&#x306E;&#x4F8B; - Amazon Simple Storage Service</a></li>
+<li><a href="http://old.ganchiku.com/blog/2011/11/633.html">wordpress &#x306E;&#x30A2;&#x30C3;&#x30D7;&#x30ED;&#x30FC;&#x30C9;&#x753B;&#x50CF;&#x3092; S3 &#x306B;&#x7F6E;&#x3044;&#x3066;&#x3001;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x5236;&#x5FA1;&#x3082;&#x884C;&#x3046; | GANCHIKU.com</a></li>
+</ul>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://gahag.net/001616-hedgehog-animal/">http://gahag.net/001616-hedgehog-animal/</a> <a href="#fnref1" class="footnote-backref">&#x21A9;</a></p>
+</li>
+</ol>
+</section>
+</article><div class="adsense"><div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Refills Bottom (Responsive) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2136746860059501"
+     data-ad-slot="2358320270"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><footer><hr><h3>Index of&nbsp;<a href="/refills/bid/github-pages/">GitHub Pages</a></h3><div class="article-links"><a href="/refills/rid/1462280/"><div class="left"><span class="octicon octicon-file-text"></span>GitHubアクセストークンとWerckerの設定</div></a><a href="/refills/rid/1462287/"><div class="left"><span class="octicon octicon-file-text"></span>Harp &amp; Wercker 自動デプロイ</div></a><a href="/refills/rid/1462450/"><div class="left"><span class="octicon octicon-file-text"></span>Metalsmith &amp; Wercker 自動デプロイ</div></a><a href="/refills/rid/1462633/"><div class="left"><span class="octicon octicon-file-text"></span>Amazon S3に画像を置いてアクセス制御</div></a><a href="/refills/rid/1481296/"><div class="left"><span class="octicon octicon-file-text"></span>Webpack &amp; Wercker 自動デプロイ</div></a><a href="/refills/rid/1512281/"><div class="left"><span class="octicon octicon-file-text"></span>プロジェクトページのfaviconを表示する</div></a><a href="/refills/rid/1520345/"><div class="left"><span class="octicon octicon-file-text"></span>MkDocs・MaterialのDockerを使ったインストール手順</div></a></div></footer><footer><hr><div class="meta"><div class="left"><a href="https://github.com/syon" class="author"><img src="/refills/assets/img/syon.jpg" alt="syon" target="_blank"><span>syon</span></a></div><div class="right"><div class="repo"><span><a href="https://github.com/syon/refills/commits/master/src/refills/github-pages/amazon-s3-bucket-policy.md" target="_blank">更新履歴</a></span><a href="https://github.com/syon/refills" target="_blank">Repo</a><a href="https://app.wercker.com/project/byKey/3938da859441da2240b9f5d8f7d9f9fd"><img alt="Wercker status" src="https://app.wercker.com/status/3938da859441da2240b9f5d8f7d9f9fd/s/master"></a></div></div></div></footer></section></body></html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="ja"><head><title>バッチ TIPS :: コマンドプロンプト | Refills</title><meta property="og:type" content="article"><meta property="og:locale" content="ja_JP"><meta property="og:title" content="バッチ TIPS :: コマンドプロンプト | Refills"><meta property="og:site_name" content="Refills"><meta property="og:type" content="article"><meta property="og:url" content="https://syon.github.io/refills/rid/1498316/"><link rel="canonical" href="https://syon.github.io/refills/rid/1498316/"><meta property="og:image" content="https://syon.github.io/refills/assets/img/ogp.png"><meta charset="utf-8"><meta name="viewport" content="initial-scale=1, width=device-width"><link rel="stylesheet" href="/refills/assets/vendor/octicons/octicons.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Merriweather:400,400italic,700,700italic"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="/refills/assets/bundle.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37634759-11', 'auto');
+ga('send', 'pageview');</script></head><body><header class="site-head"><div class="container"><div class="logo"><a href="/refills/"><h1 class="site-name">Refills</h1></a></div></div></header><section id="article"><div class="a-title"><div class="r-meta-cate"><span class="r-category">コマンドプロンプト</span></div><h1 class="r-title">バッチ TIPS</h1><div class="r-meta-date"><a href="https://github.com/syon/refills/commits/master/src/refills/command-prompt/batch-tips.adoc" target="_blank" class="r-date"><span>2017.6.24</span></a></div></div><article class="main"><div class="sect1">
+<h2 id="__">&#x5B9F;&#x884C;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30D1;&#x30B9;&#x3092;&#x30AB;&#x30EC;&#x30F3;&#x30C8;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x3059;&#x308B;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x30D0;&#x30C3;&#x30C1;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x7F6E;&#x304B;&#x308C;&#x3066;&#x3044;&#x308B;&#x30D5;&#x30A9;&#x30EB;&#x30C0;&#x3092;&#x30AB;&#x30EC;&#x30F3;&#x30C8;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3068;&#x3059;&#x308B;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-batch" data-lang="batch"><span class="token operator">@</span><span class="token command"><span class="token keyword">echo</span> off</span>
+<span class="token command"><span class="token keyword">cd</span> <span class="token parameter attr-name">/d</span> <span class="token variable">%~dp0</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__echo">&#x7A7A;&#x884C;&#x306E; echo</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-batch" data-lang="batch"><span class="token command"><span class="token keyword">echo</span>.</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__code_timeout_code_wait_sleep">&#x6307;&#x5B9A;&#x6642;&#x9593;&#x5F85;&#x3064; <code>timeout</code> (wait/sleep)</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.atmarkit.co.jp/ait/articles/1206/08/news137.html">Tech TIPS&#xFF1A;Windows&#x306E;timeout&#xFF0F;sleep&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x5B9F;&#x884C;&#x3092;&#x4E00;&#x6642;&#x505C;&#x6B62;&#x3059;&#x308B; - &#xFF20;IT</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-batch" data-lang="batch"><span class="token command"><span class="token keyword">C</span><span class="token label property">:\&gt;</span> timeout <span class="token number">5</span></span>
+<span class="token command"><span class="token keyword">5</span> &#x79D2;&#x5F85;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x7D9A;&#x884C;&#x3059;&#x308B;&#x306B;&#x306F;&#x4F55;&#x304B;&#x30AD;&#x30FC;&#x3092;&#x62BC;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044; ...</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___2">&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;&#x51FA;&#x529B;&#x3057;&#x306A;&#x3044;</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<code>&gt;</code> &#x306F;&#x30EA;&#x30C0;&#x30A4;&#x30EC;&#x30AF;&#x30C8;&#x3068;&#x3044;&#x3044;&#x3001;&#x51FA;&#x529B;&#x5148;&#x3092;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30D7;&#x30ED;&#x30F3;&#x30D7;&#x30C8;&#x3067;&#x306A;&#x304F;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x5909;&#x66F4;&#x3057;&#x307E;&#x3059;&#x3002;
+<code>nul</code> &#x306F;&#x7A7A;&#xFF08;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#xFF09;&#x3068;&#x3044;&#x3046;&#x610F;&#x5473;&#x3067;&#x3001;&#x66F8;&#x304D;&#x8FBC;&#x3093;&#x3067;&#x3082;&#x4F55;&#x3082;&#x8D77;&#x304D;&#x307E;&#x305B;&#x3093;&#x3002;
+&#x3064;&#x307E;&#x308A;&#x3001;<code>&gt; nul</code> &#x3067;&#x51FA;&#x529B;&#x5148;&#x3092;&#x7A7A;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x5909;&#x66F4;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30D7;&#x30ED;&#x30F3;&#x30D7;&#x30C8;&#x4E0A;&#x306B;&#x306F;&#x4F55;&#x3082;&#x51FA;&#x529B;&#x3055;&#x308C;&#x306A;&#x304F;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;<br>
+<code>&gt; nul</code> &#x3092;&#x4ED8;&#x3051;&#x305F;&#x3060;&#x3051;&#x3060;&#x3068;&#x3001;&#x30A8;&#x30E9;&#x30FC;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306F;&#x51FA;&#x529B;&#x3055;&#x308C;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x3055;&#x3089;&#x306B; <code>2&gt;&amp;1</code> &#x3092;&#x4ED8;&#x3051;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;&#x30A8;&#x30E9;&#x30FC;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3082;&#x51FA;&#x529B;&#x3055;&#x308C;&#x306A;&#x304F;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;
+</blockquote>
+<div class="attribution">
+&#x2014; <a href="http://qiita.com/uhooi/items/b8b25761a5c4efe9025a">bat&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3067;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306E;&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;&#x51FA;&#x529B;&#x3057;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x65B9;&#x6CD5; - Qiita</a>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">&#x4F8B;</div>
+<div class="content">
+<pre class="highlight"><code class="language-batch" data-lang="batch"><span class="token command"><span class="token keyword">C</span><span class="token label property">:\&gt;</span> mkdir hoge &gt; nul</span>
+
+<span class="token command"><span class="token keyword">C</span><span class="token label property">:\&gt;</span> mkdir hoge &gt; nul</span>
+&#x30B5;&#x30D6;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x307E;&#x305F;&#x306F;&#x30D5;&#x30A1;&#x30A4;&#x30EB; hoge &#x306F;&#x65E2;&#x306B;&#x5B58;&#x5728;&#x3057;&#x307E;&#x3059;&#x3002;
+
+<span class="token command"><span class="token keyword">C</span><span class="token label property">:\&gt;</span> rmdir hoge</span>
+
+<span class="token command"><span class="token keyword">C</span><span class="token label property">:\&gt;</span> mkdir hoge &gt; nul <span class="token number">2</span>&gt;</span><span class="token operator">&amp;</span><span class="token command"><span class="token keyword">1</span></span>
+
+<span class="token command"><span class="token keyword">C</span><span class="token label property">:\&gt;</span> mkdir hoge &gt; nul <span class="token number">2</span>&gt;</span><span class="token operator">&amp;</span><span class="token command"><span class="token keyword">1</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___3">&#x5F15;&#x6570;&#x306E;&#x30C0;&#x30D6;&#x30EB;&#x30AF;&#x30A9;&#x30FC;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x9664;&#x53BB;&#x3059;&#x308B;</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">sample.bat</div>
+<div class="content">
+<pre class="highlight"><code class="language-batch" data-lang="batch"><span class="token command"><span class="token keyword">echo</span> <span class="token variable">%1</span></span>
+<span class="token command"><span class="token keyword">echo</span> <span class="token variable">%~1</span></span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-batch" data-lang="batch"><span class="token command"><span class="token keyword">C</span><span class="token label property">:\&gt;</span> sample.bat <span class="token string">&quot;Hello&quot;</span></span>
+&quot;Hello&quot;
+<span class="token command"><span class="token keyword">Hello</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cmd_exe">cmd.exe &#x306E;&#x30A8;&#x30B9;&#x30B1;&#x30FC;&#x30D7;&#x4ED5;&#x69D8;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x89E3;&#x91C8;&#x306E;&#x30D5;&#x30A7;&#x30FC;&#x30BA;&#x306B;&#x3088;&#x3063;&#x3066;&#x30A8;&#x30B9;&#x30B1;&#x30FC;&#x30D7;&#x4ED5;&#x69D8;&#x304C;&#x5909;&#x308F;&#x308B;&#x3002;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://thinca.hatenablog.com/entry/20100210/1265813598">cmd.exe &#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x306E;&#x4ED5;&#x69D8;&#x3092;&#x89E3;&#x6790;&#x3057;&#x3066;&#x307F;&#x305F; - &#x6C38;&#x9060;&#x306B;&#x672A;&#x5B8C;&#x6210;</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_if">if&#x6587;&#x306E;&#x4E2D;&#x3067;&#x5909;&#x6570;&#x306E;&#x5024;&#x304C;&#x53CD;&#x6620;&#x3055;&#x308C;&#x306A;&#x3044;&#x3068;&#x304D;</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://dalmore.blog7.fc2.com/blog-entry-79.html">&#x30D0;&#x30C3;&#x30C1;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;if&#x6587;&#x3084;for&#x6587;&#x3067;&#x6C17;&#x3092;&#x3064;&#x3051;&#x308B;&#x3053;&#x3068;</a></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>setlocal enabledelayedexpansion</code> &#x3092;&#x8A18;&#x8FF0;&#x3059;&#x308B;&#xFF08;&#x9045;&#x5EF6;&#x74B0;&#x5883;&#x5909;&#x6570;&#x306E;&#x5C55;&#x958B;&#xFF09;</p>
+</li>
+<li>
+<p>&#x5909;&#x6570;&#x306E;&#x5C55;&#x958B;&#x306F; <code>%</code> &#x3067;&#x306F;&#x306A;&#x304F; <code>!</code> &#x3067;&#x884C;&#x3046;</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___4">&#x6A19;&#x6E96;&#x51FA;&#x529B;&#x306E;&#x7D50;&#x679C;&#x3092;&#x5909;&#x6570;&#x306B;&#x683C;&#x7D0D;&#x3059;&#x308B;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30D7;&#x30ED;&#x30F3;&#x30D7;&#x30C8;&#x306B;&#x306F;&#x8A72;&#x5F53;&#x306E;&#x6A5F;&#x80FD;&#x304C;&#x306A;&#x3044;&#x3088;&#x3046;&#x306A;&#x306E;&#x3067;&#x3001;&#x3061;&#x3087;&#x3063;&#x3068;&#x3057;&#x305F;&#x30C6;&#x30AF;&#x30CB;&#x30C3;&#x30AF;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x5B9F;&#x73FE;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x6B21;&#x306B;&#x793A;&#x3059;&#xFF11;&#x884C;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306F; <code>time /T</code> &#x306E;&#x7D50;&#x679C;&#x3092;&#x5909;&#x6570; <code>T</code> &#x306B;&#x683C;&#x7D0D;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-batch" data-lang="batch"><span class="token command"><span class="token keyword">FOR</span> <span class="token parameter attr-name">/F</span> <span class="token string">&quot;DELIMS=&quot;</span> <span class="token variable">%%A</span> <span class="token keyword">IN</span> <span class="token punctuation">(</span><span class="token punctuation">&apos;</span>time /T<span class="token punctuation">&apos;</span><span class="token punctuation">)</span> <span class="token keyword">DO</span></span> <span class="token command"><span class="token keyword">SET</span> <span class="token variable">T</span><span class="token operator">=</span><span class="token variable">%%A</span></span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>ECHO %T%</code> &#x3068;&#x3059;&#x308B;&#x3068; <code>15:00</code> &#x306E;&#x3088;&#x3046;&#x306B;&#x6642;&#x523B;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___5">&#x6307;&#x5B9A;&#x3057;&#x305F;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x304C;&#x8D77;&#x52D5;&#x4E2D;&#x304B;&#x3069;&#x3046;&#x304B;&#x78BA;&#x8A8D;&#x3059;&#x308B;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x4E0A;&#x8A18;&#x306E;&#x5FDC;&#x7528;&#x4F8B;&#x3067;&#x3059;&#x3002;
+&#x4F8B;&#x3068;&#x3057;&#x3066;&#x30E1;&#x30E2;&#x5E33; (notepad.exe) &#x3092;&#x8D77;&#x52D5;&#x4E2D;&#x304B;&#x3069;&#x3046;&#x304B;&#x5224;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;
+PID &#x3067;&#x306F;&#x306A;&#x304F;&#x30A4;&#x30E1;&#x30FC;&#x30B8;&#x540D;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-batch" data-lang="batch"><span class="token command"><span class="token keyword">FOR</span> <span class="token parameter attr-name">/F</span> <span class="token string">&quot;DELIMS=&quot;</span> <span class="token variable">%%A</span> <span class="token keyword">IN</span> <span class="token punctuation">(</span><span class="token punctuation">&apos;</span>tasklist ^| find <span class="token parameter attr-name">/C</span> <span class="token string">&quot;notepad.exe&quot;</span><span class="token punctuation">&apos;</span><span class="token punctuation">)</span> <span class="token keyword">DO</span></span> <span class="token command"><span class="token keyword">SET</span> <span class="token variable">CNT</span><span class="token operator">=</span><span class="token variable">%%A</span></span>
+
+<span class="token command"><span class="token keyword">IF</span> <span class="token variable">%CNT%</span> <span class="token operator">GTR</span> <span class="token number">0</span></span> <span class="token punctuation">(</span>
+  <span class="token command"><span class="token keyword">echo</span> &#x30E1;&#x30E2;&#x5E33;&#x3092;&#x958B;&#x3044;&#x3066;&#x3044;&#x307E;&#x3059;</span>
+<span class="token punctuation">)</span> <span class="token command"><span class="token keyword">else</span></span> <span class="token punctuation">(</span>
+  <span class="token command"><span class="token keyword">echo</span> &#x30E1;&#x30E2;&#x5E33;&#x3092;&#x958B;&#x3044;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;</span>
+<span class="token punctuation">)</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>tasklist</code> &#x3067;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x306E;&#x4E00;&#x89A7;&#x3092;&#x53D6;&#x5F97;&#x3057;&#x3001;&#x305D;&#x306E;&#x7D50;&#x679C;&#x3092;&#x30D1;&#x30A4;&#x30D7; <code>|</code> &#x3067;&#x6B21;&#x306E;&#x51E6;&#x7406;&#x306B;&#x5F15;&#x304D;&#x6E21;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x306E;&#x3068;&#x304D;&#x30AD;&#x30E3;&#x30EC;&#x30C3;&#x30C8; <code>^</code> &#x3092;&#x4F7F;&#x3063;&#x3066;&#x30A8;&#x30B9;&#x30B1;&#x30FC;&#x30D7;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;&#x70B9;&#x306B;&#x6CE8;&#x610F;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;
+<code>find /C &quot;notepad.exe&quot;</code> &#x3067; notepad.exe &#x3068;&#x3044;&#x3046;&#x6587;&#x5B57;&#x5217;&#x3092;&#x542B;&#x3080;&#x884C;&#x306E;&#x307F;&#x306B;&#x7D5E;&#x308A;&#x8FBC;&#x307F;&#x3001;
+&#x305D;&#x306E;&#x884C;&#x6570;&#x3092;&#x30AB;&#x30A6;&#x30F3;&#x30C8;&#x3057;&#x305F;&#x7D50;&#x679C;&#x306E;&#x6570;&#x5024;&#x3092;&#x5909;&#x6570; <code>CNT</code> &#x306B;&#x683C;&#x7D0D;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+<code>IF %CNT% GTR 0</code> &#x306F;&#x300C;&#x3082;&#x3057; CNT &#x304C; 0 &#x3088;&#x308A;&#x5927;&#x304D;&#x304B;&#x3063;&#x305F;&#x3089;&#x300D;&#x3068;&#x3044;&#x3046;&#x610F;&#x5473;&#x3067;&#x3059;&#x3002;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_touch">touch</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://qiita.com/Hiroki_M/items/ffac4383baac1c03adc0">Windows&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30D7;&#x30ED;&#x30F3;&#x30D7;&#x30C8;&#x3067;touch&#x30B3;&#x30DE;&#x30F3;&#x30C9; - Qiita</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-batch" data-lang="batch"><span class="token operator">@</span><span class="token command"><span class="token keyword">echo</span> off</span>
+<span class="token command"><span class="token keyword">if</span> <span class="token variable">%1</span>. ==. goto end</span>
+<span class="token command"><span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token keyword">exist</span> <span class="token variable">%1</span></span> <span class="token punctuation">(</span>
+    <span class="token command"><span class="token keyword">type</span> nul &gt; <span class="token variable">%1</span></span>
+<span class="token punctuation">)</span> <span class="token command"><span class="token keyword">else</span></span> <span class="token punctuation">(</span>
+    <span class="token command"><span class="token keyword">copy</span> <span class="token parameter attr-name">/b</span> <span class="token variable">%1</span> +,, &gt; nul</span>
+<span class="token punctuation">)</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pwd">pwd</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-batch" data-lang="batch"><span class="token command"><span class="token keyword">SET</span> <span class="token variable">CURRENT_DIR</span><span class="token operator">=</span><span class="token variable">%cd%</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___6">&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x751F;&#x6210;&#x306E;&#x76E3;&#x8996;</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://fpcu.on.coocan.jp/dosvcmd/bbs/log/cat3/cat10/4-0372.html">&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x751F;&#x6210;&#x3092;&#x76E3;&#x8996;&#x3057;&#x3066;&#x30D0;&#x30C3;&#x30C1;&#x3092;&#x8D70;&#x3089;&#x305B;&#x308B;&#x3053;&#x3068;&#x306F;&#x53EF;&#x80FD;&#xFF1F; (DOS&#x30D7;&#x30ED;&#x30F3;&#x30D7;&#x30C8;&#x6D3B;&#x7528;&#x76F8;&#x8AC7;&#x5BA4;LOG)</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-batch" data-lang="batch"><span class="token command"><span class="token keyword">cd</span> <span class="token variable">%FOLDER</span><span class="token parameter attr-name">-A</span>%</span>
+<span class="token label property">:loop</span>
+<span class="token command"><span class="token keyword">if</span> <span class="token keyword">exist</span> *.csv</span> <span class="token command"><span class="token keyword">move</span> *.csv <span class="token variable">%FOLDER</span><span class="token parameter attr-name">-B</span>%</span>
+<span class="token comment" spellcheck="true">rem 10 &#x79D2;&#x5F85;&#x3064;</span>
+<span class="token command"><span class="token keyword">ping</span> <span class="token parameter attr-name">-n</span> <span class="token number">11</span> <span class="token number">127</span>.<span class="token number">0</span>.<span class="token number">0</span>.<span class="token number">1</span> &gt;NUL</span>
+<span class="token command"><span class="token keyword">goto</span> loop</span></code></pre>
+</div>
+</div>
+</div>
+</div></article><div class="adsense"><div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Refills Bottom (Responsive) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2136746860059501"
+     data-ad-slot="2358320270"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><footer><hr><h3>Index of&nbsp;<a href="/refills/bid/command-prompt/">コマンドプロンプト</a></h3><div class="article-links"><a href="/refills/rid/1493211/"><div class="left"><span class="octicon octicon-file-text"></span>【 xcopy 】</div></a><a href="/refills/rid/1498316/"><div class="left"><span class="octicon octicon-file-text"></span>バッチ TIPS</div></a><a href="/refills/rid/1498646/"><div class="left"><span class="octicon octicon-file-text"></span>Cmderをエクスプローラの右クリックメニューから開く『Cmder Here』</div></a><a href="/refills/rid/1498647/"><div class="left"><span class="octicon octicon-file-text"></span>Cmderで便利なエイリアス</div></a></div></footer><footer><hr><div class="meta"><div class="left"><a href="https://github.com/syon" class="author"><img src="/refills/assets/img/syon.jpg" alt="syon" target="_blank"><span>syon</span></a></div><div class="right"><div class="repo"><span><a href="https://github.com/syon/refills/commits/master/src/refills/command-prompt/batch-tips.adoc" target="_blank">更新履歴</a></span><a href="https://github.com/syon/refills" target="_blank">Repo</a><a href="https://app.wercker.com/project/byKey/3938da859441da2240b9f5d8f7d9f9fd"><img alt="Wercker status" src="https://app.wercker.com/status/3938da859441da2240b9f5d8f7d9f9fd/s/master"></a></div></div></div></footer></section></body></html>

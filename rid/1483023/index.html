@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="ja"><head><title>Redux 学習の軌跡と自作サンプルの解説 :: React | Refills</title><meta property="og:type" content="article"><meta property="og:locale" content="ja_JP"><meta property="og:title" content="Redux 学習の軌跡と自作サンプルの解説 :: React | Refills"><meta property="og:site_name" content="Refills"><meta property="og:type" content="article"><meta property="og:url" content="https://syon.github.io/refills/rid/1483023/"><link rel="canonical" href="https://syon.github.io/refills/rid/1483023/"><meta property="og:image" content="https://syon.github.io/refills/assets/img/ogp.png"><meta charset="utf-8"><meta name="viewport" content="initial-scale=1, width=device-width"><link rel="stylesheet" href="/refills/assets/vendor/octicons/octicons.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Merriweather:400,400italic,700,700italic"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="/refills/assets/bundle.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37634759-11', 'auto');
+ga('send', 'pageview');</script></head><body><header class="site-head"><div class="container"><div class="logo"><a href="/refills/"><h1 class="site-name">Refills</h1></a></div></div></header><section id="article"><div class="a-title"><div class="r-meta-cate"><span class="r-category">React</span></div><h1 class="r-title">Redux 学習の軌跡と自作サンプルの解説</h1><div class="r-meta-date"><a href="https://github.com/syon/refills/commits/master/src/refills/webfrontend/redux-study.md" target="_blank" class="r-date"><span>2016.12.30</span></a></div></div><article class="main"><p><img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201612/redux-study.png" alt="Redux Study"></p>
+<h3>DEMO</h3>
+<ul>
+<li><a href="https://syon.github.io/redux-study/">Redux Study</a></li>
+</ul>
+<h3>&#x5BFE;&#x8C61;</h3>
+<p>React &#x306E;&#x57FA;&#x790E;&#x3092;&#x8EAB;&#x306B;&#x3064;&#x3051;&#x305F;&#x4E0A;&#x3067; Redux &#x306B;&#x5165;&#x9580;&#x3059;&#x308B;&#x4EBA;&#x5411;&#x3051;&#x3067;&#x3059;&#x3002;</p>
+<h3>&#x7BC4;&#x56F2;</h3>
+<p>&#x516C;&#x5F0F;&#x306E; <a href="http://redux.js.org/docs/basics/">Basics &#xB7; Redux</a> &#x3067;&#x7D39;&#x4ECB;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x7BC4;&#x56F2;&#x3067;&#x7406;&#x89E3;&#x3092;&#x6DF1;&#x3081;&#x307E;&#x3059;&#x3002;
+&#x5E78;&#x3044;&#x3001;&#x3053;&#x308C;&#x3092;&#x7FFB;&#x8A33;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3063;&#x305F;&#x65B9;&#x304C;&#x3044;&#x3089;&#x3063;&#x3057;&#x3083;&#x308B;&#x306E;&#x3067;&#x3001;&#x305D;&#x308C;&#x3092;&#x8AAD;&#x3093;&#x3067;&#x5B66;&#x7FD2;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<ul>
+<li>Actions</li>
+<li>Reducers</li>
+<li>Store</li>
+<li>Data Flow</li>
+<li>Usage with React</li>
+</ul>
+<h3>&#x516C;&#x5F0F;</h3>
+<ul>
+<li><a href="https://github.com/reactjs/redux">https://github.com/reactjs/redux</a></li>
+<li><a href="http://redux.js.org/">Read Me &#xB7; Redux</a></li>
+</ul>
+<h2>&#x8AAD;&#x3093;&#x3060;&#x8A18;&#x4E8B;</h2>
+<h3>&#x6982;&#x5FF5;&#x3092;&#x7406;&#x89E3;&#x3059;&#x308B;</h3>
+<ul>
+<li><p><a href="https://speakerdeck.com/inamiy/reactive-state-machine-japanese">Reactive State Machine (Japanese) // Speaker Deck</a></p></li>
+<li><p><a href="https://speakerdeck.com/axross/introduction-to-redux">Introduction to Redux // Speaker Deck</a></p></li>
+</ul>
+<h3>&#x57FA;&#x790E;&#x3092;&#x8EAB;&#x306B;&#x3064;&#x3051;&#x308B;</h3>
+<ul>
+<li><a href="http://qiita.com/kiita312/items/49a1f03445b19cf407b7">Redux&#x5165;&#x9580;&#x3010;&#x30C0;&#x30A4;&#x30B8;&#x30A7;&#x30B9;&#x30C8;&#x7248;&#x3011;10&#x5206;&#x3067;&#x7406;&#x89E3;&#x3059;&#x308B;Redux&#x306E;&#x57FA;&#x790E; - Qiita</a>
+<ul>
+<li><a href="http://qiita.com/kiita312/items/b001839150ab04a6a427">Redux&#x5165;&#x9580; 1&#x65E5;&#x76EE; Redux&#x3068;&#x306F;(&#x516C;&#x5F0F;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x548C;&#x8A33;) - Qiita</a></li>
+<li><a href="http://qiita.com/kiita312/items/8f8d047e5cbd87399ccb">Redux&#x5165;&#x9580; 2&#x65E5;&#x76EE; Redux&#x306E;&#x57FA;&#x672C;&#x30FB;Actions(&#x516C;&#x5F0F;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x548C;&#x8A33;) - Qiita</a></li>
+<li><a href="http://qiita.com/kiita312/items/7fdce94912d6d9c801f8">Redux&#x5165;&#x9580; 3&#x65E5;&#x76EE; Redux&#x306E;&#x57FA;&#x672C;&#x30FB;Reducers(&#x516C;&#x5F0F;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x548C;&#x8A33;) - Qiita</a></li>
+<li><a href="http://qiita.com/kiita312/items/377787c24efac64f2495">Redux&#x5165;&#x9580; 4&#x65E5;&#x76EE; Redux&#x306E;&#x57FA;&#x672C;&#x30FB;Stores(&#x516C;&#x5F0F;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x548C;&#x8A33;) - Qiita</a></li>
+<li><a href="http://qiita.com/kiita312/items/ae3ce31521ad24dd699f">Redux&#x5165;&#x9580; 5&#x65E5;&#x76EE; Redux&#x306E;&#x57FA;&#x672C;&#x30FB;Data Flow(&#x516C;&#x5F0F;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x548C;&#x8A33;) - Qiita</a></li>
+<li><a href="http://qiita.com/kiita312/items/d769c85f446994349b52">Redux&#x5165;&#x9580; 6&#x65E5;&#x76EE; Redux&#x3068;React&#x306E;&#x9023;&#x643A;(&#x516C;&#x5F0F;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x548C;&#x8A33;) - Qiita</a></li>
+</ul></li>
+</ul>
+<h3>&#x4F8B;&#x3092;&#x898B;&#x3066;&#x4F53;&#x9A13;&#x3059;&#x308B;</h3>
+<ul>
+<li><a href="http://redux.js.org/docs/introduction/Examples.html">Examples &#xB7; Redux</a></li>
+<li><a href="https://github.com/reactjs/redux/tree/master/examples">redux/examples at master &#xB7; reactjs/redux</a></li>
+<li><a href="http://blog.andgenie.jp/articles/1021">Redux&#x306E;Example&#x3092;&#x5FB9;&#x5E95;&#x56F3;&#x89E3; | &#x4EBA;&#x751F;&#x3068;&#x4ED5;&#x4E8B;&#x3092;&#x697D;&#x3057;&#x3080;&#x30D6;&#x30ED;&#x30B0;</a></li>
+</ul>
+<h4>&#x53C2;&#x8003;</h4>
+<ul>
+<li><a href="http://k0kubun.hatenablog.com/entry/2016/03/21/114626">Coffee, jQuery&#x3067;&#x66F8;&#x3044;&#x3066;&#x3044;&#x305F;Electron&#x30A2;&#x30D7;&#x30EA;&#x3092;ES6, React, Redux&#x3067;&#x66F8;&#x304D;&#x76F4;&#x3057;&#x305F; - k0kubun&#x2019;s blog</a></li>
+<li><a href="https://togetter.com/li/911228">mizchi &#x306E; Redux &#x8003; - Togetter&#x307E;&#x3068;&#x3081;</a></li>
+<li><a href="https://speakerdeck.com/kuy/nazereduxwoshi-ufalseka">&#x306A;&#x305C;Redux&#x3092;&#x4F7F;&#x3046;&#x306E;&#x304B; // Speaker Deck</a></li>
+<li><a href="https://medium.com/@axross/wip-react-clean-architecture-386c950d8b3a">Clean Architecture in React &#x2013; Medium</a></li>
+</ul>
+<h2>&#x5F79;&#x306B;&#x7ACB;&#x3064;&#x56F3;</h2>
+<blockquote>
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201612/redux-structure.jpg" alt="Redux Structure">
+<a href="https://speakerdeck.com/inamiy/reactive-state-machine-japanese">Reactive State Machine (Japanese) // Speaker Deck</a></p>
+</blockquote>
+<blockquote>
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201612/redux-data-flow.png" alt>
+<a href="https://speakerdeck.com/axross/introduction-to-redux">Introduction to Redux // Speaker Deck</a></p>
+</blockquote>
+<h2>&#x5B9F;&#x969B;&#x306B;&#x4F5C;&#x3063;&#x3066;&#x307F;&#x308B;</h2>
+<p>&#x3044;&#x308D;&#x3044;&#x308D;&#x306A;&#x8A18;&#x4E8B;&#x3092;&#x8AAD;&#x3093;&#x3067;&#x30A4;&#x30DE;&#x30A4;&#x30C1;&#x3088;&#x304F;&#x308F;&#x304B;&#x3089;&#x306A;&#x304B;&#x3063;&#x305F;&#x90E8;&#x5206;&#x304C;&#x3042;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;
+&#x4E0A;&#x306B;&#x6319;&#x3052;&#x305F;&#x56F3;&#x306E;&#x3088;&#x3046;&#x306B; Actions &#x3084; Reducers &#x3068;&#x3044;&#x3046;&#x6982;&#x5FF5;&#x306F;&#x51FA;&#x3066;&#x304D;&#x307E;&#x3059;&#x304C;&#x3001;
+<strong>&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x4E0A;&#x3067;&#x4E00;&#x4F53;&#x3069;&#x308C;&#x3092;&#x6307;&#x3057;&#x3066;&#x3044;&#x308B;&#x306E;&#x304B;&#x8FF7;&#x3046;</strong> &#x3053;&#x3068;&#x304C;&#x3042;&#x3063;&#x3066;&#x3001;&#x4F55;&#x5EA6;&#x3082;&#x8AAD;&#x307F;&#x76F4;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;</p>
+<p>&#x305D;&#x3053;&#x3067; <mark>&#x300C;&#x81EA;&#x5206;&#x3060;&#x3063;&#x305F;&#x3089;&#x3053;&#x3046;&#x66F8;&#x3044;&#x3066;&#x3042;&#x3063;&#x305F;&#x3089;&#x308F;&#x304B;&#x308A;&#x3084;&#x3059;&#x3044;&#x300D;</mark> &#x3092;&#x76EE;&#x6307;&#x3057;&#x3066;&#x5B9F;&#x969B;&#x306B;&#x4F5C;&#x3063;&#x3066;&#x307F;&#x308B;&#x3053;&#x3068;&#x306B;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;</p>
+<h3>&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x306E;&#x984C;&#x6750;&#x3068;&#x4F5C;&#x6210;&#x65B9;&#x91DD;</h3>
+<p>&#x516C;&#x5F0F;&#x306E;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x306B;&#x3042;&#x308B;&#x30AB;&#x30A6;&#x30F3;&#x30BF;&#x30FC;&#x3088;&#x308A;&#x3082;&#x8A73;&#x7D30;&#x3001;&#x304B;&#x3064; Todo &#x30A2;&#x30D7;&#x30EA;&#x3088;&#x308A;&#x3082;&#x7C21;&#x7D20;&#x306A;&#x3082;&#x306E;&#x3092;&#x8003;&#x3048;&#x307E;&#x3057;&#x305F;&#x3002;
+&#x305D;&#x3053;&#x3067;&#x601D;&#x3044;&#x3064;&#x3044;&#x305F;&#x306E;&#x304C; RGB &#x306E;3&#x8272;&#x3092;&#x5236;&#x5FA1;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3057;&#x305F;&#x3002;&#x4E0A;&#x8FF0;&#x306E;&#x3088;&#x3046;&#x306A;&#x8FF7;&#x3044;&#x3092;&#x89E3;&#x6C7A;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;
+&#x4EE5;&#x4E0B;&#x306E;&#x76EE;&#x7684;&#x3092;&#x9054;&#x6210;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x5FF5;&#x982D;&#x306B;&#x7F6E;&#x3044;&#x3066;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x66F8;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;</p>
+<ul>
+<li>Action &#x3068;&#x304B; ActionCreator &#x304C;&#x3088;&#x304F;&#x308F;&#x304B;&#x3089;&#x306A;&#x3044;</li>
+<li>State &#x304C;&#x8907;&#x6570;&#x3042;&#x308B;&#x5834;&#x5408;&#x306F;&#x3069;&#x3046;&#x3059;&#x308B;&#x306E;&#x304B;</li>
+<li>State &#x304C;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x3068;&#x304D;&#x3069;&#x3046;&#x3059;&#x308B;&#x306E;&#x304B;</li>
+<li>1&#x3064;&#x306E;&#x30A2;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x304C;&#x8907;&#x6570;&#x306E; State &#x306B;&#x4F5C;&#x7528;&#x3059;&#x308B;&#x3068;&#x304D;&#x3069;&#x3046;&#x3059;&#x308B;&#x306E;&#x304B;</li>
+<li>&#x5404;&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5F79;&#x5272;&#x306E;&#x660E;&#x78BA;&#x5316;</li>
+</ul>
+<h3>&#x69CB;&#x6210;</h3>
+<p>&#x958B;&#x767A;&#x306E;&#x571F;&#x53F0;&#x306F;&#x3001;&#x516C;&#x5F0F;&#x306E;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3092;&#x6D41;&#x7528;&#x3059;&#x308B;&#x306E;&#x304C;&#x624B;&#x3063;&#x53D6;&#x308A;&#x65E9;&#x3044;&#x3067;&#x3059;&#x3002;
+&#x4ECA;&#x56DE;&#x306F;&#x30AB;&#x30A6;&#x30F3;&#x30BF;&#x30FC;&#x30A2;&#x30D7;&#x30EA;&#x3092;&#x62E1;&#x5F35;&#x3057;&#x3066;&#x3044;&#x304F;&#x3053;&#x3068;&#x306B;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;</p>
+<ul>
+<li>&#x5143;&#x306B;&#x3057;&#x305F;&#x516C;&#x5F0F;&#x306E;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#xFF08;&#x30AB;&#x30A6;&#x30F3;&#x30BF;&#x30FC;&#xFF09;
+<ul>
+<li><a href="https://github.com/reactjs/redux/tree/master/examples/counter">Redux Counter Example &#xB7; reactjs/redux</a></li>
+</ul></li>
+<li>&#x81EA;&#x4F5C;&#x3057;&#x305F;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x306E;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;
+<ul>
+<li><a href="https://github.com/syon/redux-study">https://github.com/syon/redux-study</a></li>
+</ul></li>
+</ul>
+<p><img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201612/redux-study-ws.png" alt="Redux Study Workspace"></p>
+<h2>&#x5B9F;&#x969B;&#x306B;&#x4F5C;&#x3063;&#x3066;&#x307F;&#x3066;&#x308F;&#x304B;&#x3063;&#x305F;&#x3053;&#x3068;</h2>
+<p>Action / ActionCreator &#x306F;&#x3001;&#x51FA;&#x6765;&#x4E0A;&#x304C;&#x3063;&#x305F;&#x30A2;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x8FD4;&#x3059;&#x306E;&#x304B;&#xFF08;Action&#xFF09;&#x3001;&#x5F15;&#x6570;&#x3092;&#x3082;&#x3068;&#x306B;
+&#x5185;&#x90E8;&#x3067;&#x5224;&#x65AD;&#x3057;&#x3066;&#x30A2;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x5C0E;&#x304D;&#x51FA;&#x3059;&#x3082;&#x306E;&#xFF08;ActionCreator&#xFF09;&#x3068;&#x3044;&#x3046;&#x7406;&#x89E3;&#x306B;&#x81F3;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;
+&#x547C;&#x3073;&#x51FA;&#x3057;&#x5074;&#x3067;&#x4E8B;&#x524D;&#x306B;&#x30A2;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x304C;&#x6C7A;&#x307E;&#x3063;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#x306F;&#x524D;&#x8005;&#x3001;&#x72B6;&#x6CC1;&#x306B;&#x5FDC;&#x3058;&#x3066;&#x30A2;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x5909;&#x3048;&#x305F;&#x3044;&#x5834;&#x5408;&#x306B;&#x5F8C;&#x8005;
+&#x3068;&#x3044;&#x3046;&#x4F7F;&#x3044;&#x5206;&#x3051;&#x3092;&#x3059;&#x308B;&#x306E;&#x3060;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p><strong>actions/index.js</strong></p>
+<pre><code class="language-js"><span class="token comment" spellcheck="true">// Action</span>
+<span class="token keyword">const</span> hitReset <span class="token operator">=</span> <span class="token punctuation">{</span> type<span class="token punctuation">:</span> <span class="token string">&apos;RESET&apos;</span> <span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// ActionCreator</span>
+<span class="token keyword">const</span> hitR <span class="token operator">=</span> <span class="token punctuation">(</span>isPlus <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>isPlus<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> type<span class="token punctuation">:</span> <span class="token string">&apos;HIT_INCR_R&apos;</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> type<span class="token punctuation">:</span> <span class="token string">&apos;HIT_DECR_R&apos;</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x307E;&#x305F;&#x3001;&#x4ECA;&#x56DE;&#x306E;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x306F; R+ &#x306A;&#x3069;&#x8272;&#x306B;&#x5909;&#x5316;&#x3092;&#x4E0E;&#x3048;&#x308B;&#x30DC;&#x30BF;&#x30F3;&#x3092;&#x62BC;&#x3059;&#x3068;&#x3001;&#x8272;&#x3068;&#x30AB;&#x30A6;&#x30F3;&#x30BF;&#x30FC;&#x306E;&#x4E21;&#x65B9;&#x304C;
+&#x4F5C;&#x7528;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x6319;&#x52D5;&#x306E;&#x5B9F;&#x73FE;&#x306B;&#x5F53;&#x521D;&#x306F; <code>dispatch</code> &#x3092;2&#x5EA6;&#x547C;&#x3093;&#x3067; Color &#x3068;
+Count &#x306E;&#x4E21;&#x65B9;&#x306B;&#x30A2;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4F1D;&#x3048;&#x3066;&#x3044;&#x305F;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;ColorReducer &#x5185;&#x3067;&#x30D7;&#x30EA;&#x30F3;&#x30C8;&#x30C7;&#x30D0;&#x30C3;&#x30B0;&#x3057;&#x3066;&#x3044;&#x305F;&#x969B;&#x306B;
+Count &#x306B;&#x5BFE;&#x3059;&#x308B;&#x30A2;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x3082;&#x6D41;&#x308C;&#x3066;&#x304F;&#x308B;&#x3053;&#x3068;&#x306B;&#x6C17;&#x3065;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;
+&#x3064;&#x307E;&#x308A;&#x3001;<strong>&#x30A2;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x306F;&#x3059;&#x3079;&#x3066;&#x306E; Reducer &#x306B;&#x5BFE;&#x3057;&#x3066;&#x4F1D;&#x3048;&#x3089;&#x308C;&#x308B;</strong> &#x306E;&#x3067;&#x3059;&#x306D;&#x3002;
+&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x3067;&#x3001;&#x30AB;&#x30A6;&#x30F3;&#x30BF;&#x30FC;&#x3092;&#x5897;&#x52A0;&#x3055;&#x305B;&#x308B;&#x30A2;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x3059;&#x3079;&#x3066;&#x3092;&#x30EA;&#x30CD;&#x30FC;&#x30E0;&#x3057; <code>HIT_INCR_R</code> &#x306E;&#x3088;&#x3046;&#x306B;
+HIT &#x3092;&#x5148;&#x982D;&#x306B;&#x3064;&#x3051;&#x3001;&#x6B63;&#x898F;&#x8868;&#x73FE;&#x3067;&#x305D;&#x308C;&#x3092;&#x62FE;&#x3044;&#x4E0A;&#x3052;&#x3066;&#x30AB;&#x30A6;&#x30F3;&#x30C8;&#x30A2;&#x30C3;&#x30D7;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x307F;&#x305F;&#x3068;&#x3053;&#x308D;
+&#x3053;&#x308C;&#x304C;&#x3046;&#x307E;&#x304F;&#x3044;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;&#x3069;&#x3053;&#x3068;&#x306A;&#x304F;&#x30A2;&#x30F3;&#x30C1;&#x30D1;&#x30BF;&#x30FC;&#x30F3;&#x81ED;&#x304C;&#x3057;&#x307E;&#x3059;&#x304C;&#x3001;&#x305D;&#x3046;&#x3044;&#x3046;&#x4ED5;&#x7D44;&#x307F;&#x306A;&#x3093;&#x3060;&#x3088;&#x3068;&#x793A;&#x5506;&#x3059;&#x308B;
+&#x305F;&#x3081;&#x306B;&#x3082;&#x4ECA;&#x56DE;&#x306F;&#x3088;&#x3057;&#x3068;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p><strong>reducers/CountReducer.js</strong></p>
+<pre><code class="language-js"><span class="token keyword">const</span> count <span class="token operator">=</span> <span class="token punctuation">(</span>state <span class="token operator">=</span> initialState<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token regex">/^HIT/</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> state <span class="token operator">+</span> <span class="token number">1</span>
+    <span class="token keyword">case</span> <span class="token regex">/RESET/</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> initialState
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> state
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x3053;&#x3053;&#x307E;&#x3067;&#x3092;&#x6291;&#x3048;&#x305F;&#x4E0A;&#x3067;&#x6700;&#x5F8C;&#x306B;&#x5B9F;&#x88C5;&#x3057;&#x3066;&#x307F;&#x305F;&#x306E;&#x304C; RESET &#x30DC;&#x30BF;&#x30F3;&#x3067;&#x3057;&#x305F;&#x3002;
+<code>{ type: &apos;RESET&apos; }</code> &#x3092; Store &#x306B; Dispatch &#x3057;&#x3001;Color &#x3068; Count &#x306E;&#x4E21;&#x65B9;&#x304C;&#x53CD;&#x5FDC;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;
+&#x3069;&#x3061;&#x3089;&#x306E; Reducer &#x306B;&#x3082;&#x305D;&#x308C;&#x3092;&#x5F85;&#x3061;&#x69CB;&#x3048;&#x308B;&#x5F62;&#x3067;&#x8A18;&#x8FF0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p><strong>reducers/ColorReducer.js</strong></p>
+<pre><code class="language-js"><span class="token keyword">const</span> color <span class="token operator">=</span> <span class="token punctuation">(</span>state <span class="token operator">=</span> initialState<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">&apos;HIT_INCR_R&apos;</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        r<span class="token punctuation">:</span> state<span class="token punctuation">.</span>r <span class="token operator">&gt;=</span> <span class="token number">255</span> <span class="token operator">?</span> <span class="token number">0</span> <span class="token punctuation">:</span> state<span class="token punctuation">.</span>r <span class="token operator">+</span> <span class="token number">15</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">/* &#x4E2D;&#x7565; */</span>
+    <span class="token keyword">case</span> <span class="token string">&apos;RESET&apos;</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> initialState
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> state
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2>&#x304A;&#x308F;&#x308A;&#x306B;</h2>
+<p>&#x6B21;&#x306F; Advanced &#x306A;&#x9818;&#x57DF;&#x306B;&#x8E0F;&#x307F;&#x8FBC;&#x3093;&#x3067;&#x3001;&#x975E;&#x540C;&#x671F;&#x51E6;&#x7406;&#x3084; Middleware &#x3092;&#x6271;&#x3044;&#x305F;&#x3044;&#x3068;&#x8003;&#x3048;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x3057;&#x304B;&#x3057;&#x3001;&#x53C2;&#x8003;&#x8A18;&#x4E8B;&#x306B;&#x6319;&#x3052;&#x305F;&#x3088;&#x3046;&#x306A;&#x61D0;&#x7591;&#x7684;&#x306A;&#x58F0;&#x3082;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;&#x9280;&#x306E;&#x5F3E;&#x4E38;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x306E;&#x3067;&#x3001;&#x898F;&#x6A21;&#x3084;&#x76EE;&#x7684;&#x306B;
+&#x5408;&#x3063;&#x305F;&#x3082;&#x306E;&#x3092;&#x9078;&#x629E;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&#x5B9F;&#x969B;&#x306B;&#x305D;&#x306E;&#x624B;&#x3067;&#x8A66;&#x3057;&#x3066;&#x304B;&#x3089;&#x3001;&#x306D;&#x3002;</p>
+</article><div class="adsense"><div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Refills Bottom (Responsive) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2136746860059501"
+     data-ad-slot="2358320270"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><footer><hr><h3>Index of&nbsp;<a href="/refills/bid/webfrontend/">WebFrontEnd</a></h3><div class="article-links"><a href="/refills/rid/1481295/"><div class="left"><span class="octicon octicon-file-text"></span>SPA ではない Webpack 設定サンプル</div></a><a href="/refills/rid/1483023/"><div class="left"><span class="octicon octicon-file-text"></span>Redux 学習の軌跡と自作サンプルの解説</div></a></div></footer><footer><hr><div class="meta"><div class="left"><a href="https://github.com/syon" class="author"><img src="/refills/assets/img/syon.jpg" alt="syon" target="_blank"><span>syon</span></a></div><div class="right"><div class="repo"><span><a href="https://github.com/syon/refills/commits/master/src/refills/webfrontend/redux-study.md" target="_blank">更新履歴</a></span><a href="https://github.com/syon/refills" target="_blank">Repo</a><a href="https://app.wercker.com/project/byKey/3938da859441da2240b9f5d8f7d9f9fd"><img alt="Wercker status" src="https://app.wercker.com/status/3938da859441da2240b9f5d8f7d9f9fd/s/master"></a></div></div></div></footer></section></body></html>

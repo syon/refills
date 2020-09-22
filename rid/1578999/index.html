@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="ja"><head><title>Nuxt.js + iView (View UI)のセットアップ :: Nuxt.js | Refills</title><meta property="og:type" content="article"><meta property="og:locale" content="ja_JP"><meta property="og:title" content="Nuxt.js + iView (View UI)のセットアップ :: Nuxt.js | Refills"><meta property="og:site_name" content="Refills"><meta property="og:type" content="article"><meta property="og:url" content="https://syon.github.io/refills/rid/1578999/"><link rel="canonical" href="https://syon.github.io/refills/rid/1578999/"><meta property="og:image" content="https://syon.github.io/refills/assets/img/ogp.png"><meta charset="utf-8"><meta name="viewport" content="initial-scale=1, width=device-width"><link rel="stylesheet" href="/refills/assets/vendor/octicons/octicons.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Merriweather:400,400italic,700,700italic"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="/refills/assets/bundle.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37634759-11', 'auto');
+ga('send', 'pageview');</script></head><body><header class="site-head"><div class="container"><div class="logo"><a href="/refills/"><h1 class="site-name">Refills</h1></a></div></div></header><section id="article"><div class="a-title"><div class="r-meta-cate"><span class="r-category">Nuxt.js</span></div><h1 class="r-title">Nuxt.js + iView (View UI)のセットアップ</h1><div class="r-meta-date"><a href="https://github.com/syon/refills/commits/master/src/refills/nuxt/iview-setup.adoc" target="_blank" class="r-date"><span>2020.1.14</span></a></div></div><article class="main"><div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/202001/iviewui-com.png" alt="iviewui.com">
+</div>
+</div>
+<div class="paragraph">
+<p>Nuxt.js &#x306E; UI &#x30D5;&#x30EC;&#x30FC;&#x30E0;&#x30EF;&#x30FC;&#x30AF;&#x306B; View UI (&#x65E7; iView) &#x3092;&#x63A1;&#x7528;&#x3057;&#x305F;&#x74B0;&#x5883;&#x306E;&#x30BB;&#x30C3;&#x30C8;&#x30A2;&#x30C3;&#x30D7;&#x65B9;&#x6CD5;&#x3092;&#x3054;&#x7D39;&#x4ECB;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x73FE;&#x6642;&#x70B9;&#x3067;&#x6700;&#x65B0;&#x306E; View UI <strong>v4</strong> &#x3092;&#x524D;&#x63D0;&#x3068;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x30C6;&#x30FC;&#x30DE;&#x306E;&#x30AB;&#x30B9;&#x30BF;&#x30DE;&#x30A4;&#x30BA;&#x307E;&#x3067;&#x3054;&#x6848;&#x5185;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="sect1">
+<h2 id="_view_ui_iview">View UI (iView)</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.iviewui.com" class="bare">https://www.iviewui.com</a></p>
+</li>
+<li>
+<p><a href="https://github.com/view-design/ViewUI" class="bare">https://github.com/view-design/ViewUI</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__">&#x524D;&#x63D0;&#x4E8B;&#x9805;</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Node.js</dt>
+<dd>
+<p>12.14.0</p>
+</dd>
+<dt class="hdlist1">npm</dt>
+<dd>
+<p>6.13.4</p>
+</dd>
+<dt class="hdlist1">nuxt</dt>
+<dd>
+<p>2.11.0</p>
+</dd>
+<dt class="hdlist1">view-design</dt>
+<dd>
+<p>4.1.0</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___2">&#x5B8C;&#x6210;&#x30A4;&#x30E1;&#x30FC;&#x30B8;</h2>
+<div class="sectionbody">
+<div class="imageblock no-shadow">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/202001/nuxt-iview.png" alt="nuxt-iview">
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x30BD;&#x30FC;&#x30B9; &#x4E00;&#x5F0F;</dt>
+<dd>
+<p><a href="https://github.com/syon/awake/tree/nuxt-iview4" class="bare">https://github.com/syon/awake/tree/nuxt-iview4</a></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__create_nuxt_app">&#x624B;&#x9806;&#x2460; &#x1F331; create-nuxt-app</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nuxt.js &#x516C;&#x5F0F;&#x30AC;&#x30A4;&#x30C9;&#x306B;&#x5F93;&#x3044;&#x3001;<code>create-nuxt-app</code> &#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ npx create-nuxt-app <span class="token operator">&lt;</span>project-name<span class="token operator">&gt;</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://ja.nuxtjs.org/guide/installation/">&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB; - NuxtJS</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x8CEA;&#x554F;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x3001;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x30BD;&#x30FC;&#x30B9;&#x3067;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x7B54;&#x3048;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+UI framework &#x306F;&#x307E;&#x3060;&#x65E7;&#x540D;&#x306E; iView &#x306E;&#x307E;&#x307E;&#x3060;&#x3063;&#x305F;&#x306E;&#x3067;&#x3001;&#x3053;&#x308C;&#x3092;&#x9078;&#x629E;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">create-nuxt-app v2.12.0
+? Choose the package manager Npm
+? Choose UI framework iView
+? Choose custom server framework None <span class="token punctuation">(</span>Recommended<span class="token punctuation">)</span>
+? Choose Nuxt.js modules Axios, DotEnv
+? Choose linting tools ESLint, Prettier
+? Choose <span class="token function">test</span> framework None
+? Choose rendering mode Single Page App
+? Choose development tools jsconfig.json <span class="token punctuation">(</span>Recommended <span class="token keyword">for</span> VS Code<span class="token punctuation">)</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__iview_view_design">&#x624B;&#x9806;&#x2461; &#x1F4E6; iview &#x2192; view-design</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x4E0A;&#x8A18;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x306B;&#x5F93;&#x3063;&#x3066;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3059;&#x308B;&#x3068; iView v3 &#x304C;&#x5C0E;&#x5165;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x308C;&#x3092;&#x73FE;&#x6642;&#x70B9;&#x3067;&#x6700;&#x65B0;&#x306E; <strong>v4</strong> &#x306B;&#x30A2;&#x30C3;&#x30D7;&#x30B0;&#x30EC;&#x30FC;&#x30C9;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x516C;&#x5F0F;&#x306B;&#x3042;&#x308B;&#x30A2;&#x30C3;&#x30D7;&#x30B0;&#x30EC;&#x30FC;&#x30C9;&#x30AC;&#x30A4;&#x30C9;&#x306B;&#x5F93;&#x3044;&#x3001;npm&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8; <code>iview</code> &#x3092; <code>view-design</code> &#x306B;&#x5909;&#x66F4;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.iviewui.com/docs/update4-en">Upgrade 4.x Guide - iView</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__customize_theme">&#x624B;&#x9806;&#x2462; &#x1F484; Customize Theme</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x30C6;&#x30FC;&#x30DE;&#x306E;&#x30AB;&#x30B9;&#x30BF;&#x30DE;&#x30A4;&#x30BA;&#x306B;&#x306F;&#x3001;&#x3064;&#x307E;&#x305A;&#x304D;&#x30DD;&#x30A4;&#x30F3;&#x30C8;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+View UI &#x306F; CSS &#x306E;&#x62E1;&#x5F35;&#x30E1;&#x30BF;&#x8A00;&#x8A9E; <a href="http://lesscss.org/">Less</a>
+&#x3092;&#x4F7F;&#x3063;&#x3066;&#x30B9;&#x30BF;&#x30A4;&#x30EB;&#x30B7;&#x30FC;&#x30C8;&#x3092;&#x4F5C;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x30C6;&#x30FC;&#x30DE;&#x306E;&#x30AB;&#x30B9;&#x30BF;&#x30DE;&#x30A4;&#x30BA;&#x306F;&#x5909;&#x6570;&#x3092;&#x5909;&#x66F4;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x5B9F;&#x73FE;&#x3059;&#x308B;&#x305F;&#x3081;&#x3001;&#x958B;&#x767A;&#x4E2D;&#x306E;
+&#x74B0;&#x5883;&#x3067;&#x3082; Less &#x3092;&#x5C0E;&#x5165;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="listingblock">
+<div class="title">Nuxt.js&#x306B;Less&#x3092;&#x5C0E;&#x5165;</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ npm i -D <span class="token function">less</span> less-loader@5</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x3053;&#x306E;&#x307E;&#x307E;&#x4F5C;&#x696D;&#x3092;&#x9032;&#x3081;&#x308B;&#x3068;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x30A8;&#x30E9;&#x30FC;&#x306B;&#x906D;&#x9047;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/202001/iview-theme-error.png" alt="iview-theme-error">
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash"> ERROR  <span class="token keyword">in</span> ./plugins/iview-theme.less
+
+Module build failed <span class="token punctuation">(</span>from ./node_modules/less-loader/dist/cjs.js<span class="token punctuation">)</span>:
+
+
+// https://github.com/ant-design/ant-motion/issues/44
+.bezierEasingMixin<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+^
+Inline JavaScript is not enabled. Is it <span class="token keyword">set</span> <span class="token keyword">in</span> your options?</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x3053;&#x308C;&#x306B;&#x5BFE;&#x51E6;&#x3059;&#x308B;&#x306B;&#x306F;&#x3001;<a href="https://github.com/vueComponent/ant-design-vue/issues/234#issuecomment-466308850">&#x3072;&#x3068;&#x624B;&#x9593;&#x3092;&#x52A0;&#x3048;&#x308B;</a> &#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>Less &#x3092;&#x5C0E;&#x5165;&#x3067;&#x304D;&#x305F;&#x3089;&#x3001;&#x516C;&#x5F0F;&#x306E;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x306B;&#x5F93;&#x3044;&#x30C6;&#x30FC;&#x30DE;&#x30AB;&#x30B9;&#x30BF;&#x30DE;&#x30A4;&#x30BA;&#x7528;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x6E96;&#x5099;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.iviewui.com/docs/guide/theme-en">Customize Theme - iView</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x5177;&#x4F53;&#x7684;&#x306A;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x5909;&#x66F4;&#x5185;&#x5BB9;&#x306F;&#x3053;&#x3061;&#x3089;&#x3092;&#x3054;&#x89A7;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/syon/awake/commit/0fb95bae3950e3e1dfa87f54926d2e8ac179e5ad">&#x1F484; Customize Theme &#xB7; syon/awake@0fb95ba</a></p>
+</li>
+</ul>
+</div>
+<hr>
+<div class="paragraph">
+<p>&#x4EE5;&#x4E0A;&#x3067;&#x30BB;&#x30C3;&#x30C8;&#x30A2;&#x30C3;&#x30D7;&#x306F;&#x7D42;&#x308F;&#x308A;&#x3067;&#x3059;&#x3002;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x958B;&#x767A;&#x3092;&#x958B;&#x59CB;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#xFF01;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ npm run dev</code></pre>
+</div>
+</div>
+</div>
+</div></article><div class="adsense"><div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Refills Bottom (Responsive) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2136746860059501"
+     data-ad-slot="2358320270"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><footer><hr><h3>Index of&nbsp;<a href="/refills/bid/nuxt/"></a></h3><div class="article-links"><a href="/refills/rid/1566444/"><div class="left"><span class="octicon octicon-file-text"></span>Vuex メモ</div></a><a href="/refills/rid/1578999/"><div class="left"><span class="octicon octicon-file-text"></span>Nuxt.js + iView (View UI)のセットアップ</div></a></div></footer><footer><hr><div class="meta"><div class="left"><a href="https://github.com/syon" class="author"><img src="/refills/assets/img/syon.jpg" alt="syon" target="_blank"><span>syon</span></a></div><div class="right"><div class="repo"><span><a href="https://github.com/syon/refills/commits/master/src/refills/nuxt/iview-setup.adoc" target="_blank">更新履歴</a></span><a href="https://github.com/syon/refills" target="_blank">Repo</a><a href="https://app.wercker.com/project/byKey/3938da859441da2240b9f5d8f7d9f9fd"><img alt="Wercker status" src="https://app.wercker.com/status/3938da859441da2240b9f5d8f7d9f9fd/s/master"></a></div></div></div></footer></section></body></html>

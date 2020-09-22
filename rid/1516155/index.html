@@ -1,0 +1,339 @@
+<!DOCTYPE html><html lang="ja"><head><title>Puppeteerメモ :: Chrome | Refills</title><meta property="og:type" content="article"><meta property="og:locale" content="ja_JP"><meta property="og:title" content="Puppeteerメモ :: Chrome | Refills"><meta property="og:site_name" content="Refills"><meta property="og:type" content="article"><meta property="og:url" content="https://syon.github.io/refills/rid/1516155/"><link rel="canonical" href="https://syon.github.io/refills/rid/1516155/"><meta property="og:image" content="https://syon.github.io/refills/assets/img/ogp.png"><meta charset="utf-8"><meta name="viewport" content="initial-scale=1, width=device-width"><link rel="stylesheet" href="/refills/assets/vendor/octicons/octicons.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Merriweather:400,400italic,700,700italic"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="/refills/assets/bundle.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37634759-11', 'auto');
+ga('send', 'pageview');</script></head><body><header class="site-head"><div class="container"><div class="logo"><a href="/refills/"><h1 class="site-name">Refills</h1></a></div></div></header><section id="article"><div class="a-title"><div class="r-meta-cate"><span class="r-category">Chrome</span></div><h1 class="r-title">Puppeteerメモ</h1><div class="r-meta-date"><a href="https://github.com/syon/refills/commits/master/src/refills/chrome/puppeteer.adoc" target="_blank" class="r-date"><span>2018.10.25</span></a></div></div><article class="main"><div class="imageblock no-shadow">
+<div class="content">
+<img src="https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201810/puppeteer.png" alt="Puppeteer" width="150">
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a href="https://github.com/GoogleChrome/puppeteer">GoogleChrome/puppeteer</a></dt>
+<dd>
+<p>Headless Chrome Node API</p>
+</dd>
+</dl>
+</div>
+<div class="sect1">
+<h2 id="_documents">documents</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://pptr.dev/" class="bare">https://pptr.dev/</a></p>
+</li>
+<li>
+<p><a href="https://developers.google.com/web/tools/puppeteer/">Puppeteer &#xA0;|&#xA0; Tools for Web Developers &#xA0;|&#xA0; Google Developers</a></p>
+</li>
+<li>
+<p><a href="https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md">puppeteer/api.md at master &#xB7; GoogleChrome/puppeteer</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_based_on_headless_chrome">based on Headless Chrome</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a href="https://github.com/Kikobeats/browserless">Kikobeats/browserless</a></dt>
+<dd>
+<p>High level automation API for working with Headless Chrome</p>
+</dd>
+<dt class="hdlist1"><a href="https://github.com/yujiosaka/headless-chrome-crawler">Headless Chrome Crawler</a></dt>
+<dd>
+<p>&#x30E2;&#x30C0;&#x30F3;&#x30D5;&#x30ED;&#x30F3;&#x30C8;&#x30A8;&#x30F3;&#x30C9;&#x306B;&#x5BFE;&#x5FDC;&#x3057;&#x305F;&#x30D8;&#x30C3;&#x30C9;&#x30EC;&#x30B9;Chrome&#x306B;&#x3088;&#x308B;&#x5206;&#x6563;&#x30AF;&#x30ED;&#x30FC;&#x30E9;&#x30FC;</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_puppeteer">Puppeteer&#x306E;&#x4F7F;&#x3044;&#x3069;&#x3053;&#x308D;</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Chrome&#x3067;&#x52D5;&#x3051;&#x3070;&#x826F;&#x3044;</p>
+</li>
+<li>
+<p>E2E&#x30C6;&#x30B9;&#x30C8;&#x7528;&#x9014;&#x3067;&#x306F;&#x306A;&#x3044;</p>
+</li>
+<li>
+<p>&#x81EA;&#x52D5;&#x64CD;&#x4F5C;&#x304C;&#x76EE;&#x7684;&#x3067;&#x3042;&#x308B;&#xFF08;&#x30B9;&#x30AF;&#x30EC;&#x30A4;&#x30D4;&#x30F3;&#x30B0;&#x3001;&#x30AD;&#x30E3;&#x30D7;&#x30C1;&#x30E3;&#xFF09;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x30B3;&#x30FC;&#x30C9;&#x5185;&#x3067;&#x306F; <strong>&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x306E; UI &#x64CD;&#x4F5C;</strong> &#x3092; Puppeteer API &#x306B;&#x5B9F;&#x884C;&#x3055;&#x305B;&#x3001;
+DOM &#x306E;&#x8AAD;&#x307F;&#x53D6;&#x308A;&#x3084;&#x52A0;&#x5DE5;&#x306F; <code>page.evaluate()</code> &#x306B;&#x6D41;&#x3059;&#x3002;
+Puppeteer &#x306B;&#x306F; <a href="https://github.com/cheeriojs/cheerio">cheerio</a> &#x306E;&#x3088;&#x3046;&#x306A; API &#x306F;&#x306A;&#x3044;&#x3002;
+Chromium &#x5B9F;&#x884C;&#x74B0;&#x5883;&#x3067; innerHTML / outerHTML &#x3092;&#x8AAD;&#x307F;&#x53D6;&#x3063;&#x3066; cheerio &#x306B;&#x6E21;&#x3059;&#x3053;&#x3068;&#x306F;&#x3067;&#x304D;&#x308B;&#x3002;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tips">tips</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="__">&#x307E;&#x3068;&#x3081;</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://qiita.com/rh_taro/items/32bb6851303cbc613124">puppeteer&#x3067;&#x3088;&#x304F;&#x4F7F;&#x3046;&#x3067;&#x3042;&#x308D;&#x3046;&#x51E6;&#x7406;&#x306E;&#x66F8;&#x304D;&#x65B9; - Qiita</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_launch_options">launch options</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#puppeteerlaunchoptions">puppeteer/api.md at master &#xB7; GoogleChrome/puppeteer</a></p>
+</li>
+<li>
+<p><a href="https://peter.sh/experiments/chromium-command-line-switches/">List of Chromium Command Line Switches &#xAB; Peter Beverloo</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_err_cert_common_name_invalid">ERR_CERT_COMMON_NAME_INVALID</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): Error: SSL Certificate error: ERR_CERT_COMMON_NAME_INVALID</p>
+</div>
+</blockquote>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js"><span class="token keyword">const</span> browser <span class="token operator">=</span> <span class="token keyword">await</span> puppeteer<span class="token punctuation">.</span><span class="token function">launch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  headless<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  ignoreHTTPSErrors<span class="token punctuation">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_use_proxy_server_with_authentication">use proxy server with authentication</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://blog.apify.com/how-to-make-headless-chrome-and-puppeteer-use-a-proxy-server-with-authentication-249a21a79212">Make headless Chrome and Puppeteer use proxy server with authentication</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js"><span class="token keyword">const</span> puppeteer <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;puppeteer&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">(</span><span class="token keyword">async</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> proxyUrl <span class="token operator">=</span> <span class="token string">&apos;http://proxy.example.com:8000&apos;</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> username <span class="token operator">=</span> <span class="token string">&apos;bob&apos;</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> password <span class="token operator">=</span> <span class="token string">&apos;password123&apos;</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> browser <span class="token operator">=</span> <span class="token keyword">await</span> puppeteer<span class="token punctuation">.</span><span class="token function">launch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    args<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token template-string"><span class="token string">`--proxy-server=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>proxyUrl<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    headless<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> page <span class="token operator">=</span> <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">newPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">authenticate</span><span class="token punctuation">(</span><span class="token punctuation">{</span> username<span class="token punctuation">,</span> password <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span><span class="token string">&apos;https://www.example.com&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">await</span> browser<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_wait_sleep">wait / sleep</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagewaitforselectororfunctionortimeout-options-args">puppeteer/api.md at master &#xB7; GoogleChrome/puppeteer</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js"><span class="token comment" spellcheck="true">// wait for selector</span>
+<span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">waitFor</span><span class="token punctuation">(</span><span class="token string">&apos;.foo&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// wait for 1 second</span>
+<span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">waitFor</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// wait for predicate</span>
+<span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">waitFor</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token operator">!</span><span class="token operator">!</span>document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">&apos;.foo&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="___2">&#x8981;&#x7D20;&#x306E;&#x30C6;&#x30AD;&#x30B9;&#x30C8;&#x53D6;&#x5F97;</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js"><span class="token keyword">const</span> text <span class="token operator">=</span> <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">$eval</span><span class="token punctuation">(</span><span class="token string">&apos;.selector&apos;</span><span class="token punctuation">,</span> element <span class="token operator">=</span><span class="token operator">&gt;</span> element<span class="token punctuation">.</span>textContent<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__html">&#x8981;&#x7D20;&#x306E; HTML &#x53D6;&#x5F97;</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js"><span class="token keyword">const</span> html <span class="token operator">=</span> <span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">$eval</span><span class="token punctuation">(</span><span class="token string">&apos;.main-container&apos;</span><span class="token punctuation">,</span> e <span class="token operator">=</span><span class="token operator">&gt;</span> e<span class="token punctuation">.</span>outerHTML<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="___3">&#x540D;&#x524D;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x30D5;&#x30EC;&#x30FC;&#x30E0;&#x3092;&#x53D6;&#x5F97;</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js"><span class="token keyword">const</span> frame <span class="token operator">=</span> page<span class="token punctuation">.</span><span class="token function">frames</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>frame <span class="token operator">=</span><span class="token operator">&gt;</span> frame<span class="token punctuation">.</span><span class="token function">name</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">&apos;myframe&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="___4">&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x3057;&#x3066;&#x4FDD;&#x5B58;</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.sambaiz.net/article/131/">Headless Chrome&#x3067;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x3059;&#x308B; - sambaiz-net</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x306E;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x6A5F;&#x80FD;&#x3092;&#x7D4C;&#x7531;&#x3057;&#x3066;&#x4FDD;&#x5B58;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x5F97;&#x308B;&#x65B9;&#x6CD5;&#x3002;
+<code>Page.setDownloadBehavior</code> &#x304C;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x30D0;&#x30FC;&#x306B;&#x76F8;&#x5F53;&#x3057;&#x3001;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x30D5;&#x30A9;&#x30EB;&#x30C0;&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x3002;
+&#x3053;&#x306E;&#x969B;&#x3001;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x30D1;&#x30B9;&#x306F; <code>path.resolve()</code> &#x3092;&#x4F7F;&#x3063;&#x3066;&#x9069;&#x5207;&#x306A;&#x6587;&#x5B57;&#x5217;&#x3092; downloadPath &#x306B;&#x5272;&#x308A;&#x5F53;&#x3066;&#x308B;&#x3068;&#x3088;&#x3044;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x306E;UI&#x64CD;&#x4F5C;&#x3067;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x30D0;&#x30FC;&#x306B;&#x843D;&#x3061;&#x3066;&#x304F;&#x308B;&#x30B1;&#x30FC;&#x30B9;&#x3067;&#x3042;&#x308C;&#x3070;&#x4E0A;&#x8A18;&#x3067;&#x5BFE;&#x5FDC;&#x3067;&#x304D;&#x308B;&#x304C;&#x3001;
+&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x305F;&#x3060;&#x3051;&#x3067;&#x306F;&#x30DA;&#x30FC;&#x30B8;&#x304C;&#x958B;&#x3044;&#x3066;&#x3057;&#x307E;&#x3046;&#x3088;&#x3046;&#x306A;&#x30B1;&#x30FC;&#x30B9;&#x3067;&#x306F;&#x4ED6;&#x306E;&#x69D8;&#x3005;&#x306A;&#x30A2;&#x30D7;&#x30ED;&#x30FC;&#x30C1;&#x304C;&#x5B58;&#x5728;&#x3059;&#x308B;&#x3002;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/GoogleChrome/puppeteer/issues/299">Question: How do I get puppeteer to download a file? &#xB7; Issue #299 &#xB7; GoogleChrome/puppeteer</a></p>
+</li>
+<li>
+<p><a href="https://github.com/GoogleChrome/puppeteer/issues/610#issuecomment-340160025">Response is Null when Navigating to a PDF &#xB7; Issue #610 &#xB7; GoogleChrome/puppeteer</a></p>
+</li>
+<li>
+<p>&#x9759;&#x7684;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306A;&#x3089;&#x3070; URL &#x3060;&#x3051;&#x5272;&#x308A;&#x51FA;&#x3057;&#x3066; Node.js &#x306B;&#x623B;&#x3057;&#x3066; curl &#x306E;&#x3088;&#x3046;&#x306B;&#x51E6;&#x7406;&#x3059;&#x308B;&#x306E;&#x3082;&#x624B;</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/11944932/how-to-download-a-file-with-node-js-without-using-third-party-libraries">javascript - How to download a file with Node.js (without using third-party libraries)? - Stack Overflow</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_post">POST&#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x3092;&#x9001;&#x308B;</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/GoogleChrome/puppeteer/issues/669">Send POST request to a page and take screenshot &#xB7; Issue #669 &#xB7; GoogleChrome/puppeteer</a><br>
+POST&#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x3092;&#x9001;&#x308B;&#x306B;&#x306F; Request Interception &#x3092;&#x4F7F;&#x3046;&#x3002; overrides.headers &#x3067; Content-Type &#x3082;&#x6307;&#x5B9A;&#x3057;&#x306A;&#x3044;&#x3068; Express &#x3067;&#x306F;&#x53D7;&#x3051;&#x4ED8;&#x3051;&#x3066;&#x3082;&#x3089;&#x3048;&#x306A;&#x3044;&#x306E;&#x3067;&#x6CE8;&#x610F;&#x3002;</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl http://www.google.com -d <span class="token string">&apos;a=b&amp;c=d&apos;</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js"><span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">setRequestInterceptionEnabled</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+page<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&apos;request&apos;</span><span class="token punctuation">,</span> request <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> overrides <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>request<span class="token punctuation">.</span>url <span class="token operator">===</span> <span class="token string">&apos;http://www.google.com&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    overrides<span class="token punctuation">.</span>method <span class="token operator">=</span> <span class="token string">&apos;POST&apos;</span><span class="token punctuation">;</span>
+    overrides<span class="token punctuation">.</span>headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token string">&apos;Content-Type&apos;</span><span class="token punctuation">:</span> <span class="token string">&apos;application/x-www-form-urlencoded; charset=UTF-8&apos;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    overrides<span class="token punctuation">.</span>postData <span class="token operator">=</span> <span class="token string">&apos;a=b&amp;c=d&apos;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  request<span class="token punctuation">.</span><span class="token keyword">continue</span><span class="token punctuation">(</span>overrides<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">await</span> page<span class="token punctuation">.</span><span class="token function">goto</span><span class="token punctuation">(</span><span class="token string">&apos;http://www.google.com&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_github_com_googlechrome_puppeteer_blob_master_docs_api_md_pageexposefunctionname_puppeteerfunction_page_exposefunction_a"><a href="https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageexposefunctionname-puppeteerfunction">page.exposeFunction</a></h3>
+<div class="paragraph">
+<p>&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x306E; window &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B; Node.js &#x95A2;&#x6570;&#x3092;&#x6E21;&#x3057;&#x3066;&#x5B9F;&#x884C;&#x3055;&#x305B;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x3002;
+&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x306F; crypto &#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092; require &#x3057;&#x3066;&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x304B;&#x3089; md5 &#x30CF;&#x30C3;&#x30B7;&#x30E5;&#x3092;&#x751F;&#x6210;&#x3057;&#x3066;&#x3044;&#x308B;&#x3002;
+&#x3082;&#x3046;&#xFF11;&#x3064;&#x306E;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x306F; fs &#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092; require &#x3057;&#x3066; window.readfile &#x95A2;&#x6570;&#x3092;&#x5B9F;&#x73FE;&#x3057;&#x3066;&#x3044;&#x308B;&#x3002;</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_run_on">Run on</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://syonx.hatenablog.com/entry/2017/09/20/210004">Puppeteer&#x3092;Docker&#x3084;Heroku&#x3067;&#x52D5;&#x304B;&#x3059;&#x30E1;&#x30E2; - syonx</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_heroku">Heroku</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/jontewks/puppeteer-heroku-buildpack">jontewks/puppeteer-heroku-buildpack</a><br>
+Installs dependencies needed in order to run puppeteer on heroku</p>
+</li>
+<li>
+<p><a href="https://github.com/CoffeeAndCode/puppeteer-heroku-buildpack">CoffeeAndCode/puppeteer-heroku-buildpack</a><br>
+adds support for Chinese, Korean, and Japanese characters</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="__a_href_https_github_com_googlechrome_puppeteer_blob_master_docs_troubleshooting_md_running_puppeteer_on_aws_lambda_aws_lambda_a"><a href="https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#running-puppeteer-on-aws-lambda">AWS Lambda</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/Kikobeats/aws-lambda-chrome">Kikobeats/aws-lambda-chrome</a><br>
+Chrome binary compatible with AWS Lambda.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_articles">articles</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://qiita.com/Quramy/items/26058e83e898ec2ec078">--headless&#x6642;&#x4EE3;&#x306E;&#x672C;&#x547D;&#xFF1F; Chrome &#x3092; Node.js&#x304B;&#x3089;&#x64CD;&#x4F5C;&#x3059;&#x308B;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA; puppeteer &#x306B;&#x3064;&#x3044;&#x3066; - Qiita</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div></article><div class="adsense"><div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Refills Bottom (Responsive) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2136746860059501"
+     data-ad-slot="2358320270"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><footer><hr><h3>Index of&nbsp;<a href="/refills/bid/chrome/"></a></h3><div class="article-links"><a href="/refills/rid/1516111/"><div class="left"><span class="octicon octicon-file-text"></span>Chromeを素早くキーボードで操作！『cVim』の使い方</div></a><a href="/refills/rid/1516155/"><div class="left"><span class="octicon octicon-file-text"></span>Puppeteerメモ</div></a></div></footer><footer><hr><div class="meta"><div class="left"><a href="https://github.com/syon" class="author"><img src="/refills/assets/img/syon.jpg" alt="syon" target="_blank"><span>syon</span></a></div><div class="right"><div class="repo"><span><a href="https://github.com/syon/refills/commits/master/src/refills/chrome/puppeteer.adoc" target="_blank">更新履歴</a></span><a href="https://github.com/syon/refills" target="_blank">Repo</a><a href="https://app.wercker.com/project/byKey/3938da859441da2240b9f5d8f7d9f9fd"><img alt="Wercker status" src="https://app.wercker.com/status/3938da859441da2240b9f5d8f7d9f9fd/s/master"></a></div></div></div></footer></section></body></html>

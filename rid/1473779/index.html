@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="ja"><head><title>プラグインの構造 :: Metalsmith | Refills</title><meta property="og:type" content="article"><meta property="og:locale" content="ja_JP"><meta property="og:title" content="プラグインの構造 :: Metalsmith | Refills"><meta property="og:site_name" content="Refills"><meta property="og:type" content="article"><meta property="og:url" content="https://syon.github.io/refills/rid/1473779/"><link rel="canonical" href="https://syon.github.io/refills/rid/1473779/"><meta property="og:image" content="https://syon.github.io/refills/assets/img/ogp.png"><meta charset="utf-8"><meta name="viewport" content="initial-scale=1, width=device-width"><link rel="stylesheet" href="/refills/assets/vendor/octicons/octicons.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Merriweather:400,400italic,700,700italic"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="/refills/assets/bundle.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37634759-11', 'auto');
+ga('send', 'pageview');</script></head><body><header class="site-head"><div class="container"><div class="logo"><a href="/refills/"><h1 class="site-name">Refills</h1></a></div></div></header><section id="article"><div class="a-title"><div class="r-meta-cate"><span class="r-category">Metalsmith</span></div><h1 class="r-title">プラグインの構造</h1><div class="r-meta-date"><a href="https://github.com/syon/refills/commits/master/src/refills/metalsmith/plugin-basic.md" target="_blank" class="r-date"><span>2016.9.10</span></a></div></div><article class="main"><h2>&#x6700;&#x5C0F;&#x69CB;&#x6210;&#x3068;&#x72EC;&#x81EA;&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;</h2>
+<pre><code class="language-js"><span class="token keyword">var</span> Metalsmith <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;metalsmith&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">hello</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arg<span class="token punctuation">.</span>hoge<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// fuga</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span>files<span class="token punctuation">,</span> metalsmith<span class="token punctuation">,</span> done<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">Metalsmith</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+    <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">{</span> hoge<span class="token punctuation">:</span> <span class="token string">&quot;fuga&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token keyword">throw</span> err<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306E;&#x4F7F;&#x7528;&#x306F; <code>.use()</code> &#x3092;&#x9023;&#x7D50;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x5B9F;&#x73FE;&#x3057;&#x307E;&#x3059;&#x3002;&#x305D;&#x306E;&#x5F15;&#x6570;&#x306B;&#x6E21;&#x3059;&#x306E;&#x306F;&#x3001;
+<strong>Metalsmith &#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x3068;&#x3057;&#x3066;&#x5B9A;&#x3081;&#x3089;&#x308C;&#x305F;&#x95A2;&#x6570;</strong> &#x3067;&#x3042;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306B;&#x3088;&#x3063;&#x3066;&#x306F; <code>require</code> &#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x305D;&#x306E;&#x307E;&#x307E;&#x6E21;&#x3059;&#x3082;&#x306E;&#x3084;&#x3001;
+&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3068;&#x3057;&#x3066;&#x95A2;&#x6570;&#x3092;&#x8FD4;&#x3059;&#x3082;&#x306E;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x3042;&#x305F;&#x308A;&#x306F; JavaScript &#x306E;&#x57FA;&#x790E;&#x306A;&#x306E;&#x3067;
+Metalsmith &#x306E;&#x7BC4;&#x7587;&#x5916;&#x306A;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;&#x6291;&#x3048;&#x3066;&#x304A;&#x304F;&#x3068;&#x3088;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code class="language-js">  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span>files<span class="token punctuation">,</span> metalsmith<span class="token punctuation">,</span> done<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+<h2>&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306E;&#x69CB;&#x9020;</h2>
+<p>&#x6B21;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x306F;&#x3001;&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306E;&#x3088;&#x304F;&#x3042;&#x308B;&#x69CB;&#x9020;&#x3067;&#x3059;&#x3002;&#x30EA;&#x30BF;&#x30FC;&#x30F3;&#x3059;&#x308B;&#x95A2;&#x6570;&#x306E;&#x4E2D;&#x3067;&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x5185;&#x306B;&#x6D41;&#x308C;&#x3066;&#x304D;&#x305F;
+&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x7FA4;&#x3059;&#x3079;&#x3066;&#x3092;&#x30EB;&#x30FC;&#x30D7;&#x3057;&#x3001;&#x4E2D;&#x8EAB;&#x3092;&#x53D6;&#x308A;&#x51FA;&#x3057;&#x3066;&#x30BF;&#x30A4;&#x30C8;&#x30EB;&#x3092;&#x8AAD;&#x307F;&#x53D6;&#x3063;&#x305F;&#x308A;&#x3001;
+Markdown &#x3092; HTML &#x306B;&#x5909;&#x63DB;&#x3057;&#x305F;&#x308A;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x3057;&#x3066;&#x3001;&#x6B21;&#x306E;&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x306B;&#x51E6;&#x7406;&#x3092;&#x6E21;&#x3059;&#x305F;&#x3081;&#x306B;&#x3001;&#x6700;&#x5F8C;&#x306B; <code>done()</code> &#x3092;&#x547C;&#x3073;&#x307E;&#x3059;&#x3002;&#x30D7;&#x30E9;&#x30B0;&#x30A4;&#x30F3;&#x3068;&#x3057;&#x3066;&#x306E;&#x5F79;&#x5272;&#x304C;
+&#x4ED6;&#x3068;&#x7AF6;&#x5408;&#x3057;&#x306A;&#x3044;&#x3001;&#x72EC;&#x7ACB;&#x3057;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#x306F;&#x521D;&#x3081;&#x306B; <code>done()</code> &#x3092;&#x547C;&#x3093;&#x3067;&#x3055;&#x3063;&#x3055;&#x3068;&#x6B21;&#x306B;&#x30D0;&#x30C8;&#x30F3;&#x3092;&#x6E21;&#x3059;&#x5834;&#x5408;&#x3082;&#x3042;&#x308B;&#x3088;&#x3046;&#x3067;&#x3059;&#x3002;</p>
+<pre><code class="language-js"><span class="token keyword">function</span> <span class="token function">printFileTitle</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span>files<span class="token punctuation">,</span> metalsmith<span class="token punctuation">,</span> done<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>files<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">var</span> data <span class="token operator">=</span> files<span class="token punctuation">[</span>file<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">// print front-matter title</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>title<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</article><div class="adsense"><div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Refills Bottom (Responsive) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2136746860059501"
+     data-ad-slot="2358320270"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><footer><hr><h3>Index of&nbsp;<a href="/refills/bid/metalsmith/">Metalsmith</a></h3><div class="article-links"><a href="/refills/rid/1473778/"><div class="left"><span class="octicon octicon-file-text"></span>思想の解説と活用事例</div></a><a href="/refills/rid/1473779/"><div class="left"><span class="octicon octicon-file-text"></span>プラグインの構造</div></a><a href="/refills/rid/1473780/"><div class="left"><span class="octicon octicon-file-text"></span>主要プラグインの一覧と解説</div></a></div></footer><footer><hr><div class="meta"><div class="left"><a href="https://github.com/syon" class="author"><img src="/refills/assets/img/syon.jpg" alt="syon" target="_blank"><span>syon</span></a></div><div class="right"><div class="repo"><span><a href="https://github.com/syon/refills/commits/master/src/refills/metalsmith/plugin-basic.md" target="_blank">更新履歴</a></span><a href="https://github.com/syon/refills" target="_blank">Repo</a><a href="https://app.wercker.com/project/byKey/3938da859441da2240b9f5d8f7d9f9fd"><img alt="Wercker status" src="https://app.wercker.com/status/3938da859441da2240b9f5d8f7d9f9fd/s/master"></a></div></div></div></footer></section></body></html>

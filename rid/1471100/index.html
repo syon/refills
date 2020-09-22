@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="ja"><head><title>キーコードまとめ :: ErgoDox | Refills</title><meta property="og:type" content="article"><meta property="og:locale" content="ja_JP"><meta property="og:title" content="キーコードまとめ :: ErgoDox | Refills"><meta property="og:site_name" content="Refills"><meta property="og:type" content="article"><meta property="og:url" content="https://syon.github.io/refills/rid/1471100/"><link rel="canonical" href="https://syon.github.io/refills/rid/1471100/"><meta property="og:image" content="https://syon.github.io/refills/assets/img/ogp.png"><meta charset="utf-8"><meta name="viewport" content="initial-scale=1, width=device-width"><link rel="stylesheet" href="/refills/assets/vendor/octicons/octicons.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Merriweather:400,400italic,700,700italic"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="/refills/assets/bundle.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37634759-11', 'auto');
+ga('send', 'pageview');</script></head><body><header class="site-head"><div class="container"><div class="logo"><a href="/refills/"><h1 class="site-name">Refills</h1></a></div></div></header><section id="article"><div class="a-title"><div class="r-meta-cate"><span class="r-category">ErgoDox</span></div><h1 class="r-title">キーコードまとめ</h1><div class="r-meta-date"><a href="https://github.com/syon/refills/commits/master/src/refills/ergodox/keycode.md" target="_blank" class="r-date"><span>2019.6.23</span></a></div></div><article class="main"><h2>Basic Keycodes</h2>
+<ul>
+<li><a href="https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md">qmk_firmware / docs / keycodes.md</a></li>
+<li><a href="https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes_basic.md">qmk_firmware / docs / keycodes_basic.md</a></li>
+</ul>
+<p><code>KC_*</code> 形式のキーコードとそのショートネームがリストアップされています。<br>
+<code>KC_2 ... Keyboard 2 and @</code> とあるので、英語配列が前提になっていると考えられます。</p>
+<h2>Quantum Keycodes</h2>
+<ul>
+<li><a href="https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#quantum-keycodes">qmk_firmware / docs / keycodes.md#quantum-keycodes</a></li>
+<li><a href="https://github.com/qmk/qmk_firmware/blob/master/docs/quantum_keycodes.md">qmk_firmware / docs / quantum_keycodes.md</a></li>
+</ul>
+<p>QMK 特有のキーコード、エイリアスがリストアップされています。</p>
+<h2>Layer</h2>
+<ul>
+<li><a href="https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#layer-switching">qmk_firmware / docs / keycodes.md#layer-switching</a></li>
+<li><a href="https://github.com/qmk/qmk_firmware/blob/master/docs/feature_advanced_keycodes.md#switching-and-toggling-layers">qmk_firmware / docs / feature_advanced_keycodes.md#switching-and-toggling-layers</a></li>
+</ul>
+<table>
+<thead>
+<tr><th>Keycode</th><th>Mean</th><th>Desc</th></tr>
+</thead>
+<tbody>
+<tr><td><code>TO(layer, when)</code></td><td>GOTO layer</td><td>レイヤー移動（<em>when</em>は<code>1</code>(ON_PRESS)推奨）</td></tr>
+<tr><td><code>MO(layer)</code></td><td>Momentary</td><td>押している間だけ指定したレイヤー</td></tr>
+<tr><td><code>OSL(layer)</code></td><td>One-shot layer</td><td>次の１キーだけ指定したレイヤー</td></tr>
+<tr><td><code>LT(layer, kc)</code></td><td>Layer / Tap</td><td>押している間だけ指定したレイヤー、タップで<em>kc</em></td></tr>
+<tr><td><code>TG(layer)</code></td><td>Toggle layer</td><td>タップして指定したレイヤー、再タップで戻る（※）</td></tr>
+<tr><td><code>DF(layer)</code></td><td>Default layer</td><td>デフォルトレイヤーの変更（電源OFFまで継続）</td></tr>
+</tbody>
+</table>
+<ul>
+<li>※ 行き先のレイヤーには同じキーに <code>KC_TRNS</code> を割り当てる必要あり</li>
+</ul>
+<h2>Modifier Keys</h2>
+<ul>
+<li><a href="https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#modifiers">qmk_firmware / docs / keycodes.md#modifiers</a></li>
+<li><a href="https://github.com/qmk/qmk_firmware/blob/master/docs/feature_advanced_keycodes.md#modifier-keys">qmk_firmware / docs / feature_advanced_keycodes.md#modifier-keys</a></li>
+</ul>
+<table>
+<thead>
+<tr><th>Keycode</th><th>Desc</th></tr>
+</thead>
+<tbody>
+<tr><td><code>LSFT(kc)</code></td><td>左 Shift + <em>kc</em></td></tr>
+<tr><td><code>S(kc)</code></td><td>左 Shift + <em>kc</em></td></tr>
+<tr><td><code>RSFT(kc)</code></td><td>右 Shift + <em>kc</em></td></tr>
+<tr><td><code>LCTL(kc)</code></td><td>左 Ctrl + <em>kc</em></td></tr>
+<tr><td><code>RCTL(kc)</code></td><td>右 Ctrl + <em>kc</em></td></tr>
+<tr><td><code>LALT(kc)</code></td><td>左 Alt + <em>kc</em></td></tr>
+<tr><td><code>RALT(kc)</code></td><td>右 Alt + <em>kc</em></td></tr>
+<tr><td><code>LGUI(kc)</code></td><td>左 GUI (Cmd/Win) + <em>kc</em></td></tr>
+<tr><td><code>RGUI(kc)</code></td><td>右 GUI (Cmd/Win) + <em>kc</em></td></tr>
+<tr><td><code>HYPR(kc)</code></td><td>Ctrl + Shift + Alt + Gui + <em>kc</em></td></tr>
+<tr><td><code>MEH(kc)</code></td><td>Ctrl + Shift + Alt + <em>kc</em></td></tr>
+<tr><td><code>LCAG(kc)</code></td><td>Ctrl + Alt + Gui + <em>kc</em></td></tr>
+</tbody>
+</table>
+<h4>Samples for Modifier Keys</h4>
+<dl>
+<dt><code>LALT(LCTL(KC_DEL))</code></dt>
+<dd>this makes a key that sends Alt, Control, and Delete in a single keypress.
+</dd>
+</dl>
+<h3>Shift キーを必要とするキーのショートネーム</h3>
+<p><a href="https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#us-ansi-shifted-symbols">qmk_firmware / docs / keycodes.md#us-ansi-shifted-symbols</a></p>
+<table>
+<thead>
+<tr><th>Keycode</th><th>Key</th></tr>
+</thead>
+<tbody>
+<tr><td><code>KC_TILD</code></td><td>~</td></tr>
+<tr><td><code>KC_EXLM</code></td><td>!</td></tr>
+<tr><td><code>KC_AT</code></td><td>@</td></tr>
+<tr><td><code>KC_HASH</code></td><td>#</td></tr>
+<tr><td><code>KC_DLR</code></td><td>$</td></tr>
+<tr><td><code>KC_PERC</code></td><td>%</td></tr>
+<tr><td><code>KC_CIRC</code></td><td>^</td></tr>
+<tr><td><code>KC_AMPR</code></td><td>&amp;</td></tr>
+<tr><td><code>KC_ASTR</code></td><td>*</td></tr>
+<tr><td><code>KC_LPRN</code></td><td>(</td></tr>
+<tr><td><code>KC_RPRN</code></td><td>)</td></tr>
+<tr><td><code>KC_UNDS</code></td><td>_</td></tr>
+<tr><td><code>KC_PLUS</code></td><td>+</td></tr>
+<tr><td><code>KC_DQUO</code></td><td>&quot;</td></tr>
+<tr><td><code>KC_LCBR</code></td><td>{</td></tr>
+<tr><td><code>KC_RCBR</code></td><td>}</td></tr>
+<tr><td><code>KC_LABK</code></td><td>&lt;</td></tr>
+<tr><td><code>KC_RABK</code></td><td>&gt;</td></tr>
+<tr><td><code>KC_PIPE</code></td><td>|</td></tr>
+<tr><td><code>KC_COLN</code></td><td>:</td></tr>
+</tbody>
+</table>
+<h3>Modifier-Tap shortcuts</h3>
+<ul>
+<li><a href="https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md#mod-tap-keys">qmk_firmware / docs / keycodes.md#mod-tap-keys</a></li>
+<li><a href="https://github.com/qmk/qmk_firmware/blob/master/docs/feature_advanced_keycodes.md#mod-tap">qmk_firmware / docs / feature_advanced_keycodes.md#mod-tap</a></li>
+</ul>
+<p>長押しで Modifier キー、タップで通常キーを実現する <code>MT(mod, kc)</code> の簡易記述です。</p>
+<table>
+<thead>
+<tr><th>Keycode</th><th>Desc</th></tr>
+</thead>
+<tbody>
+<tr><td><code>CTL_T(kc)</code></td><td>長押しで Ctrl 、タップで <em>kc</em></td></tr>
+<tr><td><code>SFT_T(kc)</code></td><td>長押しで Shift 、タップで <em>kc</em></td></tr>
+<tr><td><code>ALT_T(kc)</code></td><td>長押しで Alt 、タップで <em>kc</em></td></tr>
+<tr><td><code>GUI_T(kc)</code></td><td>長押しで Gui 、タップで <em>kc</em></td></tr>
+<tr><td><code>ALL_T(kc)</code></td><td>長押しで Ctrl + Shift + Alt + Gui 、タップで <em>kc</em></td></tr>
+<tr><td><code>MEH_T(kc)</code></td><td>長押しで Ctrl + Shift + Alt 、タップで <em>kc</em></td></tr>
+<tr><td><code>LCAG_T(kc)</code></td><td>長押しで Ctrl + Alt + Gui 、タップで <em>kc</em></td></tr>
+</tbody>
+</table>
+<h4>Samples for Modifier-Tap</h4>
+<dl>
+<dt><code>CTL_T(KC_Z)</code></dt>
+<dd>長押しで <code>Ctrl</code> 、タップで <code>Z</code>。
+</dd>
+<dt><code>ALL_T(KC_NO)</code></dt>
+<dd>長押しで <code>Hyper</code> 、タップで <code>何もしない</code>。
+</dd>
+<dt><code>ALT_T(KC_APP)</code></dt>
+<dd>長押しで <code>Alt</code> 、タップで <code>APP</code>。
+</dd>
+</dl>
+<h2>Leader key</h2>
+<p><a href="https://github.com/qmk/qmk_firmware/blob/master/docs/feature_leader_key.md">qmk_firmware / docs / feature_leader_key.md</a></p>
+<p>キーの同時押しではなく、押した順番で事前定義したキーを送信する新概念。
+<code>KC_LEAD</code>に設定したキーをタップしてから、登録したキーコンビネーションを素早く打つことで発火させる。<em>（未検証）</em></p>
+</article><div class="adsense"><div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Refills Bottom (Responsive) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2136746860059501"
+     data-ad-slot="2358320270"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><footer><hr><h3>Index of&nbsp;<a href="/refills/bid/ergodox/">ErgoDox</a></h3><div class="article-links"><a href="/refills/rid/1469458/"><div class="left"><span class="octicon octicon-file-text"></span>ErgoDox EZ</div></a><a href="/refills/rid/1471100/"><div class="left"><span class="octicon octicon-file-text"></span>キーコードまとめ</div></a><a href="/refills/rid/1475592/"><div class="left"><span class="octicon octicon-file-text"></span>WindowsでUSキーボードとして認識させる</div></a><a href="/refills/rid/1475593/"><div class="left"><span class="octicon octicon-file-text"></span>Windows用キーマップの紹介</div></a></div></footer><footer><hr><div class="meta"><div class="left"><a href="https://github.com/syon" class="author"><img src="/refills/assets/img/syon.jpg" alt="syon" target="_blank"><span>syon</span></a></div><div class="right"><div class="repo"><span><a href="https://github.com/syon/refills/commits/master/src/refills/ergodox/keycode.md" target="_blank">更新履歴</a></span><a href="https://github.com/syon/refills" target="_blank">Repo</a><a href="https://app.wercker.com/project/byKey/3938da859441da2240b9f5d8f7d9f9fd"><img alt="Wercker status" src="https://app.wercker.com/status/3938da859441da2240b9f5d8f7d9f9fd/s/master"></a></div></div></div></footer></section></body></html>

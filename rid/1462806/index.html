@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="ja"><head><title>fish shell - インストールと設定 :: fish shell | Refills</title><meta property="og:type" content="article"><meta property="og:locale" content="ja_JP"><meta property="og:title" content="fish shell - インストールと設定 :: fish shell | Refills"><meta property="og:site_name" content="Refills"><meta property="og:type" content="article"><meta property="og:url" content="https://syon.github.io/refills/rid/1462806/"><link rel="canonical" href="https://syon.github.io/refills/rid/1462806/"><meta property="og:image" content="https://syon.github.io/refills/assets/img/ogp.png"><meta charset="utf-8"><meta name="viewport" content="initial-scale=1, width=device-width"><link rel="stylesheet" href="/refills/assets/vendor/octicons/octicons.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Merriweather:400,400italic,700,700italic"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="/refills/assets/bundle.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37634759-11', 'auto');
+ga('send', 'pageview');</script></head><body><header class="site-head"><div class="container"><div class="logo"><a href="/refills/"><h1 class="site-name">Refills</h1></a></div></div></header><section id="article"><div class="a-title"><div class="r-meta-cate"><span class="r-category">fish shell</span></div><h1 class="r-title">fish shell - インストールと設定</h1><div class="r-meta-date"><a href="https://github.com/syon/refills/commits/master/src/refills/shell/fish-shell.md" target="_blank" class="r-date"><span>2016.5.10</span></a></div></div><article class="main"><h2><a href="http://fishshell.com/">fish shell</a></h2>
+<ul>
+<li><a href="http://megane-blog.com/2014/12/15/1461">fish&#x30B7;&#x30A7;&#x30EB;&#x304C;&#x3068;&#x3066;&#x3082;&#x7D20;&#x6674;&#x3089;&#x3057;&#x304B;&#x3063;&#x305F;&#x306E;&#x3067;&#x3001;&#x304A;&#x4F1D;&#x3048;&#x3057;&#x307E;&#x3059;&#x3002; | megane9988&#x306E;&#x30D6;&#x30ED;&#x30B0;</a></li>
+<li><a href="http://qiita.com/mtwtk_man/items/dde92d0a6024bc61fa58">fish-shell&#x3092;&#x4F7F;&#x3063;&#x3066;&#x307F;&#x307E;&#x305B;&#x3093;&#x304B; - Qiita</a></li>
+<li><a href="http://yoshiori.github.io/blog/2015/11/03/from-zsh-to-fish/">zsh &#x304B;&#x3089; fish &#x306B;&#x3057;&#x305F;&#x3002; - yoshiori.github.io</a></li>
+</ul>
+<h3><a href="http://fisherman.sh/">Fisherman</a></h3>
+<h3><a href="https://github.com/oh-my-fish/oh-my-fish">oh-my-fish</a></h3>
+<ul>
+<li><a href="https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md">oh-my-fish/Themes.md at master &#xB7; oh-my-fish/oh-my-fish</a>  <br>
+&#x30C6;&#x30FC;&#x30DE;&#x30D7;&#x30EC;&#x30D3;&#x30E5;&#x30FC;&#x96C6;</li>
+</ul>
+<h2>Install fish shell</h2>
+<pre><code class="language-bash">$ brew <span class="token function">install</span> fish
+$ <span class="token keyword">echo</span> <span class="token string">&quot;/usr/local/bin/fish&quot;</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> -a /etc/shells
+$ chsh -s /usr/local/bin/fish
+</code></pre>
+<h4>Required fish version: v2.3.0 on Fisherman</h4>
+<p><a href="https://github.com/fisherman/fisherman#what-is-the-required-fish-version">https://github.com/fisherman/fisherman#what-is-the-required-fish-version</a></p>
+<pre><code class="language-bash">$ brew up<span class="token punctuation">;</span> and brew upgrade --HEAD fish
+</code></pre>
+<h2>Install Fisherman</h2>
+<p><a href="https://github.com/fisherman/fisherman">fisherman/fisherman: fish plugin manager http://fisherman.sh</a></p>
+<h3>config</h3>
+<pre><code class="language-bash"><span class="token comment" spellcheck="true"># config file</span>
+$ vim .config/fish/config.fish
+</code></pre>
+<pre><code class="language-bash"><span class="token comment" spellcheck="true"># reload config</span>
+$ <span class="token function">source</span> .config/fish/config.fish
+</code></pre>
+<h4>writing config.fish</h4>
+<pre><code class="language-bash"><span class="token comment" spellcheck="true"># .bashrc</span>
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$HOME</span>/.nodebrew/current/bin:<span class="token variable">$PATH</span>
+
+<span class="token comment" spellcheck="true"># config.fish (command like, space separated)</span>
+<span class="token keyword">set</span> PATH <span class="token variable">$PATH</span> <span class="token variable">$HOME</span>/.nodebrew/current/bin
+</code></pre>
+<h3>set export</h3>
+<pre><code class="language-bash"><span class="token keyword">set</span> -gx http_proxy http://localhost:8080
+</code></pre>
+</article><div class="adsense"><div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Refills Bottom (Responsive) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2136746860059501"
+     data-ad-slot="2358320270"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><footer><hr><h3>Index of&nbsp;<a href="/refills/bid/shell/">shell</a></h3><div class="article-links"><a href="/refills/rid/1462806/"><div class="left"><span class="octicon octicon-file-text"></span>fish shell - インストールと設定</div></a><a href="/refills/rid/1499687/"><div class="left"><span class="octicon octicon-file-text"></span>画像処理コマンド 逆引きメモ</div></a></div></footer><footer><hr><div class="meta"><div class="left"><a href="https://github.com/syon" class="author"><img src="/refills/assets/img/syon.jpg" alt="syon" target="_blank"><span>syon</span></a></div><div class="right"><div class="repo"><span><a href="https://github.com/syon/refills/commits/master/src/refills/shell/fish-shell.md" target="_blank">更新履歴</a></span><a href="https://github.com/syon/refills" target="_blank">Repo</a><a href="https://app.wercker.com/project/byKey/3938da859441da2240b9f5d8f7d9f9fd"><img alt="Wercker status" src="https://app.wercker.com/status/3938da859441da2240b9f5d8f7d9f9fd/s/master"></a></div></div></div></footer></section></body></html>

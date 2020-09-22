@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="ja"><head><title>Vuex メモ :: Nuxt.js | Refills</title><meta property="og:type" content="article"><meta property="og:locale" content="ja_JP"><meta property="og:title" content="Vuex メモ :: Nuxt.js | Refills"><meta property="og:site_name" content="Refills"><meta property="og:type" content="article"><meta property="og:url" content="https://syon.github.io/refills/rid/1566444/"><link rel="canonical" href="https://syon.github.io/refills/rid/1566444/"><meta property="og:image" content="https://syon.github.io/refills/assets/img/ogp.png"><meta charset="utf-8"><meta name="viewport" content="initial-scale=1, width=device-width"><link rel="stylesheet" href="/refills/assets/vendor/octicons/octicons.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Merriweather:400,400italic,700,700italic"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="/refills/assets/bundle.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37634759-11', 'auto');
+ga('send', 'pageview');</script></head><body><header class="site-head"><div class="container"><div class="logo"><a href="/refills/"><h1 class="site-name">Refills</h1></a></div></div></header><section id="article"><div class="a-title"><div class="r-meta-cate"><span class="r-category">Nuxt.js</span></div><h1 class="r-title">Vuex メモ</h1><div class="r-meta-date"><a href="https://github.com/syon/refills/commits/master/src/refills/nuxt/vuex.adoc" target="_blank" class="r-date"><span>2019.8.22</span></a></div></div><article class="main"><div class="sect1">
+<h2 id="_nuxt_js_module_mode_store_template">Nuxt.js module mode store template</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://ja.nuxtjs.org/guide/vuex-store/">Vuex &#x30B9;&#x30C8;&#x30A2; - Nuxt.js</a></p>
+</li>
+<li>
+<p><mark><a href="https://vuex.vuejs.org/ja/api/">API &#x30EA;&#x30D5;&#x30A1;&#x30EC;&#x30F3;&#x30B9; | Vuex</a></mark></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">store/user.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js"><span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">&apos;axios&apos;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> state <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+  profile<span class="token punctuation">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> getters <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function">isLogin</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token operator">!</span><span class="token operator">!</span>state<span class="token punctuation">.</span>profile
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> mutations <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function">setProfile</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> profile<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    state<span class="token punctuation">.</span>profile <span class="token operator">=</span> profile
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> actions <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token keyword">async</span> <span class="token function">load</span><span class="token punctuation">(</span><span class="token punctuation">{</span> commit <span class="token punctuation">}</span><span class="token punctuation">,</span> id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token keyword">await</span> axios<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>API_URL<span class="token punctuation">,</span> <span class="token punctuation">{</span> params<span class="token punctuation">:</span> <span class="token punctuation">{</span> id <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> profile <span class="token operator">=</span> res<span class="token punctuation">.</span>data
+    <span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">&apos;setProfile&apos;</span><span class="token punctuation">,</span> profile<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">pages/_id.vue</div>
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js"><span class="token keyword">import</span> <span class="token punctuation">{</span> mapState<span class="token punctuation">,</span> mapGetters <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;vuex&apos;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  computed<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token function">mapState</span><span class="token punctuation">(</span><span class="token string">&apos;user&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      profile<span class="token punctuation">:</span> state <span class="token operator">=</span><span class="token operator">&gt;</span> state<span class="token punctuation">.</span>profile
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token function">mapGetters</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      isLogin<span class="token punctuation">:</span> <span class="token string">&apos;user/isLogin&apos;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token keyword">async</span> <span class="token function">asyncData</span><span class="token punctuation">(</span><span class="token punctuation">{</span> store<span class="token punctuation">,</span> params <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> id <span class="token punctuation">}</span> <span class="token operator">=</span> params
+    <span class="token keyword">await</span> store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">&apos;user/load&apos;</span><span class="token punctuation">,</span> id<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> id <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token keyword">async</span> <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// await this.$store.dispatch(&apos;user/load&apos;, this.id)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tips_getters">TIPS&#x30FB;getters</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://vuex.vuejs.org/ja/guide/getters.html" class="bare">https://vuex.vuejs.org/ja/guide/getters.html</a></p>
+</li>
+<li>
+<p><a href="https://vuex.vuejs.org/ja/api/#getters" class="bare">https://vuex.vuejs.org/ja/api/#getters</a></p>
+</li>
+</ul>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306B;&#x3088;&#x3063;&#x3066;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3055;&#x308C;&#x308B;&#x30B2;&#x30C3;&#x30BF;&#x30FC;&#x306F;&#x547C;&#x3073;&#x51FA;&#x3059;&#x5EA6;&#x306B;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x3001;&#x305D;&#x306E;&#x7D50;&#x679C;&#x306F;&#x30AD;&#x30E3;&#x30C3;&#x30B7;&#x30E5;&#x3055;&#x308C;&#x306A;&#x3044;&#x70B9;&#x306B;&#x7559;&#x610F;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+</div>
+</blockquote>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js"><span class="token keyword">export</span> <span class="token keyword">const</span> getters <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// &#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x30B9;&#x30BF;&#x30A4;&#x30EB;&#x30A2;&#x30AF;&#x30BB;&#x30B9;</span>
+  getTodoById<span class="token punctuation">:</span> <span class="token punctuation">(</span>state<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> state<span class="token punctuation">.</span>todos<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>todo <span class="token operator">=</span><span class="token operator">&gt;</span> todo<span class="token punctuation">.</span>id <span class="token operator">===</span> id<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// &#x30B2;&#x30C3;&#x30BF;&#x30FC;&#x306F;&#x7B2C;2&#x5F15;&#x6570;&#x3068;&#x3057;&#x3066;&#x4ED6;&#x306E;&#x30B2;&#x30C3;&#x30BF;&#x30FC;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308A;&#x307E;&#x3059;:</span>
+  doneTodosCount<span class="token punctuation">:</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> getters<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> getters<span class="token punctuation">.</span>doneTodos<span class="token punctuation">.</span>length
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// &#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x3001;&#x30B0;&#x30ED;&#x30FC;&#x30D0;&#x30EB;&#x5229;&#x7528;</span>
+  <span class="token function">getSomething</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> getters<span class="token punctuation">,</span> rootState<span class="token punctuation">,</span> rootGetters<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> rootGetters<span class="token punctuation">[</span><span class="token string">&apos;user/statistics&apos;</span><span class="token punctuation">]</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tips_actions">TIPS&#x30FB;actions</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js"><span class="token punctuation">{</span>
+  state<span class="token punctuation">,</span>      <span class="token comment" spellcheck="true">// `store.state` &#x3068;&#x540C;&#x3058;&#x304B;&#x3001;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x5185;&#x306B;&#x3042;&#x308C;&#x3070;&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x30B9;&#x30C6;&#x30FC;&#x30C8;</span>
+  rootState<span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">// `store.state` &#x3068;&#x540C;&#x3058;&#x3002;&#x305F;&#x3060;&#x3057;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x5185;&#x306B;&#x9650;&#x308B;</span>
+  commit<span class="token punctuation">,</span>     <span class="token comment" spellcheck="true">// `store.commit` &#x3068;&#x540C;&#x3058;</span>
+  dispatch<span class="token punctuation">,</span>   <span class="token comment" spellcheck="true">// `store.dispatch` &#x3068;&#x540C;&#x3058;</span>
+  getters<span class="token punctuation">,</span>    <span class="token comment" spellcheck="true">// `store.getters` &#x3068;&#x540C;&#x3058;&#x304B;&#x3001;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x5185;&#x306B;&#x3042;&#x308C;&#x3070;&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x30B2;&#x30C3;&#x30BF;&#x30FC;</span>
+  rootGetters <span class="token comment" spellcheck="true">// `store.getters` &#x3068;&#x540C;&#x3058;&#x3002;&#x305F;&#x3060;&#x3057;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x5185;&#x306B;&#x9650;&#x308B;</span>
+<span class="token punctuation">}</span></code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dispatch_rootaction">dispatch rootAction</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://vuex.vuejs.org/ja/guide/modules.html#%E5%90%8D%E5%89%8D%E7%A9%BA%E9%96%93%E4%BB%98%E3%81%8D%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E3%81%A7%E3%81%AE%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%90%E3%83%AB%E3%82%A2%E3%82%BB%E3%83%83%E3%83%88%E3%81%B8%E3%81%AE%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9">&#x540D;&#x524D;&#x7A7A;&#x9593;&#x4ED8;&#x304D;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3067;&#x306E;&#x30B0;&#x30ED;&#x30FC;&#x30D0;&#x30EB;&#x30A2;&#x30BB;&#x30C3;&#x30C8;&#x3078;&#x306E;&#x30A2;&#x30AF;&#x30BB;&#x30B9;</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">  <span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">&apos;user/refresh&apos;</span><span class="token punctuation">,</span> payload<span class="token punctuation">,</span> <span class="token punctuation">{</span> root<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div></article><div class="adsense"><div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Refills Bottom (Responsive) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2136746860059501"
+     data-ad-slot="2358320270"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><footer><hr><h3>Index of&nbsp;<a href="/refills/bid/nuxt/"></a></h3><div class="article-links"><a href="/refills/rid/1566444/"><div class="left"><span class="octicon octicon-file-text"></span>Vuex メモ</div></a><a href="/refills/rid/1578999/"><div class="left"><span class="octicon octicon-file-text"></span>Nuxt.js + iView (View UI)のセットアップ</div></a></div></footer><footer><hr><div class="meta"><div class="left"><a href="https://github.com/syon" class="author"><img src="/refills/assets/img/syon.jpg" alt="syon" target="_blank"><span>syon</span></a></div><div class="right"><div class="repo"><span><a href="https://github.com/syon/refills/commits/master/src/refills/nuxt/vuex.adoc" target="_blank">更新履歴</a></span><a href="https://github.com/syon/refills" target="_blank">Repo</a><a href="https://app.wercker.com/project/byKey/3938da859441da2240b9f5d8f7d9f9fd"><img alt="Wercker status" src="https://app.wercker.com/status/3938da859441da2240b9f5d8f7d9f9fd/s/master"></a></div></div></div></footer></section></body></html>

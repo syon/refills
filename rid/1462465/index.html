@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="ja"><head><title>TIPS :: Squid Proxy | Refills</title><meta property="og:type" content="article"><meta property="og:locale" content="ja_JP"><meta property="og:title" content="TIPS :: Squid Proxy | Refills"><meta property="og:site_name" content="Refills"><meta property="og:type" content="article"><meta property="og:url" content="https://syon.github.io/refills/rid/1462465/"><link rel="canonical" href="https://syon.github.io/refills/rid/1462465/"><meta property="og:image" content="https://syon.github.io/refills/assets/img/ogp.png"><meta charset="utf-8"><meta name="viewport" content="initial-scale=1, width=device-width"><link rel="stylesheet" href="/refills/assets/vendor/octicons/octicons.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Merriweather:400,400italic,700,700italic"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="/refills/assets/bundle.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37634759-11', 'auto');
+ga('send', 'pageview');</script></head><body><header class="site-head"><div class="container"><div class="logo"><a href="/refills/"><h1 class="site-name">Refills</h1></a></div></div></header><section id="article"><div class="a-title"><div class="r-meta-cate"><span class="r-category">Squid Proxy</span></div><h1 class="r-title">TIPS</h1><div class="r-meta-date"><a href="https://github.com/syon/refills/commits/master/src/refills/squid-proxy/tips.md" target="_blank" class="r-date"><span>2016.4.29</span></a></div></div><article class="main"><h2>Reload config</h2>
+<ul>
+<li><a href="http://www.cyberciti.biz/faq/howto-linux-unix-bsd-appleosx-reload-squid-conf-file/">Reload Squid Proxy Server Without Restarting Squid Daemon</a></li>
+</ul>
+<p><code>kill -HUP</code>&#x3060;&#x3068;&#x3046;&#x307E;&#x304F;&#x6A5F;&#x80FD;&#x3057;&#x306A;&#x304B;&#x3063;&#x305F;&#x3001;<code>--help</code>&#x3082;&#x52B9;&#x304B;&#x306A;&#x3044;&#x306E;&#x3067;&#x305D;&#x306E;&#x3046;&#x3061;&#x8ABF;&#x3079;&#x308B;</p>
+<pre><code class="language-bash">$ <span class="token function">kill</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">cat</span> /usr/local/var/run/squid.pid<span class="token variable">)</span></span>
+</code></pre>
+<p>reload the squid after making changes to squid.conf file</p>
+<pre><code class="language-bash">$ /usr/local/sbin/squid -k reconfigure
+</code></pre>
+<h2>Black List / White List</h2>
+<ul>
+<li><a href="http://futuremix.org/2005/07/squid-access-deny">squid &#x3067;&#x7279;&#x5B9A;&#x306E;&#x30B5;&#x30A4;&#x30C8;&#x3092;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x62D2;&#x5426;&#x3059;&#x308B;</a></li>
+<li><a href="http://futuremix.org/2005/07/squid-access-allow">squid &#x3067;&#x7279;&#x5B9A;&#x306E;&#x30B5;&#x30A4;&#x30C8;&#x306E;&#x307F;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3092;&#x8A31;&#x53EF;&#x3059;&#x308B;</a></li>
+<li><a href="http://www.p-runner.net/wordpress/?p=275">su &#x2013; root &#xBB; Blog Archive &#xBB; squid&#x3067;URL&#x30D5;&#x30A3;&#x30EB;&#x30BF;</a></li>
+</ul>
+<h2>Launch on Startup (OSX)</h2>
+<p><img src="launchrocket.png" alt="LaunchRocket"></p>
+<dl>
+<dt><a href="https://github.com/jimbojsb/launchrocket">jimbojsb/launchrocket</a></dt>
+<dd>A Mac PrefPane to manage all your Homebrew-installed services
+</dd>
+</dl>
+<h2>Memo</h2>
+<ul>
+<li><code>acl myaclname</code> &#x3067;&#x5B9A;&#x7FA9;&#x3057;&#x3066; <code>http_access allow myaclname</code> &#x3067;&#x5229;&#x7528;</li>
+<li><code>http_access</code> &#x306F;&#x4E0A;&#x304B;&#x3089;&#x8A55;&#x4FA1;&#x3055;&#x308C;&#x3001;&#x30DE;&#x30C3;&#x30C1;&#x3059;&#x308B;&#x3068;&#x305D;&#x3053;&#x3067;&#x5207;&#x308A;&#x4E0A;&#x3052;&#x308B;&#x3002;<br>
+&#x4F8B;&#x3048;&#x3070; allow localnet &#x306E;&#x4E0B;&#x306B; allow password &#x3092;&#x8A18;&#x8FF0;&#x3057;&#x3066;&#x3082;&#x3001;localnet &#x5185;&#x306E;&#x7AEF;&#x672B;&#x306F;&#x5E38;&#x306B;&#x8A31;&#x53EF;&#x3055;&#x308C;&#x308B;&#x3002;</li>
+</ul>
+</article><div class="adsense"><div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Refills Bottom (Responsive) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2136746860059501"
+     data-ad-slot="2358320270"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><footer><hr><h3>Index of&nbsp;<a href="/refills/bid/squid-proxy/">Squid Proxy Server</a></h3><div class="article-links"><a href="/refills/rid/1462460/"><div class="left"><span class="octicon octicon-file-text"></span>Squidのインストール</div></a><a href="/refills/rid/1462461/"><div class="left"><span class="octicon octicon-file-text"></span>Squidの設定</div></a><a href="/refills/rid/1462462/"><div class="left"><span class="octicon octicon-file-text"></span>Squidのディレクトリ</div></a><a href="/refills/rid/1462463/"><div class="left"><span class="octicon octicon-file-text"></span>エラーページのカスタマイズ</div></a><a href="/refills/rid/1462464/"><div class="left"><span class="octicon octicon-file-text"></span>auth</div></a><a href="/refills/rid/1462465/"><div class="left"><span class="octicon octicon-file-text"></span>TIPS</div></a></div></footer><footer><hr><div class="meta"><div class="left"><a href="https://github.com/syon" class="author"><img src="/refills/assets/img/syon.jpg" alt="syon" target="_blank"><span>syon</span></a></div><div class="right"><div class="repo"><span><a href="https://github.com/syon/refills/commits/master/src/refills/squid-proxy/tips.md" target="_blank">更新履歴</a></span><a href="https://github.com/syon/refills" target="_blank">Repo</a><a href="https://app.wercker.com/project/byKey/3938da859441da2240b9f5d8f7d9f9fd"><img alt="Wercker status" src="https://app.wercker.com/status/3938da859441da2240b9f5d8f7d9f9fd/s/master"></a></div></div></div></footer></section></body></html>

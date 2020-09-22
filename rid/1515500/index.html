@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="ja"><head><title>Selenide 逆引き Code Tips :: Selenium | Refills</title><meta property="og:type" content="article"><meta property="og:locale" content="ja_JP"><meta property="og:title" content="Selenide 逆引き Code Tips :: Selenium | Refills"><meta property="og:site_name" content="Refills"><meta property="og:type" content="article"><meta property="og:url" content="https://syon.github.io/refills/rid/1515500/"><link rel="canonical" href="https://syon.github.io/refills/rid/1515500/"><meta property="og:image" content="https://syon.github.io/refills/assets/img/ogp.png"><meta charset="utf-8"><meta name="viewport" content="initial-scale=1, width=device-width"><link rel="stylesheet" href="/refills/assets/vendor/octicons/octicons.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Merriweather:400,400italic,700,700italic"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="/refills/assets/bundle.css"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-37634759-11', 'auto');
+ga('send', 'pageview');</script></head><body><header class="site-head"><div class="container"><div class="logo"><a href="/refills/"><h1 class="site-name">Refills</h1></a></div></div></header><section id="article"><div class="a-title"><div class="r-meta-cate"><span class="r-category">Selenium</span></div><h1 class="r-title">Selenide 逆引き Code Tips</h1><div class="r-meta-date"><a href="https://github.com/syon/refills/commits/master/src/refills/selenium/selenide-tips.adoc" target="_blank" class="r-date"><span>2018.11.8</span></a></div></div><article class="main"><div class="ulist">
+<ul>
+<li>
+<p><a href="http://selenide.org/">Selenide: concise UI tests in Java</a></p>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_ie11">IE11 &#x3067;&#x52D5;&#x4F5C;&#x3057;&#x306A;&#x3044;&#x3068;&#x304D;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30CD;&#x30C3;&#x30C8;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x4FDD;&#x8B77;&#x30E2;&#x30FC;&#x30C9;&#x6709;&#x52B9;&#x3084;&#x62E1;&#x5927;&#x7387;100%&#x3001;
+&#x30EC;&#x30B8;&#x30B9;&#x30C8;&#x30EA; <code>FEATURE_BFCACHE</code> &#x306E;&#x8A2D;&#x5B9A;&#x3092;&#x3057;&#x3066;&#x3082;&#x52D5;&#x4F5C;&#x3057;&#x306A;&#x3044;&#x72B6;&#x6CC1;&#x306B;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;
+&#x5177;&#x4F53;&#x7684;&#x306B;&#x306F; IE11 &#x304C;&#x7ACB;&#x3061;&#x4E0A;&#x304C;&#x308A;&#x81EA;&#x52D5;&#x5165;&#x529B;&#x306F;&#x3067;&#x304D;&#x308B;&#x3082;&#x306E;&#x306E; <code>element.click()</code> &#x304C;&#x52B9;&#x304B;&#x306A;&#x3044;&#x3068;&#x3044;&#x3046;&#x4E8B;&#x8C61;&#x3067;&#x3059;&#x3002;
+&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3067;&#x52D5;&#x4F5C;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;(2018&#x5E74;11&#x6708;)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Windows 10 Pro (64 bit)</p>
+</li>
+<li>
+<p>IEDriverServer.exe (32 bit)</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">useIE11</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Configuration<span class="token punctuation">.</span>browser <span class="token operator">=</span> WebDriverRunner<span class="token punctuation">.</span>INTERNET_EXPLORER<span class="token punctuation">;</span>
+    System<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">&quot;webdriver.ie.driver&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;C:/path/to/webdrivers/IEDriverServer.exe&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 32bit</span>
+
+    DesiredCapabilities dc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DesiredCapabilities</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    dc<span class="token punctuation">.</span><span class="token function">setCapability</span><span class="token punctuation">(</span><span class="token string">&quot;nativeEvents&quot;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    dc<span class="token punctuation">.</span><span class="token function">setCapability</span><span class="token punctuation">(</span><span class="token string">&quot;unexpectedAlertBehaviour&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;accept&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    dc<span class="token punctuation">.</span><span class="token function">setCapability</span><span class="token punctuation">(</span><span class="token string">&quot;ignoreProtectedModeSettings&quot;</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    dc<span class="token punctuation">.</span><span class="token function">setCapability</span><span class="token punctuation">(</span><span class="token string">&quot;disable-popup-blocking&quot;</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    dc<span class="token punctuation">.</span><span class="token function">setCapability</span><span class="token punctuation">(</span><span class="token string">&quot;enablePersistentHover&quot;</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    InternetExplorerOptions opts <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InternetExplorerOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    opts<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span> dc <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    InternetExplorerDriver driver <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InternetExplorer</span><span class="token punctuation">(</span> opts <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    WebDriverRunner<span class="token punctuation">.</span><span class="token function">setWebDriver</span><span class="token punctuation">(</span> driver <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/selenide/selenide/wiki/How-Selenide-creates-WebDriver">How Selenide creates WebDriver &#xB7; selenide/selenide Wiki</a></p>
+</li>
+<li>
+<p><a href="https://sqa.stackexchange.com/questions/9496/webdriver-clicking-button-issue-in-ie-11">automated testing - WebDriver Clicking button issue in IE 11 - Software Quality Assurance &amp; Testing Stack Exchange</a></p>
+</li>
+<li>
+<p><a href="https://bitwave.showcase-tv.com/selenium%E3%81%A7internet-explorer11%E3%82%92%E5%8B%95%E3%81%8B%E3%81%99%E6%96%B9%E6%B3%95/">Selenium&#x3067;Internet Explorer11&#x3092;&#x52D5;&#x304B;&#x3059;&#x65B9;&#x6CD5;</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__">&#x8A2D;&#x5B9A;</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java"><span class="token comment" spellcheck="true">// &#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x306E;&#x30B5;&#x30A4;&#x30BA;</span>
+Configuration<span class="token punctuation">.</span>browserSize <span class="token operator">=</span> <span class="token string">&quot;1280x1024&quot;</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// open() &#x3092;&#x547C;&#x3093;&#x3060;&#x3068;&#x304D;&#x306E;&#x30D9;&#x30FC;&#x30B9;URL</span>
+Configuration<span class="token punctuation">.</span>baseUrl <span class="token operator">=</span> <span class="token string">&quot;http://localhost:8080&quot;</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x81EA;&#x52D5;&#x64CD;&#x4F5C;&#x306E;&#x7D9A;&#x884C;&#x5F85;&#x3061;&#x30BF;&#x30A4;&#x30E0;&#x30A2;&#x30A6;&#x30C8; 30&#x79D2;</span>
+Configuration<span class="token punctuation">.</span>timeout <span class="token operator">=</span> <span class="token number">30000</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x30C6;&#x30B9;&#x30C8;&#x304C;&#x7D42;&#x4E86;&#x5F8C;&#x3082;&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x3092;&#x958B;&#x3044;&#x305F;&#x307E;&#x307E;&#x306B;&#x3059;&#x308B;</span>
+Configuration<span class="token punctuation">.</span>holdBrowserOpen <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x30B9;&#x30AF;&#x30EA;&#x30FC;&#x30F3;&#x30B7;&#x30E7;&#x30C3;&#x30C8;&#x7B49;&#x306E;&#x51FA;&#x529B;&#x5148;</span>
+Configuration<span class="token punctuation">.</span>reportsFolder <span class="token operator">=</span> <span class="token string">&quot;path/to/folder&quot;</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// &#x30C6;&#x30B9;&#x30C8;&#x304C;&#x5931;&#x6557;&#x3057;&#x305F;&#x3068;&#x304D;&#x306B;&#x30EC;&#x30DD;&#x30FC;&#x30C8;&#x3092;&#x51FA;&#x529B;&#x3057;&#x306A;&#x3044;</span>
+Configuration<span class="token punctuation">.</span>savePageSource <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___2">&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="___3">&#x6700;&#x5F8C;&#x306B;&#x958B;&#x3044;&#x305F;&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x306B;&#x30B9;&#x30A4;&#x30C3;&#x30C1;&#x3059;&#x308B;</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java"><span class="token comment" spellcheck="true">// newly opened window</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span>String winHandle <span class="token operator">:</span> driver<span class="token punctuation">.</span><span class="token function">getWindowHandles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    driver<span class="token punctuation">.</span><span class="token function">switchTo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">window</span><span class="token punctuation">(</span>winHandle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/19112209/how-to-handle-the-new-window-in-selenium-webdriver-using-java">How to handle the new window in Selenium WebDriver using Java? - Stack Overflow</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="___4">&#x30BF;&#x30A4;&#x30C8;&#x30EB;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x3092;&#x30B9;&#x30A4;&#x30C3;&#x30C1;&#x3059;&#x308B;</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Utility</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> WebDriver <span class="token function">getHandleToWindow</span><span class="token punctuation">(</span>String title<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        WebDriver popup <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        Set<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> windowIterator <span class="token operator">=</span> WebDriverInitialize<span class="token punctuation">.</span><span class="token function">getDriver</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getWindowHandles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>err<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;No of windows :  &quot;</span> <span class="token operator">+</span> windowIterator<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>String s <span class="token operator">:</span> windowIterator<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            String windowHandle <span class="token operator">=</span> s<span class="token punctuation">;</span>
+            popup <span class="token operator">=</span> WebDriverInitialize<span class="token punctuation">.</span><span class="token function">getDriver</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">switchTo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">window</span><span class="token punctuation">(</span>windowHandle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Window Title : &quot;</span> <span class="token operator">+</span> popup<span class="token punctuation">.</span><span class="token function">getTitle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Window Url : &quot;</span> <span class="token operator">+</span> popup<span class="token punctuation">.</span><span class="token function">getCurrentUrl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>popup<span class="token punctuation">.</span><span class="token function">getTitle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>title<span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Selected Window Title : &quot;</span> <span class="token operator">+</span> popup<span class="token punctuation">.</span><span class="token function">getTitle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span> popup<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Window Title :&quot;</span> <span class="token operator">+</span> popup<span class="token punctuation">.</span><span class="token function">getTitle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> popup<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">WebDriver childDriver <span class="token operator">=</span> Utility<span class="token punctuation">.</span><span class="token function">getHandleToWindow</span><span class="token punctuation">(</span><span class="token string">&quot;titleOfChildWindow&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/19112209/how-to-handle-the-new-window-in-selenium-webdriver-using-java">How to handle the new window in Selenium WebDriver using Java? - Stack Overflow</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_articles">articles</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/codeborne/selenide/wiki/Selenide-vs-Selenium">Selenide vs Selenium &#xB7; codeborne/selenide Wiki &#xB7; GitHub</a><br>
+how Selenide API is simpler and more powerful than Selenium WebDriver API.</p>
+</li>
+</ul>
+</div>
+</div>
+</div></article><div class="adsense"><div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Refills Bottom (Responsive) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2136746860059501"
+     data-ad-slot="2358320270"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div><footer><hr><h3>Index of&nbsp;<a href="/refills/bid/selenium/">Selenium</a></h3><div class="article-links"><a href="/refills/rid/1496490/"><div class="left"><span class="octicon octicon-file-text"></span>Seleniumとブラウザドライバーのインストールと使い方</div></a><a href="/refills/rid/1496538/"><div class="left"><span class="octicon octicon-file-text"></span>WebdriverIO 覚書き</div></a><a href="/refills/rid/1496545/"><div class="left"><span class="octicon octicon-file-text"></span>WebdriverIO 逆引き Code Tips</div></a><a href="/refills/rid/1515500/"><div class="left"><span class="octicon octicon-file-text"></span>Selenide 逆引き Code Tips</div></a></div></footer><footer><hr><div class="meta"><div class="left"><a href="https://github.com/syon" class="author"><img src="/refills/assets/img/syon.jpg" alt="syon" target="_blank"><span>syon</span></a></div><div class="right"><div class="repo"><span><a href="https://github.com/syon/refills/commits/master/src/refills/selenium/selenide-tips.adoc" target="_blank">更新履歴</a></span><a href="https://github.com/syon/refills" target="_blank">Repo</a><a href="https://app.wercker.com/project/byKey/3938da859441da2240b9f5d8f7d9f9fd"><img alt="Wercker status" src="https://app.wercker.com/status/3938da859441da2240b9f5d8f7d9f9fd/s/master"></a></div></div></div></footer></section></body></html>
