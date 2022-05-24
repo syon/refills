@@ -13,7 +13,7 @@ layout: refill.jade
 image::https://s3-ap-northeast-1.amazonaws.com/syon.github.io/refills/chronicle/201707/wox-hero.png[wox]
 
 
-Wox 公式サイト:: http://www.getwox.com/
+Wox 公式サイト:: http://www.wox.one/
 
 Wox on GitHub:: https://github.com/Wox-launcher/Wox
 
