@@ -38,7 +38,6 @@ await new Promise(r => setTimeout(r, 5000));
   const result = await main();
   console.log(result);
 })().catch(e => {
-  // Deal with the fact the chain failed
   console.warn(e);
 });
 ```
@@ -148,7 +147,7 @@ console.log(o1);  // { a: 1, b: 2, c: 3 }, targetオブジェクト自身が変�
 
 == Array
 
-=== ソート (sort)
+=== オブジェクトのソート (sort)
 
 - link:https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/sort[Array.prototype.sort() - JavaScript | MDN]
 
@@ -171,6 +170,27 @@ items.sort((a, b) => {
 // { name: 'apple', price: 100 }
 // { name: 'mango', price: 398 }
 // { name: 'melon', price: 500 }
+```
+
+=== オブジェクト内の文字列のソート (sort)
+
+```js
+const items = [
+  { name: 'apple', price: 100 },
+  { name: 'orange', price: 98 },
+  { name: 'banana', price: 50 },
+  { name: 'melon', price: 500 },
+  { name: 'mango', price: 398 }
+]
+items.sort((a, b) => {
+  return a.name.localeCompare(b.name)
+})
+//=>
+// { name: 'apple', price: 100 }
+// { name: 'banana', price: 50 }
+// { name: 'mango', price: 398 }
+// { name: 'melon', price: 500 }
+// { name: 'orange', price: 98 }
 ```
 
 === オブジェクトから配列に変換
